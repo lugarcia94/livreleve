@@ -95,14 +95,14 @@ class Menu extends Component {
         if(this.state.mobile)
             return;
         else {
-            let list = this.renderHtml(this.props.items, true, 'all-categories');
+            let list = this.renderHtml(this.props.items, true, 'menu__categories-all');
             return (
-                <li class="all-category">
-                    <span class="all-category__name">
-                        Departamentos
+                <li class="menu__categories-all">
+                    <span class="menu__categories-all__name">
+                        Ver Mais
                     </span>
-                    <div className="menu-all-category-inner">
-                        <ul class="menu-all-category-nv-0">
+                    <div className="menu__categories-all--inner">
+                        <ul class="menu__categories-all--nv0">
                             {list}
                         </ul>
                     </div>
@@ -186,8 +186,8 @@ class Menu extends Component {
                                 </header>
                             }
                             <ul class="menu__categories menu__categories--nv0">
-                                {allCategory}
                                 {list}
+                                {allCategory}
                             </ul>
                         </nav>
 

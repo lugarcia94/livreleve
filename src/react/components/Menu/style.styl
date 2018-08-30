@@ -1,8 +1,14 @@
 .menu
-    position            : relative
-    width               : 100%
+    max-width               : 256px
 
-    transition          : transition[0]
+    &--mobile
+        position            : relative
+        width               : 100%
+
+        transition          : transition[0]
+
+        .menu__nav
+            padding-top     : 95px
 
     &--hide
         opacity         : 0
@@ -31,13 +37,9 @@
 
         color           : #fff
 
-    &__nav
-        padding-top     : 95px
-
     &__categories
         &:not(.menu__categories--nv0)
             background  : rgba(0,0,0,.03)
-
 
     &__link
         &--nv0, &--nv1, &--nv2
@@ -94,3 +96,60 @@
                 &--help
                     &:before
                         font-icon           : url('./svg/help.svg')
+
+
+@media (min-width: 992px)
+    .menu
+        position                            : fixed
+        top                                 : 105px
+        z-index                             : 2
+
+        display                             : block
+        width                               : 100%
+        min-height                          : 0
+        max-height                          : 40px
+
+        overflow                            : visible
+
+        transition                          : transition[0]
+
+        .slideout-open &
+            transform                       : translate3d(-256px, 0, 0)
+
+        &__container
+            @extend                         $container
+
+        .scrolling &
+            transform                       : translate3d(0, -40px, 0)
+
+        .scrolling:not(.scrolling--top) &
+            opacity                         : 0
+            visibility                      : hidden
+
+        &--hide
+            opacity                         : 1
+            visibility                      : visible
+
+        &__categories
+            display                         : flex
+            justify-content                 : space-between
+            overflow                        : visible
+
+            &--nv1
+                position                    : absolute
+                visibility                  : hidden
+
+            &-all
+                &--inner
+                    position                : absolute
+                    visibility              : hidden
+
+        &__categories-all__name
+            padding                         : 5px 15px
+
+            font-size                       : 12px
+            font-weight                     : regular
+
+            text-transform                  : uppercase
+
+            color                           : #909090

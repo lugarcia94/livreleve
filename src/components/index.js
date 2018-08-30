@@ -23,8 +23,11 @@ import './search';
 import './main';
 
 // Button
-import './button'
+import './button';
 
 // Minicart
-import './minicart'
+import './minicart';
+
+// head-nav
+import './head-nav';
 

@@ -39,7 +39,7 @@
         &--menu
             padding     : 0
 
-    &__logo, &__button-menu, &__cart
+    &__logo, &__button-menu, &__cart, &__head-nav
         position        : relative
         z-index         : 30
 
@@ -77,11 +77,16 @@
 
             z-index     : 30
 
+            max-width   : 360px
+
 
             .scrolling:not(.scrolling--top) &
                 transform   : none
                 opacity     : 1
                 visibility  : visible
+
+        &__head-nav
+            display         : block
 
         &__menu
             position    : absolute

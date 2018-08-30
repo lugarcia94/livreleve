@@ -1,0 +1,39 @@
+.head-nav
+    display                 : flex
+    justify-content         : space-between
+    align-items             : center
+
+    height                  : 100%
+
+    margin                  : 0 25px
+
+    &__sub
+        position            : absolute
+        visibility          : hidden
+
+    &__link
+        display             : flex
+        align-items         : center
+
+        min-height          : 45px
+
+        padding             : 5px 10px
+
+        font-size           : 12px
+        font-weight         : regular
+
+        line-height         : 1.2
+
+        text-transform      : lowercase
+
+        color               : color[1]
+
+    [dropdown=true]
+        .head-nav__link
+
+            &:after
+                content         : ''
+                margin-top      : 2px
+                border-top      : solid 4px color[1]
+                border-left     : solid 3px transparent
+                border-right    : solid 3px transparent
