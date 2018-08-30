@@ -1,0 +1,98 @@
+<header class="header">
+    <section class="banner banner--header">
+        <div class="banner__container">
+            <a href="#banner-header">
+                <img src="/arquivos/banner_header.jpg" alt="Banner Header" />
+            </a>
+        </div>
+    </section>
+
+    <div class="header__container">
+        <div class="header__button-menu">
+            <button class="button button__menu" type="button"><span class="lines"></span></button>
+        </div>
+        <div class="header__logo">
+            <div class="logo">
+                <h1>
+                    <img src="/arquivos/logo.png" alt="Monali - cosméticos" />
+                    <span>Monali - cosméticos</span>
+                </h1>
+            </div>
+        </div>
+        <div class="header__search">
+            <div class="search search--header">
+                <div class="search__container">
+                    <vtex.cmc:fullTextSearchBox/>
+                </div>
+            </div>
+        </div>
+        <div class="header__head-nav">
+            <ul class="head-nav">
+
+                <li class="head-nav__item head-nav__item--lv1" dropdown="true">
+                    <a href="#" class="head-nav__link">minha conta</a>
+
+                    <ul class="head-nav__sub">
+                        <li class="head-nav__item head-nav__item--lv2">
+                            <a href="#link" class="head-nav__link">Acessar conta</a>
+                        </li>
+                        <li class="head-nav__item head-nav__item--lv2">
+                            <a href="#link" class="head-nav__link">Cadastrar nova conta</a>
+                        </li>
+                        <li class="head-nav__item head-nav__item--lv2">
+                            <a href="#link" class="head-nav__link">Lista de desejo</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="head-nav__item head-nav__item--lv1">
+                    <a href="#" class="head-nav__link">meus pedidos</a>
+                </li>
+
+                <li class="head-nav__item head-nav__item--lv1" dropdown="true">
+                    <a href="#" class="head-nav__link">Atendimento</a>
+
+                    <ul class="head-nav__sub">
+                        <li class="head-nav__item head-nav__item--lv2">
+                            <div class="contact">
+                                <div class="contact__label">Telefone de Atendimento</div>
+                                <div class="contact__tel">(13) 3453-4741</div>
+                            </div>
+                        </li>
+                        <li class="head-nav__item head-nav__item--lv2">
+                            <div class="contact">
+                                <div class="contact__label">Whatsapp</div>
+                                <div class="contact__tel">(11) 97105-6481</div>
+                                <div class="contact__email">beleza@monali.com.br</div>
+                            </div>
+                            <div class="social">
+                                <ul class="social__list">
+                                    <li class="social__item">
+                                        <a href="">
+                                            <img src="/arquivos/facebook.png" alt="Facebook" />
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="">
+                                            <img src="/arquivos/instagram.png" alt="Instagram" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="head-nav__item head-nav__item--lv1">
+                    <a href="#" class="head-nav__link">blog</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header__cart">
+            <button class="button button__minicart minicart">
+                <span class="minicart__text" >Menu Carrinho</span>
+                <span class="minicart__qty" data-cart="amount">0</span>
+            </button>
+        </div>
+    </div>
+</header>

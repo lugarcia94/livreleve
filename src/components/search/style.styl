@@ -1,0 +1,59 @@
+.search
+    select, legend, label
+        display          : none
+
+    &__container
+        border           : solid 1px color[2]
+
+    fieldset
+        position        : relative
+        font-size       : 0
+
+
+        &:after
+            position           : absolute
+            right              : 0
+            top                : 0
+            z-index            : 0
+
+            display            : flex
+            justify-content    : center
+            align-items        : center
+            width              : 40px
+            height             : 40px
+
+            font-icon          : url('./svg/search.svg')
+            font-size          : 13px
+
+            color              : color[0]
+
+
+    [type=text]
+        display         : inline-block
+        vertical-align  : middle
+        width           : calc(100% - 40px)
+        height          : 40px
+        padding-left    : 30px
+        border          : 0
+
+        font-size       : 17px
+        font-weight     : regular
+
+        line-height     : 40px
+
+
+    [type=button]
+        position        : relative
+        z-index         : 20
+
+        display         : inline-block
+        vertical-align  : middle
+        width           : 40px
+        height          : 40px
+        border          : 0
+
+        background      : rgba(0,0,0,0)
+
+        font-size       : 0
+
+        cursor          : pointer

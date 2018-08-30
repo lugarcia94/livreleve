@@ -1,0 +1,96 @@
+.menu
+    position            : relative
+    width               : 100%
+
+    transition          : transition[0]
+
+    &--hide
+        opacity         : 0
+        visibility      : hidden
+
+    &__header
+        position        : fixed
+        top             : 0
+        left            : 0
+
+        width           : 252px
+        background      : color[0]
+
+    &__title
+        display         : flex
+        justify-content : flex-start
+        align-items     : center
+
+        height          : 40px
+        padding-left    : 30px
+
+        font-size       : 14px
+        font-weight     : semi-bold
+
+        text-transform  : uppercase
+
+        color           : #fff
+
+    &__nav
+        padding-top     : 95px
+
+    &__categories
+        &:not(.menu__categories--nv0)
+            background  : rgba(0,0,0,.03)
+
+
+    &__link
+        &--nv0, &--nv1, &--nv2
+            display         : block
+            padding         : 5px 15px
+            color           : color[1]
+
+        &--nv0
+            font-size       : 14px
+            font-weight     : regular
+            text-transform  : uppercase
+
+        &--nv1, &--nv2
+            font-size       : 13px
+
+        &--nv1
+            font-weight     : semi-bold
+
+    &__user
+        background                          : #fff
+        border-bottom                       : solid 2px color[0]
+
+        &-list
+            display                         : flex
+
+            &-item
+                flex                        : 0 0 25%
+
+            &-link
+                font-size                   : 0
+                display                     : flex
+                justify-content             : center
+                align-items                 : center
+
+                padding                     : 10px
+
+                color                       : color[1]
+
+                &:before
+                    font-size               : 25px
+
+                &--user
+                    &:before
+                        font-icon           : url('./svg/user.svg')
+
+                &--orders
+                    &:before
+                        font-icon           : url('./svg/order.svg')
+
+                &--mail
+                    &:before
+                        font-icon           : url('./svg/mail.svg')
+
+                &--help
+                    &:before
+                        font-icon           : url('./svg/help.svg')

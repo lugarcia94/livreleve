@@ -1,0 +1,10 @@
+{
+    "host": "//lojadorefrigerista.vtexcommercestable.com.br",
+    "debug": false,
+    "scrollTop": {
+        "debug": true,
+        "enabled": true,
+        "scrollingTop": true,
+        "scrollingDown": true
+    }
+}

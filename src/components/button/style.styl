@@ -1,0 +1,85 @@
+buttonWidth     = 2rem
+buttonHeight    = .25rem
+buttonColor     = color[1]
+buttonLineTop   = .5rem
+buttonRadius    = .08rem
+
+buttonColorClose = color[1]
+
+.button
+
+    .lines
+        flex             : 0 0 auto
+        position         : relative
+
+        display          : inline-block
+        width            : buttonWidth
+        height           : buttonHeight
+        border-radius    : buttonRadius
+
+        background       : buttonColor
+
+        transition       : background .3s .6s ease
+
+        &:before, &:after
+            content             : ''
+            position            : absolute
+            left                : 0
+
+            display             : inline-block
+            width               : buttonWidth
+            height              : buttonHeight
+
+            background          : buttonColor
+            border-radius       : buttonRadius
+
+
+            transform-origin    : 50% 50%
+            transition          : top .3s .6s ease, transform .3s ease
+
+        &:before
+            top: buttonLineTop
+
+        &:after
+            top -(buttonLineTop)
+
+    &__menu
+        display          : flex
+        justify-content  : center
+        align-items      : center
+
+        width            : 45px
+        height           : 45px
+
+        margin           : 0 1em
+        padding          : 0
+
+        border           : none
+        border-radius    : buttonRadius
+
+        background       : none
+
+        transition       : .3s
+        cursor           : pointer
+        user-select      : none
+
+        &--close
+            .lines
+                background: transparent
+                transition: background 0.3s 0s ease
+
+                &:before
+                    top           : 0
+                    width         : buttonWidth
+                    background    : buttonColorClose
+                    transform     : rotate3d(0, 0, 1, 45deg)
+                    transition    : top 0.3s ease, transform 0.3s 0.5s ease, background .3s ease
+
+                &:after
+                    top           : 0
+                    width         : buttonWidth
+                    background    : buttonColorClose
+                    transform     : rotate3d(0, 0, 1, -45deg)
+                    transition    : top 0.3s ease, transform 0.3s 0.5s ease, background .3s ease
+
+
