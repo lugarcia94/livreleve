@@ -148,10 +148,13 @@
                         font-icon           : url('./svg/help.svg')
 
 
-@media (min-width: 992px)
+@media only screen and (min-width: 992px)
+    .menu__container
+        { container }
+
     .menu
         position                            : fixed
-        top                                 : 105px
+        top                                 : 115px
         z-index                             : 2
 
         display                             : block
@@ -163,14 +166,23 @@
 
         transition                          : transition[0]
 
+        background                          : bg[0]
+
+        .scrolling &
+            transform                       : translate3d(0, -50px, 0)
+
 
         .scrolling:not(.scrolling--top) &
             opacity                         : 0
             visibility                      : hidden
 
+            transform                       : translate3d(0, -90px, 0)
+
         &--hide
             opacity                         : 1
             visibility                      : visible
+
+
 
         &__categories
             display                         : flex
@@ -185,6 +197,12 @@
                 &--inner
                     position                : absolute
                     visibility              : hidden
+
+        .menu__link--nv0
+            display                         : flex
+            justify-content                 : center
+            align-items                     : center
+            height                          : 40px
 
         &__categories-all__name
             padding                         : 5px 15px
