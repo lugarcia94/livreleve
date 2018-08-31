@@ -1,0 +1,45 @@
+.header
+#menu
+    display: none !important
+
+.product 
+
+    &__container
+        @extend $container
+        display: flex
+
+
+    &__content--left
+        display: grid
+        grid-template-areas: "foto breadcrumb" "foto name" "foto reviews" "foto label" "foto short" "foto variation" "foto shipping"
+        grid-template-rows: repeat( 7, min-content)
+        width: 100%
+
+    &__content--right
+        width: 205px
+
+    &__image 
+        grid-area: foto
+        max-width: 442px
+
+    &__breadcrumb 
+        grid-area: breadcrumb
+        width: 100%
+
+    &__name  
+        grid-area: name
+
+    &__reviews 
+        grid-area: reviews
+
+    &__label
+        grid-area: label
+
+    &__description--short
+        grid-area: short
+
+    &__variations
+        grid-area: variation
+
+    &__shipping
+        grid-area: shipping

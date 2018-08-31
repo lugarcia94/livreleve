@@ -31,3 +31,5 @@ import './minicart';
 // head-nav
 import './head-nav';
 
+// product
+import './product';
