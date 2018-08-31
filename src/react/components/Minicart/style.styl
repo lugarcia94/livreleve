@@ -1,1 +1,79 @@
-//.minicart
+.minicart
+    position              : fixed
+    top                   : 0
+    right                 : 0
+    z-index               : 200
+
+    width                 : 100%
+    height                : 100%
+
+    background            : rgba(0,0,0,.5)
+
+    transition            : transition[0]
+
+    opacity               : 0
+    visibility            : hidden
+
+    .is-minicart &
+        opacity           : 1
+        visibility        : visible
+
+    &__container
+        position          : fixed
+        top               : 0
+        right             : 0
+
+        width             : 256px
+        height            : 100vh
+
+        max-height        : 100%
+
+        background        : #fff
+
+        transform         : translate3d(256px, 0, 0)
+        transition        : transition[0]
+
+        .is-minicart &
+            transform       : translate3d(0, 0, 0)
+
+    &__header
+        display           : flex
+        justify-content   : space-between
+        align-items       : center
+
+        height            : 40px
+        padding-left      : 15px
+
+        font-size         : 14px
+        font-weight       : regular
+
+        text-transform    : uppercase
+
+        background        : color[0]
+        color             : #fff
+
+    &__empty
+        display           : block
+        padding           : 15px
+
+        font-size         : 14px
+        font-weight       : regular
+
+        text-transform    : uppercase
+        text-align        : center
+
+    &__close
+        font-size           : 0
+        display             : flex
+        justify-content     : center
+        align-items         : center
+
+        width               : 40px
+        height              : 40px
+
+        background          : color[1]
+
+        &:before
+            font-icon       : url('./svg/close.svg')
+            font-size       : 18px
+            color           : #fff

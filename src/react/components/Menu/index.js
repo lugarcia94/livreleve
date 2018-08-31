@@ -85,10 +85,9 @@ class Menu extends Component {
         });
     }
 
-    handleClick(event) {
-        if( event.currentTarget.classList.contains('menu__button--close')
-            || event.target.classList.contains('menu__container'))
-            this.props.toggle(false);
+    handleClick() {
+        document.querySelector('body').classList.remove('is-menu');
+        document.querySelector('.button__menu').classList.remove('button__menu--close');
     }
 
     allCategory() {
@@ -129,6 +128,7 @@ class Menu extends Component {
                             {this.state.mobile &&
                             <header className="menu__header">
                                 <h1 className="menu__title">Menu de Categorias</h1>
+                                <button onClick={this.handleClick} className="menu__close" type="button"><span>Close</span></button>
                                 <div className="menu__user">
                                     <ul className="menu__user-list">
                                         <li className="menu__user-list-item">
@@ -167,6 +167,7 @@ class Menu extends Component {
                             { this.state.mobile &&
                                 <header class="menu__header">
                                     <h1 class="menu__title">Menu de Categorias</h1>
+                                    <button onClick={this.handleClick} class="menu__close" type="button"><span>Close</span></button>
                                     <div class="menu__user">
                                         <ul class="menu__user-list">
                                             <li class="menu__user-list-item">
