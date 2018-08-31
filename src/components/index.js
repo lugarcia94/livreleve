@@ -25,9 +25,6 @@ import './main';
 // Button
 import './button';
 
-// Minicart
-import './minicart';
-
 // head-nav
 import './head-nav';
 

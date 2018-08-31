@@ -76,7 +76,7 @@ class Minicart extends Component {
     }
     render() {
         let list = this.renderHtml();
-        let _className = this.props.isRemoved ? 'minicart is-loading' : 'minicart';
+        let _className = this.props.isRemoved ? ' is-loading' : '';
 
         if(parseInt(this.props.qtd) == 0)
             list = (<h3 className="empty">Seu carrinho está vazio.</h3>);
@@ -93,7 +93,7 @@ class Minicart extends Component {
         );
 
         return(
-            <section className={_className} >
+            <div className={_className} >
                 <header className="minicart__main-header">
                     <h1 className="minicart-inner-title">Meu Carrinho</h1>
                 </header>
@@ -115,7 +115,7 @@ class Minicart extends Component {
                         </a>
                     </footer>
                 }
-            </section>
+            </div>
         );
 
     }

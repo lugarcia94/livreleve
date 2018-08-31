@@ -64,7 +64,11 @@ const config = {
                         loader: 'postcss-loader',
                         options: {
                             plugins: (loader) => [
-                                new IconfontWebpackPlugin(loader)
+                                new IconfontWebpackPlugin(loader),
+                                require('autoprefixer')({
+                                    browsers: ['last 2 versions'],
+                                    grid: true
+                                })
                             ]
                         }
                     },
