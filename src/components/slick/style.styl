@@ -1,0 +1,56 @@
+.slick
+    &-arrow
+        width               : 45px
+        height              : 45px
+        border              : 0
+        border-radius       : 3px
+
+        font-size           : 0
+
+        background          : bg[0]
+        color               : color[1]
+
+        &:before
+            font-size       : 28px
+
+    &-prev:before
+        font-icon           : url('./svg/prev.svg')
+
+    &-next:before
+        font-icon           : url('./svg/next.svg')
+
+[data-carousel]
+    position                : relative
+
+    .slick
+        &-arrow
+            position        : absolute
+            top             : 50%
+            z-index         : 50
+
+            transform       : translateY(-50%)
+            transition      : transition[0]
+
+        &-prev
+            left            : 15px
+
+        &-next
+            right           : 15px
+
+[data-carousel=three]
+    .slick
+        &-prev
+            left            : 0
+
+        &-next
+            right           : 0
+
+@media screen and (min-width: (viewport + 120))
+    [data-carousel=three]
+        .slick
+
+            &-prev
+                left        : -60px
+
+            &-next
+                right       : -60px

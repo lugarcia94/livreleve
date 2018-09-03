@@ -1,8 +1,12 @@
 // Reset CSS
 import './reset/index.styl';
 
-// Slideout
-import './slideout';
+// // Slideout
+// import './slideout';
+
+
+// SlickJS
+import './slick';
 
 // Wrapper
 import './wrapper';

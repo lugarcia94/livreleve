@@ -27,6 +27,10 @@ const config = {
         new webpack.ProvidePlugin({
             Promise: "bluebird"
         }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
         // new webpack.optimize.CommonsChunkPlugin({
         //     name: "vendor"
         // }),

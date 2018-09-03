@@ -93,15 +93,12 @@
         &:not(.menu__categories--nv0)
             background  : rgba(0,0,0,.03)
 
-    &__item
-        &--nv0
-            padding         : 0 15px
-
     &__link
         &--nv0, &--nv1, &--nv2
             display                : block
 
             color                  : color[1]
+            padding                : 5px 15px
 
             &:hover
                 text-decoration    : none
@@ -172,7 +169,7 @@
         display                             : block
         width                               : 100%
         min-height                          : 0
-        max-height                          : 40px
+        max-height                          : 41px
 
         overflow                            : visible
 
@@ -211,7 +208,7 @@
                 line-height                 : 1.3
 
             &:not(.menu__categories--nv0)
-                background                  : none
+                background                  : #fff
 
             &--nv1
                 position                    : absolute
@@ -225,7 +222,6 @@
                 white-space                 : nowrap
 
                 font-size                   : 0
-
 
                 background                  : #fff
 
@@ -294,6 +290,8 @@
 
                     transition              : transition[0]
 
+                    background              : #fff
+
                     visibility              : hidden
                     opacity                 : 0
 
@@ -358,6 +356,14 @@
             justify-content                 : center
             align-items                     : center
             height                          : 40px
+
+        &__item
+            &--nv0
+                padding                     : 0 15px
+
+        &__link
+            &--nv0, &--nv1, &--nv2
+                padding                     : 0
 
         &__categories-all__name
             display                         : flex
