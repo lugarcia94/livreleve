@@ -28,3 +28,8 @@ import './button';
 // head-nav
 import './head-nav';
 
+// Contact
+import './contact';
+
+// Social
+import './social';

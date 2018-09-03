@@ -5,35 +5,107 @@
 
     height                  : 100%
 
-    margin                  : 0 25px
+    margin                  : 0 5 0 45px
 
     &__sub
         position            : absolute
-        visibility          : hidden
+        top                 : 100%
+        left                : 0
 
-    &__link
-        display             : flex
-        align-items         : center
+        min-width           : 250%
 
-        min-height          : 45px
+        padding             : 20px
+        border-radius       : 3px
 
-        padding             : 5px 10px
-
-        font-size           : 12px
+        font-size           : 13px
         font-weight         : regular
 
-        line-height         : 1.2
-
-        text-transform      : lowercase
-
+        background          : #fff
         color               : color[1]
+        border              : solid 1px #e9e9e9
+
+        visibility          : hidden
+        opacity             : 0
+
+        transition          : transition[0]
+
+
+    &__link
+        .head-nav__item--lv1 > &
+            display             : flex
+            align-items         : center
+
+            min-height          : 45px
+
+            padding             : 5px 0
+
+            font-size           : 12px
+            font-weight         : regular
+
+            line-height         : 1.2
+
+            text-transform      : lowercase
+
+            color               : color[1]
+
+            &:hover
+                text-decoration : none
+
+    &__item
+        &--lv1
+            position            : relative
+            margin-right        : 20px
+
+            &:after
+                content         : ''
+                position        : absolute
+                top             : 100%
+                left            : 0
+
+                width           : 100%
+                height          : 1px
+                max-width       : 0
+
+                background      : color[0]
+
+                opacity         : 0
+
+                transition      : transition[0]
+
+            &:hover
+                &:after
+                    opacity         : 1
+                    max-width       : 100%
+
+        &--lv2
+
+            + .head-nav__item--lv2
+                margin-top          : 10px
+
+            > a
+                font-size           : 13px
+                font-weight         : regular
+
+                line-height         : 1
+
+                color               : color[1]
+
+
 
     [dropdown=true]
-        .head-nav__link
+
+        > .head-nav__link
 
             &:after
                 content         : ''
                 margin-top      : 2px
+                margin-left     : 3px
                 border-top      : solid 4px color[1]
                 border-left     : solid 3px transparent
                 border-right    : solid 3px transparent
+
+        &:hover
+
+            .head-nav__sub
+                visibility    : visible
+                opacity       : 1

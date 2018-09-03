@@ -58,9 +58,11 @@ class Menu extends Component {
                             body.classList.remove('mn-active');
                         }
                     }}>
-                        <ul className="menu__list">
-                            {this.renderHtml(item.children, nofollow, classname, (nivel + 1))}
-                        </ul>
+                        <div className="menu__sub-inner">
+                            <ul className="menu__list">
+                                {this.renderHtml(item.children, nofollow, classname, (nivel + 1))}
+                            </ul>
+                        </div>
                         {classname == 'categories' && !this.state.mobile && item.banner &&
                             <div class="banner" dangerouslySetInnerHTML={{ __html: item.banner }}></div>
                         }
