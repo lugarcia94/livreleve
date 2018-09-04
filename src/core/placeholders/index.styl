@@ -1,5 +1,14 @@
 $container
     width           : calc(100% - 30px)
-    height          : 100%
     max-width       : 1200px
+    width           : viewport
+    max-width       : 100%
+    padding         : 0 15px
     margin          : 0 auto
+
+container = @block {
+    width           : viewport
+    max-width       : 100%
+    padding         : 0 15px
+    margin          : 0 auto
+}

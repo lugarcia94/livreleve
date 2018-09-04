@@ -1,8 +1,12 @@
 // Reset CSS
 import './reset/index.styl';
 
-// Slideout
-import './slideout';
+// // Slideout
+// import './slideout';
+
+
+// SlickJS
+import './slick';
 
 // Wrapper
 import './wrapper';
@@ -28,8 +32,16 @@ import './button';
 // head-nav
 import './head-nav';
 
+
 // product
 import './product';
 
 // breadcrumb
 import './breadcrumb';
+=======
+// Contact
+import './contact';
+
+// Social
+import './social';
+

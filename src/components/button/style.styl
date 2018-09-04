@@ -84,18 +84,20 @@ buttonColorClose = color[1]
 
 
     &__minicart
-
-
-
         display                     : flex
         justify-content             : center
         align-items                 : center
 
-        height                      : 100%
-        border                    : 0
-        background                : none
+        width                       : 45px
+        height                      : 45px
+        padding                     : 0
 
-        &_text
+        border                      : 0
+        background                  : none
+
+        cursor                      : pointer
+
+        &-text
             margin-right            : 3px
             font-size               : 0
 
@@ -105,7 +107,7 @@ buttonColorClose = color[1]
                 font-icon           : url('./svg/cart.svg')
                 font-size           : 16px
 
-        &_qty
+        &-qty
             display                 : flex
             justify-content         : center
             align-items             : center

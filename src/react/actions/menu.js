@@ -49,7 +49,7 @@ export function menuFilterData(items) {
             const icons = utils.querySelector('#menu-icons');
             const banners = utils.querySelector('#menu-banners');
 
-            Array.from(items).forEach((item,index) => {
+            Array.from(items).forEach((item) => {
                 let _name = item.name;
                 let _slug = slug(_name);
                 let _icon;

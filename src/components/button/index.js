@@ -26,9 +26,16 @@ function menuAction() {
 
 
 const buttonCart    = document.querySelector('.button__minicart');
+const minicart      = document.querySelector('#minicart');
 
 buttonCart.addEventListener('click', function(){
     cartAction();
+});
+
+minicart.addEventListener('click', function(evt){
+    if(evt.target.classList.contains('minicart')) {
+        cartAction();
+    }
 });
 
 function cartAction() {

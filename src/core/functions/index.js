@@ -16,10 +16,11 @@ export function log(msg, debug = true) {
  */
  export function scrollTop() {
     let currentScrollTop = 0;
-   let scrolling = () => {
+
+    let scrolling = () => {
        let body        = $('body');
        let scrollTop   = $(window).scrollTop();
-       let startTop    = $('.wrapper > .header').outerHeight();
+       let startTop    = $('#header').outerHeight();
 
        log(['// ---- Scrolling Active Start ---- //'], config.scrollTop.debug);
 
@@ -50,11 +51,11 @@ export function log(msg, debug = true) {
 
        log(['Scrolling Current: ', currentScrollTop], config.scrollTop.debug);
        log(['// ---- Scrolling Active End ---- //'], config.scrollTop.debug);
-   };
+    };
 
-   $(window).bind('scroll', scrolling);
+    $(window).scroll(scrolling);
 
-   scrolling();
+    scrolling();
 }
 
 /**

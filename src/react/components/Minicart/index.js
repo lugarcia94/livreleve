@@ -9,9 +9,9 @@ class Minicart extends Component {
 
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.close = this.close.bind(this);
-        this.state = {
+        this.handleClick    = this.handleClick.bind(this);
+        this.close          = this.close.bind(this);
+        this.state          = {
             qtd: 0,
             new: false
         };
@@ -38,7 +38,7 @@ class Minicart extends Component {
     }
 
     close() {
-        this.props.toggle(false);
+        document.querySelector('body').classList.remove('is-minicart');
     }
 
     handleClick(event) {
@@ -56,36 +56,35 @@ class Minicart extends Component {
         if(typeof this.props.items === 'undefined') return;
         return Array.from(this.props.items).map((item, index) => {
             return (
-                <li key={item.id} className="minicart-item">
-                    <a href={item.detailUrl} className="minicart-item-link">
-                        <figure className="minicart-item-image">
-                            <img src={item.imageUrl} alt={item.name}/>
+                <li key={item.id} className="minicart__item">
+                    <a href={item.detailUrl} className="minicart__link">
+                        <figure className="minicart__figure">
+                            <img className="minicart__image" src={item.imageUrl} alt={item.name}/>
                         </figure>
-                        <div className="minicart-item-info">
-                            <h4 className="minicart-item-name">{item.name}</h4>
-                            <span className="minicart-item-price">{new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(item.price / 100)}</span>
-                            <small className="minicart-item-amount">Qtde.: {item.quantity}</small>
+                        <div className="minicart__info">
+                            <h4 className="minicart__name">{item.name}</h4>
+                            <span className="minicart__price">{new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(item.price / 100)}</span>
+                            <small className="minicart__amount">Qtde.: {item.quantity}</small>
                         </div>
                     </a>
-                    <button onClick={() => this.props.remove(index)} className="minicart-button-trash">
-                        <i className="icon minicart-icon-trash"></i>
-                    </button>
+                    <button onClick={() => this.props.remove(index)} className="minicart__trash"> Excluir </button>
                 </li>
             );
         });
     }
     render() {
         let list = this.renderHtml();
-        let _className = this.props.isRemoved ? ' is-loading' : '';
+        let _className = this.props.isRemoved ? 'minicart__container is-loading' : 'minicart__container';
 
         if(parseInt(this.props.qtd) == 0)
-            list = (<h3 className="empty">Seu carrinho está vazio.</h3>);
+            list = (<h3 className="minicart__empty">Seu carrinho está vazio.</h3>);
 
         if(this.props.isLoading && !this.props.isRemoved) return (
             <section className={_className} >
-                <header className="minicart__header">
-                    <h1 className="minicart-inner-title">Meu Carrinho</h1>
-                </header>
+                <div className="minicart__header">
+                    <h1 className="minicart__title">Meu Carrinho</h1>
+                    <button onClick={this.close} type="button" className="minicart__close">Close</button>
+                </div>
                 <div className="minicart__main">
                     <ul>{list}</ul>
                 </div>
@@ -94,26 +93,26 @@ class Minicart extends Component {
 
         return(
             <div className={_className} >
-                <header className="minicart__main-header">
-                    <h1 className="minicart-inner-title">Meu Carrinho</h1>
-                </header>
-                <div className="main">
+                <div className="minicart__header">
+                    <h1 className="minicart__title">Meu Carrinho</h1>
+                    <button onClick={this.close} type="button" class="minicart__close">Close</button>
+                </div>
+                <div className="minicart__main">
                     <ul>{list}</ul>
                 </div>
                 { this.props.qtd > 0 &&
-                    <footer className="minicart-inner-footer">
-                        <em className="minicart-price-total">
-                            <span className="minicart-total">Total:</span>
-                            <span className="minicart-valor">{new Intl.NumberFormat('pt-br', {
+                    <div className="minicart__footer">
+                        <em className="minicart__price-total">
+                            <span className="minicart__total">Total:</span>
+                            <span className="minicart__price">{new Intl.NumberFormat('pt-br', {
                                 style: 'currency',
                                 currency: 'BRL'
                             }).format(this.props.minicart.value / 100)}</span>
                         </em>
                         <a className="minicart-calltoaction" href="/checkout/#/cart">
-                            <i className="icon minicart-icon-cart"></i>
                             <span> Finalizar </span>
                         </a>
-                    </footer>
+                    </div>
                 }
             </div>
         );

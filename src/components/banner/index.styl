@@ -4,6 +4,56 @@
     img, a
         display         : inline-block
 
+    &--full
+        .banner__container
+            position    : relative
+            z-index     : 10
+
+            width       : 100%
+
+            font-size   : 0
+            white-space : nowrap
+            overflow    : hidden
+
+        .box-banner
+            display     : inline-block
+            width       : 100%
+            overflow    : hidden
+
+        img
+            position    : relative
+            left        : 50%
+
+            min-width   : 100%
+            max-width   : 250%
+
+            transform   : translateX(-50%)
+
+    &--mini
+        @extend         $container
+        position        : relative
+        z-index         : 20
+
+        transition      : transition[0]
+
+        .banner__container
+            width       : 100%
+            box-sizing  : content-box
+
+            font-size   : 0
+            white-space : nowrap
+
+            &:not(.slick-initialized)
+                overflow    : hidden
+
+
+        .box-banner
+            display            : inline-flex
+            justify-content    : center
+            align-items        : center
+            width              : 100%
+            height             : 100%
+            padding            : 15px
 
     &--header
         position        : relative
@@ -12,4 +62,25 @@
         display         : flex
         justify-content : center
         align-items     : center
-        height          : 40px
+        height          : 50px
+
+        transition      : transition[0]
+
+        background      : #fff
+
+        a
+            display            : flex
+            justify-content    : center
+            align-items        : center
+
+        .scrolling &
+            transform   : translate3d(0, -50px, 0)
+
+@media (min-width: 992px)
+    .banner
+        &--full
+            img
+                max-width       : 100%
+
+        &--mini
+            margin-top          : -50px
