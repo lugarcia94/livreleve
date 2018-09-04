@@ -1,0 +1,35 @@
+.breadcrumb 
+
+    ul 
+        display: flex
+        align-items: center
+        &:before 
+            content: 'Você esta em:'
+            font-weight: 300
+            color: color[1]
+            font-size: 13px
+            display: inline-block
+            margin: 0 5px 0 0
+
+        li
+        a
+            color: color[1]
+            display: flex
+            align-items: center
+            font-size: 14px
+            font-weight: 600
+           
+        a 
+            text-decoration: none
+            &:after
+                content: '/'
+                display: inline-block
+                padding: 0 5px
+            
+
+    .last 
+        a
+            color: color[0]
+            padding: 5px 0
+            &:after 
+                display: none

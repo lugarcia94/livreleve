@@ -30,3 +30,6 @@ import './head-nav';
 
 // product
 import './product';
+
+// breadcrumb
+import './breadcrumb';
