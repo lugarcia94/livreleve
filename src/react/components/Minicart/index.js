@@ -19,7 +19,7 @@ class Minicart extends Component {
 
     componentWillMount() {
         this.props.fetchData();
-        $(window).on('checkoutRequestEnd.vtex', () => this.props.fetchData() );
+        $vtex(window).on('checkoutRequestEnd.vtex', () => this.props.fetchData() );
     }
 
     componentWillReceiveProps(nextProps) {

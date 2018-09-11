@@ -36,6 +36,41 @@
         .is-minicart &
             transform       : translate3d(0, 0, 0)
 
+        &:before
+            content         : ''
+            position        : fixed
+            top             : 0
+            left            : 0
+            z-index         : 100
+
+            width           : 100%
+            height          : 100%
+
+            background      : rgba(0,0,0,.5)
+
+            opacity         : 0
+            visibility      : hidden
+
+        &:after
+            content         : ''
+            position        : fixed
+            top             : 50%
+            left            : 50%
+            z-index         : 200
+
+            width           : 40px
+            height          : 40px
+
+            border-radius   : 50%
+
+            border          : solid 4px color[0]
+            border-top      : solid 4px transparent
+
+            animation       : rotating 1s linear infinite
+
+            opacity         : 0
+            visibility      : hidden
+
     &__header
         display           : flex
         justify-content   : space-between
@@ -52,6 +87,10 @@
         background        : color[0]
         color             : #fff
 
+    &__main
+        height            : calc(100% - 120px)
+        overflow-y        : auto
+
     &__empty
         display           : block
         padding           : 15px
@@ -67,6 +106,7 @@
         display             : flex
         justify-content     : center
         align-items         : center
+        border              : 0
 
         width               : 40px
         height              : 40px
@@ -77,3 +117,103 @@
             font-icon       : url('./svg/close.svg')
             font-size       : 18px
             color           : #fff
+
+    &__item
+        position            : relative
+        border-bottom       : solid 1px rgba(0,0,0,.1)
+
+    &__trash
+        position            : absolute
+        top                 : 50%
+        left                : 0
+        border              : 0
+        border-radius       : 0 2px 2px 0
+        font-size           : 0
+        padding             : 5px
+
+        background          : #fff
+        color               : #f00
+        box-shadow          : 0 0 5px rgba(0,0,0,.2)
+
+        transform           : translateY(-50%)
+
+        cursor              : pointer
+
+        &:before
+            font-icon       : url('./svg/trash.svg')
+            font-size       : 20px
+
+    &__link
+        display             : flex
+        padding             : 10px
+
+        font-size           : 13px
+        font-weight         : regular
+
+        color               : color[1]
+
+        &:hover
+            text-decoration : none
+
+    &__info
+        display             : flex
+        flex-flow           : row wrap
+        justify-content     : space-between
+
+    &__name
+        margin-bottom       : 10px
+        flex                : 0 0 100%
+
+    &__figure
+        flex                : 0 0 55px
+        margin-right        : 10px
+
+
+    &__price-total
+        display             : flex
+        justify-content     : flex-end
+        align-items         : center
+        width               : 100%
+        height              : 40px
+
+        padding             : 0 10px
+
+        font-size           : 14px
+        text-transform      : uppercase
+
+        .minicart__price
+            font-size       : 17px
+            font-weight     : bold
+
+            padding-left    : 10px
+
+            color           : color[0]
+
+
+    &__footer  a
+        display         : flex
+        justify-content : center
+        align-items     : center
+
+        width           : 100%
+        height          : 40px
+
+        border          : 0
+
+        font-size       : 16px
+        font-weight     : bold
+
+        text-transform  : uppercase
+
+        background      : #84DD4B
+        color           : #fff
+
+@media (min-width: 992px)
+    .minicart
+        &__trash
+            transform           : translateX(-100%) translateY(-50%)
+            transition          : transition[0]
+
+        &__item:hover
+            .minicart__trash
+                transform      : translateX(0) translateY(-50%)

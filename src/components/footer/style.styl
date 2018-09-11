@@ -1,0 +1,54 @@
+.footer
+    background          : color[1]
+    margin-top          : 100px
+
+    &__container
+        { container }
+
+        padding         : 30px 0 20px
+
+        font-size       : 13px
+        color           : #fff
+
+        text-align      : center
+
+
+    &__nav
+        display         : inline-block
+        vertical-align  : top
+        margin-bottom   : 20px
+        padding         : 15px
+
+    a
+        font-size       : 13px
+        font-weight     : semi-bold
+
+        color           : #fff
+
+
+    &__title
+        display         : block
+        margin-bottom   : 10px
+
+        font-size       : 15px
+        font-weight     : semi-bold
+
+        text-transform  : uppercase
+
+        color           : color[0]
+
+
+@media screen and (min-width: 992px)
+    .footer
+        &__container
+            display            : flex
+            justify-content    : space-between
+
+            text-align         : left
+
+        &__nav
+            &--payment
+                max-width       : 345px
+
+            &--security
+                max-width       : 215px

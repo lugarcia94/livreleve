@@ -13,6 +13,8 @@ const store = configureStore();
 
 import { fetchOrderForm } from "./react/actions/core";
 
+import 'Core/polyfill/hasAttribute';
+
 //Polyfill
 import '../src/core/polyfill/array.range';
 
@@ -27,6 +29,21 @@ const config = {
 
 // Load Order Form
 store.dispatch(fetchOrderForm());
+
+
+import Kit from './react/components/kit';
+let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
+
+if(rootKit.length) {
+    rootKit.forEach((kit) => {
+        ReactDOM.render(
+            <Provider store={store}>
+                <Kit/>
+            </Provider>,
+            kit
+        );
+    });
+}
 
 
 // Render Button Menu

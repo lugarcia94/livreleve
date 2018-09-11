@@ -1,13 +1,24 @@
 .social
     img
-        max-width       : 23px
+        max-width               : 23px
 
     &__list
-        display         : flex
-        justify-content : flex-start
-        align-items     : center
+        display                 : flex
+        justify-content         : flex-start
+        align-items             : center
 
-        margin          : -3px
+        margin                  : -3px
 
     &__item
-        margin          : 3px
+        margin                  : 3px
+
+    &--center
+        .social__list
+            justify-content     : center
+
+
+@media screen and (max-width: 992px)
+    .social
+        &--center
+            .social__list
+                justify-content : flex-start

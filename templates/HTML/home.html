@@ -10,18 +10,84 @@
     <div class="wrapper__container">
         <vtex:template id="00-monali-header" />
 
-        <section class="banner banner--full">
-            <div data-carousel="one" class="banner__container">
-                <vtex:contentPlaceHolder id="bannerHomeFull" />
-            </div>
-        </section>
-        <section class="banner banner--mini">
-            <div data-carousel="three" class="banner__container">
-                <vtex:contentPlaceHolder id="bannerHomeThree" />
-            </div>
-        </section>
+        <main class="main" id="main">
 
-        <main class="main" id="main"></main>
+            <section class="banner banner--full">
+                <div data-carousel="one" class="banner__container">
+                    <vtex:contentPlaceHolder id="bannerHomeFull" />
+                </div>
+            </section>
+
+            <section class="banner banner--mini">
+                <div data-carousel="three" class="banner__container">
+                    <vtex:contentPlaceHolder id="bannerHomeThree" />
+                </div>
+            </section>
+
+            <div class="showcase">
+                <div data-carousel="showcase" class="showcase__container">
+                    <vtex:contentPlaceHolder id="bestSellers" />
+                </div>
+            </div>
+
+            <section class="banner banner--duo">
+                <div data-carousel="duo" class="banner__container">
+                    <vtex:contentPlaceHolder id="bannerHomeDuo" />
+                </div>
+            </section>
+
+            <div class="news-rulers">
+                <div class="news-rulers__item news">
+                    <vtex.cmc:newsletterOptIn/>
+                </div>
+                <div class="news-rulers__item rulers">
+                    <ul class="rulers__list">
+                        <li class="rulers__item rulers__item--frete-gratis">
+                            <strong>Frete grátis</strong> acima de R$200
+                        </li>
+                        <li class="rulers__item rulers__item--boleto">
+                            <strong>5% de desconto</strong> no boleto
+                        </li>
+                        <li class="rulers__item rulers__item--cartao">
+                            Pague em até <strong>6x sem juros</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="showcase">
+                <div data-carousel="showcase" class="showcase__container">
+                    <vtex:contentPlaceHolder id="bestPrices" />
+                </div>
+            </div>
+
+
+            <section class="banner banner--duo">
+                <div data-carousel="duo" class="banner__container">
+                    <vtex:contentPlaceHolder id="bannerHomeDuoSmall" />
+                </div>
+            </section>
+
+
+            <div class="showcase">
+                <div data-carousel="showcase" class="showcase__container">
+                    <vtex:contentPlaceHolder id="showcaseNews" />
+                </div>
+            </div>
+
+            <div class="kits-gift">
+                <div class="kits-gift__container">
+                    <div data-component="kits" class="kits">
+                        <vtex:contentPlaceHolder id="showcaseKits" />
+                    </div>
+                    <div data-carousel="gift" class="gift">
+                        <vtex:contentPlaceHolder id="showcaseGift" />
+                    </div>
+                </div>
+            </div>
+
+        </main>
 
         <vtex:template id="00-monali-footer" />
         <vtex:template id="00-monali-scripts" />

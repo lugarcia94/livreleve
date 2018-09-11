@@ -1,0 +1,174 @@
+.showcase
+    { container }
+
+    h2
+        visibility          : hidden
+
+        &.showcase__title--actived
+            visibility      : visible
+
+
+    &__title
+        margin              : 20px 0
+        font-size           : 13px
+        font-weight         : light
+
+        text-align          : center
+
+        color               : color[0]
+
+        strong
+            display         : block
+
+            font-size       : 24px
+            font-weight     : light
+
+            color           : color[1]
+
+    &__item
+        position            : relative
+        text-align          : center
+        padding             : 15px
+
+    &__image
+        position            : relative
+
+        img
+            display         : inline-block
+
+    &__name
+        height              : 34px
+        margin-bottom       : 10px
+
+        line-height         : 18px
+        overflow            : hidden
+
+
+    &__link
+        display             : block
+
+        &--name
+            font-size       : 13px
+            color           : color[1]
+
+
+    &__description
+        height              : 52px
+        margin-bottom       : 10px
+
+        font-size           : 11px
+        font-weight         : regular
+
+        line-height         : 12px
+
+        color               : #A8A8A8
+
+        overflow            : hidden
+
+    &__out
+        padding             : 5px 15px
+
+        font-size           : 14px
+        font-weight         : bold
+
+        text-transform      : uppercase
+
+        background          : rgba(0,0,0, .4)
+        color               : #fff
+
+    &__container
+        > div > ul:not(.slick-dotted)
+            display             : flex
+            flex-flow           : row wrap
+
+            > li
+                order           : 1
+                flex            : 1 1 234px
+
+                &.helperComplement
+                    order       : 2
+                    display     : block !important
+
+        &:not([data-carousel])
+            > div > ul
+                margin          : -15px
+
+
+        &[data-carousel]
+            > div > ul:not(.slick-dotted)
+                flex-wrap       : nowrap
+                width           : 100%
+                overflow        : hidden
+
+                > li
+                    min-width   : 234px
+
+                    &.helperComplement
+                        display : none
+
+    &__buy
+        margin-top              : 10px
+
+    &__quickview
+        position                : absolute
+        top                     : 20px
+        left                    : 20px
+
+        a
+            display                 : block
+
+            font-size               : 10px
+            text-transform          : uppercase
+            text-align              : center
+
+            line-height             : 1
+
+            color                   : color[0]
+
+            &:before
+                display             : block
+                margin-bottom       : 2px
+
+                font-icon           : url('./svg/quickview.svg')
+                font-size           : 18px
+
+            &:hover
+                text-decoration     : none
+
+
+@media (min-width: 992px)
+    .showcase
+        &__buy
+            position                : absolute
+            bottom                  : 10px
+            left                    : 10px
+
+            width                   : calc(100% - 20px)
+            margin-top              : 0
+
+            visibility              : hidden
+            opacity                 : 0
+
+            transition              : transition[0]
+
+        &__quickview
+            visibility              : hidden
+            opacity                 : 0
+
+            transition              : transition[0]
+
+        &__item
+            &:hover
+                box-shadow          : inset 0 0 0 1px #E9E9E9
+
+                .showcase__quickview
+                    visibility      : visible
+                    opacity         : 1
+
+                .showcase__buy
+                    visibility      : visible
+                    opacity         : 1
+
+
+
+

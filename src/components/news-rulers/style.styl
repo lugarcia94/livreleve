@@ -1,0 +1,86 @@
+.news-rulers
+    { container }
+
+    border-top              : solid 1px #E9E9E9
+    padding-top             : 20px
+    margin-top              : 50px
+
+
+.newsletter
+    text-align              : center
+    font-size               : 0
+
+    label
+        font-size       : 12px
+
+    #newsletterClientName
+        display             : none
+
+    #newsletterClientEmail
+        width               : calc(100% - 35px)
+        height              : 35px
+        padding-left        : 10px
+        border              : solid 1px #E9E9E9
+
+    #newsletterButtonOK
+        height              : 35px
+        width               : 35px
+
+        border              : 0
+
+        font-size           : 14px
+        font-weight         : bold
+
+        text-transform      : uppercase
+
+        background          : color[1]
+        color               : color[0]
+
+    &-title
+        font-size           : 14px
+        font-weight         : regular
+
+    fieldset
+
+        > p
+            margin-bottom   : 10px
+
+            font-size       : 19px
+            font-weight     : regular
+
+            color           : color[0]
+
+
+@media (min-width: 992px)
+    .news-rulers
+        display             : flex
+        align-items         : center
+
+        .news
+            flex            : 1 1 345px
+
+        .rulers
+            flex            : 1 1 auto
+            margin-left     : 50px
+
+    .newsletter
+        position            : relative
+
+        &-title
+            display         : inline-block
+            width           : 260px
+            padding-bottom  : 30px
+            padding-right   : 20px
+
+            vertical-align  : middle
+
+        fieldset
+            display         : inline-block
+            width           : calc(100% - 260px)
+
+            > p
+                position    : absolute
+                bottom      : 0
+                left        : 0
+                width       : 240px
+

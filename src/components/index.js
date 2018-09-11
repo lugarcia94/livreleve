@@ -1,10 +1,6 @@
 // Reset CSS
 import './reset/index.styl';
 
-// // Slideout
-// import './slideout';
-
-
 // SlickJS
 import './slick';
 
@@ -37,3 +33,33 @@ import './contact';
 
 // Social
 import './social';
+
+// Showcase
+import './showcase';
+
+// Footer
+import './footer';
+
+// Copyright
+import './copyright';
+
+// Payment
+import './payment';
+
+// Security
+import './security';
+
+// Partners
+import './partners';
+
+// labels
+import './labels';
+
+// News Rulers
+import './news-rulers';
+
+// Rulers
+import './rulers';
+
+// prices
+import './prices';

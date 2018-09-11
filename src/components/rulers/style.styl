@@ -1,0 +1,42 @@
+.rulers
+    &__item
+
+        height              : 30px
+
+        font-size           : 14px
+        font-weight         : regular
+
+        color               : color[1]
+
+        strong
+            margin          : 0 3px
+
+        &:before
+            display         : inline-block
+            width           : 25px
+            vertical-align  : middle
+
+            color           : color[0]
+
+        &--frete-gratis
+            &:before
+                font-icon       : url('./svg/truck.svg')
+                font-size       : 16px
+
+        &--boleto
+            &:before
+                font-icon       : url('./svg/code.svg')
+                font-size       : 17px
+
+        &--cartao
+            &:before
+                font-icon       : url('./svg/card.svg')
+                font-size       : 14px
+
+
+@media (min-width: 768px)
+    .rulers
+        &__list
+            display             : flex
+            justify-content     : space-between
+            padding             : 10px 0

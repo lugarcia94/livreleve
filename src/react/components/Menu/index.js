@@ -17,6 +17,7 @@ class Menu extends Component {
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleExpanded = this.handleExpanded.bind(this);
     }
     componentDidUpdate() {
         menuAdjustment();
@@ -49,6 +50,8 @@ class Menu extends Component {
             if(item.children.length){
                 let ulAttr = {};
                 ulAttr['className'] = 'menu__' + classname + ' menu__' + classname + '--nv' + (nivel + 1);
+                attr['className'] = attr['className'] + ' menu__item--has-child';
+                attr['aria-expanded'] = false;
                 sub = (
                     <div { ...ulAttr } onClick={e => {
                         let body = document.querySelector('body');
@@ -71,7 +74,7 @@ class Menu extends Component {
             }
 
             return(
-                <li { ...attr } key={item.id} >
+                <li { ...attr } key={item.id} onClick={this.handleExpanded} >
                     <a href={item.url} { ...options } >
                         { typeof item.icon != 'undefined'  && item.icon != "" && classname == 'categories' && !this.state.mobile &&
                             <span class="menu__icon" dangerouslySetInnerHTML={{ __html: item.icon }}></span>
@@ -85,6 +88,13 @@ class Menu extends Component {
                 </li>
             );
         });
+    }
+
+    handleExpanded(evt) {
+        console.log(evt.target.getAttribute('aria-expanded'));
+        if(evt.target.classList.contains('menu__item--has-child')) {
+            evt.target.setAttribute('aria-expanded', ! (evt.target.getAttribute('aria-expanded') == 'true'));
+        }
     }
 
     handleClick() {
@@ -124,7 +134,7 @@ class Menu extends Component {
             return(
                 <div aria-expanded={this.props.expanded}
                      className={(this.state.mobile ? 'menu--mobile' : 'menu--desktop')} role="menubar">
-                    <div className="menu__container" onClick={this.handleClick}>
+                    <div className="menu__container">
 
                         <nav className="menu__nav">
                             {this.state.mobile &&
@@ -163,7 +173,7 @@ class Menu extends Component {
 
         return (
             <div aria-expanded={this.props.expanded} class={ (this.state.mobile ? 'menu--mobile' : 'menu--desktop') } role="menubar" >
-                <div class="menu__container" onClick={this.handleClick}>
+                <div class="menu__container" >
 
                         <nav class="menu__nav">
                             { this.state.mobile &&

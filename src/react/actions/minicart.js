@@ -68,6 +68,8 @@ export function minicartFetchData(callback = function(){}) {
                 minicart.items.forEach((item) => dispatch(minicartItems(item)));
                 dispatch(minicartQtd(amount));
 
+                Array.from(document.querySelectorAll('[data-cart=amount]')).forEach(item => item.innerHTML = amount);
+
                 callback();
 
             })

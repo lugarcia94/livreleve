@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import axios from 'axios';
 import config from '../../../core/config';
 
+import './style.styl';
+
 class BuyButton extends Component {
     constructor(props) {
         super(props);
@@ -34,7 +36,7 @@ class BuyButton extends Component {
                 single: false
             };
 
-            if(skus.length == 1) {
+            if(skus.length > 0) {
                 state = {
                     item: {
                         id: skus[0].sku,
@@ -140,8 +142,7 @@ class BuyButton extends Component {
                     <button className="buy-button__more" type="button" onClick={this.more.bind(this)}><span>+</span></button>
                 </div>
                 <button disabled={ !this.state.valid } className="buy-button__button" type="button" onClick={this.buy}>
-                    <strong>Adiconar</strong>
-                    ao carrinho
+                    Adicionar á Sacola
                 </button>
             </div>
         );
