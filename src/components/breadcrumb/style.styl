@@ -2,13 +2,16 @@
 
     ul 
         display: flex
-        align-items: center
+        flex-wrap: wrap
+        align-items: flex-start
         &:before 
             content: 'Você esta em:'
             font-weight: 300
             color: color[1]
             font-size: 13px
-            display: inline-block
+            line-height: 14px
+            display: flex
+            align-items: center
             margin: 0 5px 0 0
 
         li
@@ -17,6 +20,7 @@
             display: flex
             align-items: center
             font-size: 14px
+            line-height: 14px
             font-weight: 600
            
         a 
@@ -30,6 +34,6 @@
     .last 
         a
             color: color[0]
-            padding: 5px 0
+            // padding: 5px 0
             &:after 
                 display: none

@@ -36,9 +36,12 @@ import './head-nav';
 // product
 import './product';
 
+// Review
+import './review';
+
 // breadcrumb
 import './breadcrumb';
-=======
+
 // Contact
 import './contact';
 
