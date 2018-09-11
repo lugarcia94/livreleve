@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    
+    <head>
+        <vtex:template  id="01-arsenal-head" />
+    </head>
+
+    <body id="product-page" itemscope="" itemtype="http://schema.org/AutoPartsStore" >
+        
+        <div class="wrapper">
+    
+            <vtex:template  id="01-arsenal-header" />
+            
+            <main id="main">
+                
+                <div class="product__container">
+                
+                    <section class="breadcrumb">
+                        <vtex.cmc:breadCrumb />
+                    </section>
+                    
+                    <div class="product__content">
+                        
+                        <div class="product__inner-content">
+                            
+                            <div id="produto" class="product__image">
+                                
+                                <div class="label-colection" role="group">
+                                    <span class="label-discount">
+                                        <vtex.cmc:discountHightLight/>
+                                    </span>
+                                    <span class="label-featured">
+                                        <vtex.cmc:HightLight/>
+                                    </span>
+                                </div>
+                                
+                               <vtex.cmc:ProductImage zoom="on"/>
+                            </div>
+                            
+                            <div class="product__details">
+                            
+                                <h1 class="product__name"><vtex.cmc:productName /></h1>
+                            
+                                <div class="product__code">
+                                    <vtex.cmc:skuReference/>
+                                </div>
+                                
+                                <div class="reviews__short reviews__short--product">
+                                    <vtex.cmc:evaluationRate/>
+                                    <span class="review__star"></span>
+                                </div>
+    
+                                <div class="product__description--short">
+                                    <div class="description-short"><vtex.cmc:productDescriptionShort /></div>
+                                    <div class="product__action product__action--description">
+                                        <a href="#description">Leia Mais</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="product__variations">
+                                    <vtex.cmc:skuSelection />
+                                </div>
+                                
+                                <div class="product__shipping">
+                                    <div class="product__stock">Produto em: <strong>Estoque</strong></div>
+                                    <vtex.cmc:shippingValue />
+                                    <script type="text/javascript">$(document).ready( function(){ShippingValue();});</script>
+                                </div>
+                                
+                                <div class="addthis_inline_share_toolbox"></div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="product__buytobether">
+                            <vtex.cmc:BuyTogether/>
+                        </div>
+                        
+                        <div class="product__description">
+                            <h2 class="product__title">Descrição do Produto</h2>
+                            <vtex.cmc:ProductDescription/>
+                        </div>
+                        
+                        <div class="showcase" data-carousel="showcase-related">
+                            <vtex:contentPlaceHolder id="Quem viu, viu também" />
+                        </div>
+                        
+                        <div class="showcase" data-carousel="showcase-related">
+                            <vtex:contentPlaceHolder id="Quem comprou, comprou também" />
+                        </div>
+                        
+                        <div class="product__review">
+                            <h2 class="product__title"> Opinião de quem já comprou </h2>
+                            <vtex.cmc:UserReview/>
+                        </div>
+
+                    </div>
+                        
+                    <div class="product__price">
+                    
+                        <div class="product__price-container">
+                        
+                            <div class="product__brand">
+                                <vtex.cmc:brandName/>
+                            </div>
+                            
+                            <div class="product__price-inner">
+                                <vtex.cmc:skuPrice/>
+                            
+                            
+                                <div class="other-payments">
+                                    <div class="other-payments__header">
+                                       Ver opções de parcelamento
+                                   </div>
+                                   <div class="other-payments__main">
+                                       <vtex.cmc:OtherPaymentMethod/>
+                                   </div>
+                               </div>
+                        
+                                <div class="buttons buttons--buy">
+                                    <div class="buttons__qtys">
+                                        <div class="buttons__actions">
+                                            <button class="buttons__action buttons__action--less" type="button"></button>
+                                            <input class="buttons__input buttons__input--buy" value="1" type="text" />
+                                            <button class="buttons__action buttons__action--more" type="button"></button>
+                                        </div>
+                                    </div>
+                                    <vtex.cmc:BuyButton/>
+                                </div>
+                            </div>
+                            
+                            <div class="product__payment">
+                                <img src="/arquivos/formas-de-pagamento2.png" alt="MasterCard / Visa / American Express / Diners Club / Elo / MercadoPago / Boleto" title="MasterCard / Visa / American Express / Diners Club / Elo / MercadoPago / Boleto" class="img-responsive" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+                
+            </main>
+            
+            <vtex:template  id="01-arsenal-footer" />
+            
+        </div>
+        
+        <vtex:template  id="01-arsenal-config" />
+        <vtex:template  id="01-arsenal-scripts" />
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b54a3c6b9b2c46b"></script>
+    </body> 
+
+</html>
