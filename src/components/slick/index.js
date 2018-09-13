@@ -61,12 +61,45 @@ $('[data-carousel]').each(function(){
             ];
 
             break;
+
+        case 'gift':
+            config.slidesToShow      = 1;
+            config.slidesToScroll    = 1;
+            config.dots              = false;
+
+            config.responsive         = [
+                {
+                    breakpoint        : 992,
+                    settings          : {
+                        slidesToShow      : 3,
+                        slidesToScroll    : 3
+                    }
+                },
+                {
+                    breakpoint        : 768,
+                    settings          : {
+                        slidesToShow      : 2,
+                        slidesToScroll    : 2
+                    }
+                },
+                {
+                    breakpoint        : 425,
+                    settings          : {
+                        slidesToShow      : 1,
+                        slidesToScroll    : 1
+                    }
+                }
+            ];
+            break;
     }
 
-    if(type != 'showcase') {
-        $(this).slick(config);
-    } else if($(this).find('> div > ul').length) {
+    if( type == 'showcase' ) {
         $(this).find('.helperComplement').remove();
         $(this).find('> div > ul').slick(config);
+    } else if( type == 'gift' ) {
+        $(this).find('.helperComplement').remove();
+        $(this).find('> div > ul').slick(config);
+    } else {
+        $(this).slick(config);
     }
 });

@@ -1,44 +1,47 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
-import axios from 'axios';
+import Slick  from 'react-slick';
+import Item from './item';
+
+import './style.styl';
+
+const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+};
 
 
-
-class Kit extends Component {
+class Kits extends Component {
 
     constructor(props) {
         super(props);
     }
 
-    componentDidMount() {
-        console.log('DidMount Kit');
-        axios.get('/api/catalog_system/pub/products/search?fq=productId:1512')
-            .then(function(data){
-                console.log(data)
-            })
+    componentWillMount() {
+        Array.from(document.querySelectorAll('[data-component=kits]')).forEach( kit => kit.classList.add('kits--actived') );
     }
 
     render() {
-        return <div></div>;
+        let title = this.props.title;
 
+        if(title.split('-').length > 1) {
+            title = title.split('-');
+            title = <h2 className="showcase__title"><strong> { title[0] }</strong> { title[1] }</h2>;
+        } else {
+            title = <h2 className="showcase__title"><strong>{ title }</strong></h2>;
+        }
+
+        return <div class="kits__container">
+            { title }
+
+            <Slick {...settings}>
+                {this.props.ids.map( (id, index) => <Item key={ index } id={ id } />)}
+            </Slick>
+        </div>;
     }
 }
 
 
-Kit.propTypes = {
-
-};
-
-const mapStateToProps = (state) => {
-    return {
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-    };
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Kit);
+export default Kits;
