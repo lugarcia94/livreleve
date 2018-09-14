@@ -7,6 +7,17 @@ $('[data-carousel]').each(function(){
     let config = {};
 
     switch (type) {
+        case 'one':
+            config.responsive = [
+                {
+                    breakpoint    : 992,
+                    settings      : {
+                        dots      : true
+                    }
+                }
+
+            ];
+            break;
         case 'three':
             config.variableWidth      = true;
             config.responsive         = [
