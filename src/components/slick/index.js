@@ -104,13 +104,14 @@ $('[data-carousel]').each(function(){
             break;
     }
 
-    if( type == 'showcase' ) {
+    if(type == 'showcase') {
         $(this).find('.helperComplement').remove();
         $(this).find('> div > ul').slick(config);
-    } else if( type == 'gift' ) {
-        $(this).find('.helperComplement').remove();
-        $(this).find('> div > ul').slick(config);
-    } else {
+    }else if( type == 'buytobether'){
+
+    }else{
         $(this).slick(config);
-    }
+    } 
+
 });
+
