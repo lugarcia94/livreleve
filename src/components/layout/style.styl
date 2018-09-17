@@ -1,0 +1,25 @@
+.layout
+    display         : flex
+    justify-content : space-between
+    align-items     : stretch
+
+    &__left
+        position    : absolute
+
+    &__main
+        flex        : 1 1 auto
+        max-width   : 100%
+
+
+@media (min-width: 992px)
+    .layout
+        &__left
+            flex        : 0 0 225px
+            position    : static
+            max-width   : 225px
+
+        &__main
+            max-width   : calc(100% - 225px)
+
+
+

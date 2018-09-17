@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+<head>
+    <vtex:template id="00-monali-head" />
+</head>
+<body>
+<div class="wrapper">
+    <vtex:template id="00-monali-menu" />
+
+    <div class="wrapper__container">
+        <vtex:template id="00-monali-header" />
+
+        <main class="main" id="main">
+
+            <!-- BreadCrumb -->
+            <section class="breadcrumb">
+                <div class="breadcrumb__container">
+                    <vtex.cmc:breadCrumb />
+                </div>
+            </section>
+            <!-- / BreadCrumb -->
+            <div class="main__container layout layout--left" id="main__container">
+                <aside class="sidebar category__sidebar layout__left">
+                    <div class="sidebar__container">
+                        <header class="sidebar__header">
+                            <h4 class="sideebar__title">Filtrar sua busca</h4>
+                            <button type="button" class="button sidebar__button sidebar__button--close">X</button>
+                        </header>
+
+                        <div class="sidebar__main">
+                            <vtex.cmc:searchNavigator/>
+                        </div>
+                    </div>
+
+                    <button class="button sidebar__button sidebar__button--open">
+                        <svg id="icon-ic_filter_list_black_24px" viewBox="0 0 32 32">
+                            <path d="M13.333 24h5.333v-2.667h-5.333v2.667zM4 8v2.667h24v-2.667h-24zM8 17.333h16v-2.667h-16v2.667z"></path>
+                        </svg>
+                    </button>
+                </aside>
+
+                <div class="catagory__main layout__main">
+                    <div class="banner banner--category">
+                        <div class="banner__container">
+                            <vtex:contentPlaceHolder id="bannerCategory" />
+                        </div>
+                    </div>
+                    <div class="category__showcase showcase">
+                        <div class="showcase__container">
+                            <vtex.cmc:searchResult layout="a505d839-2426-4641-a027-1a4e7e4189d3" itemCount="12"  columnCount="12" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </main>
+
+        <vtex:template id="00-monali-footer" />
+        <vtex:template id="00-monali-scripts" />
+    </div>
+</div>
+</body>
+</html>

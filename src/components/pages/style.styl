@@ -1,0 +1,105 @@
+
+.pages
+    display             : flex
+    justify-content     : center
+
+    margin              : 15px 0
+
+    .first, .last
+        display         : none
+
+
+    .page-number, .previous, .next
+        display         : flex
+        justify-content : center
+        align-items     : center
+
+        width           : 30px
+        height          : 30px
+
+        border          : solid 1px #F7F7F7
+        margin          : 1px
+
+        background      : #F7F7F7
+        color           : color[0]
+        overflow        : hidden
+
+        &.pgCurrent, &:hover
+            background  : #fff
+            color       : color[1]
+
+    .previous, .next
+        font-size       : 0
+
+        &:before
+            font-size   : 15px
+
+    .previous
+        &:before
+            font-icon   : url('./svg/prev.svg')
+
+    .next
+        &:before
+            font-icon   : url('./svg/next.svg')
+
+.vitrine
+    margin-top              : 30px
+    margin-bottom           : 30px
+
+    .pager
+        display             : none
+
+.searchResultsTime
+    margin-top              : 15px
+
+    font-size               : 13px
+    font-weight             : regular
+
+    text-align              : center
+
+    color                   : color[1]
+
+    .resultado-busca-termo, .resultado-busca-tempo
+        display             : none
+
+.main
+    .sub
+        margin-top      : 15px
+
+.vitrine
+    + .searchResultsTime
+        + .sub .orderBy
+            display         : none
+
+.resultado-busca-filtro
+    font-size           : 13px
+    font-weight         : regular
+
+    .compare, .filterBy
+        display         : none
+
+    .orderBy
+        text-align      : center
+
+
+@media (min-width: 992px)
+    #main
+        { container }
+    
+    .main
+        .sub
+            display     : flex
+            align-items : center
+            margin-top  : 0
+
+            .pages
+                margin  : 0
+
+    .searchResultsTime
+        flex            : 1 1 auto
+        margin-top      : 0
+
+        text-align      : left
+
+    .category__showcase .main
+        align-items     : center

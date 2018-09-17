@@ -1,6 +1,10 @@
 // Reset CSS
 import './reset/index.styl';
 
+
+// Layout
+import './layout';
+
 // SlickJS
 import './slick';
 
@@ -76,3 +80,12 @@ import './prices';
 
 // Kits & Gift
 import './kits-gift';
+
+// Pages
+import './pages';
+
+// Sidebar
+import './sidebar';
+
+// Category
+import './category';
