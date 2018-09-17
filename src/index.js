@@ -16,7 +16,8 @@ import { fetchOrderForm } from "./react/actions/core";
 import 'Core/polyfill/hasAttribute';
 
 //Polyfill
-import '../src/core/polyfill/array.range';
+import 'Core/polyfill/array.range';
+import 'Core/polyfill/reduce';
 
 const config = {
     menu: true,
@@ -33,12 +34,14 @@ store.dispatch(fetchOrderForm());
 
 import Kit from './react/components/kit';
 let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
-
+// 1512
 if(rootKit.length) {
+
     rootKit.forEach((kit) => {
+        let title = kit.querySelector('h2').innerHTML;
         ReactDOM.render(
             <Provider store={store}>
-                <Kit/>
+                <Kit ids={ [1512,1512,1512,1512] } title={ title } />
             </Provider>,
             kit
         );

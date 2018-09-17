@@ -79,4 +79,6 @@ import './rulers';
 // prices
 import './prices';
 
+// Kits & Gift
+import './kits-gift';
 

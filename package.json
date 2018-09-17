@@ -90,6 +90,7 @@
     "axios": "^0.18.0",
     "jquery": "^3.1.1",
     "prop-types": "^15.6.2",
+    "react-slick": "^0.23.1",
     "slick-carousel": "^1.6.0",
     "stickyfilljs": "^2.0.1",
     "sumoselect": "^3.0.5"

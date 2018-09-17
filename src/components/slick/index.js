@@ -7,6 +7,17 @@ $('[data-carousel]').each(function(){
     let config = {};
 
     switch (type) {
+        case 'one':
+            config.responsive = [
+                {
+                    breakpoint    : 992,
+                    settings      : {
+                        dots      : true
+                    }
+                }
+
+            ];
+            break;
         case 'three':
             config.variableWidth      = true;
             config.responsive         = [
@@ -61,6 +72,36 @@ $('[data-carousel]').each(function(){
             ];
 
             break;
+
+        case 'gift':
+            config.slidesToShow      = 1;
+            config.slidesToScroll    = 1;
+            config.dots              = false;
+
+            config.responsive         = [
+                {
+                    breakpoint        : 992,
+                    settings          : {
+                        slidesToShow      : 3,
+                        slidesToScroll    : 3
+                    }
+                },
+                {
+                    breakpoint        : 768,
+                    settings          : {
+                        slidesToShow      : 2,
+                        slidesToScroll    : 2
+                    }
+                },
+                {
+                    breakpoint        : 425,
+                    settings          : {
+                        slidesToShow      : 1,
+                        slidesToScroll    : 1
+                    }
+                }
+            ];
+            break;
     }
 
     if(type == 'showcase') {
@@ -73,3 +114,4 @@ $('[data-carousel]').each(function(){
     } 
 
 });
+
