@@ -1,6 +1,12 @@
 // Reset CSS
 import './reset/index.styl';
 
+// product
+import './product';
+
+//buytobether
+import './buytobether';
+
 // SlickJS
 import './slick';
 
@@ -29,8 +35,7 @@ import './button';
 import './head-nav';
 
 
-// product
-import './product';
+
 
 // Review
 import './review';
@@ -73,3 +78,5 @@ import './rulers';
 
 // prices
 import './prices';
+
+

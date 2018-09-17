@@ -3,28 +3,84 @@
 #minicart
     display: none !important
 
-.product 
+.product
+        
+    &__brand 
+        width: 145px
+        @media( max-width: 991px )
+            margin: 0 0 10px 0
+
+    &__labels
+        margin: 10px 0 
+
+    &__title
+        font-size: 24px
+        line-height: 24px
+        font-weight: 300
+        color: #333333
+        letter-spacing: -0.44px
+        text-align: center
+
+    &__subtitle
+        font-size: 13px
+        color: #D4B65D
+        letter-spacing: -0.24px
+        text-align: center
+        margin: 0 0 30px 0
 
     &__container
-        @extend $container
-        display: flex
-        align-items: flex-start
+        width: calc(100vw - 30px)
+        max-width: 1200px
+        margin: 0 auto
+        display: grid
+        padding: 0 
+        @media( min-width: 992px )
+            grid-template-areas: "info price" "buytobether buytobether" "description description" "review review"
+            grid-template-columns: auto 205px
+
+        @media( max-width: 991px )
+            grid-template-areas: "info" "buytobether" "description" "review" "price"
+            max-width: 768px
+
 
     &__content--left
+        grid-area: info
         display: grid
-        grid-template-areas: "foto breadcrumb" "foto name" "foto content"
-        grid-template-rows: 30px 50px auto;
-        max-width: calc(100% - 205px);
-        grid-template-columns: 442px auto;
         width: 100%
+        @media( min-width: 992px )
+            grid-template-columns: 442px auto
+            grid-template-areas: "foto breadcrumb" "foto name" "foto content"
+            grid-template-rows: 30px 50px auto
+            
+        @media( max-width: 991px )
+            grid-template-columns: auto
+            grid-template-areas: "breadcrumb" "foto" "name" "content"
+            
+
 
     &__content--right
-        width: 205px
+        grid-area: price
+        width: 100%
+        display: flex
+        margin: 25px 0 0 0
+    
+    &__fixed
+        width: 100%
 
     &__image 
         grid-area: foto
         max-width: 442px
-        min-width: 442px
+        width: 100%
+        margin: 0 auto
+        @media( max-width: 991px )
+            margin: 0 auto 25px
+
+        .thumbs 
+            li 
+                width: 50px
+                img 
+                    width: 100%
+    
 
     &__breadcrumb 
         grid-area: breadcrumb
@@ -44,9 +100,11 @@
     &__content-inner
         grid-area: content
 
-    &__review
+    &__review--line
         display: flex
         align-items: center
+        @media( max-width: 991px )
+            margin: 10px 0
         .review--short
             width: 125px
 
@@ -61,15 +119,12 @@
                 display: flex
                 margin: 0 5px 0 0
 
-    // &__label
-    //     grid-area: label
-
     &__description--short
         font-size: 14px
         color: #A8A8A8
         letter-spacing: -0.25px
         line-height: 15px
-        padding: 10px 0
+        padding: 10px 15px 10px 0
 
     &__description-more
         border: none
@@ -149,6 +204,10 @@
                 height: 30px
                 padding: 0 10px 
                 width: 100px
+                @media( max-width: 991px )
+                    margin: 15px 0
+                    height: 45px
+                    width: 100%
 
         .cep-busca
             a
@@ -162,7 +221,9 @@
 
         fieldset
             position: relative 
-            width: 185px
+
+            @media( min-width: 992px )
+                width: 185px
 
         .frete-calcular 
             display: flex
@@ -174,11 +235,15 @@
             font-size: 14px
             color: #DEB94C
             letter-spacing: -0.25px
-            position: absolute
-            right: 0
-            top: 0px
-            height: 30px
-            width: 80px
+            position: relative
+            height: 45px
+            width: 100%
+            @media( min-width: 992px )
+                position: absolute
+                right: 0
+                top: 0px
+                height: 30px
+                width: 80px
             &:before
                 font-weight: 600
                 content: 'CALCULAR'
@@ -196,12 +261,47 @@
                 opacity: 0
 
 
+        .freight-values
+            margin: 20px 0
+            @media( min-width: 992px )
+                padding: 15px 15px 0 0
+
+            table 
+                padding: 0 10px
+                border: 1px solid #eee
+                border-radius: 2px
+                width: 100%
+
+            thead
+                font-size: 14px
+                color: #333333
+                line-height: 14px
+                
+                th 
+                    border-bottom: 1px solid #eee
+                    padding: 10px 0
+
+            td 
+                font-size: 14px 
+                border-bottom: 1px solid #eee
+                padding: 10px 0
+                color: #666
+
+            tr 
+                &:last-child 
+                    td
+                        border: none
 
 
+
+    // Price
     &__price-inner
         border: 1px solid #E9E9E9
         border-radius: 2px
-        padding: 5px 
+        padding: 25px 5px 5px 5px
+        @media( min-width: 992px )
+            position: sticky
+            top: 10px
 
         .buy-button 
             background: #84DD4B
@@ -271,9 +371,6 @@
                     margin: 0 auto
                     color: #fff
 
-                   
-
-
                 &--less
                     &:before 
                         content: '-'
@@ -288,29 +385,60 @@
                         line-height: 14px
                         font-weight: 800
 
+        // Esgotado
+        .portal-notify-me-ref
+            color: #A8A8A8
+            font-size: 14px
 
-  
-.portal-notify-me-ref
-    color: #A8A8A8
-    font-size: 14px
-
-    .notifyme-title
-        font-size: 20px
-        color: #333
+            .notifyme-title
+                font-size: 20px
+                color: #333
 
 
-    input 
-        background: #FFFFFF
-        border: 1px solid #F0F0F0
-        border-radius: 3px
-        font-size: 14px
-        color: #333333
-        letter-spacing: -0.27px
-        height: 30px
-        width: 100%
-        margin: 10px 0 0 0
-        padding: 0 5px
+            input 
+                background: #FFFFFF
+                border: 1px solid #F0F0F0
+                border-radius: 3px
+                font-size: 14px
+                color: #333333
+                letter-spacing: -0.27px
+                height: 30px
+                width: 100%
+                margin: 10px 0 0 0
+                padding: 0 5px
 
-        &.notifyme-button-ok
-            background: color[0]
-            text-transform: uppercase
+                &.notifyme-button-ok
+                    background: color[0]
+                    text-transform: uppercase
+
+
+    &__buytobether
+        grid-area: buytobether
+
+    &__description 
+        grid-area: description
+        @media( max-width: 991px )
+            max-width: 768px
+            width: 100%
+
+        &--box 
+            border-top: 1px solid #E9E9E9
+            padding: 40px 15px
+            @extend $container
+
+        .productDescription
+            font-size: 14px
+            color: #726F6F
+            letter-spacing: -0.25px
+            p 
+                margin: 10px 0
+
+
+    &__review--box
+        grid-area: review 
+        border-top: 1px solid #E9E9E9
+        padding-top: 40px 
+        @extend $container
+        @media( max-width: 991px )
+            max-width: 768px
+            width: 100%

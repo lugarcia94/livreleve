@@ -63,10 +63,13 @@ $('[data-carousel]').each(function(){
             break;
     }
 
-    if(type != 'showcase') {
-        $(this).slick(config);
-    } else if($(this).find('> div > ul').length) {
+    if(type == 'showcase') {
         $(this).find('.helperComplement').remove();
         $(this).find('> div > ul').slick(config);
-    }
+    }else if( type == 'buytobether'){
+
+    }else{
+        $(this).slick(config);
+    } 
+
 });

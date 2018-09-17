@@ -73,13 +73,196 @@ star05 = -8px -2px
             &:before 
                 background-position: star05
             
-            
 
+#opiniao_de_usuario
+    hr 
+        display: none
+        
+    .rating-demonstrativo
+    .rating-produto
+        &:before 
+            @extend $star 
+
+    .avaliacao0
+    .avaliacao10
+        &:before 
+            background-position: star01
+
+    .avaliacao15
+    .avaliacao20
+        &:before 
+            background-position: star02
+
+    .avaliacao25
+    .avaliacao30
+        &:before 
+            background-position: star03
+
+    .avaliacao35
+    .avaliacao40
+        &:before 
+            background-position: star04
+
+    .avaliacao45
+    .avaliacao50
+        &:before 
+            background-position: star05
    
 
+    .user-review 
+        h4 
+            display: none
 
+        .avaliacao
+            display: grid
+            grid-template-areas: "media avalie-produto" "rating avalie-produto" "rating ulPubliqueResenha" "rating  links-resenha-usuario" "userReviewReturnMessages userReviewReturnMessages"
+            grid-template-columns: 390px auto
+            
+
+        .media
+            grid-area: media
+            display: flex
+            width: 100%
+            max-width: 390px
+            margin: 0 0 7px 0
+            font-size: 13px
+            color: #333333
+            letter-spacing: -0.24px
+            font-weight: 600
+            text-transform: capitalize
+            span 
+                order: 2
+
+            em 
+                display: block 
+                width: 140px
+                order: 1
+                strong 
+                    &:after 
+                        display: none
+
+                span 
+                    display: none
+
+        .rating
+            grid-area: rating
+            width: 100%
+            
+            + p 
+                display: none
+
+            li 
+                display: flex
+                justify-content: space-between
+
+            .voteRatingBar
+                display: none
+                + span 
+                    width: 64%
+                    font-size: 13px
+                    color: #333333
+                    letter-spacing: -0.24px
+                    font-weight: 600
+                    text-transform: capitalize
+
+            .voteRatingStar
+                display: block
+                height: 15px
+                width: 140px
+
+        .avalie-produto
+            grid-area: avalie-produto
+            display: flex
+            flex-wrap: wrap
+            // height: 25px
+            // align-self: start
+
+            #opcoes-avalie
+                margin: 5px 0
+                width: 100%
+                p  
+                    display: none
+
+                input 
+                    display: inline-block
+                label 
+                    display: inline-block
+                    margin: 0 10px 0 0
+                    font-size: 13px
+                    color: #333333
+                    letter-spacing: -0.24px
+                    font-weight: 600
+                    text-transform: capitalize
+
+            .rating-avalie-wrapper
+                margin: 0 0 0 8px
+
+            h5 
+                font-size: 13px
+                color: #333333
+                letter-spacing: -0.24px
+                font-weight: 600
+                text-transform: capitalize
+
+
+        #ulPubliqueResenha
+            grid-area: ulPubliqueResenha
+            // align-self: start
+            a  
+                background: #333333
+                border-radius: 2px
+                font-size: 14px
+                color: #DEB94C
+                letter-spacing: -0.25px
+                width: 170px
+                height: 30px
+                display: flex
+                align-items: center
+                justify-content: center
+                text-transform: uppercase
+                font-weight: 600
+                margin: 10px 0 0 0
+
+
+        .links-resenha-usuario
+            grid-area: links-resenha-usuario
+            display: none
+
+
+        #userReviewReturnMessages
+            grid-area: userReviewReturnMessages
 
             
+
+
+    .rating-avalie
+        a  
+            text-decoration: none
+            &:visited
+            &:focus
+            &:hover 
+                text-decoration: none
+
+        #rtAvaliacao_A 
+            display: flex
+            align-items: center
+            font-size: 0
+            line-height: 0
+
+            span 
+                display: block
+                height: 20px
+                width: 20px
+                overflow: hidden
+                &:before 
+                    @extend $star 
+                    background-position: -100px 0
+
+                &.filledRatingStar
+                    &:hover 
+                        &:before 
+                            background-position: -5px 0
+                    
 
 
 // .product__review
