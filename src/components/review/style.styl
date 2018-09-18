@@ -21,6 +21,7 @@ star05 = -8px -2px
         display: flex
         align-items: center
 
+
         strong 
             display: none
 
@@ -418,140 +419,190 @@ star05 = -8px -2px
 //     &:hover
 //         background: color[1]
 
-// #formUserReview
+#formUserReview
 
-//     .content
-//         margin: 0 auto
-//         padding: 20px 10px
-//         overflow: auto
-//         max-height: 4445px
+    .header
+        position: relative
+
+    .avaliacao0
+    .avaliacao10
+        &:before 
+            background-position: star01
+
+    .avaliacao15
+    .avaliacao20
+        &:before 
+            background-position: star02
+
+    .avaliacao25
+    .avaliacao30
+        &:before 
+            background-position: star03
+
+    .avaliacao35
+    .avaliacao40
+        &:before 
+            background-position: star04
+
+    .avaliacao45
+    .avaliacao50
+        &:before 
+            background-position: star05
+
+
+    #rtAvaliacao_A0
+        display: flex
+        align-items: center
+        font-size: 0
+        line-height: 0
+
+        span 
+            display: block
+            height: 20px
+            width: 20px
+            overflow: hidden
+            &:before 
+                @extend $star 
+                background-position: -100px 0
+
+            &.filledRatingStar
+                &:hover 
+                    &:before 
+                        background-position: -5px 0
    
-//     .header 
-//         h1
-//         h2 
-//             display: none
 
-//     .close
-//         a
-//             position: absolute
-//             top: 0
-//             right: 0
-//             width: 40px
-//             height: 40px
-//             font-size: 0
+    .content
+        margin: 0 auto
+        padding: 10px 10px
+        overflow: auto
+        max-height: 4445px
+   
+    .header 
+        h1
+        h2 
+            display: none
 
-//             display: flex
-//             align-items: center
-//             justify-content: center
+    .close
+        a
+            position: absolute
+            top: 0
+            right: 0
+            width: 40px
+            height: 40px
+            font-size: 0
 
-//             &:before
-//                 content: '+'
-//                 transform: rotate(45deg)
-//                 font-size: 24px
-//                 font-weight: 700
-//                 color: #333
-//                 position: relative;
-//                 z-index: 10;
-//                 width: 100%;
-//                 height: 100%;
-//                 display: flex;
-//                 align-items: center;
-//                 justify-content: center;
+            display: flex
+            align-items: center
+            justify-content: center
+
+            &:before
+                content: '+'
+                transform: rotate(45deg)
+                font-size: 24px
+                font-weight: 700
+                color: #333
+                position: relative;
+                z-index: 10;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
 
     
 
-// .formUserComment
-//     position: fixed;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%,-50%);
-//     background: #fff;
-//     padding: 1.25rem;
-//     box-shadow: 0 0 100px rgba(0,0,0,0.5);
-//     z-index: 200;
-//     height:430px;
-//     width: 100%;
-//     max-width: 600px;
-//     max-height: 500px;
-//     overflow: auto
+.formUserComment
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 1.25rem;
+    box-shadow: 0 0 100px rgba(0,0,0,0.5);
+    z-index: 200;
+    height:430px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 500px;
+    overflow: auto
 
-//     z-index: 200
+    z-index: 200
 
-//     &:empty
-//         display: none
+    &:empty
+        display: none
 
-//     input[type=text], textarea
-//         width: 100%
-//         min-height: 45px
+    input[type=text], textarea
+        width: 100%
+        min-height: 45px
 
-//         border: solid 1px #ede8e5
+        border: solid 1px #ede8e5
 
-//     textarea
-//         padding: 10px
+    textarea
+        padding: 10px
 
-//     .header h1, .footer
-//         display: none
+    .header h1, .footer
+        display: none
 
-//     .grp
-//         position: relative
-//         margin-bottom: 10px
-//         font-size: 13px
+    .grp
+        position: relative
+        margin-bottom: 10px
+        font-size: 13px
 
-//         label
-//             padding-left: 8px
-//             padding-bottom: 3px
-//             display: block
+        label
+            padding-left: 8px
+            padding-bottom: 3px
+            display: block
 
-//         span
-//             position: absolute
-//             left: 0
-//             top: 0
+        span
+            position: absolute
+            left: 0
+            top: 0
 
-//     .checkgroups
-//         font-size: 11px
+    .checkgroups
+        font-size: 11px
 
-//         input, label
-//             display: inline
-//             margin: 0
-//             padding: 0
+        input, label
+            display: inline
+            margin: 0
+            padding: 0
 
-//     .opiniaoRating
-//         > div
-//             display: flex
-//             align-items: center
-//             margin: 10px 0
+    .opiniaoRating
+        > div
+            display: flex
+            align-items: center
+            margin: 10px 0
 
-//         #rtAvaliacao_A0
-//             font-size: 0
-//             height: 15px
-//             margin-left: 10px
+        #rtAvaliacao_A0
+            font-size: 0
+            height: 15px
+            margin-left: 10px
 
-//     .opiniaoInfo
-//         font-size: 10px
-//         padding: 0 0 10px
-//         color: #ff0000
+    .opiniaoInfo
+        font-size: 10px
+        padding: 0 0 10px
+        color: #ff0000
 
-//     .aviso-resenha
-//         font-size: 10px
-//         padding: 10px
+    .aviso-resenha
+        font-size: 10px
+        padding: 10px
 
-//         color: #ffffff
-//         background: rgba(#f00, .4)
+        color: #ffffff
+        background: rgba(#f00, .4)
 
-//     .avaliar
-//         margin-top: 20px
+    .avaliar
+        margin-top: 20px
 
-//         a
-//             display: block
-//             height: 40px
-//             background: color[1]
-//             text-align: center
-//             color: #ffffff
-//             line-height: 40px
-//             font-size: 22px
-//             text-transform: uppercase
-//             font-weight: 500
+        a
+            display: block
+            height: 40px
+            background: color[1]
+            text-align: center
+            color: #ffffff
+            line-height: 40px
+            font-size: 22px
+            text-transform: uppercase
+            font-weight: 500
 
 // @media (min-width: 600px)
 
