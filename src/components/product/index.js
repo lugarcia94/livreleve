@@ -1,5 +1,5 @@
 import './style.styl';
-import { slug, currency, onlyFloat } from 'Core/functions';
+import { slug, buttonMoreLess, onlyFloat, buttonBuy } from 'Core/functions';
 
 function produtoInit(){
 
@@ -51,3 +51,7 @@ function produtoInit(){
 if( $('body#product-page').length ){
     produtoInit();
 }
+
+buttonMoreLess('.buttons__qtys', '.buttons__input--buy', '.buttons__action--more', '.buttons__action--less');
+buttonBuy('.buttons--buy', '.buy-button', '.buttons__input--buy');
+
