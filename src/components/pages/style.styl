@@ -535,6 +535,15 @@ $buttonAccount
 
 #orders-page 
     font-family: "Source Sans Pro", sans-serif !important
+    overflow-x: hidden
+
+    .search__container
+        .busca input 
+            box-shadow: none
+
+    @media only screen and (min-width: 992px)
+        .menu__categories--nv1 
+            display: flex
     
     .breadcrumb
         background: none 
@@ -553,3 +562,25 @@ $buttonAccount
             &:hover 
                 background: color[0] !important
                 color: color[1] !important
+
+
+
+
+
+#institutional-page
+
+    .main__container 
+        padding: 40px 0
+    
+    .layout__main
+        max-width: 100%
+
+    h1
+        font-size: 25px
+        color: color[0]
+        margin: 10px 0
+
+    h2
+        font-size: 20px
+        color: color[0]
+        margin: 10px 0
