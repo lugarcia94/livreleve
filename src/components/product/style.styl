@@ -443,3 +443,39 @@
         @media( max-width: 991px )
             max-width: 768px
             width: 100%
+
+.zoomPad
+    position: relative
+    overflow: hidden
+
+    > img
+        transition: transition[0]
+
+    &:hover > img
+        opacity: 0 !important
+
+.zoomWindow
+    top     : 50% !important
+    left    : 50% !important
+    transform :translateX(-50%) translateY(-50%)
+
+//    &:hover
+//        #image-main
+//            visibility: hidden
+//
+//.image-zoom
+//    position: relative
+//    display: block
+//    overflow: hidden
+//    z-index: 1
+//
+//    margin 0 auto
+//    max-width 100%
+//
+//.zoomPreload
+//    display: none
+
+.zoomWrapperImage
+    background      : #fff
+    img
+        max-width   : none
