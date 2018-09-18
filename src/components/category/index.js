@@ -7,3 +7,5 @@ if(body.hasClass('category')) {
     sub.first().append($('.pager.top'));
     sub.last().append($('.pager.bottom'));
 }
+
+

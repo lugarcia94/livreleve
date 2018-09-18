@@ -7,6 +7,20 @@
 
     margin                  : 0 5 0 45px
 
+    .welcome
+        font-size           : 0
+
+        a
+            &:before
+                content         : 'Acessar Conta'
+                font-size       : 13px
+
+            &[href*=logout]
+                &:before
+                    content     : 'Sair'
+
+
+
     &__sub
         position            : absolute
         top                 : 100%
@@ -109,3 +123,18 @@
             .head-nav__sub
                 visibility    : visible
                 opacity       : 1
+
+
+.head-nav__sub
+    display                 : flex
+    flex-flow               : column nowrap
+
+    > .head-nav__item
+        order               : 1
+
+        .logout &:first-child
+            order           : 2
+            margin-top      : 10px
+
+        .logout &:nth-child(2)
+            margin-top      : 0

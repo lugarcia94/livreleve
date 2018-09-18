@@ -60,7 +60,26 @@ const config = {
                 loader: 'svg-inline-loader'
             },
             {
-                test: /\.(css|styl)$/,
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: (loader) => [
+                                new IconfontWebpackPlugin(loader),
+                                require('autoprefixer')({
+                                    browsers: ['last 2 versions'],
+                                    grid: true
+                                })
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.styl$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -96,7 +115,7 @@ const config = {
     performance: {
         hints: false
     },
-    devtool: 'source-map'
+    // devtool: 'source-map'
 };
 
 module.exports = config;

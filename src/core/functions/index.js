@@ -177,12 +177,12 @@ export function percentPrice(price, percent) {
  * Buy Button
  * - Botão de compra
  */
-export function buttonBuy() {
-    let buttons = Array.from(document.querySelectorAll('.product__left'));
+export function buttonBuy(buttonsClass = '.product__left', buyClass=".buy-button", inputClass = '.buy-button__input') {
+    let buttons = Array.from(document.querySelectorAll(buttonsClass));
 
     buttons.forEach(box => {
-        let button = box.querySelector('.buy-button');
-        let qtd    = box.querySelector('.buy-button__input');
+        let button = box.querySelector(buyClass);
+        let qtd    = box.querySelector(inputClass);
 
         if(button) {
             button.addEventListener('click', e => {
@@ -200,12 +200,12 @@ export function buttonBuy() {
  *  buttonMoreLess
  *  - Botão de Quantidade Mais e Menos
  */
-export function buttonMoreLess() {
-    let buttons = Array.from(document.querySelectorAll('.buy-button__qtd'));
+export function buttonMoreLess(boxClass=".buy-button__qtd", inputClass='.buy-button__input', moreClass='.buy-button__more', lessClass='.buy-button__less') {
+    let buttons = Array.from(document.querySelectorAll(boxClass));
     buttons.forEach(box => {
-        let qtd    = box.querySelector('.buy-button__input');
-        let more   = box.querySelector('.buy-button__more');
-        let less   = box.querySelector('.buy-button__less');
+        let qtd    = box.querySelector(inputClass);
+        let more   = box.querySelector(moreClass);
+        let less   = box.querySelector(lessClass);
 
         onlyNumber(qtd);
 
