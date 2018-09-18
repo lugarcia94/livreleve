@@ -1,5 +1,8 @@
+import './zoom.css';
 import './style.styl';
 import { slug, buttonMoreLess, onlyFloat, buttonBuy } from 'Core/functions';
+
+
 
 function produtoInit(){
 
@@ -12,12 +15,14 @@ function produtoInit(){
     function pencent(){
         let oldPrice = $('.plugin-preco .skuListPrice').text();
         let bestPrice = $('.plugin-preco .skuBestPrice').text();
-        let discount =  ( onlyFloat(oldPrice) - onlyFloat(bestPrice) ) / onlyFloat(oldPrice) * 100 
+        if(oldPrice && bestPrice) {
+            let discount = (onlyFloat(oldPrice) - onlyFloat(bestPrice)) / onlyFloat(oldPrice) * 100
 
-        if( !$('.pencent-price').length ){
-            $('.plugin-preco').append('<span class="pencent-price"></span>');
+            if (!$('.pencent-price').length) {
+                $('.plugin-preco').append('<span class="pencent-price"></span>');
+            }
+            $('.pencent-price').html('<strong>' + discount.toFixed(0) + '%</strong><em>off</em>');
         }
-        $('.pencent-price').html( '<strong>'+discount.toFixed(0)+'%</strong><em>off</em>' );
     }
     pencent();
 
@@ -52,6 +57,27 @@ if( $('body#product-page').length ){
     produtoInit();
 }
 
+
+
 buttonMoreLess('.buttons__qtys', '.buttons__input--buy', '.buttons__action--more', '.buttons__action--less');
 buttonBuy('.buttons--buy', '.buy-button', '.buttons__input--buy');
+
+var resetZoom = function () {
+    window.LoadZoom = function () {
+        var optionsZoom = {
+            zoomType: 'innerzoom',
+            zoomWidth: $vtex('.image-zoom').width(),
+            zoomHeight: $vtex('.image-zoom').height()
+        };
+
+        $vtex(".image-zoom").jqzoom(optionsZoom);
+    };
+
+    LoadZoom(0);
+};
+
+resetZoom();
+
+$(window).resize(() => resetZoom());
+
 
