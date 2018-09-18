@@ -79,7 +79,24 @@
         display         : none
 
     .orderBy
-        text-align      : center
+        white-space     : nowrap
+        margin          : 0 70px
+
+        label, .SumoSelect
+            display         : inline-block
+            vertical-align  : middle
+
+        .SumoSelect
+            max-width       : 100px
+
+            > .CaptionCont
+                border-color    : #F0F0F0
+                border-radius   : 2px
+
+            > .optWrapper
+                width       : calc(100% + 100px)
+
+
 
 
 @media (min-width: 992px)

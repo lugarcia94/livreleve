@@ -1,6 +1,9 @@
 // Reset CSS
 import './reset/index.styl';
 
+// Sumoselect
+import './sumoselect';
+
 // Layout
 import './layout';
 

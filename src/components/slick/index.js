@@ -1,4 +1,4 @@
-import slick from 'slick-carousel';
+import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import './style.styl';
 
@@ -104,7 +104,7 @@ $('[data-carousel]').each(function(){
             break;
     }
 
-    if(type == 'showcase') {
+    if( $.inArray(type, ['showcase', 'gift']) != -1 ) {
         $(this).find('.helperComplement').remove();
         $(this).find('> div > ul').slick(config);
     }else if( type == 'buytobether'){
