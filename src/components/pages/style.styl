@@ -147,7 +147,7 @@
             margin-bottom: 10px
         .busca 
             border: solid 1px #f0f0f0;
-            
+
         div.search
             // width: 100%
             // box-shadow: 0 0 10px rgba(0,0,0,.4)
@@ -159,3 +159,428 @@
         //     display: none
 
 
+
+
+
+
+
+
+
+
+//Account
+$buttonAccount
+    height: 35px
+    line-height: 35px
+
+    background: color[1]
+    color: #ffffff
+
+    display: inline-block
+    padding: 0 20px
+    border-radius: 3px
+    margin: 10px 0
+
+    text-transform: uppercase
+    font-weight: 500
+
+    &:hover
+        background: color[0]
+        text-decoration: none
+
+.profile-detail-display
+    display: inline-block
+    padding: 20px
+    font-size: 13px
+    margin: 0
+
+    h4
+        font-size: 24px
+
+    h5
+        font-size: 16px
+
+.profile-detail-display-info
+    .title
+        font-weight: 500
+
+.edit-profile-link a
+    @extend $buttonAccount
+
+#editar-perfil
+    position: fixed
+    display: inline-block !important
+    padding: 20px
+    margin: 0
+    font-size: 13px
+    flex: 1 1 auto
+
+    background: #ffffff
+
+    z-index: 100
+
+    top: 50%
+    left: 50%
+
+    transform: translate(-50%, -50%) scale(1)
+    width: 100%
+    height: 100%
+    overflow: auto
+    transition: all .2s ease-in-out
+
+    &[aria-hidden=true]
+        visibility: hidden
+        opacity: 0
+        transform: translate(-50%, -50%) scale(.5)
+
+    #myModalLabel
+        display: none
+
+    .close
+        position: absolute
+        top: 0
+        right: 0
+        padding: 0
+        width: 40px
+        height: 40px
+        font-size: 22px
+        font-weight: 700
+
+
+    #profile-submit, .btn-link
+        @extend $buttonAccount
+        margin: 10px 0
+        border: 0
+
+    #profile-submit
+        background: color[0]
+        color: #222
+
+    .btn-link
+        margin-left: 10px
+
+#business-toggle
+    font-size: 11px
+    font-weight: 500
+    color: #ff0000
+    text-transform: uppercase
+    display: block
+
+.profile-detail-form
+    font-size: 0
+
+    margin: 0 -10px
+
+    h5
+        font-size: 22px
+        padding: 10px
+        padding-top: 0
+
+    input[type=text]
+        width: 100%
+
+    .control-label
+        font-size: 13px
+
+    .control-group
+        font-size: 13px
+        width: 50%
+        padding: 10px
+
+        display: inline-block
+
+.profile-detail-form-business-data
+    border-top: solid 1px rgba(0,0,0,.1)
+    border-bottom:  solid 1px rgba(0,0,0,.1)
+    padding: 10px 0
+    margin: 10px 0
+
+.account
+    .catagory__main
+        text-align: center
+
+        display: flex
+        flex-wrap: wrap
+        // margin: 0 -10px
+        width: 100%;
+        max-width: 100%
+
+    .layout__col2--left
+        padding: 0
+
+.account__user-profile
+    display: inline-block
+    margin: 10px
+    text-align: left
+    flex: 1 1 auto
+
+    border: solid 1px rgba(0,0,0,.1)
+
+#address-remove, #address-edit
+    &[aria-hidden=true]
+        display: none
+.account__orders
+    a 
+        height: 2.19rem;
+        line-height: 2.19rem;
+        background: darken(color[0], 30%)
+        color: #fff;
+        display: inline-block;
+        padding: 0 1.25rem;
+        border-radius: 3px;
+        margin: 0.63rem 0;
+        text-transform: uppercase;
+        font-weight: 500;
+        &:hover
+            background: color[0]
+            text-decoration: none
+
+.account__address
+.account__orders
+    display: inline-block
+    padding: 20px
+    font-size: 13px
+    border: solid 1px rgba(0,0,0,.1)
+    vertical-align: top
+    margin: 10px
+    text-align: left
+    flex: 1 1 auto
+
+.address-display
+    margin: 10px 0
+
+    h5
+        font-weight: 500
+
+.edit-address-link
+    font-size: 0
+    text-align: right
+    margin-bottom: 10px
+
+    a
+        display: inline-block
+        background: color[0]
+        color: #fff
+        font-size: 10px
+        text-transform: uppercase
+        padding: 3px 10px
+        border-radius: 2px
+
+        + a
+            margin-left: 5px
+
+        &:hover
+            background: color[1]
+            text-decoration: none
+
+
+#address-edit
+    position: fixed
+    display: inline-block !important
+    padding: 20px
+    margin: 0
+    font-size: 13px
+    flex: 1 1 auto
+
+    background: #ffffff
+
+    z-index: 100
+
+    top: 50%
+    left: 50%
+
+    transform: translate(-50%, -50%) scale(1)
+    width: 100%
+    height: 100%
+    overflow: auto
+    transition: all .2s ease-in-out
+
+
+    &[aria-hidden=true]
+        visibility: hidden
+        opacity: 0
+        transform: translate(-50%, -50%) scale(.5)
+
+    .close
+        position: absolute
+        top: 0
+        right: 0
+        padding: 0
+        width: 40px
+        height: 40px
+        font-size: 22px
+        font-weight: 700
+
+    .address-label
+        font-size: 22px
+        margin: 0
+
+    .address-form
+        margin: 0 -10px
+
+        .row
+            > div
+                width: calc(50% - 40px)
+                display: inline-block
+                margin: 0 10px
+
+                .control-group
+                    width: 100%
+                    margin: 10px 0
+
+    .control-group
+        width: calc(50% - 40px)
+        display: inline-block
+        margin: 10px
+
+        input
+            width: 100%
+
+    .address-form-neighborhood
+        width: calc(100% - 60px)
+
+    #form-submit, .btn-link
+        @extend $buttonAccount
+        border: 0
+
+    .btn-link
+        margin-left: 10px
+
+    #form-submit
+        background-color: color[0]
+
+        // &:hover
+        //     background-color: 
+
+.new-address-link a
+    @extend $buttonAccount
+    margin: 10px 0
+    color: #ffffff
+
+#address-remove
+
+    position: fixed
+    display: inline-block !important
+    padding: 20px
+    margin: 0
+    font-size: 13px
+    flex: 1 1 auto
+
+    background: #ffffff
+
+    z-index: 100
+
+    top: 50%
+    left: 50%
+
+    transform: translate(-50%, -50%) scale(1)
+    width: 100%
+    height: 100%
+    overflow: auto
+    transition: all .2s ease-in-out
+
+
+    &[aria-hidden=true]
+        visibility: hidden
+        opacity: 0
+        transform: translate(-50%, -50%) scale(.5)
+
+    .close
+        position: absolute
+        top: 0
+        right: 0
+        padding: 0
+        width: 40px
+        height: 40px
+        font-size: 22px
+        font-weight: 700
+
+
+    #address-delete, .btn-link
+        @extend $buttonAccount
+        border: 0
+
+    .btn-link
+        margin-left: 10px
+
+    #address-delete
+        background-color: #f00
+
+        &:hover
+            background-color: darken(#f00, 20%)
+
+
+@media (min-width: 600px)
+    #editar-perfil, #address-edit, #address-remove
+        width: auto
+        height: auto
+
+
+
+
+
+//Orders
+.nav-pills>.active>a, .nav-pills>.active>a:hover, .nav-pills>.active>a:focus
+    background: color[0] !important
+    color: #ffffff !important
+
+.nav-tabs>li>a, .nav-pills>li>a
+    color: color[1] !important
+
+
+#account-page
+#orders-page
+
+    #main
+        @extend $container
+
+#orders-page 
+    font-family: "Source Sans Pro", sans-serif !important
+    overflow-x: hidden
+
+    .search__container
+        .busca input 
+            box-shadow: none
+
+    @media only screen and (min-width: 992px)
+        .menu__categories--nv1 
+            display: flex
+    
+    .breadcrumb
+        background: none 
+        // padding: 0
+
+    ul 
+        padding: 0 
+        margin: 0
+    input 
+        margin-bottom: 0
+
+    .page-header
+        a
+            display: flex;
+            align-items: center;
+            &:hover 
+                background: color[0] !important
+                color: color[1] !important
+
+
+
+
+
+#institutional-page
+
+    .main__container 
+        padding: 40px 0
+    
+    .layout__main
+        max-width: 100%
+
+    h1
+        font-size: 25px
+        color: color[0]
+        margin: 10px 0
+
+    h2
+        font-size: 20px
+        color: color[0]
+        margin: 10px 0
