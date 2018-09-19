@@ -117,11 +117,11 @@ star05 = -8px -2px
         .avaliacao
             display: grid
             @media(min-width: 769px)
-                grid-template-areas: "media avalie-produto" "rating avalie-produto" "rating ulPubliqueResenha" "rating  links-resenha-usuario" "userReviewReturnMessages userReviewReturnMessages"
+                grid-template-areas: "media avalie-produto" "rating avalie-produto" "rating ulPubliqueResenha" "rating  links-resenha-usuario" "resenhas resenhas" "userReviewReturnMessages userReviewReturnMessages"
                 grid-template-columns: 390px auto
 
             @media(max-width: 768px)
-                grid-template-areas: "media media" "rating rating" "avalie-produto avalie-produto" "ulPubliqueResenha ulPubliqueResenha" "links-resenha-usuario links-resenha-usuario" "userReviewReturnMessages userReviewReturnMessages"
+                grid-template-areas: "media media" "rating rating" "avalie-produto avalie-produto" "ulPubliqueResenha ulPubliqueResenha" "links-resenha-usuario links-resenha-usuario" "resenhas resenhas"  "userReviewReturnMessages userReviewReturnMessages"
                 
 
         .media
@@ -249,7 +249,43 @@ star05 = -8px -2px
         #userReviewReturnMessages
             grid-area: userReviewReturnMessages
 
-            
+        
+        .resenhas
+            grid-area: resenhas
+            margin: 20px 0
+
+            .opt-texto
+                color: #616161
+                font-size: 13px
+                text-transform: initial
+                // margin: 10px 0
+                padding: 10px 0
+                // background: rgba(0,0,0,.05)
+
+            .util
+                display: none
+
+            .quem
+                text-transform:uppercase
+                color: #726F6F
+                font-size: 12px
+                
+                > li + li
+                    margin-top: 20px
+                li 
+                    margin-top: 40px
+                    margin-bottom:40px
+                    .quem 
+                        display: flex
+
+                    &:last-child 
+                        padding-bottom: 40px 
+                        border-bottom: 1px solid #E9E9E9
+
+
+                .dados 
+                    strong 
+                        font-weight: 400
 
 
     .rating-avalie
@@ -276,6 +312,8 @@ star05 = -8px -2px
                     background-position: -100px 0
 
                 &.filledRatingStar
+                    &:before 
+                        background-position: -5px 0
                     &:hover 
                         &:before 
                             background-position: -5px 0
@@ -311,26 +349,6 @@ star05 = -8px -2px
 //     .avalie-produto
 //         margin-top: 20px
 
-//     .resenhas
-//         margin: 20px 0
-
-//         .opt-texto
-//             color: #616161
-//             font-size: 13px
-//             text-transform: uppercase
-//             margin: 10px 0
-//             padding: 10px 0
-//             // background: rgba(0,0,0,.05)
-
-//         .util
-//             display: none
-
-//         .quem
-//             text-transform:uppercase
-//             color: color[0]
-//             font-size: 12px
-//             > li + li
-//                 margin-top: 20px
             
 
 
@@ -419,37 +437,64 @@ star05 = -8px -2px
 //     &:hover
 //         background: color[1]
 
+.avaliacao
+
+    .rating-wrapper
+        display: flex
+        flex-wrap: wrap
+        strong 
+            display: none
+        .rating
+            display: block;
+            height: 15px;
+            width: 90px;
+            margin: 0 0 0 10px
+            &:before 
+                @extend $star 
+
+    .a0
+    .a10
+    .avaliacao0
+    .avaliacao10
+        &:before 
+            background-position: star01 !important
+
+    .a15
+    .a20
+    .avaliacao15
+    .avaliacao20
+        &:before 
+            background-position: star02 !important
+
+    .a25
+    .a30
+    .avaliacao25
+    .avaliacao30
+        &:before 
+            background-position: star03 !important
+
+    .a35
+    .a40
+    .avaliacao35
+    .avaliacao40
+        &:before 
+            background-position: star04 !important
+
+    .a45
+    .a50
+    .avaliacao45
+    .avaliacao50
+        &:before 
+            background-position: star05 !important
+
+    
+
 #formUserReview
 
     .header
         position: relative
 
-    .avaliacao0
-    .avaliacao10
-        &:before 
-            background-position: star01
-
-    .avaliacao15
-    .avaliacao20
-        &:before 
-            background-position: star02
-
-    .avaliacao25
-    .avaliacao30
-        &:before 
-            background-position: star03
-
-    .avaliacao35
-    .avaliacao40
-        &:before 
-            background-position: star04
-
-    .avaliacao45
-    .avaliacao50
-        &:before 
-            background-position: star05
-
-
+    
     #rtAvaliacao_A0
         display: flex
         align-items: center
@@ -468,7 +513,7 @@ star05 = -8px -2px
             &.filledRatingStar
                 &:before 
                     background-position: -5px 0
-                    
+
                 &:hover 
                     &:before 
                         background-position: -5px 0
@@ -551,6 +596,8 @@ star05 = -8px -2px
         position: relative
         margin-bottom: 10px
         font-size: 13px
+        &.fTitulo 
+            display: none
 
         label
             padding-left: 8px

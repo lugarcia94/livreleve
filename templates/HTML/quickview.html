@@ -4,6 +4,7 @@
     <head>
         <vtex:template id="00-monali-head" />
     </head>
+    
     <body id="product-page">
         <div class="wrapper">
             <vtex:template id="00-monali-menu" />
@@ -106,38 +107,13 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="buytobether product__buytobether" data-carousel="buytobether">
-                        <vtex.cmc:BuyTogether/>
-                    </div>
-                    
-                    <div class="product__description product__description--box">
-                        <h2 class="product__title">Descrição do Produto</h2>
-                        <h3 class="product__subtitle">Saiba tudo o que precisa sobre este produto</h3>
-                        <vtex.cmc:ProductDescription/>
-                    </div>
-                    
-                    <div class="product__review--box">
-                        <div class="review product__review">
-                            <h2 class="product__title">Avaliações do produto</h2>
-                            <h3 class="product__subtitle">Olha o que quem já comprou disse</h3>
-                            <vtex.cmc:UserReview/>
-                        </div>
-                    </div>
-                    
-                     <div class="showcase">
-                        <div data-carousel="showcase" class="showcase__container">
-                            <vtex:contentPlaceHolder id="related" />
-                        </div>
-                    </div>
-                    
+
                 </main>
                 
             </div>
-            
-            <vtex:template id="00-monali-footer" />
+
             <vtex:template id="00-monali-scripts" />
-            <vtex.cmc:productQuickView/>
+            
         </div>
         
     </body>
