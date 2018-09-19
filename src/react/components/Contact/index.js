@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+import './style.styl';
+
 class Contact extends Component {
     constructor(props) {
         super(props);
@@ -120,74 +122,77 @@ class Contact extends Component {
     render() {
         let form = this.state.form;
 
-        return <section className="contact">
-            <div className="input--text">
-                <label htmlFor="firstName">Nome: </label>
+        return <div className="contact-us__component-form">
+            <div className="contact-us__item">
+                <label className="contact-us__label" htmlFor="firstName">Nome: </label>
                 <input name="firstName" id="firstName" type="text"
-                       className    = {form.firstName.valid}
+                       className    = {form.firstName.valid + ' contact-us__input'}
                        value        = {form.firstName.value}
                        onChange     = {this.handleChange.bind(this)} />
             </div>
-            <div className="input--text">
-                <label htmlFor="lastName">Sobrenome</label>
+            <div className="contact-us__item">
+                <label className="contact-us__label" htmlFor="lastName">Sobrenome</label>
                 <input name="lastName" id="lastName" type="text"
-                       className    = {form.lastName.valid}
+                       className    = {form.lastName.valid  + ' contact-us__input'}
                        value        = {form.lastName.value}
                        onChange     = {this.handleChange.bind(this)} />
             </div>
-            <div className="input--text">
-                <label htmlFor="email">E-Mail</label>
+            <div className="contact-us__item">
+                <label className="contact-us__label" htmlFor="email">E-Mail</label>
                 <input name="email" id="email" type="text"
-                       className    = {form.email.valid}
+                       className    = {form.email.valid  + ' contact-us__input'}
                        value        = {form.email.value}
                        onChange     = {this.handleChange.bind(this)} />
             </div>
-            <div className="input--text">
-                <label htmlFor="phone">Telefone</label>
+            <div className="contact-us__item">
+                <label className="contact-us__label" htmlFor="phone">Telefone</label>
                 <input name="phone" id="phone" type="text"
-                       className    = {form.phone.valid}
+                       className    = {form.phone.valid  + ' contact-us__input'}
                        value        = {form.phone.value}
                        onChange     = {this.handleChange.bind(this)} />
             </div>
-            <div className="input--text">
-                <label htmlFor="celular">Celular</label>
+            <div className="contact-us__item">
+                <label className="contact-us__label" htmlFor="celular">Celular</label>
                 <input name="celular" id="celular" type="text"
-                       className    = {form.celular.valid}
+                       className    = {form.celular.valid  + ' contact-us__input'}
                        value        = {form.celular.value}
                        onChange     = {this.handleChange.bind(this)} />
             </div>
-            <div className="select">
-                <label htmlFor="type">Tipo</label>
-                <select name="type" id="type"
-                        className   = {form.type.valid}
-                        value       = {form.type.value}
-                        onChange    = {this.handleChange.bind(this)} >
-                    <option value="">Selecionar motivo</option>
-                    <option value="Sugestão">Sugestão</option>
-                    <option value="Dúvida">Dúvida</option>
-                    <option value="Reclamação">Reclamação</option>
-                </select>
+            <div className="contact-us__item">
+                <label className="contact-us__label" htmlFor="type">Tipo</label>
+                <div class="select-fake">
+                    <span class="select-fake__value">{form.type.value == '' ? 'Selecionar motivo' : form.type.value }</span>
+                    <select name="type" id="type"
+                            className   = {form.type.valid  + ' contact-us__select'}
+                            value       = {form.type.value}
+                            onChange    = {this.handleChange.bind(this)} >
+                        <option value="">Selecionar motivo</option>
+                        <option value="Sugestão">Sugestão</option>
+                        <option value="Dúvida">Dúvida</option>
+                        <option value="Reclamação">Reclamação</option>
+                    </select>
+                </div>
             </div>
-            <div className="textarea">
-                <label htmlFor="description">Mensagem</label>
+            <div className="contact-us__item">
+                <label className="contact-us__label" htmlFor="description">Mensagem</label>
                 <textarea name="description" id="description" cols="30" rows="10"
-                          className = {form.description.valid}
+                          className = {form.description.valid  + ' contact-us__text'}
                           value     = {form.description.value}
                           onChange  = {this.handleChange.bind(this)}></textarea>
             </div>
-            <div className="contact__actions">
-                <button type="button"
+            <div className="contact-us__actions">
+                <button className="contact-us__send" type="button"
                     onClick     = {(e)=>this.handleSubmit(e)} >Enviar
                 </button>
             </div>
 
-            <div className="contact__error">
-                {!this.state.valided && <span className="warning">Verifique os campos selecionados são obrigatórios.</span>}
-                {this.state.error && <span className="error">Erro de envio, tente novamente</span>}
-                {this.state.success && <span className="sucess">Sua mensagem foi enviada com sucesso!</span>}
+            <div className="contact-us__msgs">
+                {!this.state.valided && <span className="contact-us__msg contact-us__msg--warning">Verifique os campos selecionados são obrigatórios.</span>}
+                {this.state.error && <span className="contact-us__msg contact-us__msg--error">Erro de envio, tente novamente</span>}
+                {this.state.success && <span className="contact-us__msg contact-us__msg--success">Sua mensagem foi enviada com sucesso!</span>}
             </div>
 
-        </section>
+        </div>
     }
 
 }

@@ -29,8 +29,8 @@ const config = {
 };
 
 // Load Order Form
-store.dispatch(fetchOrderForm());
 
+store.dispatch(fetchOrderForm());
 
 import Kit from './react/components/kit';
 let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
@@ -133,21 +133,24 @@ if(config.buybutton) {
 //     });
 // }
 //
-// // Contato
-// import Contact from './react/components/Contact';
-// if(config.contact) {
-//     let rootContact = document.querySelector('#contact');
-//
-//     if(rootContact) {
-//         ReactDOM.render(
-//             <Provider store={store}>
-//                 <Contact />
-//             </Provider>,
-//             rootContact
-//         );
-//     }
-//
-// }
+// Contato
+import Contact from './react/components/Contact';
+
+console.log('contato');
+
+if(config.contact) { console.log('teste');
+    let rootContact = document.querySelector('[data-component=contact]');
+
+    if(rootContact) {
+        ReactDOM.render(
+            <Provider store={store}>
+                <Contact />
+            </Provider>,
+            rootContact
+        );
+    }
+
+}
 //
 // //Related Search
 // import RelatedSearch from './react/components/RelatedSearch';

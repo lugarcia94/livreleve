@@ -1,28 +1,43 @@
-const webpack = require('webpack');
+const   webpack                 = require('webpack');
+const   path                    = require('path');
+const   MiniCssExtractPlugin    = require("mini-css-extract-plugin");
+const   IconfontWebpackPlugin   = require('iconfont-webpack-plugin');
+
+
 const config = {
     entry: {
-        app: __dirname + '/src/index.js',
-        scripts: __dirname + '/src/components/index.js',
+        app: './src/index.js',
         vendor: ['whatwg-fetch', 'slick-carousel', 'jquery'],
     },
     output: {
-        path: __dirname + '/deploy/javascript/',
+        path: path.resolve( __dirname, './deploy'),
         filename: '[name].js'
     },
+    mode: 'production', // none, development or production(default)
+    resolve: {
+        extensions: ['.js', '.jsx', '.json'],
+        alias: {
+            Core: path.resolve(__dirname, './src/core')
+        }
+    },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: "./[name].css"
+        }),
         new webpack.ProvidePlugin({
             Promise: "bluebird"
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendor"
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: "vendor"
+        // }),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production')
             }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false }
         })
     ],
     module: {
@@ -37,19 +52,6 @@ const config = {
                 }
             },
             {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    loaders: {
-                        js: 'babel-loader'
-                    }
-                }
-            },
-            {
-                test: /\.css$/,
-                use: [ 'style-loader', 'css-loader' ]
-            },
-            {
                 test: /\.(eot|woff|woff2|ttf|png|jpg|gif)$/,
                 loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
             },
@@ -58,17 +60,60 @@ const config = {
                 loader: 'svg-inline-loader'
             },
             {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: (loader) => [
+                                new IconfontWebpackPlugin(loader),
+                                require('autoprefixer')({
+                                    browsers: ['last 2 versions'],
+                                    grid: true
+                                }),
+                                require('cssnano')({
+                                    zindex: false
+                                })
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.styl$/,
-                exclude: /node_modules/,
-                loader: 'style-loader!css-loader?sourceMap!postcss-loader?sourceMap="inline"!stylus-loader?paths=src'
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: (loader) => [
+                                new IconfontWebpackPlugin(loader),
+                                require('autoprefixer')({
+                                    browsers: ['last 2 versions'],
+                                    grid: true
+                                }),
+                                require('cssnano')({
+                                    zindex: false
+                                })
+                            ]
+                        }
+                    },
+                    {
+                        loader: 'stylus-loader',
+                        options: {
+                            import: path.resolve(__dirname, './src/core/index.styl')
+                        }
+
+                    }
+
+                ]
+
             },
         ]
     },
-
-    resolve: {
-        extensions: ['.js', '.jsx', '.json'],
-    },
-
     watchOptions: {
         aggregateTimeout: 300,
         ignored: /node_modules/
@@ -76,6 +121,7 @@ const config = {
     performance: {
         hints: false
     },
+    // devtool: 'source-map'
 };
 
 module.exports = config;
