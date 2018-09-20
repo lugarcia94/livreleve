@@ -1,5 +1,4 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 import './style.styl';
@@ -79,7 +78,7 @@ class Contact extends Component {
 
     sendEmail() {
         let form = this.state.form;
-        axios.post('//api.vtex.com/keratinex/dataentities/CT/documents', {
+        axios.post('//api.vtex.com/monali/dataentities/CT/documents', {
             firstName: form.firstName.value,
             lastName: form.lastName.value,
             email: form.email.value,
@@ -197,17 +196,5 @@ class Contact extends Component {
 
 }
 
-Contact.propTypes = {
-};
 
-const mapStateToProps = (state) => {
-    return {
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Contact);
+export default Contact;

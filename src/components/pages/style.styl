@@ -210,45 +210,110 @@ $buttonAccount
 .edit-profile-link a
     @extend $buttonAccount
 
-#editar-perfil
-    position: fixed
-    display: inline-block !important
-    padding: 20px
-    margin: 0
-    font-size: 13px
-    flex: 1 1 auto
 
-    background: #ffffff
+.modal
+    position            : fixed
+    top                 : 0
+    left                : 0
+    z-index             : 200
 
-    z-index: 100
+    display             : block !important
+    width               : 100%
+    height              : 100%
 
-    top: 50%
-    left: 50%
+    background          : rgba(0,0,0,.5)
 
-    transform: translate(-50%, -50%) scale(1)
-    width: 100%
-    height: 100%
-    overflow: auto
-    transition: all .2s ease-in-out
+    opacity             : 0
+    visibility          : hidden
 
-    &[aria-hidden=true]
-        visibility: hidden
-        opacity: 0
-        transform: translate(-50%, -50%) scale(.5)
+    transition          : transition[0]
 
-    #myModalLabel
-        display: none
+    > div:last-child, > form
+        position        : fixed
+        top             : 50%
+        left            : 50%
+
+        width           : 600px
+        height          : 600px
+
+        max-width       : 100%
+        max-height      : 100%
+
+        padding         : 40px 0 0
+
+        background      : #fff
+
+        transform       : translate(-50%, -50%) scale(.5)
+        transition      : transition[0]
+
+    > form
+        padding         : 50px 30px 30px
+
+    > div:last-child form
+        display         : block
+        width           : 100%
+        height          : 100%
+        overflow-y      : auto
+        padding         : 30px
+
+    &[aria-hidden=false]
+        opacity         : 1
+        visibility      : visible
+
+        > div:last-child, > form
+            transform       : translate(-50%, -50%) scale(1)
+
+    &-header
+        position        : fixed
+        top             : 0
+        left            : 0
+
+        display         : flex
+        justify-content : space-between
+        align-items     : stretch
+
+        width           : 100%
+
+        h3
+            flex                : 1 1 auto
+            order               : -1
+
+            display             : flex
+            justify-content     : flex-start
+            align-items         : center
+            padding-left        : 30px
+
+            font-size           : 16px
+            font-weight         : bold
+
+            text-transform      : uppercase
+
+            background          : color[0]
+            color               : #fff
 
     .close
-        position: absolute
-        top: 0
-        right: 0
-        padding: 0
-        width: 40px
-        height: 40px
-        font-size: 22px
-        font-weight: 700
+        display         : flex
+        justify-content : center
+        align-items     : center
 
+        width           : 40px
+        height          : 40px
+        padding         : 0
+        border          : 0
+
+        background      : color[0]
+        color           : #fff
+
+        font-size       : 0
+        text-transform  : uppercase
+        line-height     : 1
+
+        &:before
+            content     : '+'
+            font-size   : 32px
+            margin-top  : -4px
+
+            transform   : rotate(45deg)
 
     #profile-submit, .btn-link
         @extend $buttonAccount
@@ -257,17 +322,29 @@ $buttonAccount
 
     #profile-submit
         background: color[0]
-        color: #222
+        color: #fff
 
     .btn-link
         margin-left: 10px
 
+
 #business-toggle
     font-size: 11px
     font-weight: 500
-    color: #ff0000
+    background: color[0]
+    color: #ffffff
     text-transform: uppercase
-    display: block
+    display: flex
+    justify-content: center
+    align-items: center
+
+    height: 40px
+    text-align: center
+
+    &:hover
+        background: color[1]
+        text-decoration: none
+
 
 .profile-detail-form
     font-size: 0
@@ -281,6 +358,8 @@ $buttonAccount
 
     input[type=text]
         width: 100%
+        height: 40px
+        padding: 0 15px
 
     .control-label
         font-size: 13px
@@ -319,9 +398,9 @@ $buttonAccount
 
     border: solid 1px rgba(0,0,0,.1)
 
-#address-remove, #address-edit
-    &[aria-hidden=true]
-        display: none
+//#address-remove, #address-edit
+//    &[aria-hidden=true]
+//        display: none
 .account__orders
     a 
         height: 2.19rem;
@@ -378,42 +457,6 @@ $buttonAccount
 
 
 #address-edit
-    position: fixed
-    display: inline-block !important
-    padding: 20px
-    margin: 0
-    font-size: 13px
-    flex: 1 1 auto
-
-    background: #ffffff
-
-    z-index: 100
-
-    top: 50%
-    left: 50%
-
-    transform: translate(-50%, -50%) scale(1)
-    width: 100%
-    height: 100%
-    overflow: auto
-    transition: all .2s ease-in-out
-
-
-    &[aria-hidden=true]
-        visibility: hidden
-        opacity: 0
-        transform: translate(-50%, -50%) scale(.5)
-
-    .close
-        position: absolute
-        top: 0
-        right: 0
-        padding: 0
-        width: 40px
-        height: 40px
-        font-size: 22px
-        font-weight: 700
-
     .address-label
         font-size: 22px
         margin: 0
@@ -438,6 +481,12 @@ $buttonAccount
 
         input
             width: 100%
+            height: 40px
+
+        select
+            width: 100%
+            height: 40px
+            border: solid 1px #f0f0f0
 
     .address-form-neighborhood
         width: calc(100% - 60px)
@@ -453,7 +502,7 @@ $buttonAccount
         background-color: color[0]
 
         // &:hover
-        //     background-color: 
+        //     background-color:
 
 .new-address-link a
     @extend $buttonAccount
@@ -513,10 +562,10 @@ $buttonAccount
             background-color: darken(#f00, 20%)
 
 
-@media (min-width: 600px)
-    #editar-perfil, #address-edit, #address-remove
-        width: auto
-        height: auto
+//@media (min-width: 600px)
+//    #editar-perfil, #address-edit, #address-remove
+//        width: auto
+//        height: auto
 
 
 

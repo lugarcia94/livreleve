@@ -136,9 +136,7 @@ if(config.buybutton) {
 // Contato
 import Contact from './react/components/Contact';
 
-console.log('contato');
-
-if(config.contact) { console.log('teste');
+if(config.contact) {
     let rootContact = document.querySelector('[data-component=contact]');
 
     if(rootContact) {
