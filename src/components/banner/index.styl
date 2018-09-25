@@ -57,7 +57,13 @@
             padding            : 15px
 
     &--duo
-        @extend         $container
+        margin          : 0 auto 30px
+        max-width       : viewport + 30px
+
+
+        .box-banner
+            padding         : 15px
+
 
     &--header
         position        : relative
@@ -73,15 +79,28 @@
         background      : #fff
 
         a
-            display            : flex
-            justify-content    : center
-            align-items        : center
+            display             : block
+
+            position            : relative
+            width               : 100%
+
+        img
+            position            : relative
+            left                : 50%
+
+            max-width           : calc(100% + 180px)
+
+            transform           : translateX(-50%)
 
         .scrolling &
             transform   : translate3d(0, -50px, 0)
 
 @media (min-width: 992px)
     .banner
+        &--header
+            img
+                max-width       : 100%
+
         &--full
             margin-top          : -108px
 

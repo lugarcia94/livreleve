@@ -227,3 +227,25 @@ export function onlyNumber(input) {
     input.addEventListener('keydown', e => { if(!(Number.isInteger(parseInt(e.key)) || [8, 37, 38, 39, 40].indexOf(e.keyCode) !== -1)) e.preventDefault(); });
     input.addEventListener('change', () => { if(input.value.trim() == '' || input.value.trim() < 1) input.value = 1; $(input).trigger('input');});
 }
+
+
+export function ajustPercent() {
+    $('.labels__item--percent:not(.on)').each(function(){
+         $(this).addClass('on');
+         let perc = $.trim($(this).text());
+
+         perc = perc
+                    .replace('%', '')
+                    .replace(',', '.');
+
+        if(perc) {
+            perc = parseFloat(perc);
+
+            if(perc) {
+                perc = Math.round(perc);
+                $(this).html(perc + '%');
+            }
+        }
+
+    });
+}

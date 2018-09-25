@@ -37,7 +37,7 @@ class Kits extends Component {
             { title }
 
             <Slick {...settings}>
-                {this.props.ids.map( (id, index) => <Item key={ index } id={ id } />)}
+                {this.props.ids.map( (id, index) => <Item key={ index } rate={this.props.rate[index]} id={ id } />)}
             </Slick>
         </div>;
     }

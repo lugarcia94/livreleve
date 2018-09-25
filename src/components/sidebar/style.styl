@@ -177,13 +177,17 @@
     margin-top                  : 15px
     border-radius               : 2px
 
-    font-size                   : 14px
+    font-size                   : 0
     font-weight                 : bold
 
     text-transform              : uppercase
 
     background                  : color[1]
     color                       : color[0]
+
+    &:before
+        content                 : 'Aplicar Filtro'
+        font-size               : 14px
 
     &:hover
         text-decoration         : none

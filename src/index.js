@@ -38,10 +38,20 @@ let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
 if(rootKit.length) {
 
     rootKit.forEach((kit) => {
-        let title = kit.querySelector('h2').innerHTML;
+        let title   = kit.querySelector('h2').innerHTML;
+        let rate    = [];
+        let ids     = [];
+
+        Array.from(kit.querySelectorAll('[data-id]')).forEach(id => {
+            ids.push(id.getAttribute('data-id'));
+            rate.push(id.querySelector('.rate').innerHTML);
+        });
+
+        console.log(ids,rate);
+
         ReactDOM.render(
             <Provider store={store}>
-                <Kit ids={ [1512,1512,1512,1512] } title={ title } />
+                <Kit ids={ ids } rate={ rate } title={ title } />
             </Provider>,
             kit
         );

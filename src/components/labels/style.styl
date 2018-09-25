@@ -1,5 +1,5 @@
 .labels
-    &--showcase
+    &--collection
         position        : absolute
         bottom          : 0
         left            : 50%
@@ -28,3 +28,34 @@
         font-weight: 800
         background: #FFDB6F
         border-radius: 2px
+
+    &__item--percent
+        display         : none
+        justify-content : center
+        align-items     : center
+        flex-wrap       : wrap
+
+        background      : #FF4A4A
+        position        : absolute
+        top             : 0
+        right           : 0
+
+        padding         : 8px 0
+
+        font-size       : 12px
+        font-weight     : bold
+        line-height     : 1
+
+        width           : 40px
+        height          : 40px
+
+        border-radius   : 50%
+        color           : #fff
+
+        &:after
+            content     : 'OFF'
+            font-weight : regular
+            flex        : 0 0 100%
+
+        &.on
+            display     : flex

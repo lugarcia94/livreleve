@@ -107,6 +107,11 @@ class Item extends Component {
                             </a>
                         </h1>
 
+                        <div className="review showcase__review review__short review__short--list">
+                            <span className={ "rating-produto avaliacao" + this.props.rate }>{ this.props.rate }</span>
+                            <span className="review__star review__star--small"></span>
+                        </div>
+
                         <div className="showcase__description">
                             { description }
                         </div>

@@ -81,3 +81,14 @@ if($('.image-zoom').length) {
 
     $(window).resize(() => resetZoom());
 }
+
+const shortDescription = $('.product__description-more');
+const description = $('.product__description .product__title');
+
+if(shortDescription && description) {
+    shortDescription.click(function(){
+        let top = description.offset().top - $('.header').outerHeight();
+
+        $('html,body').animate({scrollTop: top}, 1000);
+    });
+}

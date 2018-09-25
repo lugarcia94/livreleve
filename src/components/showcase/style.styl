@@ -140,6 +140,20 @@
             &:hover
                 text-decoration     : none
 
+    &__prices
+        .price
+            display                 : flex
+            justify-content         : center
+            align-items             : center
+            flex-flow               : row wrap
+
+            > div
+                flex                : 0 0 100%
+
+                &.valor-de, &.valor-por
+                    flex            : 0 0 auto
+                    padding         : 0 5px
+
 
 @media (min-width: 992px)
     .showcase
