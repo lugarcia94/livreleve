@@ -45,20 +45,21 @@ export function menuToggle(bool) {
 
 export function menuFilterData(items) {
     return dispatch => {
+
         if(utils) {
             const icons = utils.querySelector('#menu-icons');
             const banners = utils.querySelector('#menu-banners');
-
+            
             Array.from(items).forEach((item) => {
                 let _name = item.name;
                 let _slug = slug(_name);
                 let _icon;
                 let _banner;
 
-                if (icons)
+                if (icons && _slug)
                     _icon = icons.querySelector('.' + _slug);
     
-                if (banners)
+                if (banners && _slug)
                     _banner = banners.querySelector('.' + _slug);
     
                 item['icon'] = '';
@@ -67,7 +68,7 @@ export function menuFilterData(items) {
                 if (_icon)      item['icon']    = _icon.innerHTML;
                 if (_banner)    item['banner']  = _banner.innerHTML;
 
-                if(banners) {
+                if(banners) { 
                     Array.from(item.children).forEach((sub) => {
                         let _subName = sub.name;
                         let _subSlug = slug(_subName);
@@ -75,7 +76,7 @@ export function menuFilterData(items) {
 
                         sub['banner'] = '';
 
-                        if (_subBanner) sub['banner'] = _subBanner.innerHTML;
+                        if (_subBanner && _subSlug) sub['banner'] = _subBanner.innerHTML;
 
                     });
                 }

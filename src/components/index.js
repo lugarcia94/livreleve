@@ -97,4 +97,10 @@ import './category';
 // Empty
 import './empty';
 
+// tb 
+import './tb';
+
+// quickview
+import './quickview';
+
 
