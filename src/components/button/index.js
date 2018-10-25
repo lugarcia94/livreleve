@@ -4,15 +4,19 @@ const body          = document.querySelector('body');
 const buttonMenu    = document.querySelector('.button__menu');
 const menu          = document.querySelector('#menu');
 
-buttonMenu.addEventListener('click',function(){
-    menuAction();
-});
-
-menu.addEventListener('click', function(evt){
-    if(evt.target.classList.contains('menu') || evt.target.classList.contains('menu--mobile')) {
+if(buttonMenu) {
+    buttonMenu.addEventListener('click',function(){
         menuAction();
-    }
-});
+    });
+}
+
+if(menu) {
+    menu.addEventListener('click', function(evt){
+        if(evt.target.classList.contains('menu') || evt.target.classList.contains('menu--mobile')) {
+            menuAction();
+        }
+    });
+}
 
 function menuAction() {
     if(body.classList.contains('is-menu')) {
@@ -28,15 +32,19 @@ function menuAction() {
 const buttonCart    = document.querySelector('.button__minicart');
 const minicart      = document.querySelector('#minicart');
 
-buttonCart.addEventListener('click', function(){
-    cartAction();
-});
-
-minicart.addEventListener('click', function(evt){
-    if(evt.target.classList.contains('minicart')) {
+if(buttonCart) {
+    buttonCart.addEventListener('click', function(){
         cartAction();
-    }
-});
+    });
+}
+
+if(minicart) {
+    minicart.addEventListener('click', function(evt){
+        if(evt.target.classList.contains('minicart')) {
+            cartAction();
+        }
+    });
+}
 
 function cartAction() {
     body.classList.toggle('is-minicart');

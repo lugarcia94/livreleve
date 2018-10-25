@@ -47,8 +47,6 @@ if(rootKit.length) {
             rate.push(id.querySelector('.rate').innerHTML);
         });
 
-        console.log(ids,rate);
-
         ReactDOM.render(
             <Provider store={store}>
                 <Kit ids={ ids } rate={ rate } title={ title } />

@@ -179,6 +179,7 @@ export function percentPrice(price, percent) {
  */
 export function buttonBuy(buttonsClass = '.product__left', buyClass=".buy-button", inputClass = '.buy-button__input') {
     let buttons = Array.from(document.querySelectorAll(buttonsClass));
+    const body = document.querySelector('body');
 
     buttons.forEach(box => {
         let button = box.querySelector(buyClass);
@@ -189,7 +190,10 @@ export function buttonBuy(buttonsClass = '.product__left', buyClass=".buy-button
                 if (button.getAttribute('href').indexOf('javascript') === -1) {
                     e.preventDefault();
                     let href = urlParameter(button.getAttribute('href'), 'qty', qtd.value ? qtd.value : 1);
-                    location.href = href;
+                    if(body.classList.contains('quickview'))
+                        window.parent.location.href = href;
+                    else 
+                        window.location.href = href;
                 }
             });
         }
