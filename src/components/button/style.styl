@@ -122,3 +122,31 @@ buttonColorClose = color[1]
 
             background              : color[0]
             color                   : #fff
+
+        
+        .notification
+            background: #fff
+            border-radius: 3px
+            position: absolute
+            top: 100%
+            padding: 10px
+            width: 130px
+            border:1px solid #ddd
+            box-shadow: 0 2px 3px rgba(0,0,0,0.3)
+            &:before 
+                content: ""
+                display: inline-block
+                vertical-align: middle
+                margin-right: 10px
+                width: 0
+                height: 0
+
+                border-left: 5px solid transparent
+                border-right: 5px solid transparent
+                border-bottom: 5px solid color[0]
+                position: absolute
+                top: -5px
+                left: 50%
+                transform: translateX(-50%)
+        
+            
