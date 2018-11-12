@@ -4,7 +4,7 @@ import { minicart, minicartHasErrored, minicartIsLoading, minicartQtd, minicartE
 import { orderForm, firstSku } from './core';
 import { giftlist } from "./giftlist";
 import { relateds, paginateRelateds, loadingRelateds, searchRelateds, errorRelateds } from "./relatedSearch";
-import { wishlist, isLoadWishlist, products, isCreating, isRemoving } from './wishlist';
+import { wishlist, isLoadWishlist, products, isCreating, isRemoving, wishlistOrderForm } from './wishlist';
 
 export default combineReducers({
     orderForm,
@@ -35,5 +35,6 @@ export default combineReducers({
     isLoadWishlist,
     products,
     isCreating,
-    isRemoving
+    isRemoving,
+    wishlistOrderForm
 });

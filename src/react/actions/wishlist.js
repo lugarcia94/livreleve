@@ -13,6 +13,31 @@ export function wishlist(products) {
     }
 }
 
+export function wishlistOrderForm(orderForm) {
+    return {
+        type: 'WISHLIST_ORDERFORM',
+        orderForm
+    }
+}
+
+export function wishlistLogin() {
+    return (dispatch) => {
+        return vtexjs.checkout.getOrderForm()
+            .done((orderForm) => {
+                if(!orderForm.loggedIn) {
+                    vtexid.start({
+                        returnUrl: '',
+                        userEmail: '',
+                        locale: 'pt-BR',
+                        forceReload: false
+                    });
+                } else {
+                    dispatch(wishlistOrderForm(orderForm));
+                }
+            });
+    }
+}
+
 export function wishlistRemove(id) {
     return {
         type: 'WISHILIST_REMOVE',
@@ -34,23 +59,23 @@ export function isLoadWishlist(loadding) {
     }
 }
 
-export function loadWishlist(id) {
-    return (dispatch) => {
-        const request = axios.get(`${ HOST }/dataentities/LD/search/?idCliente="${ id }"&_fields=id,idCliente,products&${ randomNumber() }`);
+export function loadWishlist(_id_) {
+    return (dispatch) => { 
+        const request = axios.get(`${ HOST }/dataentities/LD/search/?idCliente=${ _id_ }&_fields=id,idCliente,products&${ randomNumber() }`);
         dispatch(isLoadWishlist(true));
         return request
-            .then((data) => data.data)
             .then((data) => { 
-                if(data.length) {
-                    let id = data[0].id;
-                    let idCliente = id;
-                    let _products = JSON.parse(data[0].products);
-                    let _dataTMP = { id, idCliente, products: _products };
-                    dispatch(wishlist(_dataTMP));
-                    if(_products.length) { 
+                data = data.data; 
+                let idCliente = _id_;
+                let _products = [];
+                let _dataTMP = { idCliente, products: _products };
+                if(data.length) { 
+                    _dataTMP.id         = data[0].id;
+                    _dataTMP.products   = JSON.parse(data[0].products);
+                    if(_dataTMP.products.length) { 
                         let count = 0;
-                        let total = _products.length;
-                        _products.forEach((id) => {
+                        let total = _dataTMP.products.length;
+                        _dataTMP.products.forEach((id) => {
                             const request = fetchProduct(id);
                             request
                                 .then((data) => data.data)
@@ -72,7 +97,10 @@ export function loadWishlist(id) {
                         });
                     } else dispatch(isLoadWishlist(false));
                     
+                } else {
+                    dispatch(isLoadWishlist(false));
                 }
+                dispatch(wishlist(_dataTMP));
                 return null;
             })
             .catch((err) => dispatch(isLoadWishlist(false)));
@@ -134,15 +162,16 @@ export function remove(id) {
 
 export function update(id) {
     return (dispatch, getState) => {
-        const wishlist = getState().wishlist;
-        const index = wishlist.products.indexOf(id);
-    
-        let addFlag = false;
-        let _wishlist = {
+        let wishlist    = getState().wishlist; console.log('wishlist', wishlist);
+        let index       = wishlist.products.indexOf(id);
+        let addFlag     = false;
+        let _wishlist   = {
             id: wishlist.id,
             idCliente: wishlist.idCliente,
             products: []
         };
+
+        if(wishlist.id == 0) delete _wishlist.id;
         
         if(index != -1) {
             wishlist.products.splice(index, 1);
@@ -155,9 +184,16 @@ export function update(id) {
             addFlag = true;
         }
         
-        _wishlist.products = JSON.stringify(wishlist.products); console.log(_wishlist);
+        _wishlist.products = JSON.stringify(wishlist.products); console.log('update', _wishlist);
         return axios.patch(`${ HOST }/dataentities/LD/documents/`, _wishlist)
-            .then(() => {
+            .then(() => { 
+                if(!_wishlist.id) {
+                    vtexjs.checkout.getOrderForm()
+                        .done(function(orderForm) {
+                            _wishlist.id = orderForm.clientProfileData.email;
+                            dispatch(wishlist(_wishlist));
+                        });
+                }
                 if(addFlag) {
                     dispatch(isCreating(false));
                     dispatch(wishlistAdd(id));
@@ -186,7 +222,7 @@ export function products(products) {
 }
 
 export function buy(products) {
-    return ( dispatch, getState ) => {
+    return ( dispatch ) => {
         let items = [];
         products.forEach((product) => {
             const item = {

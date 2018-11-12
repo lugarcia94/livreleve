@@ -38,14 +38,16 @@ class painel extends Component {
 
     buyALL(event) {
         event.preventDefault();
-        let form = event.target;
-        let data = new FormData(form);
-        let ids = data.getAll('c-wishlist__checkbox[]');
-        let { products, buy } = this.props;
+        if(!this.state.checked) {
+            let form = event.target;
+            let data = new FormData(form);
+            let ids = data.getAll('c-wishlist__checkbox[]');
+            let { products, buy } = this.props;
 
-        let buyProducts = products.filter((p) => ids.indexOf(p.id));
+            let buyProducts = products.filter((p) => ids.indexOf(p.id));
 
-        if(buyProducts) buy(buyProducts);
+            if(buyProducts) buy(buyProducts);
+        }
         
     }
 
@@ -139,7 +141,7 @@ class painel extends Component {
         
         if(products.length) flagShow = false;
         
-        return <div id="c-wishilist" data-loadding={isLoadding} className="c-wishlist" aria-hidden={ flagShow } aria-expanded={ this.state.open }>
+        return <div style={{ display: this.props.orderForm.loggedIn ? 'block' : 'none' }} id="c-wishilist" data-loadding={isLoadding} className="c-wishlist" aria-hidden={ flagShow } aria-expanded={ this.state.open }>
             <div className="c-wishlist__container">
                 <div className={ "c-wishlist__events" } aria-hidden={ show }>
                     { product.map( ( product, index ) => <div data-eventid={ product.eventID } key={ index } aria-hidden={ !product.show } className={ "c-wishlist__events-item c-wishlist__events-item--" + product.action }>
@@ -183,7 +185,7 @@ class painel extends Component {
                                         </div>
                                         <Product product={ product } />
                                         <div className="c-wishlist__actions">
-                                            <button type="button" className="c-wishlist__button c-wishlist__button--remove" onClick={ () => this.props.update(parseInt(product.id))} >
+                                            <button type="button" className="c-wishlist__button c-wishlist__button--remove" onClick={ () => this.props.update(parseInt(product.id), this.props.wishlist)} >
                                                 <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><polygon points="404.176,0 256,148.176 107.824,0 0,107.824 148.176,256 0,404.176 107.824,512 256,363.824 404.176,512 512,404.176 363.824,256 512,107.824 "/></svg>
                                             </button>
                                             <button onClick={ () => this.buy(product) } type="button" className="c-wishlist__button c-wishlist__button--buy">Comprar</button>
@@ -192,7 +194,7 @@ class painel extends Component {
                                 </div>) }
                             </div>
                             <div className="c-wishlist__content-footer">
-                                <button type="submit" className="c-wishlist__button c-wishlist__button--buy">Comprar Selecionados</button>
+                                <button disabled={ !this.state.checked } type="submit" className="c-wishlist__button c-wishlist__button--buy">Comprar Selecionados</button>
                             </div>
                         </div> : <div className="c-wishlist__content c-wishlist__content--empty">
                             <button type="button" className="c-wishlist__button c-wishlist__button--close" onClick={ this.handle }>
@@ -235,7 +237,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         load  : (id) => dispatch(loadWishlist(id)),
-        update: (id) => dispatch(update(id)),
+        update: (id, wishlist) => dispatch(update(id, wishlist)),
         buy   : (product) => dispatch(buy(product))
     };
 };

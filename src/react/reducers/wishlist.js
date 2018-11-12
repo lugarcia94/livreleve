@@ -67,3 +67,12 @@ export function isCreating(state=false, action) {
             return state;
     }
 }
+
+export function wishlistOrderForm(state={loggedIn: false}, action) {
+    switch (action.type) {
+        case 'WISHLIST_ORDERFORM': 
+            return action.orderForm;
+        default: 
+            return state;
+    }
+}

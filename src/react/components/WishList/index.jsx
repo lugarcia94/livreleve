@@ -16,17 +16,16 @@ let loadFlag = true;
 function load(orderForm) {
     console.log('[ WISHLIST ] Loading...',orderForm);
 
-    if(orderForm.loggedIn) {
-        let rootPainel = document.querySelector('[data-component=wishlist]');
-        if(rootPainel) {
-            ReactDOM.render(
-                <Provider store={ store }>
-                    <Painel id={ orderForm.userProfileId } />
-                </Provider>,
-                rootPainel
-            );
-        }
+    let rootPainel = document.querySelector('[data-component=wishlist]');
+    if(rootPainel) {
+        ReactDOM.render(
+            <Provider store={ store }>
+                <Painel orderForm={ orderForm } id={ orderForm.clientProfileData.email } />
+            </Provider>,
+            rootPainel
+        );
     }
+
 }
 
 export function loadHeart() {
@@ -54,17 +53,17 @@ export default () => {
     if(typeof vtexjs == 'object') {
         vtexjs.checkout.getOrderForm()
             .done(function(orderForm) {
-                if(loadFlag) {
+                // if(loadFlag) {
                     load(orderForm);
-                    loadFlag = false;
-                }
+                    // loadFlag = false;
+                // }
             });
-        $vtex(window).on('orderFormUpdated.vtex', function(evt, orderForm) {
-            if(loadFlag) {
-                load(orderForm);
-                loadFlag = false;
-            }
-        });
+        // $vtex(window).on('orderFormUpdated.vtex', function(evt, orderForm) {
+        //     if(loadFlag) {
+        //         load(orderForm);
+        //         loadFlag = false;
+        //     }
+        // });
     }
     loadHeart();
 }

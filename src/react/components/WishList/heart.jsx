@@ -1,48 +1,46 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { update } from '../../actions/wishlist';
-import { orderForm } from '../../reducers/core';
+import { update, wishlistLogin } from '../../actions/wishlist';
 
 class heart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected: false,
-            orderForm: {
-                loggedIn: false
-            }
+            selected: false
         };
         this.handle = this.handle.bind(this);
     }
     componentDidMount() {
-        this.update();
+        this.update(this.props.wishlist);
     }
     componentWillReceiveProps(nextProps) { 
-        this.update();
+        if(this.props.wishlist.products.length != nextProps.wishlist.products.length) {
+            this.update(nextProps.wishlist);
+        }
     }
-    login() {
-        vtexjs.checkout.getOrderForm()
-            .done((orderForm) => {
-                this.setState({ orderForm });
-                if(!orderForm.loggedIn) {
-                    vtexid.start();
-                }
-            });
-    }
-    update() {
-        let { wishlist } = this.props; 
+    update(wishlist) { 
         let index = wishlist.products.findIndex( id => id == this.props.id);
 
         if(index > -1)  this.setState({ selected: true });
         else            this.setState({ selected: false });
     }
     handle() {
-        if(!this.state.orderForm.loggedIn) this.login();
-        else {
-            const { id } = this.props;
-            this.props.update(parseInt(id));
-        } 
+        const { id } = this.props;
+        
+        if(!this.props.orderForm.loggedIn) {
+            this.props.login().done((orderForm) => {
+                if(orderForm.loggedIn) {
+                    this.props.update(parseInt(id), this.props.wishlist)
+                        .then(() => this.forceUpdate())
+                        .then(() => this.update(this.props.wishlist));
+                }
+            });
+        } else {
+            this.props.update(parseInt(id), this.props.wishlist)
+                .then(() => this.forceUpdate())
+                .then(() => this.update(this.props.wishlist));
+        }
     }
     render() {
         const { removing, creating } = this.props;
@@ -57,22 +55,25 @@ class heart extends Component {
 }
 
 heart.propTypes = {
-    wishlist: PropTypes.object.isRequired,
-    removing: PropTypes.bool.isRequired,
-    creating: PropTypes.bool.isRequired
+    wishlist : PropTypes.object.isRequired,
+    removing : PropTypes.bool.isRequired,
+    creating : PropTypes.bool.isRequired,
+    orderForm: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
     return {
-        wishlist: state.wishlist,
-        removing: state.isRemoving,
-        creating: state.isCreating
+        wishlist : state.wishlist,
+        removing : state.isRemoving,
+        creating : state.isCreating,
+        orderForm: state.wishlistOrderForm
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        update: (id) => dispatch(update(id))
+        update  : (id, wishlist)    => dispatch(update(id, wishlist)),
+        login   : ()                => dispatch(wishlistLogin())
     };
 };
 
