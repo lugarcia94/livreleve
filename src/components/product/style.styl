@@ -258,6 +258,7 @@
             position: relative
             height: 45px
             width: 100%
+            z-index: 99
             @media( min-width: 992px )
                 position: absolute
                 right: 0
@@ -279,6 +280,9 @@
                 bottom: 0
                 width: 100%
                 opacity: 0
+                z-index: 99
+                @media( max-width: 991px )
+                    height: 45px
 
 
         .freight-values
