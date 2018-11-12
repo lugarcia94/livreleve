@@ -49,3 +49,20 @@ if(minicart) {
 function cartAction() {
     body.classList.toggle('is-minicart');
 }
+
+
+// Notificação basica do carrinho
+setTimeout(function(){
+    $vtex('.showcase__buy').click(function(){
+        $vtex('.button__minicart-qty').on("DOMNodeInserted", function(event) {
+
+            if( ! $vtex('.button__minicart .notification').length >= 1 ){
+                var notification = $vtex(this).text();
+                $vtex(this).after( $vtex('<div class="notification"><span>'+notification+'</span> no carrinho!</div>'));
+            }
+            setTimeout(function(){
+                $vtex('.button__minicart .notification').remove();
+            },3000);
+        });
+    });
+},2000);

@@ -138,21 +138,21 @@ class Contact extends Component {
             </div>
             <div className="contact-us__item">
                 <label className="contact-us__label" htmlFor="email">E-Mail</label>
-                <input name="email" id="email" type="text"
+                <input name="email" id="email" type="mail" placeholder="Ex. nome@teste.com"
                        className    = {form.email.valid  + ' contact-us__input'}
                        value        = {form.email.value}
                        onChange     = {this.handleChange.bind(this)} />
             </div>
             <div className="contact-us__item">
                 <label className="contact-us__label" htmlFor="phone">Telefone</label>
-                <input name="phone" id="phone" type="text"
+                <input name="phone" id="phone" type="text" placeholder="(00) 0000-0000"
                        className    = {form.phone.valid  + ' contact-us__input'}
                        value        = {form.phone.value}
                        onChange     = {this.handleChange.bind(this)} />
             </div>
             <div className="contact-us__item">
                 <label className="contact-us__label" htmlFor="celular">Celular</label>
-                <input name="celular" id="celular" type="text"
+                <input name="celular" id="celular" type="text" placeholder="(00) 00000-0000"
                        className    = {form.celular.valid  + ' contact-us__input'}
                        value        = {form.celular.value}
                        onChange     = {this.handleChange.bind(this)} />
