@@ -1,10 +1,18 @@
 {
-    "host": "//monali.vtexcommercestable.com.br", 
+    "host": "https://monali.vtexcommercestable.com.br", 
     "debug": false,
     "scrollTop": {
         "debug": true,
         "enabled": true,
         "scrollingTop": true,
         "scrollingDown": true
+    },
+    "wishlist": {
+        "enabled": true
+    },
+    "seller": {
+        "id": "1",
+        "name": "monali",
+        "channel": "1"
     }
 }

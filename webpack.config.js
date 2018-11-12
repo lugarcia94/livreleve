@@ -47,7 +47,7 @@ const config = {
                 loader: "babel-loader",
                 exclude: /node_modules/,
                 query: {
-                    plugins: ["transform-runtime", "react-html-attrs"],
+                    plugins: ["transform-runtime", "react-html-attrs", "transform-object-rest-spread"],
                     presets: ['env', 'react']
                 }
             },

@@ -3,8 +3,8 @@ import { menu, menuHasErrored, menuIsLoading, menuExpanded } from './menu';
 import { minicart, minicartHasErrored, minicartIsLoading, minicartQtd, minicartExpanded, minicartItems, minicartIsRemove } from './minicart';
 import { orderForm, firstSku } from './core';
 import { giftlist } from "./giftlist";
-
 import { relateds, paginateRelateds, loadingRelateds, searchRelateds, errorRelateds } from "./relatedSearch";
+import { wishlist, isLoadWishlist, products, isCreating, isRemoving } from './wishlist';
 
 export default combineReducers({
     orderForm,
@@ -29,5 +29,11 @@ export default combineReducers({
     paginateRelateds,
     loadingRelateds,
     searchRelateds,
-    errorRelateds
+    errorRelateds,
+
+    wishlist,
+    isLoadWishlist,
+    products,
+    isCreating,
+    isRemoving
 });

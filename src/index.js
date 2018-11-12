@@ -25,7 +25,8 @@ const config = {
     buybutton: true,
     giftlist: false,
     contact: true,
-    relatedSearch: true
+    relatedSearch: true,
+    wishlist: true
 };
 
 // Load Order Form
@@ -177,3 +178,8 @@ if(config.contact) {
 //         });
 //     }
 // }
+
+import WishList from './react/components/WishList';
+if(config.wishlist) {
+    WishList(); 
+}
