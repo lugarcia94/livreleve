@@ -6,11 +6,19 @@ import { slug, buttonMoreLess, onlyFloat, buttonBuy } from 'Core/functions';
 
 function produtoInit(){
 
+    $vtex(window).on('load', function() {  
+        setTimeout(function() {
+           $vtex('.product__review #publishUserReview').on('click', '.formUserComment', function(e){
+               if($vtex(e.target).hasClass('formUserComment')) {
+                   $vtex('.product__review #publishUserReview .formUserComment').html('');
+               }
+           });
+        }, 5000);
+    });
+
     $('.product__variations .skuList label').each(function(){
         $(this).append('<img src="//monali.vteximg.com.br/arquivos/'+slug($(this).text())+'.jpg" width="60" height="60" alt="'+$(this).text()+'">');
     });
-
-
 
     function pencent(){
         let oldPrice = $('.plugin-preco .skuListPrice').text();
