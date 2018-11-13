@@ -17,11 +17,21 @@ class painel extends Component {
             show    : true,
             time    : 3,
             checked : true,
-            purchase: []
+            purchase: [],
+            isBuyAll: false
         }
         this.handle    = this.handle.bind(this);
         this.selectALL = this.selectALL.bind(this);
         this.buyALL    = this.buyALL.bind(this);
+        this.checkedBuyAll = this.checkedBuyAll.bind(this);
+    }
+
+    checkedBuyAll() {
+        let checkedAll = Array.from(document.querySelectorAll('.c-wishlist__checkbox:checked'));
+        let isBuyAll = false;
+        if(checkedAll.length) 
+            isBuyAll = true 
+        this.setState({isBuyAll});
     }
     
     buy (product) {
@@ -38,14 +48,13 @@ class painel extends Component {
 
     buyALL(event) {
         event.preventDefault();
-        if(!this.state.checked) {
+        this.checkedBuyAll(); 
+        if(this.state.isBuyAll) {
             let form = event.target;
             let data = new FormData(form);
-            let ids = data.getAll('c-wishlist__checkbox[]');
+            let ids = Array.from(document.querySelectorAll('.c-wishlist__checkbox:checked')).map(checkbox => parseInt(checkbox.value));
             let { products, buy } = this.props;
-
-            let buyProducts = products.filter((p) => ids.indexOf(p.id));
-
+            let buyProducts = products.filter((p) => ids.indexOf(p.id) != -1 ? true : false);
             if(buyProducts) buy(buyProducts);
         }
         
@@ -69,6 +78,7 @@ class painel extends Component {
         radios.forEach(radio => radio.checked = false );
         this.setState({ checked: true });
     }
+
     deleteEvent(product) {
         window.setTimeout(function(){ 
             let products = this.state.product;
@@ -91,6 +101,7 @@ class painel extends Component {
 
     componentDidMount() {
         this.props.load(this.props.id);
+        Array.from(document.querySelectorAll('.head-nav__link--wishlist')).forEach((link) => link.addEventListener("click", ( event ) => { event.preventDefault(); this.handle(); } ));
     }
 
     componentWillReceiveProps(nextProps) { 
@@ -178,7 +189,7 @@ class painel extends Component {
                                 { products.map( ( product, index ) => <div className={ 'c-wishlist__content-item ' + ( purchase.findIndex( p => p.id == product.id) != -1 ? 'c-wishlist__content-item--adding' : '' ) } key={ index }>
                                     <label className="c-wishlist__content-label" >
                                         <div className="c-wishlist__checkbox-box">
-                                            <input value={ product.id } type="checkbox" className="c-wishlist__checkbox" name="c-wishlist__checkbox[]" />
+                                            <input onClick={this.checkedBuyAll} value={ product.id } type="checkbox" className="c-wishlist__checkbox" name="c-wishlist__checkbox[]" />
                                             <span className="c-wishlist__checkbox-span">
                                                 <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" ><path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"/></svg>
                                             </span>
@@ -194,7 +205,7 @@ class painel extends Component {
                                 </div>) }
                             </div>
                             <div className="c-wishlist__content-footer">
-                                <button disabled={ !this.state.checked } type="submit" className="c-wishlist__button c-wishlist__button--buy">Comprar Selecionados</button>
+                                <button disabled={ !this.state.isBuyAll } type="submit" className="c-wishlist__button c-wishlist__button--buy">Comprar Selecionados</button>
                             </div>
                         </div> : <div className="c-wishlist__content c-wishlist__content--empty">
                             <button type="button" className="c-wishlist__button c-wishlist__button--close" onClick={ this.handle }>

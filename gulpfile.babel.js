@@ -104,7 +104,7 @@ gulp.task('connect', () => {
     });
 
     const openOptions = {
-        uri: `http://${accountName}.vtexlocal.com.br/admin/Site/Login.aspx`,
+        uri: `http://${accountName}.vtexlocal.com.br/admin/login`,
         app: 'google chrome'
     };
 

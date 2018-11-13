@@ -162,7 +162,7 @@ export function remove(id) {
 
 export function update(id) {
     return (dispatch, getState) => {
-        let wishlist    = getState().wishlist; console.log('wishlist', wishlist);
+        let wishlist    = getState().wishlist; 
         let index       = wishlist.products.indexOf(id);
         let addFlag     = false;
         let _wishlist   = {
@@ -184,7 +184,7 @@ export function update(id) {
             addFlag = true;
         }
         
-        _wishlist.products = JSON.stringify(wishlist.products); console.log('update', _wishlist);
+        _wishlist.products = JSON.stringify(wishlist.products);
         return axios.patch(`${ HOST }/dataentities/LD/documents/`, _wishlist)
             .then(() => { 
                 if(!_wishlist.id) {
