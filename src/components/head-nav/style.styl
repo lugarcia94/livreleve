@@ -22,8 +22,9 @@
         font-size           : 0
 
         a
+            color: #333
             &:before
-                content         : 'Acessar Conta'
+                content         : 'Fazer login'
                 font-size       : 13px
 
             &[href*=logout]
@@ -72,6 +73,9 @@
             text-transform      : lowercase
 
             color               : color[1]
+
+            &[href*="#"]
+                pointer-events: none
 
             &:hover
                 text-decoration : none

@@ -91,6 +91,35 @@ class Minicart extends Component {
             </section>
         );
 
+
+        let frete     = this.props.frete;
+        let freteHTML = '';
+
+        if (frete) { 
+            
+            let calcFrete  = (frete - (this.props.minicart.value / 100));
+            var finalValue = ((this.props.minicart.value / 100)*100) / frete;
+            if (finalValue > 100) {
+                finalValue = 95;
+            }
+
+            if (calcFrete <= 0 ) {
+                freteHTML = <div className="minicart__fretegratis">
+                    <span> Você ganhou <strong>Frete Grátis!</strong></span>
+                    <div className="progressbar">
+                        <div style={{width:finalValue + '%'}}></div>
+                    </div>
+                </div>
+            }else{
+                freteHTML = <div className="minicart__fretegratis">
+                <span>Faltam <strong>R$ {calcFrete.toFixed(2)}</strong> para ganhar <strong>Frete Grátis</strong></span>
+                <div className="progressbar">
+                    <div style={{width:finalValue + '%'}}></div>
+                </div>
+            </div>
+            }
+        }
+
         return(
             <div className={_className} >
                 <div className="minicart__header">
@@ -102,6 +131,7 @@ class Minicart extends Component {
                 </div>
                 { this.props.qtd > 0 &&
                     <div className="minicart__footer">
+                        {freteHTML}
                         <em className="minicart__price-total">
                             <span className="minicart__total">Total:</span>
                             <span className="minicart__price">{new Intl.NumberFormat('pt-br', {

@@ -96,14 +96,19 @@ import Minicart from './react/components/Minicart';
 if(config.minicart) {
     let rootMinicart = document.querySelector('#minicart');
     if(rootMinicart) {
+        let valorFrete = 0;
+        if (rootMinicart.querySelector('.valorFreteGratis'))
+            valorFrete = rootMinicart.querySelector('.valorFreteGratis').innerHTML;
+            console.log(valorFrete)
         ReactDOM.render(
             <Provider store={store}>
-                <Minicart />
+                <Minicart frete={valorFrete}/>
             </Provider>,
             rootMinicart
         );
     }
 }
+
 
 import BuyButton from './react/components/BuyButton';
 if(config.buybutton) {
