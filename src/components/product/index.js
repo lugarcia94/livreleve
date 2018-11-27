@@ -16,6 +16,28 @@ function produtoInit(){
         }, 5000);
     });
 
+
+    $vtex(document).ajaxComplete(function(a,b,c) {
+        let u = "/userreview";
+        let p = "/publishuserreviewcomment";
+
+        if( u == c.url ){
+            $vtex('.product__review #publishUserReview').on('click', '.formUserComment', function(e){
+                if($vtex(e.target).hasClass('formUserComment')) {
+                    $vtex('.product__review #publishUserReview .formUserComment').html('');
+                }
+            });
+        }
+
+        if( p == c.url ){
+            $vtex('.product__review #publishUserReview').on('click', '.formUserComment', function(e){
+                if($vtex(e.target).hasClass('formUserComment')) {
+                    $vtex('.product__review #publishUserReview .formUserComment').html('');
+                }
+            });
+        }
+    });
+
     $('.product__variations .skuList label').each(function(){
         $(this).append('<img src="//monali.vteximg.com.br/arquivos/'+slug($(this).text())+'.jpg" width="60" height="60" alt="'+$(this).text()+'">');
     });
