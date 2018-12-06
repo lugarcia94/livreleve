@@ -39,7 +39,7 @@ function produtoInit(){
     });
 
     $('.product__variations .skuList label').each(function(){
-        $(this).append('<img src="//monali.vteximg.com.br/arquivos/'+slug($(this).text())+'.jpg" width="60" height="60" alt="'+$(this).text()+'">');
+        $(this).append('<img src="//wawcadeiras.vteximg.com.br/arquivos/'+slug($(this).text())+'.jpg" width="60" height="60" alt="'+$(this).text()+'">');
     });
 
     function pencent(){

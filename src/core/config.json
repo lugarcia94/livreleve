@@ -1,5 +1,5 @@
 {
-    "host": "https://monali.vtexcommercestable.com.br", 
+    "host": "https://wawcadeiras.vtexcommercestable.com.br", 
     "debug": false,
     "scrollTop": {
         "debug": true,
@@ -12,7 +12,7 @@
     },
     "seller": {
         "id": "1",
-        "name": "monali",
+        "name": "wawcadeiras",
         "channel": "1"
     }
 }
