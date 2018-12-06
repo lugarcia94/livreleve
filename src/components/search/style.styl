@@ -1,4 +1,6 @@
 .header, .empty-search
+    
+
     .search
         background           : #fff
 
@@ -25,13 +27,14 @@
                 display            : flex
                 justify-content    : center
                 align-items        : center
-                width              : 40px
-                height             : 40px
-
+                width              : 50px
+                height             : 49px
+                border-radius      : 3px
+                background-color   : #ffb200
                 font-icon          : url('./svg/search.svg')
-                font-size          : 13px
-
-                color              : color[0]
+                font-size          : 20px
+                color              : #fff
+                cursor             : pointer
 
 
         [type=text]
@@ -41,10 +44,14 @@
             height          : 47px
             border          : 0
 
-            font-size       : 14px
+            font-size       : 15px
             font-weight     : regular
-
+            letter-spacing  : 0.2px
+            color           : #beaf8c
             line-height     : 50px
+            padding-left    : 20px
+            font-style      : italic 
+            font-family: 'Montserrat', sans-serif
 
 
         [type=button]

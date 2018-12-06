@@ -88,7 +88,7 @@ buttonColorClose = color[1]
         justify-content             : center
         align-items                 : center
 
-        width                       : 45px
+        width                       : 55px
         height                      : 45px
         padding                     : 0
 
@@ -104,8 +104,10 @@ buttonColorClose = color[1]
             &:before
                 display             : block
 
-                font-icon           : url('./svg/cart.svg')
-                font-size           : 16px
+                font-icon           : url('./svg/cat2.svg')
+                font-size           : 23px
+                color               : color[0]
+                margin-right        3 px
 
         &-qty
             display                 : flex
@@ -117,11 +119,16 @@ buttonColorClose = color[1]
 
             border-radius           : 50%
 
-            font-size               : 12px
-            font-weight             : regular
+            font-size               : 17px
+            font-weight             : 600
 
-            background              : color[0]
-            color                   : #fff
+            color                   : color[0]
+
+            &:after
+                content ')'
+
+            &:before 
+                content: '('
 
         
         .notification

@@ -13,10 +13,9 @@
     display                 : flex
     justify-content         : space-between
     align-items             : center
-
     height                  : 100%
-
-    margin                  : 0 5 0 45px
+    max-width               : 3540px
+    width                   : 100%
 
     .welcome
         font-size           : 0
@@ -48,7 +47,7 @@
 
         background          : #fff
         color               : color[1]
-        border              : solid 1px #e9e9e9
+        border              : solid 1px #ffe7a7
 
         visibility          : hidden
         opacity             : 0
@@ -63,16 +62,14 @@
 
             min-height          : 45px
 
-            padding             : 5px 0
-
             font-size           : 12px
-            font-weight         : bold
+            font-weight         : 600
 
-            line-height         : 1.2
+            line-height         : 12px
 
-            text-transform      : lowercase
+            text-transform      : uppercase
 
-            color               : color[1]
+            color               : #888
 
             &[href*="#"]
                 pointer-events: none
@@ -106,6 +103,29 @@
                     opacity         : 1
                     max-width       : 100%
 
+            &:nth-child(3)
+                > a
+                    &:before
+                        font-icon          : url('./svg/zap.svg')
+                        font-size          : 20px
+                        margin-right       : 3px
+                        color              : #2cb742
+
+            &:nth-child(2)
+                > a
+                    &:before
+                        font-icon          : url('./svg/pack.svg')
+                        font-size          : 20px
+                        margin-right       : 3px
+                        color              : color[2] 
+
+            &:nth-child(1)
+                > a
+                    &:before
+                        font-icon          : url('./svg/user.svg')
+                        font-size          : 20px
+                        margin-right       : 3px
+                        color              : color[2] 
         &--lv2
 
             + .head-nav__item--lv2
@@ -123,15 +143,7 @@
 
     [dropdown=true]
 
-        > .head-nav__link
-
-            &:after
-                content         : ''
-                margin-top      : 2px
-                margin-left     : 3px
-                border-top      : solid 4px color[1]
-                border-left     : solid 3px transparent
-                border-right    : solid 3px transparent
+ 
 
         &:hover
 
@@ -153,3 +165,48 @@
 
         .logout &:nth-child(2)
             margin-top      : 0
+
+.contact
+    > span 
+        display: flex 
+        align-items: center
+        width 100%
+        line-height: 23px
+
+    .contact-item_tel , .contact-item_wts
+        font-size: 16px
+        color #434343
+        font-weight: 600
+
+    .contact-item_skype, .contact-item_mail
+        font-size: 13px
+        color: #434343
+        font-weight: 600
+
+    .contact-item_tel
+        &:before
+            font-icon          : url('./svg/fone.svg')
+            font-size          : 16px
+            margin-right       : 3px
+            color              : color[0] 
+
+    .contact-item_wts
+        &:before
+            font-icon          : url('./svg/zap2.svg')
+            font-size          : 16px
+            margin-right       : 3px
+            color              : color[0] 
+
+    .contact-item_mail
+        &:before
+            font-icon          : url('./svg/mail.svg')
+            font-size          : 13px
+            margin-right       : 3px
+            color              : color[0] 
+
+    .contact-item_skype
+        &:before
+            font-icon          : url('./svg/skype.svg')
+            font-size          : 16px
+            margin-right       : 3px
+            color              : color[0] 

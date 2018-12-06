@@ -20,8 +20,9 @@
         justify-content : space-between
         align-items     : center
 
-        height          : 90px
+        height          : 80px
 
+ 
 
         &--menu
             padding     : 0
@@ -55,9 +56,6 @@
         max-width       : 138px
 
  
-
-   
-
     &__search
         position        : absolute
         top             : 100%
@@ -75,15 +73,25 @@
 
 @media (min-width: 992px)
     .header
+        &__container
+            &:after 
+                content: ''
+                position: absolute
+                bottom: -5px
+                width: 100%
+                background: #ffe7a7
+                height: 1px
+                max-width: 1140px
+
         &__search
             position    : relative
             top         : auto
             left        : auto
 
             z-index     : 30
-
+            margin-left: 30px
             max-width   : 360px
-            margin-right: 30px
+
 
 
             .scrolling:not(.scrolling--top) &
@@ -95,7 +103,10 @@
             justify-content : flex-start
 
         &__head-nav
-            display         : block
+                display: flex
+                justify-content: space-between
+                max-width: 480px
+                width: 100%
 
         &__menu
             position    : absolute
