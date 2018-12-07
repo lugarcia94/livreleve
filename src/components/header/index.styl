@@ -13,7 +13,7 @@
 
     &__container
         @extend         $container
-
+        background      : #fff 
         z-index         : 100
 
         display         : flex
@@ -32,12 +32,11 @@
             .scrolling:not(.scrolling--top) &
                 opacity     : 1
                 visibility  : visible
-
-        .scrolling &
-            transform       : translate3d(-50%, -50px, 0)
+ 
 
     .scrolling &
         min-height          : 66px
+        background          : #fff
 
     &__logo, &__button-menu, &__cart, &__head-nav
         position        : relative
@@ -72,6 +71,14 @@
             visibility  : hidden
 
 @media (min-width: 992px)
+    .scrolling
+        .header__container:after
+            bottom: 0
+
+    .scrolling--top
+        .menu
+            top: 80px    
+              
     .header
         &__container
             &:after 
