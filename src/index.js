@@ -31,31 +31,31 @@ const config = {
 
 // Load Order Form
 
-store.dispatch(fetchOrderForm());
+// store.dispatch(fetchOrderForm());
 
-import Kit from './react/components/kit';
-let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
-// 1512
-if(rootKit.length) {
+// import Kit from './react/components/kit';
+// let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
+// // 1512
+// if(rootKit.length) {
 
-    rootKit.forEach((kit) => {
-        let title   = kit.querySelector('h2').innerHTML;
-        let rate    = [];
-        let ids     = [];
+//     rootKit.forEach((kit) => {
+//         let title   = kit.querySelector('h2').innerHTML;
+//         let rate    = [];
+//         let ids     = [];
 
-        Array.from(kit.querySelectorAll('[data-id]')).forEach(id => {
-            ids.push(id.getAttribute('data-id'));
-            rate.push(id.querySelector('.rate').innerHTML);
-        });
+//         Array.from(kit.querySelectorAll('[data-id]')).forEach(id => {
+//             ids.push(id.getAttribute('data-id'));
+//             rate.push(id.querySelector('.rate').innerHTML);
+//         });
 
-        ReactDOM.render(
-            <Provider store={store}>
-                <Kit ids={ ids } rate={ rate } title={ title } />
-            </Provider>,
-            kit
-        );
-    });
-}
+//         ReactDOM.render(
+//             <Provider store={store}>
+//                 <Kit ids={ ids } rate={ rate } title={ title } />
+//             </Provider>,
+//             kit
+//         );
+//     });
+// }
 
 
 // Render Button Menu
