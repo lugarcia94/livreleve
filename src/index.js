@@ -26,7 +26,7 @@ const config = {
     giftlist: false,
     contact: true,
     relatedSearch: true,
-    wishlist: true
+    wishlist: false
 };
 
 // Load Order Form
@@ -39,7 +39,7 @@ let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
 if(rootKit.length) {
 
     rootKit.forEach((kit) => {
-        let title   = kit.querySelector('h2').innerHTML;
+        let title   = kit.querySelector('h2') ? kit.querySelector('h2').innerHTML : '';
         let rate    = [];
         let ids     = [];
 

@@ -1,6 +1,6 @@
 import { scrollTop } from './functions';
 import './polyfill/addeventlistener';
-import './firebase';
+// import './firebase';
 
 // Scroll Top
 scrollTop();

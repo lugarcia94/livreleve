@@ -83,16 +83,14 @@
 
     &__container, [id*=ResultItems_]
         > div > ul:not(.slick-dotted)
-            display             : flex
-            flex-flow           : row wrap
-
+            display                 : grid
+            grid-template-rows      : 1fr
+            grid-template-columns   : repeat(3,1fr)
             > li
-                order           : 1
                 flex            : 1 1 234px
 
                 &.helperComplement
-                    order       : 2
-                    display     : block !important
+                    display     : none
 
         &:not([data-carousel])
             > div > ul
