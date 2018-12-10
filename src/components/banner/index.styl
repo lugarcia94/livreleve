@@ -26,7 +26,7 @@
             left        : 50%
 
             min-width   : 100%
-            max-width   : 250%
+            max-width   : 150%
 
             transform   : translateX(-50%)
 
@@ -118,11 +118,23 @@
             justify-content: space-between
             flex-wrap: wrap
 
+            > div
+                flex: 0 0 33%
+
+            @media(max-width: 768px)
+                > div
+                    margin: 0 auto
+                    margin-bottom: 10px
+                    flex: 0 0 100%
+
     &__valores
         margin: 55px 0 25px 0
 
+        @media(max-width: 768px)
+            margin: 20px 0
+
         .header__banner
-            flex: 0 0 100%
+            flex: 0 0 100%!important
             font-size: 40px
             color: #434343
             text-align: left
@@ -138,7 +150,20 @@
             justify-content: space-between
             flex-wrap: wrap
 
-.ruler
+            > div
+                flex: 0 0 25%
+
+            @media(max-width: 768px)
+                > div
+                    flex: 0 0 50%
+                    font-size: 30px
+                    text-align: center
+
+            @media(max-width: 425px)
+                > div
+                    flex: 0 0 100%
+
+.ruler  
     &__container
         {container}
 
@@ -156,6 +181,10 @@
                 align-items: center
                 justify-content: center
                 transition: all 150ms ease-in-out
+
+                @media(max-width: 768px)
+                    flex: 0 0 100%
+                    margin-bottom 10px
 
                 a  
                     font-size: 14px

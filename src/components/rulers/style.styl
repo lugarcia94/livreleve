@@ -83,8 +83,12 @@
             font-size: 14px
             color: #434343
             font-weight: 600
-            display: flex
+            display: flex!important
             align-items: center
+            flex-wrap: wrap
+
+            @media(max-width: 1100px)
+                justify-content: center
 
             &:first-child
                 &:before

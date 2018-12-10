@@ -1,23 +1,28 @@
 .slick
     &-arrow
-        width               : 45px
+        width               : 25px
         height              : 45px
         border              : 0
         border-radius       : 3px
 
         font-size           : 0
-
-        background          : bg[0]
-        color               : color[1]
+        position            : absolute
+        background          : #fff
+        color               : color[0]
 
         &:before
             font-size       : 28px
 
-    &-prev:before
-        font-icon           : url('./svg/prev.svg')
+    &-prev
+        left                    : 0
+        &:before
+            font-icon           : url('./svg/prev.svg')
 
-    &-next:before
-        font-icon           : url('./svg/next.svg')
+    &-next
+        right                   : 0
+        &:before
+            font-icon           : url('./svg/next.svg')
+        
 
     &-dots
         display             : block
