@@ -54,6 +54,10 @@
         appearance          : none
         cursor              : pointer
         vertical-align      : bottom
+        transition          : all 150ms ease-in-out
+
+        &:hover
+            opacity: 0.8
 
         @media(max-width: 768px)
             width 100%
@@ -88,6 +92,9 @@
                 font-weight     : 600
                 letter-spacing  : 0.3px
                 color           : #ffffff
+
+                @media(max-width: 425px)
+                    font-size   : 15px
 
             &:before
                 font-icon       : url('./svg/mail.svg')

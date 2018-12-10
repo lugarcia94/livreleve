@@ -4,8 +4,8 @@ if (window.innerWidth < 1100) {
     const rulers = $('.info__list');
 
     rulers.slick({
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         responsive: [
             {
                 breakpoint: 650,
@@ -24,3 +24,5 @@ if (window.innerWidth < 1100) {
 
     });
 }
+
+$('#newsletterButtonOK').val('CADASTRAR');
