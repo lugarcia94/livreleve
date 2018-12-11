@@ -31,11 +31,11 @@ const config = {
 
 // Load Order Form
 
-store.dispatch(fetchOrderForm());
+// store.dispatch(fetchOrderForm());
 
 import Kit from './react/components/kit';
 let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
-// 1512
+// // 1512
 if(rootKit.length) {
 
     rootKit.forEach((kit) => {

@@ -1,3 +1,4 @@
+
 .menu
 
     .banner, .menu-banner-link
@@ -124,9 +125,10 @@
                 text-decoration    : none
 
         &--nv0
-            font-size              : 14px
-            font-weight            : regular
+            font-size              : 13px
+            font-weight            : 600
             text-transform         : uppercase
+            color                  : #434343
 
         &--nv1, &--nv2
             font-size              : 13px
@@ -185,8 +187,8 @@
 
     .menu
         position                            : fixed
-        top                                 : 115px
-        z-index                             : 2
+        top                                 : 85px
+        z-index                             : -1
 
         display                             : block
         width                               : 100%
@@ -197,7 +199,7 @@
 
         transition                          : transition[0]
 
-        background                          : bg[0]
+        background                          : #fff
 
         .scrolling &
             transform                       : translate3d(0, -50px, 0)
@@ -220,6 +222,8 @@
             display                         : flex
             justify-content                 : space-between
             overflow                        : visible
+            max-width                       : 905px 
+            margin                          : 0 auto         
 
             .banner
                 display                     : inline-block
@@ -317,7 +321,7 @@
                     height                  : calc(100vh - 200px)
                     border                  : solid 1px #E9E9E9
                     border-radius           : 3px
-                    padding                 : 10px
+                    padding                 : 40px
 
                     transition              : transition[0]
 
@@ -387,10 +391,7 @@
             justify-content                 : center
             align-items                     : center
             height                          : 40px
-
-        &__item
-            &--nv0
-                padding                     : 0 15px
+ 
 
         &__link
             &--nv0, &--nv1, &--nv2
@@ -408,14 +409,14 @@
             align-items                     : center
 
             height                          : 40px
-            padding                         : 5px 15px
+            padding                         : 0
 
-            font-size                       : 12px
-            font-weight                     : regular
+            font-size                       : 11px
+            font-weight                     : 600
 
             text-transform                  : uppercase
 
-            color                           : #909090
+            color                           : #434343
 
         // Ajuste last
         &__item--nv0

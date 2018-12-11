@@ -65,3 +65,64 @@
             display             : flex
             justify-content     : space-between
             padding             : 10px 0
+
+.info
+    &__container
+        {container}
+
+    &__list
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        margin: 35px 0
+        border-bottom: 1px solid #FFE6AB
+        padding-bottom: 35px
+
+        li  
+            font-size: 14px
+            color: #434343
+            font-weight: 600
+            display: flex!important
+            align-items: center
+            flex-wrap: wrap
+
+            @media(max-width: 1100px)
+                justify-content: center
+
+            &:first-child
+                &:before
+                    font-icon       : url('./svg/desconto.svg')
+                    font-size       : 16px
+                    margin-right    : 5px
+                    color           :color[2]
+
+            &:nth-child(2)
+                &:before
+                    font-icon       : url('./svg/card2.svg')
+                    font-size       : 16px
+                    margin-right    : 5px
+                    color           :color[2]
+
+            &:nth-child(3)
+                &:before
+                    font-icon       : url('./svg/security.svg')
+                    font-size       : 16px
+                    margin-right    : 5px
+                    color           :color[2]
+
+            &:nth-child(4)
+                &:before
+                    font-icon       : url('./svg/truck2.svg')
+                    font-size       : 16px
+                    margin-right    : 5px
+                    color           :color[2]
+
+    
+
+
+            strong 
+                font-size: 11px
+                color: #BEAF8C
+                font-weight: 600
+                margin-left 3px

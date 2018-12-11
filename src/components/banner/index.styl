@@ -26,7 +26,7 @@
             left        : 50%
 
             min-width   : 100%
-            max-width   : 250%
+            max-width   : 150%
 
             transform   : translateX(-50%)
 
@@ -109,3 +109,131 @@
 
         &--mini
             margin-top          : -50px
+
+.mini
+    &__banner
+        .banner__container
+            {container}
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+
+            > div
+                flex: 0 0 33%
+
+            @media(max-width: 768px)
+                > div
+                    margin: 0 auto
+                    margin-bottom: 10px
+                    flex: 0 0 100%
+
+    &__valores
+        margin: 55px 0 25px 0
+
+        @media(max-width: 768px)
+            margin: 20px 0
+
+        .header__banner
+            flex: 0 0 100%!important
+            font-size: 40px
+            color: #434343
+            text-align: left
+            margin-bottom: 30px
+            font-weight: 300
+
+            strong 
+                color: color[0]
+
+        .banner__container
+            {container}
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+
+            > div
+                flex: 0 0 25%
+
+            @media(max-width: 768px)
+                > div
+                    flex: 0 0 50%
+                    font-size: 30px
+                    text-align: center
+
+            @media(max-width: 425px)
+                > div
+                    flex: 0 0 100%
+
+.ruler  
+    &__container
+        {container}
+
+        .links__list
+            display: flex
+            align-items: center
+            flex-wrap: wrap
+            justify-content: space-between
+
+            li  
+                border: 1px solid color[0]
+                min-height: 58px
+                flex: 0 0 25%
+                display: flex
+                align-items: center
+                justify-content: center
+                transition: all 150ms ease-in-out
+
+                @media(max-width: 768px)
+                    flex: 0 0 100%
+                    margin-bottom 10px
+
+                a  
+                    font-size: 14px
+                    color: #434343
+                    font-weight: 600
+                    transition: all 150ms ease-in-out
+
+                &:nth-child(1),&:nth-child(2),&:nth-child(3)
+                    @media(min-width: 992px)
+                        border-right: none
+
+                &:first-child
+                    &:before
+                        font-icon       : url('./svg/entrega.svg')
+                        font-size       : 20px
+                        margin-right    : 5px
+                        color           :color[2]
+                        transition      : all 150ms ease-in-out
+
+                &:nth-child(2)
+                    &:before
+                        font-icon       : url('./svg/desconto.svg')
+                        font-size       : 20px
+                        margin-right    : 5px
+                        color           :color[2]
+                        transition      : all 150ms ease-in-out
+
+                &:nth-child(3)
+                    &:before
+                        font-icon       : url('./svg/dica.svg')
+                        font-size       : 20px
+                        margin-right    : 5px
+                        transition      : all 150ms ease-in-out
+                        color           :color[2]
+
+                &:nth-child(4)
+                    &:before
+                        font-icon       : url('./svg/surpresas.svg')
+                        font-size       : 20px
+                        margin-right    : 5px
+                        color           :color[2]
+                        transition      : all 150ms ease-in-out
+
+                &:hover
+                    background: color[2]
+
+                    &:before
+                        color: #fff
+
+                    a  
+                        color: #fff
+                        text-decoration: none

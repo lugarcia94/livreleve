@@ -1,26 +1,35 @@
 .footer
-    background          : color[1]
-    margin-top          : 100px
+    .about__footer
+        margin: 25px 0
+        border-bottom: 1px solid #FFE6AB
+        padding-bottom: 10px
 
+        h3 
+            font-size: 16px
+            color: #888888
+            font-weight: 600
+            margin-bottom: 15px
+
+        p  
+            font-size: 11px
+            color: #888888
+            font-weight: 400
+            text-align: justify
+            margin-bottom: 15px
+            letter-spacing: -0.1px
+            
     .category &
         margin-top      : 20px
 
     &__container
-        { container }
-
-        padding         : 30px 0 20px
-
-        font-size       : 13px
-        color           : #fff
-
-        text-align      : center
-
+        { container } 
+        display             : flex
+        justify-content     : space-between
+        flex-wrap           : wrap
 
     &__nav
         display         : inline-block
-        vertical-align  : top
-        margin-bottom   : 20px
-        padding         : 15px
+        vertical-align  : top 
 
         &-item a
             line-height : 25px
@@ -28,7 +37,6 @@
     a
         font-size       : 13px
         font-weight     : semi-bold
-
         color           : #fff
 
 
@@ -46,12 +54,7 @@
 
 @media screen and (min-width: 992px)
     .footer
-        &__container
-            display            : flex
-            justify-content    : space-between
-
-            text-align         : left
-
+ 
         &__nav
             &--payment
                 max-width       : 345px
