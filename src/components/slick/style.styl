@@ -4,7 +4,7 @@
         height              : 45px
         border              : 0
         border-radius       : 3px
-
+        cursor              : pointer      
         font-size           : 0
         position            : absolute
         background          : transparent
@@ -69,10 +69,10 @@
             transition      : transition[0]
 
         &-prev
-            left            : 15px
+            left            : 0
 
         &-next
-            right           : 15px
+            right           : 0
 
 [data-carousel=three]
     .slick
@@ -89,12 +89,4 @@
         margin-top          : -50px
 
 
-@media screen and (min-width: (viewport + 120))
-    [data-carousel=three], [data-carousel=showcase], [data-carousel=buytobether]
-        .slick
-
-            &-prev
-                left        : -60px
-
-            &-next
-                right       : -60px
+ 

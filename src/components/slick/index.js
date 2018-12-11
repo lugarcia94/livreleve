@@ -37,10 +37,11 @@ $('[data-carousel]').each(function(){
             break;
 
         case 'showcase':
-            config.slidesToShow      = 5;
-            config.slidesToScroll    = 5;
-            config.dots              = true;
-            config.responsive         = [
+            config.slidesToShow      = 4;
+            config.slidesToScroll    = 4;
+            config.arrows            = true;
+            config.dots              = false;
+            config.responsive        = [
                 {
                     breakpoint        : 1024,
                     settings          : {
