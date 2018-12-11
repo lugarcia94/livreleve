@@ -4,10 +4,10 @@
         height              : 45px
         border              : 0
         border-radius       : 3px
-
+        cursor              : pointer      
         font-size           : 0
         position            : absolute
-        background          : #fff
+        background          : transparent
         color               : color[0]
 
         &:before
@@ -38,22 +38,16 @@
             width           : 10px
             height          : 10px
             padding         : 0
-
             border          : 0
             border-radius   : 50%
-
             font-size       : 0
-
             background      : #E9E9E9
-
             margin          : 0 6px
 
         .slick-active
             button
-
                 width       : 15px
                 height      : 15px
-
                 background  : color[0]
 
 [data-carousel]
@@ -64,15 +58,14 @@
             position        : absolute
             top             : 50%
             z-index         : 50
-
             transform       : translateY(-50%)
             transition      : transition[0]
 
         &-prev
-            left            : 15px
+            left            : 0
 
         &-next
-            right           : 15px
+            right           : 0
 
 [data-carousel=three]
     .slick
@@ -89,12 +82,4 @@
         margin-top          : -50px
 
 
-@media screen and (min-width: (viewport + 120))
-    [data-carousel=three], [data-carousel=showcase], [data-carousel=buytobether]
-        .slick
-
-            &-prev
-                left        : -60px
-
-            &-next
-                right       : -60px
+ 

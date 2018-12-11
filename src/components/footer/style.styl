@@ -42,7 +42,6 @@
 
     &__title
         display         : block
-        margin-bottom   : 10px
 
         font-size       : 15px
         font-weight     : semi-bold
@@ -61,3 +60,30 @@
 
             &--security
                 max-width       : 215px
+
+.nav__container 
+    display: flex
+    justify-content: space-between
+    width: 100%
+    flex-wrap: wrap
+    margin-bottom: 30px
+    border-bottom: 1px solid #ffe7a7
+    padding-bottom: 25px
+
+    .help
+        margin-top: 10px 
+
+    .footer__nav-list
+        li  
+            a  
+                font-size: 13px
+                color: #888888
+                transition: all 150ms ease-in-out
+
+                &:hover
+                    text-decoration: none 
+                    color: color[0]
+
+.payment 
+    .footer__title 
+        margin-bottom: 5px

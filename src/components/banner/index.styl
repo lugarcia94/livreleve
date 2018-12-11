@@ -9,9 +9,7 @@
         .banner__container
             position    : relative
             z-index     : 10
-
             width       : 100%
-
             font-size   : 0
             white-space : nowrap
             overflow    : hidden
@@ -34,13 +32,11 @@
         @extend         $container
         position        : relative
         z-index         : 20
-
         transition      : transition[0]
 
         .banner__container
             width       : 100%
             box-sizing  : content-box
-
             font-size   : 0
             white-space : nowrap
 
@@ -60,7 +56,6 @@
         margin          : 0 auto 30px
         max-width       : viewport + 30px
 
-
         .box-banner
             padding         : 15px
 
@@ -68,28 +63,22 @@
     &--header
         position        : relative
         z-index         : 30
-
         display         : flex
         justify-content : center
         align-items     : center
         height          : 50px
-
         transition      : transition[0]
-
         background      : #fff
 
         a
             display             : block
-
             position            : relative
             width               : 100%
 
         img
             position            : relative
             left                : 50%
-
             max-width           : calc(100% + 180px)
-
             transform           : translateX(-50%)
 
         .scrolling &
@@ -237,3 +226,9 @@
                     a  
                         color: #fff
                         text-decoration: none
+
+.mini__banner 
+    margin: 60px 0
+
+.ruler__link 
+    margin-bottom: 60px
