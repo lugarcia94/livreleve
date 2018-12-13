@@ -16,6 +16,7 @@ import proxy            from 'proxy-middleware';
 import middlewares      from './middlewares';
 import chokidar         from 'chokidar';
 import pump             from 'pump';
+import browserSync      from 'browser-sync';
 
 /**
  * General
@@ -73,10 +74,30 @@ const environment = vtex.environment;
 const portalHost = `${accountName}.${environment}.com.br`;
 const imgProxyOptions = url.parse(`${vtex.protocol}://${accountName}.vteximg.com.br/arquivos`);
 const portalProxyOptions = url.parse(`${vtex.protocol}://${portalHost}/`);
+const secureUrl = vtex.protocol == 'https' ? true : false;
+let   localHost = `${accountName}.vtexlocal.com.br`;
+const port = 80;
+
+if (port !== 80)
+    localHost += ":#{port}"
 
 imgProxyOptions.route = '/arquivos';
 portalProxyOptions.preserveHost = true;
 portalProxyOptions.cookieRewrite = `${accountName}.vtexlocal.com.br`;
+
+const rewriteReferer = function(referer) {
+    if (referer == null) {
+        referer = '';
+    }
+    if (secureUrl) {
+        referer = referer.replace('http:', 'https:');
+    }
+    return referer.replace(localHost, portalHost);
+};
+
+const rewriteLocation = function(location) {
+    return location.replace('https:', 'http:').replace(portalHost, localHost);
+};
 
 gulp.task('connect', () => {
     $.connect.server({
@@ -86,10 +107,10 @@ gulp.task('connect', () => {
         middleware: () => {
             return [
                 middlewares.disableCompression,
-                middlewares.rewriteLocationHeader(environment),
+                middlewares.rewriteLocationHeader(rewriteLocation),
                 middlewares.replaceHost(portalHost),
-                middlewares.replaceReferer(environment, vtex.protocol, portalHost),
-                middlewares.replaceHtmlBody(environment, vtex.protocol),
+                middlewares.replaceReferer(rewriteReferer),
+                middlewares.replaceHtmlBody(environment, accountName, secureUrl, port),
                 httpPlease({
                     host: portalHost,
                     verbose: true
@@ -128,15 +149,6 @@ gulp.task('svg:copy', function () {
         .pipe(gulp.dest(path.svg.out));
 });
 
-
-function svgCopyOnly(event, path) {
-    console.log('['+event+']', path);
-    return gulp.src(path)
-        .pipe($.rename({dirname: ''}))
-        .pipe(gulp.dest('build/svg'));
-}
-
-
 /**
  *  Images
  */
@@ -150,7 +162,8 @@ gulp.task('images', function () {
                 svgoPlugins: [{removeViewBox: true}]
             })
         )
-        .pipe(gulp.dest(path.images.out));
+        .pipe(gulp.dest(path.images.out))
+        .pipe(browserSync.stream());
 });
 function imageCopyOnly(event, pathFile) {
     console.log(`[${event}] ${pathFile}`);
@@ -162,7 +175,8 @@ function imageCopyOnly(event, pathFile) {
                 svgoPlugins: [{removeViewBox: true}]
             })
         )
-        .pipe(gulp.dest(path.images.out));
+        .pipe(gulp.dest(path.images.out))
+        // .pipe(browserSync.reload());
 }
 gulp.task('images:deploy', function () {
     return gulp.src(path.deploy.images.in + '/**/*.{jpg,png}')
@@ -214,6 +228,7 @@ gulp.task('postcss', function(){
         )
         .pipe(gulp.dest(path.css.out));
 });
+
 gulp.task('postcss:deploy', function(){
 
     return gulp.src( path.deploy.css.in + '/**/*.css')
@@ -252,6 +267,7 @@ gulp.task("stylus", function() {
         .pipe(gulp.dest(path.css.out));
 });
 
+
 /**
  *  CSS
  */
@@ -265,21 +281,13 @@ gulp.task('css', ['stylus'], function(){
  * Watch
  */
 gulp.task('watch', function(){
-
-    // gulp.watch([path.css.in + '/**/*.styl', 'src/core/**/*.styl'], ['css']);
-    //
     chokidar.watch(path.images.in + '/**/*.{jpg,png}', {
-            // ignoreInitial: true,
+            ignoreInitial: true,
             ignored: /(^|[\/\\])\../
         }).on('all', (event, path) => {
             imageCopyOnly(event, path);
+            
         });
-    // chokidar.watch(path.svg.in + '/**/*.svg', {ignored: /(^|[\/\\])\../}).on('all', (event, path) => {
-    //     svgCopyOnly(event, path);
-    // });
-    //
-    // gulp.watch('build/arquivos/*.{js,jsx,jpg,png,jpeg}')
-    //     .on('change', $.connect.reload);
 
 });
 
@@ -300,5 +308,5 @@ gulp.task('deploy', function(){
  */
 gulp.task('default', function (cb) {
     // return runSequence('clean', 'svg:copy', 'build', [ 'watch', 'connect' ]);
-    return runSequence('watch', 'connect');
+    return runSequence( 'connect', 'watch');
 });

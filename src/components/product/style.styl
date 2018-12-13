@@ -1,489 +1,66 @@
-#product-page
-    #main 
-        margin: 20px auto
-        padding: 0
+.thumbs
+    position                : absolute 
+    top                     : 0 
+    left                    : 0
+    margin                  : -5px
+    width                   : 70px
+    
+    li 
+        padding             : 5px 
+
+    a 
+        display             : block
+        border              : solid 1px transparent  
+        border-radius       : 3px
+        &.ON 
+            border-color        : #FF7000
 
 .product
-    &__more-link
-        background: #333333
-        color: #DEB94C
-        display: block
-        font-size:14px
-        font-weight: bold
-        text-transform: uppercase
-        text-align: center
-        width: 197px
-        height: 35px
-        line-height: 35px
-        margin: 20px 0
-
-        &:hover 
-            text-decoration: none
-
-    &__brand
-        text-align: right
-        width: 100%
-
-        .brandName
-            display: inline-block
-            width: 145px
-
-        @media( max-width: 991px )
-            margin: 0 0 10px 0
-
-    &__labels
-        margin: 10px 0 
-
-    &__title
-        font-size: 24px
-        line-height: 24px
-        font-weight: 300
-        color: #333333
-        letter-spacing: -0.44px
-        text-align: center
-
-    &__subtitle
-        font-size: 13px
-        color: #D4B65D
-        letter-spacing: -0.24px
-        text-align: center
-        margin: 0 0 30px 0
-
-    &__container
-        width: calc(100vw - 30px)
-        max-width: 1200px
-        margin: 0 auto
-        display: grid
-        padding: 0 
-        @media( min-width: 992px )
-            grid-template-areas: "info price" "buytobether buytobether" "description description" "review review"
-            grid-template-columns: auto 205px
-
-        @media( max-width: 991px )
-            grid-template-areas: "info" "buytobether" "description" "review" "price"
-            max-width: 768px
-
-
-    &__content--left
-        grid-area: info
-        display: grid
-        width: 100%
-        @media( min-width: 992px )
-            grid-template-columns: 442px auto
-            grid-template-areas: "foto breadcrumb" "foto name" "foto content"
-            grid-template-rows: 30px 50px auto
-            
-        @media( max-width: 991px )
-            grid-template-columns: auto
-            grid-template-areas: "breadcrumb" "foto" "name" "content"
-
-    &__content--right
-        grid-area: price
-        width: 100%
-        display: flex
-        margin: 25px 0 0 0
-    
-    &__fixed
-        width: 100%
-
-    &__image 
-        grid-area: foto
-        max-width: 442px
-        width: 100%
-        margin: 0 auto
-        @media( max-width: 991px )
-            margin: 0 auto 25px
-
-        .thumbs 
-            li 
-                width: 50px
-                img 
-                    width: 100%
-    
-    &__breadcrumb 
-        grid-area: breadcrumb
-        width: 100%
-        max-height: 30px
-        overflow: hidden
-        
-    &__name  
-        grid-area: name
-        max-height: 50px
-        overflow: hidden
-        font-size: 24px
-        line-height: 24px
-        font-weight: 300
-        color: color[1]
-
-    &__content-inner
-        grid-area: content
-
-    &__review--line
-        display: flex
-        align-items: center
-        @media( max-width: 991px )
-            margin: 10px 0
-        .review--short
-            width: 125px
-
-        .product__code
-            font-size: 14px
-            color: #A8A8A8
-            letter-spacing: -0.25px
-            line-height: 15px
-            display: flex
-
-            &:before 
-                content: 'Cod: '
-                display: flex
-                margin: 0 5px 0 0
-
-    &__description--short
-        font-size: 14px
-        color: #A8A8A8
-        letter-spacing: -0.25px
-        line-height: 15px
-        padding: 10px 15px 10px 0
-
-    &__description-more
-        border: none
-        cursor: pointer
-        background: none 
-        font-size: 12px
-        color: color[0]
-        letter-spacing: -0.22px
-        padding: 5px 0
-
-    &__variations
-        ul 
-            margin: 0 -5px
-            li 
-                display: flex
-                flex-wrap: wrap
-
-                label
-                    box-shadow: 0 0 0 1px #E9E9E9
-                    display: inline-block
-                    margin: 5px
-                    font-size: 0
-                    transition: transition[0]
-                    cursor: pointer
-
-                input 
-                    display: none
-                    &:checked
-                        + label 
-                            box-shadow: 0 0 0 2px color[0]
-
-
-            .specification
-                font-size: 14px
-                color: #A8A8A8
-                letter-spacing: -0.25px
-                line-height: 15px
-                margin: 0 0 0 5px
-
-        &--selected
-            font-size: 14px
-            color: #333333
-            margin: 5px 0
-            display: block
-
-    &__shipping
-        margin: 10px 0 0 0
-        &:before 
-            content: 'Calcule o seu Frete e prazo de entrega'
-            margin: 0 0 10px 0
-            display: block
-            font-size: 14px
-            line-height: 14px
-            color: #A8A8A8
-            letter-spacing: -0.25px
-            [data-status="false"] & 
-                display: none
-
-        .frete
-        .quantity
-        .footer
-        .header
-            display: none
-
-        
-
-        .prefixo
-            font-size: 0
-            line-height: 0
-            width: 100%
-            input
-                background: #FFFFFF
-                border: 1px solid #F0F0F0
-                border-radius: 3px
-                color: #333333
-                font-size: 14px
-                height: 30px
-                padding: 0 10px 
-                width: 100px
-                @media( max-width: 991px )
-                    margin: 15px 0
-                    height: 45px
-                    width: 100%
-
-        .cep-busca
-            a
-                font-size: 14px
-                color: #A8A8A8
-                letter-spacing: -0.25px
-                line-height: 15px
-                padding: 5px 0
-                width: 100%
-                display: inline-block
-
-        fieldset
-            position: relative 
-
-            @media( min-width: 992px )
-                width: 185px
-
-        .frete-calcular 
-            display: flex
-            align-items: center
-            justify-content: center
-            background: #333333
-            border-radius: 2px
-            // margin: 0 0 0 10px
-            font-size: 14px
-            color: #DEB94C
-            letter-spacing: -0.25px
-            position: relative
-            height: 45px
-            width: 100%
-            z-index: 99
-            @media( min-width: 992px )
-                position: absolute
-                right: 0
-                top: 0px
-                height: 30px
-                width: 80px
-            &:before
-                font-weight: 600
-                content: 'CALCULAR'
-
-            #btnFreteSimulacao
-                border: none 
-                font-size: 0
-                line-height: 0
-                position: absolute
-                left: 0
-                right: 0
-                top: 0
-                bottom: 0
-                width: 100%
-                opacity: 0
-                z-index: 99
-                @media( max-width: 991px )
-                    height: 45px
-
-
-        .freight-values
-            margin: 20px 0
-            @media( min-width: 992px )
-                padding: 15px 15px 0 0
-
-            table 
-                padding: 0 10px
-                border: 1px solid #eee
-                border-radius: 2px
-                width: 100%
-
-            thead
-                font-size: 14px
-                color: #333333
-                line-height: 14px
-                
-                th 
-                    border-bottom: 1px solid #eee
-                    padding: 10px 0
-
-            td 
-                font-size: 14px 
-                border-bottom: 1px solid #eee
-                padding: 10px 0
-                color: #666
-
-            tr 
-                &:last-child 
-                    td
-                        border: none
-
-
-
-    // Price
-    &__price-inner
-        border: 1px solid #E9E9E9
-        border-radius: 2px
-        padding: 25px 5px 5px 5px
-        position: relative
-        @media( min-width: 992px )
-            position: sticky
-            top: 10px
-
-        .buy-button 
-            background: #84DD4B
-            border-radius: 2px
-            font-size: 16px
-            color: #FFFFFF
-            letter-spacing: -0.29px
-            text-transform: uppercase
-            font-weight: 800
-            display: flex !important
-            align-items: center
-            justify-content: center
-            height: 40px
-            width: 100%
-            text-shadow: 0 1px 2px #67B932
-            text-decoration: none
-            [data-status="false"] &
-                display: none !important
-
-        .buttons
-            &__qtys 
-                [data-status="false"] &
-                    display: none !important
-
-            &__actions
-                max-width: 147px
-                width: 100% 
-                margin: 15px auto
-                display: flex
-                align-items: center
-                justify-content: center
-                &:before
-                    content: 'Quantidade'
-                    font-size: 14px
-                    color: #A8A8A8
-                    letter-spacing: -0.25px
-                    display: inline-block
-                    margin-right: 5px
-
-            &__input
-                background: #FFFFFF
-                border: 1px solid #F0F0F0
-                border-radius: 3px
-                font-size: 15px
-                color: #333333
-                letter-spacing: -0.27px
-                height: 30px
-                width: 30px
-                text-align: center
-
-            &__action
-                cursor: pointer
-                padding: 0
-                border: none
-                min-width: 30px
-                min-height: 30px
-                // margin: 0 5px
-
-                &:before 
-                    content: ''
-                    background: #DEB94C
-                    display: block
-                    border-radius: 50%
-                    width: 16px
-                    height: 16px
-                    margin: 0 auto
-                    color: #fff
-
-                &--less
-                    &:before 
-                        content: '-'
-                        font-size: 30px
-                        line-height: 12px
-                        font-weight: 600
-
-                &--more
-                    &:before 
-                        content: '+'
-                        font-size: 16px
-                        line-height: 14px
-                        font-weight: 800
-
-        // Esgotado
-        .portal-notify-me-ref
-            color: #A8A8A8
-            font-size: 14px
-
-            .notifyme-title
-                font-size: 20px
-                color: #333
-
-
-            input 
-                background: #FFFFFF
-                border: 1px solid #F0F0F0
-                border-radius: 3px
-                font-size: 14px
-                color: #333333
-                letter-spacing: -0.27px
-                height: 30px
-                width: 100%
-                margin: 10px 0 0 0
-                padding: 0 5px
-
-                &.notifyme-button-ok
-                    background: color[0]
-                    text-transform: uppercase
-
-
-    &__buytobether
-        grid-area: buytobether
-
+    &__image
+        position    : relative
+        min-height  : 425px
+    &__labels 
+        position    : absolute 
+        top         : 0 
+        right       : 0
+    &__sku-review 
+        display             : flex 
+        justify-content     : space-between
+        align-items         : center  
+        margin              : 0 -10px
+        .review 
+            padding         : 10px 
+    &__code
+        visibility          : hidden 
+        font-size           : 14px
+        font-weight         : regular 
+        color               : #888888
+        text-transform      : uppercase
+        padding             : 10px 
+        &--show 
+            visibility      : visible    
     &__description 
-        grid-area: description
-        @media( max-width: 991px )
-            max-width: 768px
-            width: 100%
+        &-more 
+            display         : none 
+        .description-short
+            margin          : 0 -10px 
+        .productDescriptionShort
+            font-size       : 13px 
+            font-weight     : regular 
+            color           : #434343
+            padding         : 10px 
+    &__name 
+        font-size   : 17px
+        font-weight : regular 
+        color       : #888888
+        line-height : 1.2
+    &__info 
+        .buttons--buy
+            display : none 
 
-        &--box 
-            border-top: 1px solid #E9E9E9
-            padding: 40px 15px
-            @extend $container
-
-        .productDescription
-            font-size: 14px
-            color: #726F6F
-            letter-spacing: -0.25px
-            
-            p 
-                margin: 10px 0
-
-
-    &__review--box
-        grid-area: review 
-        border-top: 1px solid #E9E9E9
-        padding-top: 40px 
-        @extend $container
-        @media( max-width: 991px )
-            max-width: 768px
-            width: 100%
-
-.zoomPad
-    position: relative
-    overflow: hidden
-
-    > img
-        transition: transition[0]
-
-    &:hover > img
-        opacity: 0 !important
-
-.zoomWindow
-    top     : 50% !important
-    left    : 50% !important
-    transform :translateX(-50%) translateY(-50%)
-
-
-.zoomWrapperImage
-    background      : #fff
-    img
-        max-width   : none
+@media (min-width: 992px)
+    .product 
+        &__container 
+            display             : flex 
+        &__image, &__info 
+            padding             : 15px
