@@ -45,25 +45,17 @@ export function loadHeart() {
     }
 }
 
-$vtex(document).ajaxComplete(function(){
-    loadHeart();
-});
+
 
 export default () => {
+    $vtex(document).ajaxComplete(function(){
+        loadHeart();
+    });
     if(typeof vtexjs == 'object') {
         vtexjs.checkout.getOrderForm()
             .done(function(orderForm) {
-                // if(loadFlag) {
-                    load(orderForm);
-                    // loadFlag = false;
-                // }
+                load(orderForm);
             });
-        // $vtex(window).on('orderFormUpdated.vtex', function(evt, orderForm) {
-        //     if(loadFlag) {
-        //         load(orderForm);
-        //         loadFlag = false;
-        //     }
-        // });
     }
     loadHeart();
 }

@@ -5,8 +5,11 @@ import { orderForm, firstSku } from './core';
 import { giftlist } from "./giftlist";
 import { relateds, paginateRelateds, loadingRelateds, searchRelateds, errorRelateds } from "./relatedSearch";
 import { wishlist, isLoadWishlist, products, isCreating, isRemoving, wishlistOrderForm } from './wishlist';
+import { wholesale } from './wholesale';
+import {reducer as toastrReducer} from 'react-redux-toastr'
 
 export default combineReducers({
+    toastr: toastrReducer,
     orderForm,
     firstSku,
 
@@ -36,5 +39,6 @@ export default combineReducers({
     products,
     isCreating,
     isRemoving,
-    wishlistOrderForm
+    wishlistOrderForm,
+    wholesale
 });

@@ -11,13 +11,13 @@ import configureStore from './react/store/configureStore';
 import Menu from './react/components/Menu';
 const store = configureStore();
 
-import { fetchOrderForm } from "./react/actions/core";
-
 import 'Core/polyfill/hasAttribute';
 
 //Polyfill
 import 'Core/polyfill/array.range';
 import 'Core/polyfill/reduce';
+
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
 const config = {
     menu: true,
@@ -33,9 +33,55 @@ const config = {
 
 // store.dispatch(fetchOrderForm());
 
+import ReduxToastr from 'react-redux-toastr';
+const rootToastr = document.querySelector('[data-component=toastr]');
+if(rootToastr)
+    ReactDOM.render(
+        <Provider store={store}>
+            <ReduxToastr
+                timeOut={5000}
+                newestOnTop={false}
+                preventDuplicates
+                position="top-right"
+                transitionIn="fadeIn"
+                transitionOut="fadeOut"
+                progressBar
+                closeOnToastrClick />
+        </Provider>,
+        rootToastr
+    );
+
+
+import Wholesale from './react/components/Wholesale';
+let rootWholesales = Array.from(document.querySelectorAll('[data-component=wholesale]'));
+if(rootWholesales.length) {
+    rootWholesales.forEach((rootWholesale) => {
+        ReactDOM.render(
+            <Provider store={ store }>
+                <Wholesale />
+            </Provider>,
+            rootWholesale
+        );
+    })
+}
+
+import WholesalePrices from './react/components/Wholesale/wholesalePrice';
+let rootWholesalePrices = Array.from(document.querySelectorAll('[data-component=wholesale-prices]'));
+if(rootWholesalePrices.length) {
+    rootWholesalePrices.forEach((rootWholesalePrice)=>{
+        ReactDOM.render(
+            <Provider store={ store }>
+                <WholesalePrices />
+            </Provider>,
+            rootWholesalePrice
+        );
+    })
+}
+
+
 import Kit from './react/components/kit';
 let rootKit = Array.from(document.querySelectorAll('[data-component=kits]'));
-// // 1512
+
 if(rootKit.length) {
 
     rootKit.forEach((kit) => {
@@ -60,8 +106,6 @@ if(rootKit.length) {
 
 // Render Button Menu
 // import ButtonMenu from './react/components/ButtonMenu';
-
-
 if(config.menu) {
     let rootMenu = document.querySelector('#menu');
 
@@ -99,7 +143,6 @@ if(config.minicart) {
         let valorFrete = 0;
         if (rootMinicart.querySelector('.valorFreteGratis'))
             valorFrete = rootMinicart.querySelector('.valorFreteGratis').innerHTML;
-            console.log(valorFrete)
         ReactDOM.render(
             <Provider store={store}>
                 <Minicart frete={valorFrete}/>

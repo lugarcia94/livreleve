@@ -63,7 +63,7 @@ class Minicart extends Component {
                         </figure>
                         <div className="minicart__info">
                             <h4 className="minicart__name">{item.name}</h4>
-                            <span className="minicart__price">{new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(item.price / 100)}</span>
+                            <span className="minicart__price">{new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(item.sellingPrice / 100)}</span>
                             <small className="minicart__amount">Qtde.: {item.quantity}</small>
                         </div>
                     </a>

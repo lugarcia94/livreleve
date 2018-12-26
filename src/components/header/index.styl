@@ -1,18 +1,19 @@
 .header
-    position            : fixed
-    top                 : 0
-    left                : 0
-    z-index             : 100
+    .wrapper__container > &
+        position            : fixed
+        top                 : 0
+        left                : 0
+        z-index             : 100
 
-    width               : 100%
+        width               : 100%
 
-    transition          : transition[0]
+        transition          : transition[0]
 
     &__head-nav
         display         : none
 
     &__container
-        @extend         $container
+        { container }
         background      : #fff 
         z-index         : 100
 
@@ -21,14 +22,8 @@
         align-items     : center
 
         height          : 80px
-
- 
-
         &--menu
             padding     : 0
-
- 
-
             .scrolling:not(.scrolling--top) &
                 opacity     : 1
                 visibility  : visible
@@ -78,17 +73,19 @@
     .scrolling--top
         .menu
             top: 80px    
-              
+
     .header
         &__container
             &:after 
                 content: ''
+                width       : 100% 
+                max-width   : viewport - 30px
                 position: absolute
                 bottom: -5px
-                width: 100%
+                left    : 50% 
                 background: #ffe7a7
                 height: 1px
-                max-width: 1140px
+                transform       : translateX(-50%)
 
         &__search
             position    : relative
@@ -131,3 +128,4 @@
 
         &__button-menu
             display         : none
+

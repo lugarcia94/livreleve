@@ -1,9 +1,74 @@
+
+#image 
+    position                : relative 
+    z-index                 : 1
+    max-width               : 100% 
+    overflow                : hidden 
+
+#divTitulo
+    display                 : flex 
+    justify-content         : space-between
+    align-items             : center 
+    font-size               : 15px 
+    font-weight             : 400
+    line-height             : 20px 
+    height                  : 45px
+    border-top              : solid 1px rgba(0,0,0,.1)
+    padding                 : 12px 0
+
+    &:after 
+        font-icon           : url('./svg/next.svg')
+        font-size           : 18px
+        display             : flex 
+        justify-content     : center 
+        align-items         : center  
+        width               : 45px 
+        height              : 100%
+
+.description-product__content
+    position                : fixed 
+    top                     : 0 
+    left                    : 0 
+    z-index                 : 200 
+    width                   : 100% 
+    height                  : 100%
+    visibility              : hidden 
+    opacity                 : 0 
+    transform               : translate3d(100%, 0, 0)
+    transition              : transition[0]
+    background              : #fff 
+
+    &:before 
+        position            : absolute 
+        top                 : 0 
+        right               : 0
+        display             : flex 
+        justify-content     : center 
+        align-items         : center  
+        width               : 45px
+        height              : 45px    
+        background          : none 
+        border              : 0   
+        font-icon           : url('./svg/close.svg')
+        font-size           : 18px
+
+    .productDescription
+        height              : calc(100% - 45px)
+        overflow-y          : auto 
+        padding             : 0 15px 50px
+        margin-top          : 45px
+    .on & 
+        visibility          : visible
+        opacity             : 1 
+        transform           : translate3d(0,0,0)
+
 .thumbs
     position                : absolute 
     top                     : 0 
     left                    : 0
+    z-index                 : 2 
     margin                  : -5px
-    width                   : 70px
+    width                   : 80px
     
     li 
         padding             : 5px 
@@ -15,14 +80,180 @@
         &.ON 
             border-color        : #FF7000
 
+.product__attrs
+    &--dimensoes, &--outras-informacoes
+        .attrs__header 
+            display             : none 
+
+.product__specification 
+    .attrs
+        &__title
+            display                 : flex 
+            justify-content         : space-between
+            align-items             : center 
+            font-size               : 15px 
+            font-weight             : 400
+            line-height             : 20px 
+            height                  : 45px
+            border-top              : solid 1px rgba(0,0,0,.1)
+            padding                 : 12px 0
+
+            &:after 
+                font-icon           : url('./svg/next.svg')
+                font-size           : 18px
+                display             : flex 
+                justify-content     : center 
+                align-items         : center  
+                width               : 45px 
+                height              : 100%
+
+        &__container 
+            position                : fixed 
+            top                     : 0 
+            left                    : 0 
+            z-index                 : 200
+            width                   : 100%
+            height                  : 100% 
+            background              : #fff 
+            opacity                 : 0
+            visibility              : hidden 
+            transform               : translate3d(100%, 0, 0)
+            transition              : transition[0]
+            &:before 
+                position            : absolute 
+                top                 : 0 
+                right               : 0
+                display             : flex 
+                justify-content     : center 
+                align-items         : center  
+                width               : 45px
+                height              : 45px    
+                background          : none 
+                border              : 0   
+                font-icon           : url('./svg/close.svg')
+                font-size           : 18px
+        &__case 
+            height                  : calc(100% - 45px)
+            margin                  : 45px auto 0
+            padding                 : 0 15px 50px
+            font-size               : 13px
+            font-weight             : light
+            overflow-y              : auto 
+            .product__attr-label
+                font-weight         : semi-bold
+                padding-right       : 20px
+            .product__attr-div
+                display             : none 
+            .product__attr 
+                display                 : grid 
+                grid-template-columns   : repeat(2, 1fr)
+                grid-template-rows      : 1fr 
+                padding                 : 15px
+                &:nth-child(even)
+                    background          : #FFE6AB    
+            
+
+    &.on 
+        .attrs__container
+            opacity             : 1
+            visibility          : visible 
+            transform           : translate3d(0,0,0) 
+
 .product
+    &__image-extra
+        display                 : none 
+    &__variations 
+        position                : fixed 
+        top                     : 0 
+        left                    : 0 
+        z-index                 : 200
+        width                   : 100% 
+        height                  : 100% 
+        background              : #fff 
+        visibility              : hidden 
+        opacity                 : 0 
+        transform               : translate3d(100%, 0, 0) 
+        transition              : transition[0]
+        &.on 
+            opacity             : 1
+            visibility          : visible 
+            transform           : translate3d(0,0,0) 
+        &:before 
+            position            : absolute 
+            top                 : 0 
+            right               : 0
+            display             : flex 
+            justify-content     : center 
+            align-items         : center  
+            width               : 45px
+            height              : 45px    
+            background          : none 
+            border              : 0   
+            font-icon           : url('./svg/close.svg')
+            font-size           : 18px
+
+    &__shipping
+        margin-top              : 30px 
+    &__prices 
+        .from
+            font-size           : 14px
+            font-weight         : light 
+            color               : #767676
+            text-decoration     : line-through
+        .to 
+            font-size           : 24px
+            font-weight         : bold 
+            color               : color[0]
+    &__buy 
+        display                 : flex 
+        justify-content         : center 
+        align-items             : center  
+        width                   : 100% 
+        height                  : 45px
+        border                  : 0
+        background              : #43C233
+        color                   : #fff
+        font-size               : 16px
+        font-weight             : semi-bold
+        text-transform          : uppercase 
+        cursor                  : pointer
+        &:disabled 
+            background          : #eaeaea
+            cursor              : not-allowed
     &__image
         position    : relative
         min-height  : 425px
+    &__description 
+        font-size   : 13px
+        font-weight : regular 
+        color       : #434343
+    &__review--box
+        margin-bottom   : 30px
+    &__title 
+        display                 : flex 
+        justify-content         : space-between
+        align-items             : center 
+        font-size               : 15px 
+        font-weight             : 400
+        line-height             : 20px 
+        height                  : 45px
+        border-top              : solid 1px rgba(0,0,0,.1)
+        padding                 : 12px 0
+
+        &:after 
+            font-icon           : url('./svg/next.svg')
+            font-size           : 18px
+            display             : flex 
+            justify-content     : center 
+            align-items         : center  
+            width               : 45px 
+            height              : 100%
     &__labels 
         position    : absolute 
         top         : 0 
         right       : 0
+        z-index     : 3
+        padding     : 15px
     &__sku-review 
         display             : flex 
         justify-content     : space-between
@@ -57,10 +288,267 @@
     &__info 
         .buttons--buy
             display : none 
+    &__variant
+        padding             : 30px 
+        box-shadow          : inset 0 0 0 15px #fff, inset 0 0 0 16px #FFE6AB
+        border-radius       : 18px
+        &:after 
+            content         : ''
+            display         : block 
+            clear           : both
+    .product__info &__attr
+        display                 : flex 
+        justify-content         : flex-start 
+        align-items             : center  
+        height                  : 25px 
+        font-size               : 13px
+        font-weight             : regular 
+        margin                  : 7px 0
+        &-value 
+            font-weight         : light
+        for attr in 'profundidade' 'largura' 'altura' 'envio-imediato'
+            &--{ attr }:before 
+                display         : inline-block
+                font-icon       : url('./svg/' + attr + '.svg')
+                width           : 30px
+                color           : color[2]
+                if( attr == 'profundidade')
+                    font-size       : 25px
+                if( attr == 'largura' )
+                    font-size       : 15px
+                if( attr == 'altura')
+                    font-size       : 25px
+                if( attr == 'envio-imediato' )
+                    font-size       : 16px
+                    color           : #434343
+    &__link-more 
+        font-size               : 13px
+        font-weight             : regular 
+        text-decoration         : underline
+        color                   : color[0]
+        display                 : block 
+        margin                  : 20px 0
+    &__variants 
+        display                 : block 
+        font-size               : 13px
+        font-weight             : regular
+        line-height             : 16px
+        text-transform          : uppercase 
+        text-align              : center
+        letter-spacing          : 1px 
+        color                   : color[2]   
+        border                  : solid 1px color[0]
+        border-radius           : 3px
+        padding                 : 14px 15px
+        margin                  : 20px 0
+        &:hover 
+            background          : color[0]
+            color               : #fff 
+            text-decoration     : none 
+.variants
+    height                      : calc(100% - 50px)
+    width                       : 100% 
+    padding                     : 0 15px 55px
+    margin-top                  : 50px 
+    overflow-y                  : auto
+    &__title 
+        font-size               : 20px 
+        font-weight             : light
+        text-align              : center  
+        color                   : #434343
+        padding-bottom          : 10px
 
+        span 
+            font-weight         : bold 
+            text-transform      : uppercase 
+            color               : #43C233
+    &__list
+        display                 : grid 
+        grid-template-rows      : 1fr 
+        grid-template-columns   : 1fr 
+        margin                  : 0 -15px
+    &__buy 
+        position                : fixed 
+        bottom                  : 0 
+        left                    : 0
+        display                 : flex 
+        justify-content         : center 
+        align-items             : center  
+        width                   : 100% 
+        height                  : 45px
+        border                  : 0
+        background              : #43C233
+        color                   : #fff
+        font-size               : 16px
+        font-weight             : semi-bold
+        text-transform          : uppercase 
+        cursor                  : pointer
+        &:disabled 
+            background          : #eaeaea
+            cursor              : not-allowed
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+.variant 
+    display                     : flex
+    align-items                 : stretch 
+    &__image 
+        flex                    : 0 0 calc(50% - 20px)
+        margin-right            : 20px
+    &__content 
+        flex                    : 1 
+        min-width               : 0
+    &__name 
+        font-size               : 13px
+        font-weight             : regular
+    &__prices 
+        font-size               : 15px
+        font-weight             : bold
+        color                   : color[0]
+        margin                  : 4px 0 7px
+    &__quantity 
+        max-width               : 70px
+        height                  : 35px 
+        border                  : solid 1px #ffe6ab
+        border-radius           : 3px
+        display                 : flex 
+        &-button 
+            display             : flex 
+            justify-content     : center 
+            align-items         : center  
+            flex                : 0 0 25px
+            border              : 0
+            font-size           : 13px
+            font-weight         : bold 
+            background          : none 
+            color               : color[0]
+            cursor              : pointer
+            &:disabled 
+                color           : #eaeaea
+                cursor          : not-allowed
+        &-input 
+            flex                : 1 1 auto 
+            min-width           : 0
+            border              : 0 
+            background          : none 
+            font-size           : 13px
+            font-style          : italic
+            text-align          : center
+            color               : #BEAF8C 
+
+@media (min-width: 500px)
+    .variants
+        &__list
+            grid-template-columns: repeat(2, 1fr)
 @media (min-width: 992px)
+    .variants
+        &__list
+            grid-template-columns: repeat(3, 1fr)
+@media (min-width: 1440px)
+    .variants
+        &__list
+            grid-template-columns: repeat(4, 1fr)
+@media (min-width: 992px)
+    .thumbs 
+        width                   : 110px
+        padding                 : 15px
     .product 
         &__container 
             display             : flex 
         &__image, &__info 
             padding             : 15px
+        &__shipping
+            padding-top             : 30px 
+            border-top              : solid 1px #FFE6AB
+        &__variations
+            position            : static
+            opacity             : 1
+            visibility          : visible 
+            transform           : none 
+            &:before 
+                display         : none 
+        &__title 
+            margin-top          : 40px
+            padding-top         : 40px 
+            border-top          : solid 1px #FFE6AB
+            font-size           : 30px 
+            font-weight         : light
+            height              : auto
+            &:after 
+                display         : none 
+        &__specification 
+            .attrs__case 
+                margin          : 0
+                .product__attr
+                    grid-template-columns: 40% 1fr
+            .attrs__title
+                padding-top         : 0
+                border              : 0
+                font-size           : 20px 
+                font-weight         : regular
+                height              : auto
+                &:after 
+                    display         : none 
+            .attrs__container
+                position                : static 
+                visibility              : visible 
+                opacity                 : 1 
+                transform               : none 
+            .attrs__case
+                padding                 : 0
+                margin-top              : 0
+            
+    .description-product__content
+        position                : static 
+        visibility              : visible 
+        opacity                 : 1 
+        transform               : none 
+        .productDescription
+            padding             : 0 0 10px
+            margin-top          : 30px 
+    .variants
+        padding                 : 0
+        margin-bottom           : 40px
+        padding-top             : 40px 
+        border-top              : solid 1px #ffe6ab
+        overflow                : visible
+        &__buy
+            position            : static
+    #divTitulo
+        border                  : 0 
+        font-size               : 40px
+        font-weight             : light
+        &:after 
+            display             : none 
+    .product__specification-image
+        display                 : flex 
+        justify-content         : space-between
+        align-items             : flex-start 
+        padding-top             : 10px 
+    .product__image-extra
+        display                 : block
+        flex                    : 0 0 auto
+        margin-left             : 30px
+    .product__specification
+        flex                    : 1 1 auto 
+        min-width               : center 
+@media (min-width: viewport)
+    .thumbs 
+        order                   : -1
+        position                : relative
+        flex                    : 0 0 110px
+    #image 
+        flex                    : 1 1 auto 
+        min-width               : 0
+        padding                 : 15px 
+    .product 
+        &__image
+            min-height          : 670px
+            flex                : 1 1 auto 
+            min-width           : 0
+            #show
+                margin              : -15px
+                display             : flex 
+        &__info 
+            flex                : 0 1 475px 

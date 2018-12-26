@@ -48,13 +48,17 @@
                                 <!--  Component: Sellers -->
                                 <vtex.cmc:SellerOptions />
                         
-                                <!--  Component: Price -->
-                                <vtex.cmc:skuPrice />
+                                <div class="product__prices" data-component="wholesale-prices"></div>
 
                                 <div class="product__description product__description--short">
                                     <div class="description-short"><vtex.cmc:productDescriptionShort /></div>
                                     <button class="product__description-more">+ Ver mais</button>
                                 </div>
+                                
+                                <div class="product__attrs product__attrs--dimensoes" data-attr="Dimensões"></div>
+                                <a href="#vejamaisdetalhes" class="product__link-more">Veja mais detalhes</a>
+                                <div class="product__attrs product__attrs--outras-informacoes" data-attr="Outras informações"></div>
+                                <a href="#selecioneasvariacoes" class="product__variants">CLIQUE E SELECIONE AS CORES</a>
                             
                                 <!--  Component: Sales channels -->
                                 <vtex.cmc:SalesChannelDropList />
@@ -62,16 +66,7 @@
                                 <!--  Component: Addicional services -->
                                 <vtex.cmc:stockKeepingUnitService />
                                 
-                                <div class="buttons buttons--buy">
-                                    <div class="buttons__qtys">
-                                        <div class="buttons__actions">
-                                            <button class="buttons__action buttons__action--less" type="button"></button>
-                                            <input class="buttons__input buttons__input--buy" value="1" type="text" />
-                                            <button class="buttons__action buttons__action--more" type="button"></button>
-                                        </div>
-                                    </div>
-                                    <vtex.cmc:BuyButton/>
-                                </div>
+                                <button disabled="disabled" type="button" class="product__buy">COMPRAR</button>
                                 
                                 <div class="product__shipping">
                                     <vtex.cmc:shippingValue />
@@ -88,24 +83,22 @@
                         
                     </div>
 
-                    <div class="product__variations">
-                        <vtex.cmc:skuSelection />
-                    </div>
+                    <div class="product__variations" data-component="wholesale"></div>
                     
-                    <div class="buytobether product__buytobether" data-carousel="buytobether">
+                    <div class="buytobether product__buytobether">
                         <vtex.cmc:BuyTogether/>
                     </div>
                     
                     <div class="product__description product__description--box">
-                        <h2 class="product__title">Descrição do Produto</h2>
-                        <h3 class="product__subtitle">Saiba tudo o que precisa sobre este produto</h3>
+                        <h2 class="product__title">Descrição</h2>
                         <vtex.cmc:ProductDescription/>
                     </div>
                     
+                    <div class="product__specification" data-attr="Especificações Técnicas"></div>
+                    
                     <div class="product__review--box">
                         <div class="review product__review">
-                            <h2 class="product__title">Avaliações do produto</h2>
-                            <h3 class="product__subtitle">Olha o que quem já comprou disse</h3>
+                            <h2 class="product__title">Avaliações</h2>
                             <vtex.cmc:UserReview/>
                         </div>
                     </div>

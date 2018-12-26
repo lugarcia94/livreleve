@@ -88,7 +88,7 @@
         color               : #fff
 
     &__container, [id*=ResultItems_]
-        > div > ul:not(.slick-dotted)
+        > div > ul:not(.slick-dotted):not(.slick-initialized)
             display                 : grid
             grid-template-rows      : 1fr
             grid-template-columns   : repeat(3,1fr)
