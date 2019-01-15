@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import getProductById from 'Core/getProductById';
 import Product from './product';
-import Config from 'Core/config.json';
+
 import { wholesale } from '../../actions/wholesale';
 import { addToCart } from '../../actions/core';
 
@@ -19,7 +19,7 @@ class Wholesale extends Component {
     }
     async componentDidMount() {
         const current  = await vtexjs.catalog.getCurrentProductWithVariations();
-        const product  = await getProductById(current.productId);
+        const product  = await getProductById(current.productId); console.log(product);
         
         if(product.items) {
             product.salesChannel = current.salesChannel;

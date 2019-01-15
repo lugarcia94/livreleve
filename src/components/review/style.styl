@@ -1,4 +1,5 @@
 star = './svg/star.svg';
+loading = 'data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ibGRzLW1lc3NhZ2UiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgc3R5bGU9ImJhY2tncm91bmQ6IG5vbmU7Ij48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMCA1MCkiPgo8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iNiIgZmlsbD0iI2ZmYjIwMCIgdHJhbnNmb3JtPSJzY2FsZSgwLjcxNjU1NiAwLjcxNjU1NikiPgogIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0ic2NhbGUiIGJlZ2luPSItMC4zNzVzIiBjYWxjTW9kZT0ic3BsaW5lIiBrZXlTcGxpbmVzPSIwLjMgMCAwLjcgMTswLjMgMCAwLjcgMSIgdmFsdWVzPSIwOzE7MCIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGVUcmFuc2Zvcm0+CjwvY2lyY2xlPgo8L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAgNTApIj4KPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjYiIGZpbGw9IiNmZmIyMDAiIHRyYW5zZm9ybT0ic2NhbGUoMC45NzEwNDggMC45NzEwNDgpIj4KICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InNjYWxlIiBiZWdpbj0iLTAuMjVzIiBjYWxjTW9kZT0ic3BsaW5lIiBrZXlTcGxpbmVzPSIwLjMgMCAwLjcgMTswLjMgMCAwLjcgMSIgdmFsdWVzPSIwOzE7MCIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGVUcmFuc2Zvcm0+CjwvY2lyY2xlPgo8L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjAgNTApIj4KPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjYiIGZpbGw9IiNmZmIyMDAiIHRyYW5zZm9ybT0ic2NhbGUoMC45Mjc0ODQgMC45Mjc0ODQpIj4KICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InNjYWxlIiBiZWdpbj0iLTAuMTI1cyIgY2FsY01vZGU9InNwbGluZSIga2V5U3BsaW5lcz0iMC4zIDAgMC43IDE7MC4zIDAgMC43IDEiIHZhbHVlcz0iMDsxOzAiIGtleVRpbWVzPSIwOzAuNTsxIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlVHJhbnNmb3JtPgo8L2NpcmNsZT4KPC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwIDUwKSI+CjxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI2IiBmaWxsPSIjZmZiMjAwIiB0cmFuc2Zvcm09InNjYWxlKDAuNjM5OTk5IDAuNjM5OTk5KSI+CiAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJzY2FsZSIgYmVnaW49IjBzIiBjYWxjTW9kZT0ic3BsaW5lIiBrZXlTcGxpbmVzPSIwLjMgMCAwLjcgMTswLjMgMCAwLjcgMSIgdmFsdWVzPSIwOzE7MCIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGVUcmFuc2Zvcm0+CjwvY2lyY2xlPgo8L2c+PC9zdmc+'
 
 color-selected     = #FFB200
 color-not-selected = #FFE6AB
@@ -332,44 +333,139 @@ rating-bar-radius = 3px
     height                      : calc(100% - 45px)
     overflow-y                  : auto
 
-// Light de Msg
+// Light de Publish
 .formUserComment
-    &:not(:empty) #formUserReview
-        opacity                 : 1
-        visibility              : visible
-        transform               : translate3d(0,0,0)
+    background              : #fff
+    min-height              : 100px
+    font-size               : 13px 
+    font-weight             : regular 
+    position                : relative 
+    > h2 
+        padding-top         : 30px
+        &:after 
+            position            : absolute 
+            right               : 0
+            top                 : 0
+            display             : flex 
+            width               : 45px 
+            height              : 45px 
+            justify-content     : center 
+            align-items         : center 
+            background          : #ffb200
+            color               : #fff 
+            border-radius       : 3px
 
-#formUserReview
-    position                    : fixed 
-    top                         : 0 
-    left                        : 0 
-    z-index                     : 205
-    width                       : 100% 
-    height                      : 100%
+            font-icon           : url('./svg/close.svg')
+            font-size           : 20px 
+
+#publishUserReview
     background                  : #fff
     opacity                     : 0 
-    visibility                  : visible 
-    transition                  : transition[0] 
-    transform                   : translate3d(100%, 0, 0)
-    padding                     : 20px
+    visibility                  : hidden 
+    transition                  : all .2s ease-in-out
+
+    background-image            : url(loading) 
+    background-repeat           : no-repeat 
+    background-position         : center center  
+    background-size             : 300px 100px
+
+    .review--publish & 
+        opacity                 : 1 
+        visibility              : visible 
+        min-height              : 100px
+
+#formUserReview
     font-size                   : 13px
     font-weight                 : regular
-    padding                     : 30px 0
-    h1 
-        display                 : none 
-    h2 
-        font-size               : 20px
-        font-weight             : regular
+    .header 
+        margin                  : 15px 0 30px
+        position                : relative 
+        h1 
+            display             : none 
+        h2 
+            font-size           : 20px 
+            font-weight         : regular  
+            line-height         : 45px 
+
+        .close a 
+            position            : absolute 
+            font-size           : 0 
+            right               : 0 
+            top                 : 0 
+            display             : flex 
+            width               : 45px 
+            height              : 45px 
+            justify-content     : center 
+            align-items         : center 
+            background          : #ffb200
+            color               : #fff 
+            border-radius       : 3px
+            &:before 
+                font-icon       : url('./svg/close.svg')
+                font-size       : 20px 
+            &:hover 
+                text-decoration : none  
+                background      : darken(#ffb200, 10%)
     input[type=text], textarea 
-        display                 : block 
         width                   : 100% 
-        padding                 : 15px 
         border                  : solid 1px rgba(0,0,0,.1)
         border-radius           : 3px
-    textarea
+        padding                 : 15px
+    input[type=text]
+        height                  : 45px 
+    textarea 
         height                  : 200px
+    .grp
+        position                : relative
+        margin-bottom           : 20px
+    .fTitulo, .fComentario
+        label 
+            display                 : block
+            padding-left            : 10px 
+            padding-bottom          : 10px
+        span 
+            position            : absolute 
+            top                 : 0 
+            left                : 0   
+    .aviso-resenha 
+        border-radius           : 3px
+        padding                 : 15px 
+        background              : #ff6961
+        color                   : #fff 
+        margin                  : 15px 0
+
+    .avaliar a 
+        display                 : flex 
+        justify-content         : center 
+        align-items             : center  
+        height                  : 45px 
+        font-size               : 13px 
+        font-weight             : bold 
+        text-transform          : uppercase 
+        color                   : #fff 
+        background              : #ffb200
+        border-radius           : 3px 
+        margin-bottom           : 30px 
+        &:hover 
+            text-decoration : none  
+            background      : darken(#ffb200, 10%)
 
 @media (min-width: 992px)
+    .product__review:before 
+        content             : ''
+        position            : fixed 
+        top                 : 0 
+        left                : 0 
+        z-index             : 204
+        width               : 100% 
+        height              : 100% 
+        background          : rgba(0,0,0,.5)
+        opacity             : 0 
+        visibility          : hidden 
+        transition          : transition[0] 
+    .review--publish:before
+        opacity             : 1 
+        visibility          : visible 
     #resenha
         position            : static 
         visibility          : visible 
@@ -411,3 +507,29 @@ rating-bar-radius = 3px
                 margin-right    : 20px 
                 &:last-child 
                     margin-right: 0
+    #publishUserReview
+        position                : fixed 
+        top                     : 50%
+        left                    : 50%
+        z-index                 : 205 
+        height                  : auto 
+        width                   : 500px
+        max-height              : 90vh 
+        border-radius           : 3px
+        overflow                : auto 
+        transform               : translateY(-50%) translateX(-50%)
+        padding                 : 20px 
+        box-shadow              : 0 0 100px rgba(0,0,0,.1) 
+        opacity                 : 0 
+        visibility              : hidden 
+        transition              : transition[0]  
+        .review--publish & 
+            opacity             : 1 
+            visibility          : visible
+    #formUserReview 
+        .header
+            margin                  : 0
+        .avaliar a
+            margin-bottom           : 0
+
+    

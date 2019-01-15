@@ -1,6 +1,4 @@
 .showcase
-    { container }
-
     h2
         visibility          : hidden
 
@@ -47,7 +45,6 @@
         line-height         : 18px
         overflow            : hidden
 
-
     &__link
         display             : block
 
@@ -55,7 +52,7 @@
             letter-spacing  : 0.2px
             color           : #888888
             font-size       : 13px
-            font-weight     : 600 
+            font-weight     : semi-bold 
             line-height     : 15px
             transition      : all 150ms ease-in-out 
 
@@ -91,13 +88,14 @@
         > div > ul:not(.slick-dotted):not(.slick-initialized)
             display                 : grid
             grid-template-rows      : 1fr
-            grid-template-columns   : repeat(3,1fr)
+            grid-template-columns   : 1fr
             > li
-                flex            : 1 1 234px
-
                 &.helperComplement
                     display     : none
-
+            @media (min-width: 425px)
+                grid-template-columns   : repeat(2, 1fr)
+            @media (min-width: 768px)
+                grid-template-columns   : repeat(3, 1fr)
         &:not([data-carousel])
             > div > ul
                 margin          : -15px
@@ -107,7 +105,6 @@
             > div > ul:not(.slick-dotted)
                 flex-wrap       : nowrap
                 width           : 100%
-                overflow        : hidden
 
                 > li
                     min-width   : 234px
@@ -115,75 +112,107 @@
                     &.helperComplement
                         display : none
 
-    &__buy
-        margin-top              : 10px
-
-    &__quickview
-        position                : absolute
-        top                     : 20px
-        left                    : 20px
-
-        a
-            display                 : block
-            font-size               : 10px
-            text-transform          : uppercase
-            text-align              : center
-            line-height             : 1
-            color                   : color[0]
-
-            &:before
-                display             : block
-                margin-bottom       : 2px
-                font-icon           : url('./svg/quickview.svg')
-                font-size           : 18px
-
-            &:hover
-                text-decoration     : none
 
     &__prices
         .price
-            display                 : flex
-            justify-content         : center
-            align-items             : center
-            flex-flow               : row wrap
+            &.valor-de, &.valor-por
+                flex            : 0 0 auto
+                padding         : 0 5px
+    &__actions 
+        position                : relative
+        display                 : flex 
+        padding-top             : 65px 
+        margin-top              : 15px
+    &__buy 
+        margin-left             : 10px
+        flex                    : 1 1 auto 
+        min-width               : 0
+    .buy-button
+        width                   : 100% 
+        &__qtd 
+            display             : none 
+        &__button 
+            display             : flex 
+            justify-content     : center 
+            align-items         : center  
+            width               : 100% 
+            height              : 25px
+            padding             : 0 10px
+            border              : 0 
+            border-radius       : 3px
+            font-size           : 13px
+            font-weight         : semi-bold 
+            text-transform      : uppercase
+            background          : #43C233
+            color               : #fff
+            cursor              : pointer
+            &:disabled 
+                background      : #eaeaea
+        &__variants 
+            position            : absolute
+            top                 : 0 
+            left                : 0 
+            width               : 100% 
+            .slick-list
+                padding         : 0 
+                margin          : 0
+            .slick-slider[dir]
+                padding         : 0 50px
+        &__variant 
+            border-radius       : 3px 
+            overflow            : hidden
+            text-align          : center 
+            padding             : 1px 
+            cursor              : pointer
+            img 
+                display         : inline-block
+            &--actived 
+                box-shadow      : inset 0 0 0 1px #FF7000
+    &__quickview 
+        order                   : -1
+        display                 : none 
+        a 
+            display             : flex 
+            justify-content     : center 
+            align-items         : center 
+            padding             : 0 10px  
+            height              : 25px
+            border              : 0 
+            border-radius       : 3px        
+            font-size           : 13px 
+            font-weight         : semi-bold 
+            text-transform      : uppercase
+            background          : #FFE6AB
+            color               : #434343
 
-            > div
-                flex                : 0 0 100%
-
-                &.valor-de, &.valor-por
-                    flex            : 0 0 auto
-                    padding         : 0 5px
-
-
+@media (max-width: 991px)
+    .showcase__buy
+        margin-left: 0
+        
 @media (min-width: 992px)
+    [data-carousel]:hover 
+        z-index                 : 10
     .showcase
-        &__buy
-            position                : absolute
-            bottom                  : 10px
-            left                    : 10px
-            width                   : calc(100% - 20px)
-            margin-top              : 0
-            visibility              : hidden
-            opacity                 : 0
-            transition              : transition[0]
-
         &__quickview
-            visibility              : hidden
-            opacity                 : 0
-            transition              : transition[0]
+            display                 : block
+        &__item:hover
+            position                : relative
+            z-index                 : 100
+            background              : #fff
 
+        &__actions 
+            opacity                 : 0 
+            visibility              : hidden 
+            transition              : all .2s ease-in-out  
+    
         &__item
             &:hover
                 box-shadow          : inset 0 0 0 1px #FFE6AB
-
-                .showcase__quickview
-                    visibility      : visible
-                    opacity         : 1
-
-                .showcase__buy
-                    visibility      : visible
-                    opacity         : 1
-
+                .showcase__actions 
+                    opacity         : 1 
+                    visibility      : visible 
+        .home & 
+            margin-bottom           : -80px
 
 
 

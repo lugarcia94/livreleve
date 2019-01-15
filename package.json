@@ -62,7 +62,7 @@
     "lost": "^8.2.0",
     "mini-css-extract-plugin": "^0.4.2",
     "npm-run-all": "^4.1.1",
-    "postcss-inline-svg": "^3.0.0",
+    "postcss-inline-svg": "^3.1.1",
     "postcss-loader": "^3.0.0",
     "postcss-pxtorem": "^4.0.1",
     "postcss-svgo": "^4.0.0",
@@ -91,9 +91,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "firebase": "^5.5.8",
+    "instafeed.js": "^1.4.1",
     "jquery": "^3.1.1",
     "prop-types": "^15.6.2",
-    "react-slick": "^0.23.1",
+    "react-slick": "^0.23.2",
     "slick-carousel": "^1.6.0",
     "stickyfilljs": "^2.0.1",
     "sumoselect": "^3.0.5"

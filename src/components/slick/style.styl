@@ -9,11 +9,11 @@
         cursor              : pointer      
         font-size           : 0
         position            : absolute
-        background          : transparent
+        background          : rgba(255,255,255, .5)
         color               : color[0]
 
         &:before
-            font-size       : 28px
+            font-size       : 21px
 
     &-prev
         left                    : 0
@@ -60,6 +60,15 @@
                 transform   : rotate(90deg)
             &-next 
                 transform   : rotate(90deg)
+    
+.slick-list
+    padding                 : 5px 
+    margin                  : -5px 
+    box-sizing              : content-box 
+
+.slick-vertical
+    .slick-track, .slick-list 
+        min-height          : 100%
 
 [data-carousel]
     position                : relative
@@ -92,5 +101,13 @@
         z-index             : 10px
         margin-top          : -50px
 
+@media (max-width: 991px)
+    [data-carousel] > div > ul > .slick-arrow
+        margin-top          : -60px 
 
- 
+@media (min-width: (viewport + 90)) 
+    [data-carousel] > div > ul > .slick 
+        &-prev 
+            left            : -45px
+        &-next 
+            right           : -45px

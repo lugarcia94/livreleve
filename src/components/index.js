@@ -104,3 +104,5 @@ import './tb';
 import './quickview';
 
 
+// Instagram
+import './instagram';

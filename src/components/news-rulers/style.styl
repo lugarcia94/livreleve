@@ -1,6 +1,7 @@
 .news-rulers
     background: color[2]
     margin-top: 40px
+    box-shadow: 100px 0 0 color[2], -100px 0 0 color[2]
 
     .news-rulers__item.news
         width               : 100%
@@ -8,6 +9,11 @@
         min-height          : 72px
         display             : flex
         align-items         : center
+
+    .success
+        font-size: 14px
+        font-weight: regular
+        color: #fff 
 
 .newsletter
     width                   : 100%
@@ -38,7 +44,8 @@
         @media(max-width: 768px)
             width 100%
             max-width 100%
-            margin-bottom: 5px 
+            margin-bottom: 5px
+            margin-right: 0 
 
     #newsletterButtonOK
         width               : 88px
@@ -127,4 +134,7 @@
             bottom      : 0
             left        : 0
             width       : 240px
-
+            
+@media (min-width: 992px)
+    .news-rulers
+        box-shadow: -800px 0 0 color[2], 800px 0 0 color[2]

@@ -2,10 +2,11 @@ import './style.styl';
 
 const body = $('body');
 
-if(body.hasClass('category')) {
+if(body.hasClass('category') || body.hasClass('department')) {
     let sub = $('.sub');
-    sub.first().append($('.pager.top'));
-    sub.last().append($('.pager.bottom'));
+    let resultTimer = $('.searchResultsTime');
+    sub.first().append($('.pager.top')).prepend(resultTimer.first());
+    sub.last().append($('.pager.bottom')).prepend(resultTimer.last());
 }
 
 

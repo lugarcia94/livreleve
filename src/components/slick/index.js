@@ -8,6 +8,8 @@ $('[data-carousel]').each(function(){
 
     switch (type) {
         case 'one':
+            config.autoplay = true;
+            config.autoplaySpeed = 5000;
             config.responsive = [
                 {
                     breakpoint    : 992,

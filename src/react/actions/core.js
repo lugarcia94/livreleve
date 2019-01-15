@@ -60,7 +60,7 @@ export function addToCart(items) {
         
         items = items.filter((item) => orderForm.items.filter((i) => i.id == item.id).length == 0);
 
-        // Insert
+        // Insert 
         if(items.length) {
             orderForm = await vtexjs.checkout.addToCart(items, null, config.seller.channel);
             orderForm.items.forEach((item) => {
@@ -94,7 +94,7 @@ export function addToCart(items) {
 let msgIndex = 0;
 
 export function msg(messages) {
-    for(i=msgIndex; i < messages.length; i++) {
+    for(let i=msgIndex; i < messages.length; i++) {
         toastr.warning('Ops! Ocorreu algum problema.', messages[i].text, {
             timeOut: 0,
             extendedTimeOut: 0

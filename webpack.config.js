@@ -3,7 +3,6 @@ const   path                    = require('path');
 const   MiniCssExtractPlugin    = require("mini-css-extract-plugin");
 const   IconfontWebpackPlugin   = require('iconfont-webpack-plugin');
 
-
 const config = {
     entry: {
         app: './src/index.js',
@@ -69,6 +68,7 @@ const config = {
                         options: {
                             plugins: (loader) => [
                                 new IconfontWebpackPlugin(loader),
+                                require('postcss-inline-svg')(),
                                 require('autoprefixer')({
                                     browsers: ['last 2 versions'],
                                     grid: true
@@ -88,6 +88,7 @@ const config = {
                         options: {
                             plugins: (loader) => [
                                 new IconfontWebpackPlugin(loader),
+                                require('postcss-inline-svg')(),
                                 require('autoprefixer')({
                                     browsers: ['last 2 versions'],
                                     grid: true

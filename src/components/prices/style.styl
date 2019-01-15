@@ -1,23 +1,34 @@
 .valor-por
-    font-size       : 15px
-    font-weight     : regular
+    font-size       : 14px
+    font-weight     : semi-bold
 
-    color           : color[0]
+    color           : #FFB200
+    strong 
+        font-weight : semi-bold
+    .showcase__item--offer &
+        font-size   : 17px
+        color       : #FF7000
+
 
 .valor-de
     font-size       : 13px
-    font-weight     : regular
+    font-weight     : light
 
-    color           : #A8A8A8
+    color           : #767676
     text-decoration : line-through
+
+    strong 
+        font-weight : light
 
 
 .price__installment
     font-size       : 13px
-    font-weight     : regular
-
+    font-weight     : semi-bold
+    color           : #434343
     strong
-        font-weight : regular
+        font-weight : semi-bold
+    .showcase__item--offer & 
+        padding-top : 5px
 
 .save-price.price__save
     display         : none
@@ -85,4 +96,12 @@
 
 
 
-        
+.prices__discount 
+    font-size       : 12px
+    font-weight     : semi-bold 
+    color           : #434343
+    padding-top     : 5px
+    .price 
+        font-size   : 16px
+        font-weight : semi-bold
+        color       : #43C233       

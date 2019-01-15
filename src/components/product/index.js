@@ -10,6 +10,7 @@ import './style.styl';
 import './notifyme.styl';
 import './frete.styl';
 import zoom from 'Core/functions/zoom';
+import getProductById from 'Core/getProductById';
 
 
 const body = $vtex('body');
@@ -39,6 +40,18 @@ if(body.attr('id') == 'product-page') {
 
     $('.product__variants').on('click', function(){
         $('.product__variations').addClass('on');
+        if($(window).width() > 991) {
+            if($('body').hasClass('quickview')) {
+                $("html,body").animate({
+                    scrollTop: $('.product__variations').offset().top
+                }, 1000);
+                console.log('iframe', $('.product__variations').offset().top);
+            } else {
+                $('html,body').animate({
+                    scrollTop: $('.product__variations').offset().top - $('.wrapper__container > .header').outerHeight()
+                }, 1000);
+            }
+        }
     });
 
     $('.product__variations').click((evt) => {
@@ -82,12 +95,85 @@ if(body.attr('id') == 'product-page') {
     // Quando carrega o produto pega o sku
     vtexjs.catalog.getCurrentProductWithVariations().done(function(product){
         setSkuID(product.skus[0].sku);
+        initProduct(product.productId);
     });
 
-    // Carousel das miniaturas do produto
-    $('.thumbs').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        vertical: true
+    async function initProduct(id) {
+        const product = await getProductById(id);
+        // thumbs Video
+        const video = product.Video
+        if(video) {
+            const src = $(video[0]).attr('src');
+            const id = src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+            $('.thumbs').append(`<li class="video"><img src="//img.youtube.com/vi/${ id }/0.jpg" /></li>`);
+            $('.thumbs .video').on('click', function(){
+                $('#include').toggleClass('on-play');
+            });
+            $('.thumbs li:not(.video)').on('click', function(){
+                $('#include').removeClass('on-play');
+            });
+        }
+        $('#include').append($('<div id="yotubeplay">').append(video));
+        thumbsCarousel();
+
+        // Imagem descrição 
+        const image = product.Imagem;
+        if(image) {
+            $('.product__specification-image').append($('<div class="product__image-extra">').append(`<img src="${ image }" />`));
+        }
+    }
+
+    function thumbsCarousel(){
+        // Carousel das miniaturas do produto
+        $('.thumbs').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            vertical: true,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        vertical: false
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: {
+                        vertical: false,
+                        slidesToShow: 3,
+                    }
+                }
+            ]
+        });
+    }
+
+    $('.product').on('click', '.showcase__title', function(){
+        $(this).closest('.showcase').addClass('on');
     });
+
+    $('.product').on('click', '.showcase__container > div > ul', function(evt) {
+        if($(evt.target).hasClass('slick-slider')) {
+            $(this).closest('.showcase').removeClass('on');
+        }
+    });
+
+    const buytobether = $('#divCompreJunto');
+    if(buytobether.length) {
+        const htmlBuyToBether = $.trim(buytobether.html());
+        if(htmlBuyToBether != '') {
+            buytobether.closest('.product__buytobether').addClass('buytobether--actived');
+        }
+    }
+
+    $('.product__link-more').click(function(evt){
+        const top = $('.product__title--description').offset().top - $('#header').outerHeight();
+
+        $('body,html').animate({
+            scrollTop: top
+        }, 1000);
+
+        evt.preventDefault();
+    })
+    
 }

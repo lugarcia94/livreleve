@@ -124,15 +124,15 @@ class Menu extends Component {
     render() {
         let list = this.renderHtml(this.props.items, false, 'categories', 0, 7);
         let allCategory = this.allCategory();
-
+        let { slot } = this.props;
+        
         if (this.props.hasErrored) {
             return(<div aria-expanded={this.props.expanded} class={ (this.state.mobile ?  'menu--mobile' : 'menu--desktop') } role="menubar" >OPS!! Ocorreu algum erro no Carregamento . . .</div>);
         }
 
         if (this.props.isLoading) {
             return(
-                <div aria-expanded={this.props.expanded}
-                     className={(this.state.mobile ? 'menu--mobile' : 'menu--desktop')} role="menubar">
+                <div aria-expanded={this.props.expanded} className={(this.state.mobile ? 'menu--mobile' : 'menu--desktop')} role="menubar">
                     <div className="menu__container">
 
                         <nav className="menu__nav">
@@ -143,20 +143,16 @@ class Menu extends Component {
                                 <div className="menu__user">
                                     <ul className="menu__user-list">
                                         <li className="menu__user-list-item">
-                                            <a className="menu__user-list-link menu__user-list-link--user"
-                                               href="/account">Minha Conta</a>
+                                            <a className="menu__user-list-link menu__user-list-link--user" href="/account">Minha Conta</a>
                                         </li>
                                         <li className="menu__user-list-item">
-                                            <a className="menu__user-list-link menu__user-list-link--orders"
-                                               href="/account/orders">Pedidos</a>
+                                            <a className="menu__user-list-link menu__user-list-link--orders" href="/account/orders">Pedidos</a>
                                         </li>
                                         <li className="menu__user-list-item">
-                                            <a className="menu__user-list-link menu__user-list-link--mail"
-                                               href="/contato">Contato</a>
+                                            <a className="menu__user-list-link menu__user-list-link--mail" href="/contato">Contato</a>
                                         </li>
                                         <li className="menu__user-list-item">
-                                            <a className="menu__user-list-link menu__user-list-link--help"
-                                               href="/institucional/ajuda">Ajuda</a>
+                                            <a className="menu__user-list-link menu__user-list-link--help" href="/institucional/ajuda">Ajuda</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -201,6 +197,7 @@ class Menu extends Component {
                                 {list}
                                 {allCategory}
                             </ul>
+                        { this.state.mobile && <footer dangerouslySetInnerHTML={{ __html: slot[0].innerHTML }}></footer> }
                         </nav>
 
                 </div>

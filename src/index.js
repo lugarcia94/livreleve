@@ -154,7 +154,7 @@ if(config.minicart) {
 
 
 import BuyButton from './react/components/BuyButton';
-if(config.buybutton) {
+if(config.buybutton) { 
     let rootBuyButtom = document.querySelectorAll('.showcase__buy');
 
     Array.from(rootBuyButtom).forEach(function(root) {

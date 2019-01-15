@@ -17,16 +17,19 @@
         width           : 30px
         height          : 30px
 
-        border          : solid 1px #F7F7F7
+        border          : solid 1px #FFE6AB
+        border-radius   : 3px
         margin          : 1px
 
-        background      : #F7F7F7
-        color           : color[0]
+        font-size       : 13px
+
+        background      : #fff
+        color           : #888888
         overflow        : hidden
 
         &.pgCurrent, &:hover
-            background  : #fff
-            color       : color[1]
+            background  : #FF7000
+            color       : #fff
 
     .previous, .next
         font-size       : 0
@@ -91,11 +94,25 @@
             vertical-align  : middle
 
         .SumoSelect
-            max-width       : 100px
+            max-width       : 135px
 
             > .CaptionCont
-                border-color    : #F0F0F0
-                border-radius   : 2px
+                border-color    : #FFE6AB
+                border-radius   : 3px
+                > span
+                    height: 23px;
+                    line-height: 23px;
+                > label 
+                    display         : flex 
+                    justify-content : center 
+                    align-items     : center  
+                    &:before 
+                        font-icon   : url('./svg/down.svg') 
+                        font-size   : 5px
+                        color       : #FF7000
+
+                    > i
+                        display     : none 
 
             > .optWrapper
                 width       : calc(100% + 100px)

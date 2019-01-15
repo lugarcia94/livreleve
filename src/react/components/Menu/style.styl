@@ -1,6 +1,22 @@
 
 .menu
+    [slot]
+        display                 : none 
 
+    .head-nav
+        flex-wrap               : wrap
+        padding                 : 15px 
+    .head-nav__sub
+        display                 : none !important 
+    .head-nav__item--lv1
+        flex                    : 0 0 100% 
+        margin-right            : 0
+    .social__list
+        justify-content         : space-around
+        max-width               : none  
+        border-top              : solid 1px #ffb200
+        padding-top             : 20px 
+        margin-top              : 20px
     .banner, .menu-banner-link
         display                 : none
 
@@ -110,7 +126,7 @@
 
         &--nv0
             font-size              : 13px
-            font-weight            : 600
+            font-weight            : semi-bold
             text-transform         : uppercase
             color                  : #434343
 
@@ -118,7 +134,7 @@
             font-size              : 13px
 
         &--nv1
-            font-weight            : semi-bold
+            font-weight            : regular
 
     &__user
         flex                                : 1 1 100%
@@ -171,13 +187,11 @@
 
     .menu
         position                            : fixed
-        top                                 : 85px
+        top                                 : 86px
         z-index                             : -1
 
         display                             : block
         width                               : 100%
-        min-height                          : 0
-        max-height                          : 41px
 
         overflow                            : visible
 
@@ -188,9 +202,6 @@
         .scrolling--top & 
             box-shadow                      : 0 10px 10px rgba(0,0,0,.01)
         .scrolling:not(.scrolling--top) &
-            opacity                         : 0
-            visibility                      : hidden
-
             transform                       : translate3d(0, -90px, 0)
 
         &__nav
@@ -300,7 +311,7 @@
                     right                   : 0
 
                     width                   : 100%
-                    height                  : calc(100vh - 200px)
+                    max-height              : calc(100vh - 200px)
                     border                  : solid 1px #E9E9E9
                     border-radius           : 3px
                     padding                 : 40px
@@ -320,6 +331,9 @@
 
                     > a:before
                         display             : none
+
+                .menu__link--nv0 
+                    font-weight             : semi-bold
 
 
                 .menu & .menu__link--nv0
@@ -372,7 +386,7 @@
             display                         : flex
             justify-content                 : center
             align-items                     : center
-            height                          : 40px
+            height                          : 50px
  
 
         &__link
@@ -390,11 +404,11 @@
             justify-content                 : center
             align-items                     : center
 
-            height                          : 40px
+            height                          : 50px
             padding                         : 0
 
             font-size                       : 11px
-            font-weight                     : 600
+            font-weight                     : semi-bold 
 
             text-transform                  : uppercase
 
@@ -413,7 +427,7 @@
                     direction               : rtl
 
                     left                    : auto
-                    right                   : 15px
+                    right                   : 0
 
                     .menu__sub-inner
                         direction           : ltr
