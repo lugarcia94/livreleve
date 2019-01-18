@@ -207,6 +207,20 @@
             transform           : translate3d(0,0,0) 
 
 .product
+    &__price 
+        display                 : none 
+        body.wholesale-page &[data-component]
+            display             : block 
+        body.not-wholesale &:not([data-component])
+            display             : block
+
+    &__actions
+        display                 : none 
+        body.wholesale-page &[data-component]
+            display             : block 
+        body.not-wholesale &:not([data-component])
+            display             : block
+
     &__image-extra
         display                 : none 
     &__variations 
@@ -241,6 +255,9 @@
 
     &__shipping
         margin-top              : 30px 
+        display                 : none 
+        body.not-wholesale &
+            display             : block
     &__prices 
         .from
             font-size           : 14px
@@ -693,6 +710,8 @@
                 display             : flex 
         &__info 
             flex                : 0 1 475px 
+.addthis_inline_share_toolbox
+    margin-top: 30px
 @media (max-width: 991px)
     .product__prices
         display: flex 

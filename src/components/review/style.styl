@@ -57,6 +57,7 @@ $star-not-selected
         &:after 
             content         : ')'
 .ratingStar
+    font-size       : 0;
     &:before 
         font-icon   : url(star) 
         @extend $star-selected
@@ -66,6 +67,21 @@ $star-not-selected
 .rating-avalie a 
     font-size       : 0
     text-decoration : none 
+
+.opiniaoRating
+    > div 
+        display: flex 
+        justify-content: flex-start 
+        align-items: center 
+        padding: 10px 0
+        label 
+            margin-right: 10px
+    a:hover 
+        text-decoration: none
+
+.opiniaoInfo
+    font-size: 11px
+    opacity: .6
 
 // Pagina de produto
 for item in '50' '40' '30' '20' '10' '0' '00'
@@ -164,11 +180,13 @@ rating-bar-radius = 3px
             font-weight     : regular 
             text-transform  : uppercase 
             color           : #FFE6AB 
+            
         + li 
             margin-top      : 10px
     .voteRatingStar
         flex                : 0 0 rating-star-width
     .voteRatingBar
+        position            : relative
         flex                : 1 1 auto
         height              : rating-height-bar
         min-width           : 0
@@ -180,6 +198,7 @@ rating-bar-radius = 3px
             height          : 100%
             background      : #FF7000
             border-radius   : rating-bar-radius
+            left            : 0!important
     .avaliacao 
         > p:empty 
             display         : none 

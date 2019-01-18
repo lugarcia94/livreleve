@@ -10,6 +10,7 @@ import configureStore from './react/store/configureStore';
 
 import Menu from './react/components/Menu';
 const store = configureStore();
+import getProductById from 'Core/getProductById';
 
 import 'Core/polyfill/hasAttribute';
 
@@ -53,16 +54,32 @@ if(rootToastr)
 
 
 import Wholesale from './react/components/Wholesale';
-let rootWholesales = Array.from(document.querySelectorAll('[data-component=wholesale]'));
-if(rootWholesales.length) {
-    rootWholesales.forEach((rootWholesale) => {
-        ReactDOM.render(
-            <Provider store={ store }>
-                <Wholesale />
-            </Provider>,
-            rootWholesale
-        );
-    })
+if(window.skuJson) {
+    initWholesales();
+}
+
+async function initWholesales() {
+    const current  = await vtexjs.catalog.getCurrentProductWithVariations();
+    const product  = await getProductById(current.productId); console.log(product);
+    const body = document.querySelector('body');
+    if(product['Atacado']) {
+        if(product['Atacado'] == 'Ativo') {
+            const rootWholesales = Array.from(document.querySelectorAll('[data-component=wholesale]'));
+            
+            if(rootWholesales.length) {
+                body.classList.add('wholesale-page');
+                rootWholesales.forEach((rootWholesale) => {
+                    ReactDOM.render(
+                        <Provider store={ store }>
+                            <Wholesale product={ product } sc={ current.salesChannel } />
+                        </Provider>,
+                        rootWholesale
+                    );
+                })
+            } else body.classList.add('not-wholesale');
+        } else body.classList.add('not-wholesale');
+    } else body.classList.add('not-wholesale');
+
 }
 
 import WholesalePrices from './react/components/Wholesale/wholesalePrice';

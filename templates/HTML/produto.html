@@ -48,7 +48,8 @@
                                 <!--  Component: Sellers -->
                                 <vtex.cmc:SellerOptions />
                         
-                                <div class="product__prices" data-component="wholesale-prices"></div>
+                                <div class="product__price" data-component="wholesale-prices"></div>
+                                <div class="product__price"><vtex.cmc:skuPrice/></div>
 
                                 <div class="product__description product__description--short">
                                     <div class="description-short"><vtex.cmc:productDescriptionShort /></div>
@@ -58,15 +59,22 @@
                                 <div class="product__attrs product__attrs--dimensoes" data-attr="Dimensões"></div>
                                 <a href="#vejamaisdetalhes" class="product__link-more">Veja mais detalhes</a>
                                 <div class="product__attrs product__attrs--outras-informacoes" data-attr="Outras informações"></div>
-                                <a href="#selecioneasvariacoes" class="product__variants">CLIQUE E SELECIONE AS CORES</a>
-                            
+                                <div class="product__actions" data-component="wholesale-actions">
+                                    <a href="#selecioneasvariacoes" class="product__variants">CLIQUE E SELECIONE AS CORES</a>
+                                </div>
                                 <!--  Component: Sales channels -->
                                 <vtex.cmc:SalesChannelDropList />
                             
                                 <!--  Component: Addicional services -->
                                 <vtex.cmc:stockKeepingUnitService />
                                 
-                                <button disabled="disabled" type="button" class="product__buy">COMPRAR</button>
+                                <div class="product__actions" data-component="wholesale-actions">
+                                    <button disabled="disabled" type="button" class="product__buy">COMPRAR</button>
+                                </div>
+                                
+                                <div class="product__actions">
+                                    <vtex.cmc:BuyButton />
+                                </div>
                                 
                                 <div class="product__shipping">
                                     <vtex.cmc:shippingValue />
@@ -76,6 +84,9 @@
                                         });
                                     </script>
                                 </div>
+                                
+                                <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+                                <div class="addthis_inline_share_toolbox"></div>
 
                             </div>
 
@@ -89,12 +100,16 @@
                         <vtex.cmc:BuyTogether/>
                     </div>
                     
-                    <div class="product__description product__description--box">
-                        <h2 class="product__title">Descrição</h2>
-                        <vtex.cmc:ProductDescription/>
+                    <div class="product__description product__description--box description-product">
+                        <h2 class="product__title product__title--description">Descrição</h2>
+                        <div class="description-product__content">
+                            <vtex.cmc:ProductDescription/>
+                        </div>
                     </div>
                     
-                    <div class="product__specification" data-attr="Especificações Técnicas"></div>
+                    <div class="product__specification-image">
+                        <div class="product__specification" data-attr="Especificações Técnicas"></div>
+                    </div>
                     
                     <div class="product__review--box">
                         <div class="review product__review">
@@ -109,6 +124,13 @@
                         </div>
                     </div>
                     
+                    
+                    <div class="news-rulers">
+                        <div class="news-rulers__item news">
+                            <vtex.cmc:newsletterOptIn/>
+                        </div>
+                    </div>
+                    
                 </main>
                 
             </div>
@@ -116,6 +138,7 @@
             <vtex:template id="00-wawcadeiras-footer" />
             <vtex:template id="00-wawcadeiras-scripts" />
             <vtex.cmc:productQuickView/>
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c3e05e02fc28ae3"></script>
         </div>
         
     </body>

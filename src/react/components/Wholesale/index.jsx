@@ -18,11 +18,10 @@ class Wholesale extends Component {
         };
     }
     async componentDidMount() {
-        const current  = await vtexjs.catalog.getCurrentProductWithVariations();
-        const product  = await getProductById(current.productId); console.log(product);
+        const product  = this.props.product;
         
         if(product.items) {
-            product.salesChannel = current.salesChannel;
+            product.salesChannel = this.props.sc;
             this.setState({ products: product.items });
         }
 
