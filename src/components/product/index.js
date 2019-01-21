@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Attr from './attr';
+import { buttonBuy } from 'Core/functions';
 
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
@@ -12,6 +13,7 @@ import './frete.styl';
 import zoom from 'Core/functions/zoom';
 import getProductById from 'Core/getProductById';
 
+buttonBuy('.product__buy-qtds', '.buy-button', '.qtds__input'); 
 
 const body = $vtex('body');
 const attrs = Array.from(document.querySelectorAll('[data-attr]'));
