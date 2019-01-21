@@ -106,3 +106,5 @@ import './quickview';
 
 // Instagram
 import './instagram';
+
+import './qtds';

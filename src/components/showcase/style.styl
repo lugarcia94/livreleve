@@ -148,6 +148,8 @@
             cursor              : pointer
             &:disabled 
                 background      : #eaeaea
+            &:not(:disabled):hover
+                background      : darken(#43C233, 20%) 
         &__variants 
             position            : absolute
             top                 : 0 
@@ -184,6 +186,10 @@
             text-transform      : uppercase
             background          : #FFE6AB
             color               : #434343
+            &:hover 
+                text-decoration: none 
+                background: color[0]
+                color: #fff 
 
 @media (max-width: 991px)
     .showcase__buy
@@ -197,7 +203,7 @@
             display                 : block
         &__item:hover
             position                : relative
-            z-index                 : 100
+            z-index                 : 50
             background              : #fff
 
         &__actions 

@@ -174,6 +174,73 @@ if(body.attr('id') == 'product-page') {
         }, 1000);
 
         evt.preventDefault();
-    })
+    });
+
+    function checkProduct() {
+        $('body').removeClass('product--availabled');
+        if($('.notifyme.sku-notifyme').attr('style').indexOf('none') != -1) {
+            $('body').addClass('product--availabled');
+        }
+    }
+
+    checkProduct();
+
+    function checkTicketProduct() {
+        const discount = $('.product__image .labels [class*=desconto-a-vista]:not(.on)');
+        const numberPattern = /\D/g;
+
+        if(!$('.product__prices:not([wholesale-prices]) .productPrice').hasClass('on')) {
+            const percent  = $.trim(discount.text().replace( numberPattern, '' ));
+            const price = $.trim($('.product__prices .price-best-price .skuBestPrice').text().replace('R$', '').replace(',', '.'));
+            const total = price * ((100-percent) / 100);
+            const html      = `<div class="prices__discount"><span class="price">R$ ${ total.toFixed(2).replace('.', ',') }</span>  á vista com desconto</div>`;
+
+            $('.product__price:not([wholesale-prices]) .productPrice').append(html).addClass('on');
+        }
+    }
     
+    checkTicketProduct();
+
+    let discountDefault=0;
+
+    function discountProgressive(qtd) {
+        const label = $('.product__image .labels [class*=desconto-progressivo]');
+
+        if(label) {
+            const discount = $.trim(label.text().split('-')[1]).split(' ');
+
+            $.each(discount,function(index, item){
+                const productDiscount = item.split('/');
+
+                if(qtd < parseInt(productDiscount[0])) {
+                    if(discountDefault != parseInt(productDiscount[0])) {
+                        discountDefault = parseInt(productDiscount[0]);
+                        renderProgressiveHtml(productDiscount[0], productDiscount[1]);
+                    }
+                    return false;
+                }
+            });
+            
+        }
+        
+    }
+    function renderProgressiveHtml(qtd, percent) { console.log(qtd,percent);
+        const HTML = `<div class="progressive">
+            <div class="progressive__container">
+                <h3 class="progressive__title">Desconto Progressivo</h3>
+                <p>Compre <strong>${ qtd } UNIDADES</strong></p>
+                <p>Ganhe <strong>${ percent }% DE DESCONTO</strong></p>
+            </div>
+        </div>`;
+        $('.progressive').remove();
+        $('.product__actions--button').before(HTML);
+    }
+    $('.qtds__input').on('qtds.change', function(evt,qtd){
+        var qtds = parseInt(qtd) || 1;
+        discountProgressive(qtds);
+    });
+    $(document).ajaxComplete(function(){
+        checkTicketProduct();
+        checkProduct();
+    });
 }

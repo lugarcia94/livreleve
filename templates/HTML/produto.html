@@ -72,8 +72,17 @@
                                     <button disabled="disabled" type="button" class="product__buy">COMPRAR</button>
                                 </div>
                                 
-                                <div class="product__actions">
-                                    <vtex.cmc:BuyButton />
+                                <div class="product__actions product__actions--button">
+                                    <div class="product__buy-qtds">
+                                        <div class="product__qtds">
+                                            <div class="qtds">
+                                                <button class="qtds__button qtds__button--less" type="button"> - </button>
+                                                <input type="number" class="qtds__input" />
+                                                <button class="qtds__button qtds__button--more" type="button"> + </button>
+                                            </div>
+                                        </div>
+                                        <vtex.cmc:BuyButton />
+                                    </div>
                                 </div>
                                 
                                 <div class="product__shipping">
