@@ -38,6 +38,9 @@
         img
             display         : inline-block
 
+        .showcase__link
+            padding-bottom: 30px
+
     &__name
         height              : 45px
         margin-bottom       : 10px
@@ -86,16 +89,17 @@
 
     &__container, [id*=ResultItems_]
         > div > ul:not(.slick-dotted):not(.slick-initialized)
-            display                 : grid
-            grid-template-rows      : 1fr
-            grid-template-columns   : 1fr
+            display                 : flex 
+            justify-content: space-between
+            flex-flow: row wrap
             > li
+                order: 1
+                flex: 1 1 330px
+
                 &.helperComplement
-                    display     : none
-            @media (min-width: 425px)
-                grid-template-columns   : repeat(2, 1fr)
-            @media (min-width: 768px)
-                grid-template-columns   : repeat(3, 1fr)
+                    order: 2
+                    display: none
+
         &:not([data-carousel])
             > div > ul
                 margin          : -15px
@@ -159,7 +163,9 @@
                 padding         : 0 
                 margin          : 0
             .slick-slider[dir]
-                padding         : 0 50px
+                margin          : 0 50px
+            .slick-next
+                top : 0 !important
         &__variant 
             border-radius       : 3px 
             overflow            : hidden

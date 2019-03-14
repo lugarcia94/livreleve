@@ -174,7 +174,7 @@
             li  
                 border: 1px solid color[0]
                 min-height: 58px
-                flex: 0 0 25%
+                flex: 1 1 auto
                 display: flex
                 align-items: center
                 justify-content: center
@@ -194,7 +194,8 @@
                     font-icon       : url('./svg/arrow.svg')
                     font-size       : 10px 
                     color           : color[2] 
-                    margin-left     : 7px    
+                    margin-left     : 7px  
+                    display         : inline-block      
 
                 &:nth-child(1),&:nth-child(2),&:nth-child(3)
                     @media(min-width: 992px)
@@ -207,6 +208,7 @@
                         margin-right    : 5px
                         color           :color[2]
                         transition      : all 150ms ease-in-out
+                        display: inline-block
 
                 &:nth-child(2)
                     &:before
@@ -215,6 +217,7 @@
                         margin-right    : 5px
                         color           :color[2]
                         transition      : all 150ms ease-in-out
+                        display: inline-block
 
                 &:nth-child(3)
                     &:before
@@ -223,6 +226,7 @@
                         margin-right    : 5px
                         transition      : all 150ms ease-in-out
                         color           :color[2]
+                        display: inline-block
 
                 &:nth-child(4)
                     &:before
@@ -231,6 +235,7 @@
                         margin-right    : 5px
                         color           :color[2]
                         transition      : all 150ms ease-in-out
+                        display: inline-block
 
                 &:hover
                     background: color[2]
@@ -247,3 +252,4 @@
 
 .ruler__link 
     margin-bottom: 60px
+

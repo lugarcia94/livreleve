@@ -2,7 +2,6 @@
     .shipping-value
         display         : none 
 
-
 #popupCalculoFreteWrapper
     display                 : flex 
     justify-content         : space-between
@@ -118,6 +117,43 @@
             background      : #fff
         strong 
             font-weight : regular
+
+.freight-values
+    padding: 20px 0 
+    table 
+        border: solid 1px #eee
+        border-bottom-width: 0
+        font-size: 12px
+        color: #333
+
+        animation: animateFrete 300ms 1 ease
+
+        th, td 
+            border-bottom: solid 1px #eee 
+            padding: 5px 
+
+            &:empty 
+                display: none 
+
+            + td, + th 
+                border-left: solid 1px #eee
+        thead 
+            th, td 
+                background: #eee
+                font-weight: semi-bold
+                + td, + th 
+                    border-left-color: #fff
+
+@keyframes animateFrete 
+    from 
+        opacity: 0 
+        visibility: hidden 
+        transform: scaleY(0)
+    to 
+        opacity: 1 
+        visibility: visible 
+        transform: scaleY(1)
+
 @media(min-width: 992px)
     #popupCalculoFreteWrapper
         display             : none 

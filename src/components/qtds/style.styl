@@ -1,11 +1,14 @@
 .qtds
     display: flex 
-    max-width: 120px
+    width: 125px
+    max-width: 125px
     background: color[0]
     margin-right: 5px
     border-radius: 3px
     &__button 
         flex: 0 0 45px
+        max-width: 45px
+        padding: 0
         display: flex 
         justify-content: center 
         align-items: center 
@@ -19,11 +22,11 @@
         cursor: pointer
     &__input 
         background: none 
-        flex: 1 1 auto
+        flex: 1
         height: 45px 
+        width: 30px
         text-align: center 
         border: 0
-        flex: 1 1 auto
         min-width: 0
         font-size: 16px
         font-weight: semi-bold

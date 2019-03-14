@@ -470,6 +470,13 @@
             opacity                 : 1 
             visibility              : visible 
             transform               : translate3d(0,0,0)
+
+.thumbs 
+    max-height: 525px
+    a 
+        display: block 
+        width: 100%
+
 .buytobether
     display                     : none 
     &--actived 
@@ -600,6 +607,15 @@
             text-align          : center
             color               : #BEAF8C 
 
+
+.product__image
+    #include
+        .zoomPad > 
+            img 
+                width: 100% 
+                height: 550px
+                object-fit: contain 
+
 @media (min-width: 500px)
     .variants
         &__list
@@ -618,12 +634,18 @@
     .product__specification .attrs__container:before
         display                 : none !important
     #show 
-        display                 : flex 
+        display                 : flex
+        align-items             : flex-start  
+        overflow                : hidden
     .thumbs 
         order                   : -1
         width                   : 110px
         padding                 : 15px
         flex                    : 0 0 110px    
+        .slick-next, .slick-prev 
+            width: 80px
+            height: 80px
+
     .product 
         &__container 
             display             : flex 
@@ -814,9 +836,9 @@
         padding                 : 15px 
     .product 
         &__image
-            min-height          : 670px
-            flex                : 1 1 auto 
+            flex                : 0 1 890px
             min-width           : 0
+            min-height          : 670px
             #show
                 margin              : -15px
                 display             : flex 
