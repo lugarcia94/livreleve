@@ -90,11 +90,9 @@
     &__container, [id*=ResultItems_]
         > div > ul:not(.slick-dotted):not(.slick-initialized)
             display                 : flex 
-            justify-content: space-between
             flex-flow: row wrap
             > li
-                order: 1
-                flex: 1 1 330px
+                width: 330px
 
                 &.helperComplement
                     order: 2
@@ -125,7 +123,7 @@
     &__actions 
         position                : relative
         display                 : flex 
-        padding-top             : 65px 
+        // padding-top             : 65px 
         margin-top              : 15px
     &__buy 
         margin-left             : 10px

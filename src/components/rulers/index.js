@@ -8,7 +8,7 @@ if (window.innerWidth < 1100) {
         slidesToScroll: 3,
         responsive: [
             {
-                breakpoint: 650,
+                breakpoint: 769,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2

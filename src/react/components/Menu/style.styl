@@ -274,9 +274,13 @@
 
             &-all
                 &--nv0
-                    column-count            : 5
-
-
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    li
+                        width: 18%
+                        margin-right: 10px
+                        margin-bottom: 10px
                 .menu__item--has-child
                     &:not(.menu__item--nv0)
                         margin: 10px 0 0 0

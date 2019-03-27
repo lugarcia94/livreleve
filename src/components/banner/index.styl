@@ -117,6 +117,30 @@
                     margin: 0 auto
                     margin-bottom: 10px
                     flex: 0 0 100%
+    
+    &__val
+        .header__banner
+            flex: 0 0 100%!important
+            font-size: 40px
+            color: #434343
+            text-align: left
+            margin: 80px 0 30px 0
+            font-weight: 300
+
+            strong 
+                color: color[0]
+        .banner__container
+            opacity: 0
+            // visibility: hidden
+            overflow: hidden
+            transition: all 300ms ease-in-out
+            max-height: 0
+            
+            &.slick-initialized
+                opacity: 1
+                // visibility: visible
+                overflow: visible
+                max-height: 1000px
 
     &__valores
         border-top: solid 1px #FFE6AB
@@ -161,6 +185,28 @@
                 > div
                     flex: 0 0 100%
 
+.mini
+    &__carousel
+        .banner__container
+            opacity: 0
+            // visibility: hidden
+            overflow: hidden
+            transition: all 300ms ease-in-out
+            max-height: 0
+
+            .box-banner
+                a
+                    img
+                        border-radius: 10px
+                        @media(max-width: 768px)
+                            border-radius: 0
+            
+            &.slick-initialized
+                opacity: 1
+                // visibility: visible
+                overflow: visible
+                max-height: 1000px
+                
 .ruler  
     &__container
         {container}
@@ -247,8 +293,8 @@
                         color: #fff
                         text-decoration: none
 
-.mini__banner 
-    margin: 15px 0 60px
+.mini__carousel
+    margin: 50px 0 30px 0
 
 .ruler__link 
     margin-bottom: 60px

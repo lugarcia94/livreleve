@@ -17,7 +17,6 @@ $('[data-carousel]').each(function(){
                         dots      : true
                     }
                 }
-
             ];
             break;
         case 'three':
@@ -60,6 +59,54 @@ $('[data-carousel]').each(function(){
                 },
                 {
                     breakpoint        : 768,
+                    settings          : {
+                        slidesToShow      : 2,
+                        slidesToScroll    : 2
+                    }
+                },
+                {
+                    breakpoint        : 425,
+                    settings          : {
+                        slidesToShow      : 1,
+                        slidesToScroll    : 1
+                    }
+                }
+            ];
+
+            break;
+        
+        case 'miniBanner':
+            config.slidesToShow      = 3;
+            config.slidesToScroll    = 4;
+            config.arrows            = true;
+            config.dots              = false;
+            config.responsive        = [
+                {
+                    breakpoint        : 992,
+                    settings          : {
+                        slidesToShow      : 2,
+                        slidesToScroll    : 1
+                    }
+                },
+                {
+                    breakpoint        : 425,
+                    settings          : {
+                        slidesToShow      : 1,
+                        slidesToScroll    : 1
+                    }
+                }
+            ];
+
+            break;
+        
+            case 'miniVal':
+            config.slidesToShow      = 4;
+            config.slidesToScroll    = 4;
+            config.arrows            = true;
+            config.dots              = false;
+            config.responsive        = [
+                {
+                    breakpoint        : 992,
                     settings          : {
                         slidesToShow      : 2,
                         slidesToScroll    : 2
