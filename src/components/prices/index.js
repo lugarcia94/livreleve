@@ -10,12 +10,13 @@ function checkTicket() {
         const price     = $.trim($('.valor-por', showcase).text().replace('R$', '').replace(',', '.'));
         const total     = price * ((100-discount) / 100);
         const html      = `<div class="prices__discount"><span class="price">R$ ${ total.toFixed(2).replace('.', ',') }</span>  á vista com desconto</div>`;
-        $('.showcase__prices',showcase).append(html);        
+        $('.showcase__prices',showcase).append(html);   
+        label.addClass('on');
     });
 }
 
 checkTicket();
 
-$(document).ajaxComplete(function(){
+$vtex(document).ajaxComplete(function(){
     checkTicket();
 });

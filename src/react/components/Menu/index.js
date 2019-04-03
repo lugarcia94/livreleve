@@ -75,7 +75,7 @@ class Menu extends Component {
 
             return(
                 <li { ...attr } key={item.id} onClick={this.handleExpanded} >
-                    <a href={item.url} { ...options } >
+                    <a href={item.url + '?O=OrderByPriceASC'} { ...options } >
                         { typeof item.icon != 'undefined'  && item.icon != "" && classname == 'categories' && !this.state.mobile &&
                             <span class="menu__icon" dangerouslySetInnerHTML={{ __html: item.icon }}></span>
                         }

@@ -274,13 +274,14 @@
 
             &-all
                 &--nv0
-                    display: flex
-                    flex-wrap: wrap
-                    justify-content: space-between
+                    column-count: 2
+
                     li
-                        width: 18%
-                        margin-right: 10px
-                        margin-bottom: 10px
+                        display: block 
+                        break-inside: avoid
+                        text-align: right
+                        padding: 5px 0
+
                 .menu__item--has-child
                     &:not(.menu__item--nv0)
                         margin: 10px 0 0 0
@@ -314,7 +315,7 @@
                     position                : absolute
                     right                   : 0
 
-                    width                   : 100%
+                    width                   : 300px
                     max-height              : calc(100vh - 200px)
                     border                  : solid 1px #E9E9E9
                     border-radius           : 3px
@@ -329,7 +330,7 @@
 
                     overflow-y              : auto
 
-
+            
                 .menu__item--nv0
                     break-inside            : avoid
 
