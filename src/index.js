@@ -170,13 +170,13 @@ if(config.minicart) {
 }
 
 
-import BuyButton from './react/components/BuyButton';
-if(config.buybutton) { 
-    let rootBuyButtom = document.querySelectorAll('.showcase__buy');
+function addBuyButton() {
+    let rootBuyButtom = document.querySelectorAll('.showcase__buy:not(.on)');
 
     Array.from(rootBuyButtom).forEach(function(root) {
         let id = root.getAttribute('data-id');
         let title = root.innerHTML;
+        root.classList.add('on');
 
         ReactDOM.render(
             <Provider store={store}>
@@ -187,6 +187,17 @@ if(config.buybutton) {
 
     });
 }
+
+import BuyButton from './react/components/BuyButton';
+if(config.buybutton) { 
+    addBuyButton();
+}
+
+$vtex(document).ajaxComplete(function(){
+    if(config.buybutton) { 
+        addBuyButton();
+    }    
+});
 //
 // // Gift List
 // import GiftList from './react/components/GiftList';
