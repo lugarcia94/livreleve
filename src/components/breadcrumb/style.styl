@@ -2,8 +2,8 @@
     { container }
     a 
         font-size               : 12px 
-        font-weight             : semi-bold 
-        color                   : #434343
+        font-weight             : 400
+        color                   : #8B8A8A
     ul 
         display                 : flex 
         justify-content         : flex-start 
@@ -12,18 +12,17 @@
     li 
         padding                 : 2px 
         &:not(:last-child):after 
-            content             : ''
-            font-icon           : url('./svg/next.svg')
+            content             : '/'
             font-size           : 10px 
-            color               : #FF7000
+            color               : #8B8A8A
             display             : inline-block 
             margin              : 0 0 0 5px
         &:first-child 
             a 
                 font-size       : 0 
                 &:before 
-                    content     : 'Home'
+                    content     : 'Você está em'
                     font-size   : 12px 
         &.last 
             a 
-                color           : #FFB200
+                color           : color[0]
