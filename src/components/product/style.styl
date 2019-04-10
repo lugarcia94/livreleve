@@ -659,11 +659,10 @@
     .product 
         &__container 
             display             : flex 
-        &__image, &__info 
-            padding             : 15px
+
         &__shipping
             padding-top             : 30px 
-            border-top              : solid 1px #FFE6AB
+
         &__variations
             position            : static
             opacity             : 1
@@ -803,6 +802,23 @@
         display: block
         color: color[0]
 
+.Selecioneacor
+    .skuList
+        margin: -2px 
+        input[type=radio]
+            opacity: 0 
+            position: absolute 
+
+            + label 
+                display: inline-block 
+                vertical-align: middle
+                height 30px
+                border: none
+                border-radius: 50%  
+                margin: 2px 5px
+                cursor: pointer 
+                font-size: 0
+   
 .skuList
     margin: -2px 
     input[type=radio]
@@ -817,7 +833,7 @@
             font-size: 13px 
             font-weight: 400  
             margin: 2px 5px
-            cursor: pointer
+            cursor: pointer!important
             background: #F3ECF2
             color: color[1]
 
@@ -825,7 +841,7 @@
                 background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAZCAMAAABaQ73FAAACl1BMVEUAAADEdtj/ncS9bMnzj7a8a8rAbcjxjLTzkLK6asnAbsbwjLT0j7G6acm/bce9a8i+a8a+bMfwjLPyjbLyjrK7ase8a8jAbcbti7PujLTzj7H1kLK9asi+a8jyjrO6ace6aci7ace7aci7ase7asi8ase8asi8a8e9a8a9a8e+a8a+a8e+bMa+bMe/bMW/bMa/bMe/bcbAbcXAbcbBbcXBbcbBbsXBbsbCbsTCbsXCbsbCb8XDbsTDb8TDb8XEb8TEb8XEcMTFcMPFcMTFccTGcMPGccPGccTHccLHccPHcsLHcsPIcsLIcsPIc8PJcsLJc8HJc8LJc8PKc8HKc8LKdMHKdMLLdMHLdMLLdcLMdMHMdcDMdcHNdcDNdcHNdsDNdsHOdr/OdsDOdsHPdsDPd7/Pd8DQd7/Qd8DQeL/QeMDReL7ReL/SeL/Seb7Seb/Teb3Teb7Teb/Ter7Ter/Uer3Uer7Ver7Ve73Ve77We7zWe73We77WfL3XfLzXfL3YfLzYfL3YfbzYfb3ZfbvZfbzZfrzafrvafrzbfrrbfrvbfrzbf7vbf7zcf7rcf7vcgLvdgLrdgLvegLnegLregLvegbrfgbnfgbrfgrrggbjggrjggrnggrrhgrjhgrnhg7jhg7nig7fig7jihLjihLnjg7fjhLfjhLjkhLfkhbfkhbjlhbblhbflhrfmhbbmhrbmhrfnhrbnh7Xnh7bnh7foh7Xoh7bph7XpiLXpiLbqiLTqiLXqibTqibXqibbribTribXsibTsirPsirTsirXtirPtirTti7Pti7Tui7Pui7TvjLLvjLPvjLTwjLLwjLPwjbLxjbLxjbPyjbHyjbLyjrHyjrLyjrPzjrHzjrLzj7H0j7JUckDDAAAAH3RSTlMADQ1CQoGBgYHPz8/P0NDg4ODg4ODz8/Pz8/Pz/v7+ZUXYJAAAAkNJREFUOMullD+LX2UQRt95/sy8V91FCwMJkV2S1JZiIyhoZWGj379LqRDL/PY+Fpd8gKz9wHAOc6bWWmXdvY1LKsvISFBptaIh0nCZopg2kWP99eH28Vyr1uL9Qyi4F112WQwn3OFEKncgZ7tqyswWCvztw23V4suvcGQXRBiQVesoM5sZPWkKdNkwIZ3cDHeav7+/Vd2/WiSFLooSaQg1mUJHs7BDyLDToEGXC53909/l1+pMh/YSalijjJD2Mi4P5QnskjLMVoYB9/d19zKadL4IKDTR5/g8nnbgzoEct+6za5BRDuQ4x0/7nODHevE1I5dglSFMuaxy2pkqdXbo8rW50PC1jfvnepBKE9ElyMw4o0wmXdz5hImm0ka4Mwqx43psoqg5LdBlSkJGaaeVCXfVJaykcskKhuFOPbi4GaGLBg1dytJLHU1ocHLZTjtdHKXTxXrsUrHLwAUnQVIaaKz9pCMqk4YJ9OkBl52Out6lM4vap4Euu5yJhpeoSxhkZ3+6sEzEjlFvCppSwSJcrSKbQriZyVQZUyRsQhmiPCDCjXqY6kDwVAlWthT02g46R9BQQRwxnQNp65oP6rFDsQWoDAlOWxCzM6XCcTMv5jLJHDcPRGanHnlR2SW6aDr77KU5GxN0GR0ZfY5U1XSOJ4H7aeodIs6az+p5wFK53pSaz+gZ3Klvvwmf1XP8ax3f8Zk954f/13Pdv3hmz7/8U4uvvnxWz3+8v9VavHv9jJ6v77lWeR9vP6vnP/+9fTzX+g+OjhPpakxATgAAAABJRU5ErkJggg==')
                 color: #fff 
                 background-repeat: no-repeat
-                background-size: cover
+                background-size: cover 
 
         &:checked 
             + label 
@@ -833,6 +849,7 @@
                 color: #fff 
                 background-repeat: no-repeat
                 background-size: cover
+                font-weight: 700
 
 
 .sku-selector-container 
@@ -850,7 +867,7 @@
     #image 
         flex                    : 1 1 auto 
         min-width               : 0
-        padding                 : 15px 
+
     .product 
         &__image
             flex                : 0 1 525px
@@ -860,9 +877,25 @@
                 display             : flex 
         &__info 
             flex                : 0 1 415px 
+            margin             : 0 15px 
 
         &__right--colunm
             flex                : 0 1 305px
+            border             : solid 1px transparent
+            border-radius      : 7px
+            position           : relative
+            background         : #fff 
+            box-sizing         : border-box
+            background-clip    : padding-box
+
+            &:before 
+                content: ''
+                position: absolute
+                top: 0; right: 0; bottom: 0; left: 0
+                z-index: -1
+                margin: -1px
+                border-radius: inherit; 
+                background: linear-gradient(to right, #BA69C8, #F48FB1)
 
 .addthis_inline_share_toolbox
     margin-top: 30px
