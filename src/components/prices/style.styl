@@ -1,34 +1,117 @@
 .valor-por
-    font-size       : 14px
-    font-weight     : semi-bold
+    font-size       : 0
 
-    color           : #FFB200
     strong 
         font-weight : semi-bold
+        color       : color[2] 
+        font-size   : 22px
     .showcase__item--offer &
         font-size   : 17px
         color       : #FF7000
+
     .product__prices &
         font-size: 24px
 
+.product__other-payment 
+    margin-bottom   : 25px 
 
+    .product__btn-other-payment
+        font-size   : 12px
+        color       : #8B8A8A
+        font-weight : 400
+        cursor      : pointer
+
+        &:before 
+            font-icon       : url('./svg/card.svg')
+            font-size       : 10px
+            color           : color[0]
+            margin-right    : 5px
+
+    .other-payment-method-content
+        max-height: 0
+        visibility hidden
+        opacity 0 
+
+    .titulo-parcelamento,  .see-other-payment-method-link
+        display: none!important
+
+    ul.other-payment-method-ul
+        margin-top 5px
+        padding-left: 20px
+ 
+        li  
+            font-size: 12px
+            color: #8B8A8A
+            font-weight: 400
+            margin-bottom: 3px
+            span  
+                color: #8B8A8A
+                font-weight: 400
+
+            .other-payment-method-intereset-no, .other-payment-method-intereset-yes
+                color: #8B8A8A
+
+            strong  
+                color: color[0]
+
+.on-payment
+    .other-payment-method-content
+        max-height: none
+        visibility visible
+        opacity 1
+            
 .valor-de
-    font-size       : 13px
+    
     font-weight     : light
-
-    color           : #767676
+    font-size       : 0 
+    color           : #C2C2C2
     text-decoration : line-through
+    margin-bottom   : 5px 
+
+    &:before
+        content         : 'de'!important
+        font-size       : 13px
+        margin-right    : 5px 
 
     strong 
-        font-weight : light
+        font-weight     : light
+        font-size       : 13px
+
+.product__flags 
+    display: block
+    margin-bottom: 25px
+    width: 100%
+
+    .product__flags-title
+        font-size: 12px
+        color: #8B8A8A
+        display: block 
+        margin-bottom: 5px
 
 .preco-a-vista.price-cash, .economia-de
     display: none !important
 
 .price-installments
-    font-size: 13px
-    font-weight: semi-bold
-    color: #434343
+    font-size: 25px
+    font-weight: 700
+    
+    span  
+        span  
+            font-size: 0
+
+            label, span
+                font-size: 25px
+                color: color[0]
+
+            label  
+                &:after
+                    content: 'de'
+                    margin: 0 5px
+                    color: color[1]
+
+        strong  
+            color: color[0]
+
 
 .price__installment
     font-size       : 13px

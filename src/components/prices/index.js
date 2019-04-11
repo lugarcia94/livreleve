@@ -20,3 +20,7 @@ checkTicket();
 $vtex(document).ajaxComplete(function(){
     checkTicket();
 });
+
+$('.product__btn-other-payment').on("click", function(){
+    $(this).parent().toggleClass('on-payment');
+});

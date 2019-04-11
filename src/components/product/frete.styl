@@ -63,15 +63,23 @@
     .quantity, .cep-busca, .header
         display         : none 
     .prefixo, .fitext
-        display         : block
+        display         : flex
+        align-items     : center
         font-size       : 13px
+        color           : color[1]
+        font-weight     : 600
+
     .fitext
         width           : 100%
-        height          : 50px 
-        padding         : 0 50px 0 20px
-        border          : solid 1px color[0]
-        border-radius   : 3px
-        margin-top      : 10px
+        height          : 35px 
+        padding         : 0 50px 0 20px 
+        border-radius   : 5px
+        background      : #FBFBFB
+        border          : 1px solid #EAEAEA  
+        font-size       : 14px
+        color           : #C2C2C2
+        font-style      : italic   
+
     .content
         > fieldset 
             position    : relative 
@@ -84,14 +92,14 @@
     .freight-btn
         border          : 0 
         width           : 50px
-        height          : 50px 
-        background      : color[0]
-        color           : #fff
-        font-size       : 15px
+        height          : 35px 
+        color           : color[0]
+        font-size       : 14px
         font-weight     : semi-bold 
         text-transform  : uppercase 
         border-radius   : 3px
         cursor          : pointer
+        background      : transparent 
 
     .cep-invalido
         position        : relative
@@ -169,4 +177,4 @@
         &:before
             display         : none 
         .content > fieldset
-            max-width       : 200px
+            max-width       : 230px

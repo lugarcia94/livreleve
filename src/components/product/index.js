@@ -191,17 +191,17 @@ if(body.attr('id') == 'product-page') {
         const discount = $('.product__image .labels [class*=desconto-a-vista]:not(.on)');
         const numberPattern = /\D/g;
 
-        if(!$('.product__prices:not([wholesale-prices]) .productPrice').hasClass('on')) {
+        if(!$('.product__right--colunm:not([wholesale-prices]) .productPrice').hasClass('on')) {
             const percent  = $.trim(discount.text().replace( numberPattern, '' ));
             const price = $.trim($('.product__prices .price-best-price .skuBestPrice').text().replace('R$', '').replace(',', '.'));
             const total = price * ((100-percent) / 100);
             const html      = `<div class="prices__discount"><span class="price">R$ ${ total.toFixed(2).replace('.', ',') }</span>  á vista com desconto</div>`;
 
-            $('.product__price:not([wholesale-prices]) .productPrice').append(html).addClass('on');
+            $('.product__right--colunm:not([wholesale-prices]) .productPrice').append(html).addClass('on');
         }
     }
     
-    checkTicketProduct();
+    //checkTicketProduct();
 
     let discountDefault=0;
 

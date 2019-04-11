@@ -60,7 +60,7 @@ if(window.skuJson) {
 
 async function initWholesales() {
     const current  = await vtexjs.catalog.getCurrentProductWithVariations();
-    const product  = await getProductById(current.productId); console.log(product);
+    const product  = await getProductById(current.productId); 
     const body = document.querySelector('body');
     if(product['Atacado']) {
         if(product['Atacado'] == 'Ativo') {

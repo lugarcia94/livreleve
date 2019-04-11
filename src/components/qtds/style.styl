@@ -1,33 +1,46 @@
 .qtds
     display: flex 
-    width: 125px
-    max-width: 125px
-    background: color[0]
-    margin-right: 5px
-    border-radius: 3px
+    width: 75px
+    max-width: 75px
+    background: #FBFBFB
+    border: 1px solid #EAEAEA
+    border-radius: 5px
+    position relative
+    height 50px
+
     &__button 
-        flex: 0 0 45px
-        max-width: 45px
+        flex: 0 0 30px
+        max-width: 30px
         padding: 0
         display: flex 
         justify-content: center 
         align-items: center 
-        width: 45px 
-        height: 45px 
+        width: 30px 
+        height: 25px 
         border: 0
         background: none 
-        font-size: 24px
         font-weight: semi-bold
-        color: #fff 
         cursor: pointer
+        position: absolute
+        right 0
+        font-size: 18px
+        color: #8B8A8A
+
+    .qtds__button--more
+        top: 0
+
+    .qtds__button--less
+        bottom: 0
+
     &__input 
         background: none 
         flex: 1
-        height: 45px 
-        width: 30px
+        height: 50px 
+        width: 100%
         text-align: center 
         border: 0
         min-width: 0
-        font-size: 16px
+        font-size: 18px
         font-weight: semi-bold
-        color: #fff
+        color: color[1]
+        max-width 50px
