@@ -98,37 +98,32 @@ buttonColorClose = color[1]
         cursor                      : pointer
 
         &-text
-            margin-right            : 3px
+            margin-right            : -6px
             font-size               : 0
+            position                : relative
+            z-index                 : 1
 
             &:before
                 display             : block
-
-                font-icon           : url('./svg/cat2.svg')
-                font-size           : 23px
-                color               : color[0]
-                margin-right        3 px
+                content             : ''
+                background          : svg-load('svg/cat2.svg')
+                width               : 23px
+                height              : 30px
 
         &-qty
             display                 : flex
             justify-content         : center
             align-items             : center
-
-            width                   : 17px
-            height                  : 17px
-
+            background              : #F3ECF2 
+            width                   : 34px
+            height                  : 34px
+            flex                    : 0 0 34px
             border-radius           : 50%
 
-            font-size               : 17px
+            font-size               : 15px
             font-weight             : 600
 
-            color                   : color[0]
-
-            &:after
-                content ')'
-
-            &:before 
-                content: '('
+            color                   : color[1]
 
         
         .notification

@@ -125,10 +125,9 @@
                 text-decoration    : none
 
         &--nv0
-            font-size              : 13px
-            font-weight            : semi-bold
-            text-transform         : uppercase
-            color                  : #434343
+            font-size              : 15px
+            font-weight            : 500
+            color                  : #FFFFFF
 
         &--nv1, &--nv2
             font-size              : 13px
@@ -183,8 +182,6 @@
     .menu__container
         { container }
 
-        border-top                          : solid 1px #fff
-
     .menu
         position                            : fixed
         top                                 : 86px
@@ -197,7 +194,7 @@
 
         transition                          : transition[0]
 
-        background                          : #fff
+        background-image                    : linear-gradient(270deg, #BA69C8 0%, #F48FB1 100%)
 
         .scrolling--top & 
             box-shadow                      : 0 10px 10px rgba(0,0,0,.01)
@@ -215,7 +212,7 @@
             display                         : flex
             justify-content                 : space-between
             overflow                        : visible
-            max-width                       : 905px 
+            max-width                       : 100%
             margin                          : 0 auto         
 
             .banner
@@ -391,7 +388,7 @@
             display                         : flex
             justify-content                 : center
             align-items                     : center
-            height                          : 50px
+            height                          : 55px
  
 
         &__link
@@ -409,19 +406,26 @@
             justify-content                 : center
             align-items                     : center
 
-            height                          : 50px
+            height                          : 55px
             padding                         : 0
 
-            font-size                       : 11px
-            font-weight                     : semi-bold 
+            font-size                       : 15px
+            font-weight                     : 500
 
-            text-transform                  : uppercase
+            color                           : #ffffff
 
-            color                           : #434343
+            order                           : 0
+
+            &:before
+                font-icon          : url('./svg/menu-todas.svg')
+                font-size          : 22.42px
+                margin-right       : 5px
+                color              : #ffffff
 
         // Ajuste last
         &__item--nv0
             position                        : relative
+            order                           : 1
 
             &:nth-last-child(2), &:nth-last-child(3)
                 .banner
@@ -438,9 +442,6 @@
                         direction           : ltr
 
 /* Removendo sub */
-    .menu__link--nv0
-        &:hover 
-            box-shadow: inset 0 -1px 0 #ffb200
     .menu__item--nv0:hover .menu__categories--nv1
             display: none !important
 

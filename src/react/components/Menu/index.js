@@ -109,7 +109,7 @@ class Menu extends Component {
             return (
                 <li class="menu__categories-all">
                     <span class="menu__categories-all__name">
-                        Ver Mais
+                        Toda loja
                     </span>
                     <div className="menu__categories-all--inner">
                         <ul class="menu__categories-all--nv0">
@@ -122,7 +122,7 @@ class Menu extends Component {
     }
 
     render() {
-        let list = this.renderHtml(this.props.items, false, 'categories', 0, 7);
+        let list = this.renderHtml(this.props.items, false, 'categories', 0, 8);
         let allCategory = this.allCategory();
         let { slot } = this.props;
         
