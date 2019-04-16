@@ -76,9 +76,9 @@ $('[data-carousel]').each(function(){
             break;
         
         case 'miniBanner':
-            config.slidesToShow      = 3;
+            config.slidesToShow      = 4;
             config.slidesToScroll    = 4;
-            config.arrows            = true;
+            config.arrows            = false;
             config.dots              = false;
             config.responsive        = [
                 {

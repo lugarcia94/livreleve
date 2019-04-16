@@ -1,28 +1,24 @@
 import './style.styl';
 
-if (window.innerWidth < 1100) {
-    const rulers = $('.info__list');
+const rulers = $('.ruler__list');
 
-    rulers.slick({
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },{
-                breakpoint: 530,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+rulers.slick({
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+        {
+            breakpoint: 769,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
             }
-        ]
+        },{
+            breakpoint: 530,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 
-    });
-}
-
-$('#newsletterButtonOK').val('CADASTRAR');
+});

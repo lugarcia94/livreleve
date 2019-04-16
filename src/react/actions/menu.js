@@ -49,12 +49,14 @@ export function menuFilterData(items) {
         if(utils) {
             const icons = utils.querySelector('#menu-icons');
             const banners = utils.querySelector('#menu-banners');
+            const brands = utils.querySelector('#menu-brands');
             
             Array.from(items).forEach((item) => {
                 let _name = item.name;
                 let _slug = slug(_name);
                 let _icon;
                 let _banner;
+                let _brand;
 
                 if (icons && _slug)
                     _icon = icons.querySelector('.' + _slug);
@@ -62,11 +64,16 @@ export function menuFilterData(items) {
                 if (banners && _slug)
                     _banner = banners.querySelector('.' + _slug);
     
+                if (brands && _slug)
+                    _brand = banners.querySelector('.' + _slug);
+    
                 item['icon'] = '';
                 item['banner'] = '';
+                item['brand'] = '';
 
                 if (_icon)      item['icon']    = _icon.innerHTML;
                 if (_banner)    item['banner']  = _banner.innerHTML;
+                if (_brand)    item['brand']  = _brand.innerHTML;
 
                 if(banners) { 
                     Array.from(item.children).forEach((sub) => {

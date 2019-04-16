@@ -19,6 +19,9 @@ import './slick';
 // Wrapper
 import './wrapper';
 
+// Account
+import './account';
+
 // Header
 import './header';
 
@@ -27,6 +30,9 @@ import './logo';
 
 // Banner
 import './banner';
+
+// Brands
+import './brands';
 
 // Search
 import './search';

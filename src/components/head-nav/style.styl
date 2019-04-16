@@ -17,15 +17,25 @@
     max-width               : 3540px
     width                   : 100%
 
+    a#login
+        display: block
+        font-size: 15px
+        font-weight: 300
+        &:after
+            font-icon          : url('./svg/dropdown.svg')
+            font-size          : 7px
+            margin-left        : 2px
+            color              : #C2C2C2
     .welcome
-        a
-            color: #333
+        color: #453F3F
+        font-size: 13px
+        pointer-events: none
 
     &__sub
         position            : absolute
         top                 : 160%
-        left                : 0
-
+        left                : 50%
+        transform           : translateX(-50%)
         padding             : 30px 20px
         border-radius       : 7px
 
@@ -96,7 +106,8 @@
         &--lv1
             position            : relative
             margin-right        : 20px
-
+            display             : flex
+            align-items         : center
             &:hover
                 &:after
                     opacity         : 1
@@ -113,18 +124,17 @@
             &:nth-child(2)
                 > a
                     &:before
-                        font-icon          : url('./svg/user.svg')
+                        font-icon          : url('./svg/question.svg')
                         font-size          : 30px
                         margin-right       : 5px
                         color              : color[2] 
 
             &:nth-child(1)
-                > a
-                    &:before
-                        font-icon          : url('./svg/user.svg')
-                        font-size          : 30px
-                        margin-right       : 5px
-                        color              : color[2] 
+                &:before
+                    font-icon          : url('./svg/user.svg')
+                    font-size          : 30px
+                    margin-right       : 5px
+                    color              : color[2] 
         &--lv2
 
             + .head-nav__item--lv2
@@ -268,7 +278,8 @@
 
 @media(min-width: 992px)
     .head-nav
-        width                   : auto
+        width: 100%
+        max-width: 340px
         &__item
             &--lv1
                 // &:nth-child(1), &:nth-child(2)
