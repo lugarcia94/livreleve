@@ -213,6 +213,8 @@
             opacity             : 1
             visibility          : visible 
             transform           : translate3d(0,0,0) 
+.prices__discount
+    display: none 
 
 .product
     &__price 
@@ -302,6 +304,94 @@
 
     &__description 
         margin  : 25px 0
+        { container }
+
+    &__description--short
+        padding: 0
+        margin: 25px 0
+
+    &__review--box
+        { container }
+
+    &__extra-info
+        { container }
+        margin: 80px auto
+
+        .item__extra
+            display: flex
+            flex-wrap: wrap
+            max-width: 410px
+            justify-content: space-between
+
+            li
+                margin-bottom: 15px
+                span 
+                    font-size: 14px
+                    font-weight: 700
+                    color: #BA69C8
+                    display: block
+                    margin-bottom: 5px
+
+            .marca
+                flex: 0 0 100%
+                a  
+                    color: #453F3F
+                    text-decoration: underline
+                    letter-spacing: -0.25px
+                    font-size: 14px
+                    transition: all 150ms ease-in-out
+
+                    img  
+                        display: none!important
+
+                    &:hover
+                        color: color[0]
+            .tipo, .linha  
+                ul  
+                    li
+                        margin: 0
+                        a  
+                            color: #453F3F
+                            text-decoration: underline
+                            letter-spacing: -0.25px
+                            font-size: 14px
+                            transition: all 150ms ease-in-out
+
+                            &:hover
+                                color: color[0]
+            .categorias
+                flex: 0 0 100%
+
+                ul  
+                    display: flex
+
+                    li
+                        display: flex
+                        align-items: center
+                        margin: 0
+
+                        &:after
+                            content: ''
+                            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKCAQAAAA9B+e4AAAATUlEQVQI12M4tOXwyjOsDBBweNmh/4fXQbn/mVG5TIcWoHAPXzj0/0gKmHOoGyhz4CI3w3/GQ5OhTKBpU+FMIOf44f1QJsjo/4xQJgMA26kytS9JhgwAAAAASUVORK5CYII=') 
+                            display: block
+                            width: 6px
+                            height: 10px
+                            background-repeat: no-repeat
+                            margin: 0 5px
+
+                        a  
+                            color: #453F3F
+                            text-decoration: underline
+                            letter-spacing: -0.25px
+                            font-size: 14px
+                            transition: all 150ms ease-in-out
+
+                            &:hover
+                                color: color[0]
+
+                    li.last
+                        &:after
+                            display: none
 
 
     &__title 
@@ -331,7 +421,7 @@
         padding     : 15px
     &__sku-review 
         display             : flex 
-        justify-content     : flex-start
+        justify-content     : space-between
         align-items         : center  
         flex-wrap            : wrap 
         margin              : 0 -10px
@@ -526,6 +616,13 @@
     input::-webkit-inner-spin-button
         -webkit-appearance: none
         margin: 0
+
+.brandName.Brand-name 
+    a 
+        font-size: 0
+        padding: 5px 15px
+
+
 .product, .quickview 
     .buy-button
         display                 : flex 
@@ -661,6 +758,7 @@
         &__container 
             display             : flex 
             align-items         : flex-start
+            justify-content     : center 
             margin-top          : 20px
             
         &__shipping
@@ -679,7 +777,7 @@
         &__title 
             margin-top          : 40px
             padding-top         : 40px 
-            border-top          : solid 1px #FFE6AB
+            border-top          : none
             font-size           : 30px 
             font-weight         : light
             height              : auto
@@ -844,6 +942,21 @@
                 margin: 2px 5px
                 cursor: pointer 
                 font-size: 0
+                position relative
+
+            &:checked
+                + label 
+                    &:before
+                        content: ''
+                        border: 2px solid #ed8fb1
+                        width: 100%
+                        height: 100%
+                        position: absolute
+                        left: 50%
+                        top: 50%
+                        border-radius: 50%
+                        padding: 2px
+                        transform: translate(-50%, -50%)
    
 .skuList
     margin: -2px 
@@ -877,6 +990,7 @@
                 background-size: cover
                 font-weight: 700
 
+ 
 
 .sku-selector-container 
     .specification
@@ -924,8 +1038,7 @@
                 border-radius: inherit; 
                 background: linear-gradient(to right, #BA69C8, #F48FB1)
 
-.addthis_inline_share_toolbox
-    margin-top: 30px
+ 
 @media (max-width: 991px)
     .product__prices
         display: flex 
