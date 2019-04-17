@@ -81,7 +81,6 @@ class GiftList extends Component {
     add() {
         if(this.props.orderForm.loggedIn) {
             if(this.state.list.length > 0) {
-                console.log(this.state.list[0].data);
                 axios.post('/no-cache/giftlistv2/skutolist', this.state.list[0].data, this.state.headers)
                     .then(()=> location.href = '/giftlist/manage/');
 

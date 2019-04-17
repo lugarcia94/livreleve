@@ -65,7 +65,7 @@ export function menuFilterData(items) {
                     _banner = banners.querySelector('.' + _slug);
     
                 if (brands && _slug)
-                    _brand = banners.querySelector('.' + _slug);
+                    _brand = brands.querySelector('.' + _slug);
     
                 item['icon'] = '';
                 item['banner'] = '';

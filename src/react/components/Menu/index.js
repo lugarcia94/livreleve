@@ -66,6 +66,9 @@ class Menu extends Component {
                                 {this.renderHtml(item.children, nofollow, classname, (nivel + 1))}
                             </ul>
                         </div>
+                        {classname == 'categories' && !this.state.mobile && item.brand &&
+                            <div class="brand category__brands" dangerouslySetInnerHTML={{ __html: item.brand }}></div>
+                        }
                         {classname == 'categories' && !this.state.mobile && item.banner &&
                             <div class="banner" dangerouslySetInnerHTML={{ __html: item.banner }}></div>
                         }
