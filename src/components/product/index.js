@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Attr from './attr';
-import { buttonBuy } from 'Core/functions';
+import { buttonBuy, slug } from 'Core/functions';
 
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
@@ -245,4 +245,61 @@ if(body.attr('id') == 'product-page') {
         checkTicketProduct();
         checkProduct();
     });
+
+    //funcao foto na marca
+    if ($('.brandName > a').length) {
+        let brandName = $('.brandName > a').html();
+        let newName = slug(brandName);
+        let urlImg = '/arquivos/' + newName + '.png';
+        $('.brandName > a ').append('<img src="' + urlImg + '" alt="' + brandName + '"/>'); 
+    }
+ 
+    // funcao foto na variacao
+    if($('.Selecioneacor .item-dimension-Selecioneacor .group_1 label').length) {
+        $('.Selecioneacor .item-dimension-Selecioneacor .group_1 label').each(function(){
+            let variableName = $(this).html();
+            let namevariableNew = 'color-' + slug(variableName) + '.jpg';
+            let urlImage = '/arquivos/' + namevariableNew;
+            $(this).css('background-image', 'url(' + urlImage + ')'); 
+        });
+    }
+
+    if ($('.bread-crumb > ul').length) {
+        $('.bread-crumb > ul').clone().appendTo('.item__extra .categorias');
+    }
+
+    if ($('.brandName > a').length) {
+        $('.brandName > a').clone().appendTo('.item__extra .marca');
+    }
+
+    function getAttributeProdutct(){
+        let idProduto = '';
+
+        vtexjs.catalog.getCurrentProductWithVariations().done(function(product){
+            idProduto = product.productId;
+        });
+
+        const urlPage = window.location.host;
+        const urlApi = 'http://' + urlPage + '/api/catalog_system/pub/products/search?fq=productId:' + idProduto;
+
+        $.get(urlApi).done(function(data){
+            let arrayCabelos = data[0]['Tipo de Cabelo'];
+            let catFilter = data[0]['categories'];
+
+            arrayCabelos.forEach(function(itemRetorno){
+                let urlFilter = catFilter + itemRetorno + '?map=c,specificationFilter_19'; 
+                $('.item__extra .tipo ul').append('<li><a href="' + urlFilter + '">' + itemRetorno + '</a></li>');
+            });
+
+            let arrayLinha = data[0]['Linha']; 
+
+            arrayLinha.forEach(function(itemRetorno){
+                let urlFilter = catFilter + itemRetorno + '?map=c,specificationFilter_19'; 
+                $('.item__extra .linha ul').append('<li><a href="' + urlFilter + '">' + itemRetorno + '</a></li>');
+            });
+
+        });
+    }
+
+    getAttributeProdutct();
 }
