@@ -315,12 +315,11 @@
 
     &__extra-info
         { container }
-        margin: 80px auto
 
         .item__extra
             display: flex
             flex-wrap: wrap
-            max-width: 410px
+            max-width: 500px
             justify-content: space-between
 
             li
@@ -617,7 +616,7 @@
         -webkit-appearance: none
         margin: 0
 
-.brandName.Brand-name 
+.brandName
     a 
         font-size: 0
         padding: 5px 15px
@@ -844,8 +843,13 @@
             position            : static
     #divTitulo
         border                  : 0 
-        font-size               : 40px
+        font-size               : 0
         font-weight             : light
+        &:before
+            content             : 'compre junto'
+            font-size           : 35px
+            color               : #453F3F 
+
         &:after 
             display             : none 
     .product__specification-image
