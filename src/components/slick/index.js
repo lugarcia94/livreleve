@@ -30,6 +30,19 @@ $('[data-carousel]').each(function(){
                 }
             ];
             break;
+        
+        case 'minibanner-mid':
+            config.slidesToShow       = 2;
+            config.slidesToScroll     = 1;
+            config.responsive         = [
+                {
+                    breakpoint        : 992,
+                    settings          : {
+                        centerMode    : true
+                    }
+                }
+            ];
+            break;
 
         case 'duo':
             config.slidesToShow      = 2;
@@ -38,8 +51,8 @@ $('[data-carousel]').each(function(){
             break;
 
         case 'showcase':
-            config.slidesToShow      = 4;
-            config.slidesToScroll    = 4;
+            config.slidesToShow      = 5;
+            config.slidesToScroll    = 5;
             config.arrows            = true;
             config.dots              = false;
             config.responsive        = [

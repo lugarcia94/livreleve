@@ -1,7 +1,5 @@
 .news-rulers
-    background: color[2]
-    margin-top: 40px
-    box-shadow: 100px 0 0 color[2], -100px 0 0 color[2]
+    margin-top: 60px
 
     .news-rulers__item.news
         width               : 100%
@@ -20,26 +18,29 @@
     text-align              : center
     font-size               : 0
     display                 : flex
-    justify-content         : center
+    justify-content         : space-between
+    padding                 : 20px 25px 
     flex-wrap               : wrap
+    background-image        : linear-gradient(270deg, #BA69C8 0%, #F48FB1 100%)
+    border-radius           : 7px
 
     label
         font-size           : 12px
 
     #newsletterClientEmail, #newsletterClientName
         width               : 100%
-        height              : 40px
+        height              : 50px
         padding-left        : 10px
-        max-width           : 263px
-        border-radius       : 3px 
+        max-width           : 300px
+        border-radius       : 7px
         border              : none
         margin-right        : 20px
         background-color    : #ffffff
-        font-size           : 15px
+        font-size           : 18px
         font-weight         : 300
         font-style          : italic
         letter-spacing      : 0.2px
-        color               : #beaf8c
+        color               : #C2C2C2
 
         @media(max-width: 768px)
             width 100%
@@ -48,16 +49,16 @@
             margin-right: 0 
 
     #newsletterButtonOK
-        width               : 88px
-        height              : 40px
-        border-radius       : 3px
-        background-color    : #ffb200
+        width               : 126px
+        height              : 50px
+        border-radius       : 7px
+        background-color    : #FFC928
         border              : none 
-        font-size           : 11px
-        font-weight         : bold
+        font-size           : 13px
+        font-weight         : 600
         font-style          : normal
         letter-spacing      : 0.2px
-        color               : #ffffff
+        color               : #453F3F
         appearance          : none
         cursor              : pointer
         vertical-align      : bottom
@@ -94,9 +95,10 @@
                 margin-top 15px
 
             &:after
-                content         : 'RECEBA NOSSA NEWSLETTER'
-                font-size       : 22px;
-                font-weight     : 600
+                content         : 'receba novidades'
+                font-size       : 29px
+                line-height     : 34px 
+                font-weight     : 300
                 letter-spacing  : 0.3px
                 color           : #ffffff
 
@@ -105,7 +107,7 @@
 
             &:before
                 font-icon       : url('./svg/mail.svg')
-                font-size       : 25px
+                font-size       : 21px
                 margin-right    : 5px
                 color           : #fff
 
@@ -116,15 +118,13 @@
 
 .newsletter
     position            : relative
-    margin              : 15px 0
 
     &-title
         display         : inline-block
 
     fieldset
         display         : inline-block
-        width           : calc(100% - 485px)
-        margin-left     : 5%
+        width           : calc(100% - 270px)
 
         @media(max-width: 1170px)
             margin: 20px 0!important
@@ -135,7 +135,3 @@
             bottom      : 0
             left        : 0
             width       : 240px
-            
-@media (min-width: 992px)
-    .news-rulers
-        box-shadow: -800px 0 0 color[2], 800px 0 0 color[2]

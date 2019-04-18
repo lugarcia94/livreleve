@@ -113,6 +113,32 @@
     &__categories
         &:not(.menu__categories--nv0)
             background  : rgba(0,0,0,.03)
+        
+        &--nv0
+            > li.menu__item--has-child
+                height: 55px
+                &:after
+                    content: ''
+                    display: block
+                    position: relative
+                    width: 26px
+                    height: 26px
+                    background: #fff
+                    top: -10px
+                    left: 50%
+                    -webkit-transform: translateX(-50%) rotate(45deg)
+                    transform: translateX(-50%) rotate(45deg)
+                    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2)
+                    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2)
+                    border-radius: 7px
+                    opacity: 0
+                    visibility: hidden
+                &:hover
+                    &:after
+                        opacity: 1
+                        visibility: visible
+                        animation-name: opacityframe
+                        animation-duration: 1s
 
     &__link
         &--nv0, &--nv1, &--nv2
@@ -254,13 +280,40 @@
 
 
             &-all
+                
+                
+                height: 55px
+                &:after
+                    content: ''
+                    display: block
+                    position: relative
+                    width: 26px
+                    height: 26px
+                    background: #fff
+                    top: -10px
+                    left: 50%
+                    -webkit-transform: translateX(-50%) rotate(45deg)
+                    transform: translateX(-50%) rotate(45deg)
+                    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2)
+                    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2)
+                    border-radius: 7px
+                    opacity: 0
+                    visibility: hidden
+                &:hover
+                    &:after
+                        opacity: 1
+                        visibility: visible
+                        animation-name: opacityframe
+                        animation-duration: 1s
+
+
+
                 &--nv0
-                    column-count: 2
+                    column-count: 4
 
                     li
                         display: block 
                         break-inside: avoid
-                        text-align: right
 
                 .menu__item--has-child
                     &:not(.menu__item--nv0)
@@ -277,17 +330,19 @@
                 &--inner
                     position                : absolute
                     right                   : 0
-                    width                   : 300px
-                    max-height              : calc(100vh - 200px)
-                    border                  : solid 1px #E9E9E9
-                    border-radius           : 3px
-                    padding                 : 40px
+                    width                   : 100%
+                    max-height              : 390px
+                    border-radius           : 7px
+                    padding                 : 30px 40px
                     transition              : transition[0]
                     background              : #fff
                     visibility              : hidden
                     opacity                 : 0
                     overflow-y              : auto
-
+                .menu__link--nv0
+                    color: color[0]
+                    &:hover
+                        color: color[2]
                 .menu__item--nv0
                     break-inside            : avoid
 
@@ -310,6 +365,7 @@
                     .menu__categories-all--inner
                         visibility          : visible
                         opacity             : 1
+                        z-index             : 9
 
         &__item
             &--nv0
@@ -325,6 +381,7 @@
                     .menu__categories--nv1
                         visibility          : visible
                         opacity             : 1
+                        z-index             : 9
 
         .menu__link--nv0
             display                         : flex
@@ -376,3 +433,23 @@
 
                     .menu__sub-inner
                         direction           : ltr
+
+.category__brands
+    padding-right: 25px
+    &--title
+        font-size: 14px
+        line-height: 17px
+        color: #BA69C8
+        font-weight: 500
+    &--list
+        column-count: 2
+        padding-top: 20px
+    &--item
+        break-inside: avoid
+        padding: 15px 5px
+
+@keyframes opacityframe 
+  from
+    opacity: 0
+  to
+    opacity: 1

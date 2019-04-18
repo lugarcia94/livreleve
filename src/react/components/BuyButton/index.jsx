@@ -46,7 +46,7 @@ class BuyButton extends Component {
         };
         let valid = false;
 
-        if(parseInt(seller.commertialOffer.AvailableQuantity) > item.quantity)
+        if((parseInt(seller.commertialOffer.AvailableQuantity) >= item.quantity) && (item.quantity > 0))
             valid = true;
 
         this.setState({ sku, seller, item, valid, msg: '' });
@@ -129,7 +129,7 @@ class BuyButton extends Component {
                     <button className="buy-button__more" type="button" onClick={this.more.bind(this)}><span>+</span></button>
                 </div>
                 <button disabled={ !valid || buying } className="buy-button__button" type="button" onClick={this.buy}>
-                    { buying ? 'Comprando...' : 'Add à Sacola' }
+                    { buying ? 'Comprando...' : 'Comprar' }
                 </button>
             </div>
         );
