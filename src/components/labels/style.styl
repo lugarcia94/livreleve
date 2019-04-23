@@ -8,7 +8,7 @@
         display         : flex 
         flex-wrap       : wrap
         width           : 100%
-
+        display         : none 
         transform       : translateX(-50%)
 
     .flag
@@ -47,28 +47,19 @@
             justify-content : center
             align-items     : center
             flex-wrap       : wrap
-
-            background      : #FF4A4A
+            border-radius   : 7px
+            background      : #F74646
             position        : absolute
             top             : 0
             right           : 0
-
-            padding         : 8px 0
-
-            font-size       : 12px
-            font-weight     : medium 
-            line-height     : 1
-
-            width           : 40px
-            height          : 40px
-
-            border-radius   : 50%
+            padding         : 4px 6px
+            font-size       : 14px
+            font-weight     : bold
+            line-height     : 17px
             color           : #fff
 
-            &:after
-                content     : 'OFF'
-                font-weight : medium
-                flex        : 0 0 100%
+            &:before
+                content     : '-'
 
             &.on
                 display     : flex
