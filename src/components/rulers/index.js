@@ -5,18 +5,32 @@ const rulers = $('.ruler__list');
 rulers.slick({
     slidesToShow: 4,
     slidesToScroll: 4,
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
         {
-            breakpoint: 769,
+            breakpoint: 992,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows:false,
+                dots: true
             }
         },{
-            breakpoint: 530,
+            breakpoint: 720,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                arrows:false,
+                dots: true
+            }
+        },{
+            breakpoint: 500,
             settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                arrows:false,
+                dots: true
             }
         }
     ]

@@ -23,7 +23,11 @@
         color               : #434343
         font-weight         : 200
         text-align          : left
-        font-size           : 40px 
+        font-size           : 40px
+        
+        @media(max-width : 767px)
+            font-size: 29px
+            line-height: 36px
 
         strong
             display         : block
@@ -35,6 +39,9 @@
         position            : relative
         text-align          : center
         padding             : 15px
+        
+        @media(max-width : 991px)
+            padding         : 0px 
 
     &__image
         position            : relative
@@ -60,6 +67,10 @@
         height 44px
         margin-top: 11px
         margin-bottom: 7px
+        
+        @media(max-width : 991px)
+            height 26px
+            margin: 9px 0
 
     &__link
         display             : block
@@ -140,6 +151,8 @@
         display                 : flex 
         // padding-top             : 65px 
         margin-top              : 9px
+        @media(max-width : 991px)
+            display none
     &__buy
         margin-left             : 10px
         flex                    : 1 1 auto 
@@ -300,6 +313,9 @@
 .offer-day
     background-color: #F3ECF2
     padding: 50px 0
+    @media(max-width : 991px)
+        padding-bottom: 21px
+        padding-top: 25px
     &__container
         { container }
         display: flex
@@ -314,12 +330,17 @@
         font-weight: 300
         line-height: 42px
         margin-bottom: 11px
-
+        @media(max-width : 767px)
+            font-size: 30px
+            line-height: 36px
+            text-align: center
         + ul
             display: flex
             align-items: flex-start
             justify-content: space-between
             width: 100%
+            @media(max-width : 539px)
+                display: block
             >li
                 background: #FBFBFB
                 border: 1px solid #EAEAEA
@@ -333,12 +354,41 @@
         display: flex
         align-items: flex-start
         justify-content: space-between
+        &:hover
+            background: #fbfbfb
+        @media(max-width : 991px)
+            display: block
+            padding: 15px
+        @media(max-width : 539px)
+            background: #FBFBFB
+            border: 1px solid #EAEAEA
+            border-radius: 7px
+
+    .slick-dots
+        margin: 0
+        margin-top: 13px
+        button
+            background: #ffffff
+        .slick-active
+            button
+                background: #BA69C8
+
     .showcase__link--name
         font-size: 25px
         color: #453F3F
         line-height: 26px
+        @media(max-width : 1199px)
+            font-size: 15px
+            line-height: 18px
+        @media(max-width : 991px)
+            font-size: 20px
+            line-height: 26px
     .showcase__name
         height 52px
+    .showcase__image
+        margin-right: 10px
+        @media(max-width : 991px)
+            margin: 0
     .buy-button__button
         background: #4CB6AC
         color: #FFFFFF
@@ -357,20 +407,27 @@
             color:#4CB6AC
             border-color: #4CB6AC 
     .showcase__short-description
-        height 34px
+        height 26px
     .showcase__prices > .price
         display: flex
         align-items: center
         justify-content: space-between
+        flex-wrap: wrap
+        @media(max-width : 1199px)
+            display: block
+        .valor-de
+            flex: 1 1 100%
     .showcase__prices
         height 47px
     .showcase__actions
         opacity 1
         visibility visible
+        margin: 0
         *
             display: none
         .showcase__buy
             display: block
+            margin: 0
             *
                 display: block
             .buy-button__qtd

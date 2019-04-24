@@ -4,26 +4,51 @@ $('.brands__list').slick({
     slidesToShow: 8,
     slidesToScroll: 8,
     infinite: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [   
         {
-            breakpoint    : 992,
+            breakpoint    : 1200,
+            settings      : {
+                slidesToShow: 6,
+                slidesToScroll: 6
+            }
+        },
+        {
+            breakpoint    : 1100,
             settings      : {
                 slidesToShow: 4,
                 slidesToScroll: 4
             }
         },
         {
+            breakpoint    : 992,
+            settings      : {
+                slidesToShow: 6,
+                slidesToScroll: 6,
+                infinite: true,
+                arrows: false,
+                dots: false
+            }
+        },
+        {
             breakpoint    : 768,
             settings      : {
-                slidesToShow: 3,
-                slidesToScroll: 3
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                infinite: true,
+                arrows: false,
+                dots: false
             }
         },
         {
             breakpoint    : 500,
             settings      : {
-                slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                arrows: false,
+                dots: false
             }
         }
     ]
