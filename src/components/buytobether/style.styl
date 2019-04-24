@@ -7,19 +7,37 @@
             display: table
             margin-bottom: 60px
 
+            @media(max-width: 991px)
+                display: flex
+                flex-wrap: wrap
+                position: relative
+                justify-content: space-between
+
+                .plus 
+                    position: absolute
+                    left: 50%
+                    transform: translateX(-50%)
+                    top: 30%
+                    background: transparent
+
+                td
+                    flex: 0 0 48%
+                    padding: 0!important
+
+                td.buy
+                    flex: 0 0 100%
+
+                a
+                    text-align: left
+
+
     table, hr, .cj-parcela + strong 
         display             : none 
     &__container 
-        position            : fixed 
-        top                 : 0 
-        left                : 0 
         z-index             : 200
         width               : 100% 
         height              : 100% 
-        background          : #fff 
-        transform           : translate3d(100%, 0, 0)
-        opacity             : 0 
-        visibility          : hidden 
+        background          : #fff  
         transition          : transition[0]
         padding             : 30px 0 0
         .on & 
@@ -29,20 +47,7 @@
         &.actived table 
             display         : table
     &__close 
-        position            : fixed 
-        top                 : 0 
-        right               : 0
-        display             : flex 
-        justify-content     : center 
-        align-items         : center  
-        font-size           : 0
-        width               : 45px
-        height              : 45px    
-        background          : #fff 
-        border              : 0   
-        &:before 
-            font-icon       : url('./svg/close.svg')
-            font-size       : 18px
+        display: none
     table 
         h3, a 
             font-size       : 13px 
@@ -109,6 +114,9 @@
         border-radius   : 5px
         font-size       : 0
 
+        @media(max-width: 991px)
+            width: 100%
+
         &:hover
             opacity: 0.89
 
@@ -134,13 +142,12 @@
         table 
             height          : 100%
             overflow-y      : auto
-            padding         : 0 15px 50px
+            padding         : 0 15px  
         .actived table, tr, td, th, tbody 
             display         : block 
         td
             text-align      : center 
-        .itemA
-            border          : solid 1px rgba(0,0,0,.1)
+        .itemA 
             border-radius   : 3px 
             padding         : 20px 
         .plus 
@@ -164,4 +171,4 @@
             visibility      : visible 
             opacity         : 1 
             transform       : none  
-        
+ 

@@ -136,14 +136,19 @@ if(body.attr('id') == 'product-page') {
                 {
                     breakpoint: 992,
                     settings: {
-                        vertical: false
+                        vertical: false,
+                        slidesToShow: 1,
+                        arrows: false,
+                        dots: true
                     }
                 },
                 {
                     breakpoint: 500,
                     settings: {
                         vertical: false,
-                        slidesToShow: 3,
+                        slidesToShow: 1,
+                        arrows: false,
+                        dots: true
                     }
                 }
             ]
@@ -302,4 +307,11 @@ if(body.attr('id') == 'product-page') {
     }
 
     getAttributeProdutct();
+
+    if($(window).width() < 992) {
+        $('.productDescription').on('click', function(){
+            $(this).toggleClass('on__text');
+        });
+    }
+
 }
