@@ -23,33 +23,7 @@ $('.brands__list').slick({
         },
         {
             breakpoint    : 992,
-            settings      : {
-                slidesToShow: 6,
-                slidesToScroll: 6,
-                infinite: true,
-                arrows: false,
-                dots: false
-            }
-        },
-        {
-            breakpoint    : 768,
-            settings      : {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true,
-                arrows: false,
-                dots: false
-            }
-        },
-        {
-            breakpoint    : 500,
-            settings      : {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                infinite: true,
-                arrows: false,
-                dots: false
-            }
+            settings      : "unslick"
         }
     ]
 });

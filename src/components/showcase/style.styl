@@ -1,5 +1,7 @@
 .showcase
     { container }
+    @media(max-width: 991px)
+        padding-bottom: 38px
     h2
         visibility          : hidden
 
@@ -28,6 +30,7 @@
         @media(max-width : 767px)
             font-size: 29px
             line-height: 36px
+            text-align: center
 
         strong
             display         : block
@@ -131,9 +134,12 @@
             > div > ul:not(.slick-dotted)
                 flex-wrap       : nowrap
                 width           : 100%
-
+                @media(max-width : 991px)
+                    overflow        : auto
                 > li
-                    min-width   : 234px
+                    min-width       : 160px
+                    margin-right    : 30px
+                    margin-bottom   : 20px
 
                     &.helperComplement
                         display : none
@@ -273,8 +279,20 @@
         line-height: 42px
         flex: 0 0 100%
         margin-bottom: 20px
+        @media(max-width : 767px)
+            font-size: 30px
+            line-height: 36px
+            text-align center
     &__tabs
         flex: 0 1 17.675%
+        @media(max-width : 991px)
+            flex: 0 1 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding-bottom: 20px
+            margin-bottom: 20px
+            overflow: auto
         &-item
             font-size: 20px
             color: #8B8A8A
@@ -287,14 +305,21 @@
             cursor pointer
             border: 1px solid transparent
             transition: all .3s
+            @media(max-width : 991px)
+                min-width: 125px
+                margin-right: 7px
+                padding: 6px 0
             &--active, &:hover
                 color: color[0]
                 font-weight: 500
                 background: #ffffff
                 border: 1px solid #D4D4D4
     &__showcase
-        flex: 0 1 79.768%
+        width: 78.295%
         position relative
+        overflow: auto
+        @media(max-width : 991px)
+            width: 100%
     .showcase
         position absolute
         top: 0
@@ -302,13 +327,26 @@
         z-index: -1
         opacity 0
         visibility: hidden
+        padding: 0
+        max-width: 100%
         &--active
             z-index: 1
             opacity 1
             visibility: visible
             position static
+        .showcase__item  
+            min-width: 160px
+            @media(max-width: 991px)
+                margin-right: 30px
         .showcase__title
             display: none
+        h2 + ul
+            display: flex!important
+            align-items: flex-start!important
+            justify-content: space-between!important
+            flex-wrap: nowrap!important
+            max-width: 100%!important
+            margin: 0
 
 .offer-day
     background-color: #F3ECF2
@@ -339,13 +377,15 @@
             align-items: flex-start
             justify-content: space-between
             width: 100%
-            @media(max-width : 539px)
-                display: block
+            overflow: auto
             >li
                 background: #FBFBFB
                 border: 1px solid #EAEAEA
                 border-radius: 7px
                 flex: 0 1 48.838%
+                min-width: 275px
+                margin-right: 5px
+                margin-bottom: 15px
     .showcase__main
         flex: 0 1 50%
     .showcase__link

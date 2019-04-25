@@ -40,18 +40,18 @@
         .menu
             &__container
                 height          : 100%
-                max-width       : 256px
+                max-width       : 290px
                 background      : #fff
-
+                border-top-right-radius: 7px
                 transition      : transition[0]
-                transform       : translate3d(-256px, 0, 0)
+                transform       : translate3d(-256px, 20px, 0)
 
                 .is-menu &
-                    transform   : translate3d(0,0,0)
+                    transform   : translate3d(0,20px,0)
 
             &__nav
                 height          : 100%
-                padding-top     : 95px
+                padding-top     : 111px
                 overflow-y      : auto
 
 
@@ -69,10 +69,11 @@
         top             : 0
         left            : 0
         z-index         : 100
-
+        padding-top     : 38px
+        padding-left    : 15px 
         display         : flex
         flex-flow       : wrap
-        width           : 252px
+        width           : 100%
         background      : color[0]
 
     &__close
@@ -80,18 +81,18 @@
         display             : flex
         justify-content     : center
         align-items         : center
-
-        width               : 40px
-        height              : 40px
-
+        width               : 30px
+        height              : 30px
         border              : 0
-
-        background          : color[1]
-
+        background          : #F3ECF2
+        border-radius       : 50%
+        position            : absolute
+        top                 : 10px
+        right               : 10px
         &:before
             font-icon       : url('./svg/close.svg')
-            font-size       : 18px
-            color           : #fff
+            font-size       : 12px
+            color           : color[2]
 
     &__title
         flex            : 1 1 auto
@@ -117,28 +118,29 @@
         &--nv0
             > li.menu__item--has-child
                 height: 55px
-                &:after
-                    content: ''
-                    display: block
-                    position: relative
-                    width: 26px
-                    height: 26px
-                    background: #fff
-                    top: -10px
-                    left: 50%
-                    -webkit-transform: translateX(-50%) rotate(45deg)
-                    transform: translateX(-50%) rotate(45deg)
-                    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2)
-                    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2)
-                    border-radius: 7px
-                    opacity: 0
-                    visibility: hidden
-                &:hover
+                @media(min-width : 992px)
                     &:after
-                        opacity: 1
-                        visibility: visible
-                        animation-name: opacityframe
-                        animation-duration: 1s
+                        content: ''
+                        display: block
+                        position: relative
+                        width: 26px
+                        height: 26px
+                        background: #fff
+                        top: -10px
+                        left: 50%
+                        -webkit-transform: translateX(-50%) rotate(45deg)
+                        transform: translateX(-50%) rotate(45deg)
+                        -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.2)
+                        box-shadow: 0 0 5px 0 rgba(0,0,0,0.2)
+                        border-radius: 7px
+                        opacity: 0
+                        visibility: hidden
+                    &:hover
+                        &:after
+                            opacity: 1
+                            visibility: visible
+                            animation-name: opacityframe
+                            animation-duration: 1s
 
     &__link
         &--nv0, &--nv1, &--nv2
@@ -272,8 +274,8 @@
                         display                 : none
 
                     > .menu__list
-                        column-count            : 3
-                        width                   : 590px
+                        column-count            : 2
+                        width                   : 340px
 
                         > .menu__item
                             break-inside: avoid
@@ -434,6 +436,13 @@
                     .menu__sub-inner
                         direction           : ltr
 
+@media only screen and (min-width: 1250px)
+    .menu__categories--nv1 
+        > .menu__sub-inner 
+            > .menu__list
+                column-count: 3
+                width: 590px
+
 .category__brands
     padding-right: 25px
     &--title
@@ -453,3 +462,96 @@
     opacity: 0
   to
     opacity: 1
+
+@media only screen and (max-width: 991px)
+    .menu
+        &__header
+            background: none
+        &__account
+            display: flex
+            align-items: center
+            &:before
+                content: ''
+                display: block
+                margin-right: 6px
+                font-icon: url('./svg/user.svg')
+                font-size: 30px
+                color: color[2]
+            a
+                color: color[1]
+            span 
+                &:first-child
+                    font-size: 13px
+                    line-height: 15px
+                    font-weight: 400
+                &:last-child
+                    font-size: 15px
+                    line-height: 18px
+                    font-weight: 300
+                    display: block
+
+        &__categories
+            background: none!important
+            &--nv1
+                display: none
+            &--nv2
+                padding-bottom 30px
+        &__link
+            &--nv0
+                color: color[0]
+                padding: 10px 15px
+            &--nv1
+                font-size: 14px
+                font-weight: 500
+                color: color[1]
+                padding-left: 15px
+            &--nv2
+                font-size: 13px
+                line-height: 27px
+                color: color[1]
+                padding-left: 15px
+        &__item
+            height auto!important
+            &--nv0
+                border-top: 1px solid #EAEAEA
+                position relative
+                &:last-child
+                    border-bottom: 1px solid #EAEAEA
+                &.menu__item--has-child:after
+                    content: ''
+                    width: 45px
+                    height: 39px
+                    top: 0px
+                    right 0
+                    position: absolute
+                    font-icon: url('./svg/dropdown-cat.svg')
+                    font-size: 7px
+                    color: #C2C2C2
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    transition: all .3s
+                    cursor pointer
+            &[aria-expanded=true]
+                .menu__categories--nv1
+                    display: block
+                &.menu__item--has-child:after
+                    color: color[2]
+                    transform: rotate(180deg)
+        .head-nav
+            &__item
+                &--lv1
+                    &:before
+                        display: none
+            &__link
+                display: none!important
+            &__sub
+                display: block!important
+                position: static
+                transform: none
+                box-shadow: none
+                opacity 1
+                visibility: visible
+                padding: 0
+                &:before, &:after
+                    display: none

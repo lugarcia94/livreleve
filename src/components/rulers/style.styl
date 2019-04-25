@@ -6,6 +6,11 @@
         margin: 0 auto
     &__wrapper
         padding: 13px 0
+    &__list
+        display: flex
+        align-items: center
+        justify-content: space-between
+        overflow: auto
     &__title
         font-size: 15px
         color: color[2]
@@ -22,6 +27,7 @@
         align-items: center
         @media(max-width : 991px)
             justify-content: center!important
+            margin-right: 45px
             padding-bottom: 20px
         &--truckage
             &:before
@@ -50,5 +56,5 @@
                 font-size          : 37px
                 margin-right       : 4px
                 color              : color[2]
-    .slick-dots
-        margin-bottom: 25px
+    &__content
+        white-space: nowrap

@@ -172,37 +172,24 @@ class Menu extends Component {
         return (
             <div aria-expanded={this.props.expanded} class={ (this.state.mobile ? 'menu--mobile' : 'menu--desktop') } role="menubar" >
                 <div class="menu__container" >
-
-                        <nav class="menu__nav">
-                            { this.state.mobile &&
-                                <header class="menu__header">
-                                    <h1 class="menu__title">Menu de Categorias</h1>
-                                    <button onClick={this.handleClick} class="menu__close" type="button"><span>Close</span></button>
-                                    <div class="menu__user">
-                                        <ul class="menu__user-list">
-                                            <li class="menu__user-list-item">
-                                                <a class="menu__user-list-link menu__user-list-link--user" href="/account">Minha Conta</a>
-                                            </li>
-                                            <li class="menu__user-list-item">
-                                                <a class="menu__user-list-link menu__user-list-link--orders" href="/account/orders">Pedidos</a>
-                                            </li>
-                                            <li class="menu__user-list-item">
-                                                <a class="menu__user-list-link menu__user-list-link--mail" href="/contato">Contato</a>
-                                            </li>
-                                            <li class="menu__user-list-item">
-                                                <a class="menu__user-list-link menu__user-list-link--help" href="/institucional/ajuda">Ajuda</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </header>
-                            }
-                            <ul class="menu__categories menu__categories--nv0">
-                                {list}
-                                {allCategory}
-                            </ul>
-                        { this.state.mobile && <footer dangerouslySetInnerHTML={{ __html: slot[0].innerHTML }}></footer> }
-                        </nav>
-
+                    <nav class="menu__nav">
+                        { this.state.mobile &&
+                            <header class="menu__header">
+                                <button onClick={this.handleClick} class="menu__close" type="button"><span>Close</span></button>
+                                <div className="menu__account">
+                                    <a href="/acount" title="minha conta">
+                                        <span>Olá :)</span>
+                                        <span>Minha conta</span>
+                                    </a>
+                                </div>
+                            </header>
+                        }
+                        <ul class="menu__categories menu__categories--nv0">
+                            {list}
+                            {allCategory}
+                        </ul>
+                    { this.state.mobile && <footer dangerouslySetInnerHTML={{ __html: slot[0].innerHTML }}></footer> }
+                    </nav>
                 </div>
             </div>
         );

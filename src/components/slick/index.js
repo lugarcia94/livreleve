@@ -53,28 +53,7 @@ $('[data-carousel]').each(function(){
                 },
                 {
                     breakpoint        : 992,
-                    settings          : {
-                        slidesToShow      : 4,
-                        slidesToScroll    : 4
-                    }
-                },
-                {
-                    breakpoint        : 780,
-                    settings          : {
-                        slidesToShow      : 3,
-                        slidesToScroll    : 3,
-                        arrows            : false,
-                        dots              : true
-                    }
-                },
-                {
-                    breakpoint        : 620,
-                    settings          : {
-                        slidesToShow      : 2,
-                        slidesToScroll    : 2,
-                        arrows            : false,
-                        dots              : true
-                    }
+                    settings          : "unslick"
                 }
             ];
 
