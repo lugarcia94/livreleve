@@ -14,26 +14,14 @@ $('[data-carousel]').each(function(){
                 {
                     breakpoint    : 992,
                     settings      : {
-                        dots      : true
+                        dots      : true,
+                        arrows    : false,
                     }
                 }
             ];
             break;
         case 'three':
             config.variableWidth      = true;
-            config.responsive         = [
-                {
-                    breakpoint        : 992,
-                    settings          : {
-                        centerMode    : true
-                    }
-                }
-            ];
-            break;
-        
-        case 'minibanner-mid':
-            config.slidesToShow       = 2;
-            config.slidesToScroll     = 1;
             config.responsive         = [
                 {
                     breakpoint        : 992,
@@ -66,22 +54,26 @@ $('[data-carousel]').each(function(){
                 {
                     breakpoint        : 992,
                     settings          : {
-                        slidesToShow      : 3,
-                        slidesToScroll    : 3
+                        slidesToShow      : 4,
+                        slidesToScroll    : 4
                     }
                 },
                 {
-                    breakpoint        : 768,
+                    breakpoint        : 780,
+                    settings          : {
+                        slidesToShow      : 3,
+                        slidesToScroll    : 3,
+                        arrows            : false,
+                        dots              : true
+                    }
+                },
+                {
+                    breakpoint        : 620,
                     settings          : {
                         slidesToShow      : 2,
-                        slidesToScroll    : 2
-                    }
-                },
-                {
-                    breakpoint        : 425,
-                    settings          : {
-                        slidesToShow      : 1,
-                        slidesToScroll    : 1
+                        slidesToScroll    : 2,
+                        arrows            : false,
+                        dots              : true
                     }
                 }
             ];
@@ -97,15 +89,17 @@ $('[data-carousel]').each(function(){
                 {
                     breakpoint        : 992,
                     settings          : {
-                        slidesToShow      : 2,
-                        slidesToScroll    : 1
+                        slidesToShow      : 3,
+                        slidesToScroll    : 3,
+                        dots              : true
                     }
                 },
                 {
-                    breakpoint        : 425,
+                    breakpoint        : 720,
                     settings          : {
-                        slidesToShow      : 1,
-                        slidesToScroll    : 1
+                        slidesToShow      : 2,
+                        slidesToScroll    : 2,
+                        dots              : true
                     }
                 }
             ];

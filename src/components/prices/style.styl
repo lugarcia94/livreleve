@@ -5,7 +5,12 @@
         font-weight : bold
         color       : color[2] 
         font-size   : 20px
-        line-height : 24px 
+        line-height : 24px
+        
+        @media(max-width : 991px)
+            font-size: 17px
+            line-height: 20px
+
     .showcase__item--offer &
         font-size   : 17px
         color       : #FF7000
@@ -121,6 +126,10 @@
     color           : color[1]
     strong
         color       : color[0]
+
+    @media(max-width : 991px)
+        font-size: 17px
+        line-height: 20px
         
 .save-price.price__save
     display         : none

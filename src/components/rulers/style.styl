@@ -20,6 +20,9 @@
     &__item 
         display: flex!important
         align-items: center
+        @media(max-width : 991px)
+            justify-content: center!important
+            padding-bottom: 20px
         &--truckage
             &:before
                 font-icon          : url('./svg/truck.svg')
@@ -47,3 +50,5 @@
                 font-size          : 37px
                 margin-right       : 4px
                 color              : color[2]
+    .slick-dots
+        margin-bottom: 25px

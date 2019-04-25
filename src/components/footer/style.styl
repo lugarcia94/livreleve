@@ -12,6 +12,9 @@
         display         : inline-block
         vertical-align  : top 
         padding-top     : 25px
+        @media(max-width : 475px)
+            flex: 1 1 100%
+            text-align: center
 
         .head-nav__link
             display: none
@@ -32,6 +35,17 @@
                 font-size: 0px
                 padding: 0
                 line-height: 0px
+            .contact-item_social-list
+                @media(max-width : 475px)
+                    justify-content: center
+            
+        .contact
+            @media(max-width : 475px)
+                justify-content: center
+                span
+                    justify-content: center
+                    text-align: center
+
         &--contact
             .contact-item_call, .contact-item_social
                 display: none

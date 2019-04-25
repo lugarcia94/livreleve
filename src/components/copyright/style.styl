@@ -13,6 +13,13 @@
         padding-bottom: 27px
         margin-bottom : 27px
         border-bottom: 1px solid #EDEDED
+        @media(max-width : 475px)
+            flex-wrap: wrap
+            justify-content: center
+        
+    &__text, &__safe
+        @media(max-width : 475px)
+            flex: 1 1 100%
 
     &__title
         font-size: 12px

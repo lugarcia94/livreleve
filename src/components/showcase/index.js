@@ -54,3 +54,16 @@ $(".showcase-tabs__tabs-item").click(function() {
     $(".showcase-tabs__showcase .showcase").removeClass("showcase--active")
     $(showcase).addClass("showcase--active")
 });
+
+if ( $( window ).width() < 540 ){
+    
+    $(".offer-day .helperComplement").remove();
+
+    $('.offer-day h2 + ul').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: false,
+        dots: true
+    });
+}
