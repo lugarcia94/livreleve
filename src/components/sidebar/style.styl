@@ -121,7 +121,7 @@
                         display             : none 
                 &:checked 
                     + span 
-                        box-shadow  : 0 0 0 1px #FF7000
+                        box-shadow  : 0 0 0 1px color[0]
 
     .fields-thumbs
         display                     : flex 
@@ -142,7 +142,12 @@
         padding                     : 5px 10px
         border-radius               : 3px
         color                       : #fff 
-        background                  : #FF7000
+        background                  : #f38eb2
+        font-weight                 : 700
+
+        &:hover
+            color: #fff
+            text-decoration: none
         
 
 .menu-navegue
@@ -151,25 +156,19 @@
 
     a
         flex                    : 1 1 auto
-
         display                 : flex
         justify-content         : center
         align-items             : center
-        height                  : 45px
-
-        border                  : solid 1px #FFE6AB
-        border-radius           : 2px
+        height                  : 33px
+        border-radius           : 7px
         margin                  : 2px
-
         font-size               : 13px
         font-weight             : semi-bold 
         text-transform          : uppercase
-
         text-decoration         : none
-
         background              : #fff
-        color                   : #888888
-
+        color                   : color[1]
+        border                  : 1px solid color[0] 
 
         &[title="Refinar Resultado"]
             font-size           : 0
@@ -179,31 +178,46 @@
                 font-size       : 14px
 
         &.tab-refinar-ativo, &.tab-navegue-ativo
-            background          : #FFE6AB
-            color               : #FF7000
+            background-image    : linear-gradient(270deg, #ba69c8 0%, #f48fb1 100%)
+            color               : #fff
+            border              : none     
 
 
 .search-single-navigator
     padding                     : 15px
 
+    li, h4
+        margin-bottom           : 5px 
+
     a
-        font-size               : 12px
+        font-size               : 14px
         font-weight             : regular
+        color                   : #8B8A8A
 
-        color                   : #888888
+        &:hover
+            color               : color[0] 
+            cursor              : pointer
+            text-decoration     : none 
 
-    h3 a
-        font-size               : 13px
-        font-weight             : regular
-        text-transform          : uppercase
-        color                   : #434343
+    h3 
+        margin-bottom           : 15px
+
+        a
+            font-size               : 21px
+            font-weight             : regular
+            text-transform          : lowercase
+            color                   : #453F3F
+
+            &:hover
+                text-decoration     : none 
 
     h5:not(first-child)
-        margin-top              : 15px
-        font-size               : 13px
-        font-weight             : regular 
-        text-transform          : uppercase
-        color                   : #434343
+        font-size               : 21px
+        font-weight             : regular
+        text-transform          : lowercase
+        color                   : #453F3F
+        margin-bottom           : 15px
+        margin-top              : 50px
 
     .thumb
         width                   : 30px
@@ -227,6 +241,14 @@
     > h3, > h4, fieldset 
         order                   : 1 
 
+        a
+            font-size           : 21px
+            font-weight         : 400
+            text-transform      : lowercase
+            color               : #453f3f
+
+            &:hover
+                color               : color[0] 
     .bt-refinar
         order                   : 2
 
@@ -240,12 +262,13 @@
         color                   : #888888
 
     label
-        position                : relative
-        display                 : block
-        font-size               : 13px
-        font-weight             : regular
+        font-size: 14px
+        font-weight: 400
+        color: #8b8a8a
+        
 
-        color                   : #888888
+        &:hover
+            color: color[0]
 
         &:not(.not-thumb)
             input 
@@ -255,25 +278,27 @@
                     display             : flex 
                     justify-content     : flex-start 
                     align-items         : center  
+                    margin-bottom       : 10px
                     &:before 
                         content         : ''
                         display         : block
-                        width           : 10px 
-                        height          : 10px 
+                        width           : 15px 
+                        height          : 15px 
                         border-radius   : 3px
-                        border          : solid 1px #FFE6AB
-                        margin-right    : 3px 
+                        border          : none
+                        margin-right    : 7px 
+                        background      : #F3ECF2 
                 &:checked
                     + span:not(.image):before 
-                        background  : #FF7000
+                        background  : color[0]
 
     h5:not(first-child)
-        margin-top              : 15px
-        font-size               : 13px
-        font-weight             : regular 
-        text-transform          : uppercase
-        color                   : #434343
-        margin-bottom           : 5px
+        margin-top          : 15px
+        font-size           : 21px
+        font-weight         : 400
+        text-transform      : lowercase
+        color               : #453f3f
+        margin-bottom       : 15px
     .fields-thumbs
         .ver-filtros
             margin              : 4px
@@ -286,14 +311,14 @@
 
     height                      : 40px
     margin-top                  : 15px
-    border-radius               : 2px
+    border-radius               : 7px
 
     font-size                   : 0
     font-weight                 : bold
 
     text-transform              : uppercase
 
-    background                  : #FFB200
+    background-image: linear-gradient(270deg, #ba69c8 0%, #f48fb1 100%)
     color                       : #fff
 
     &:before
