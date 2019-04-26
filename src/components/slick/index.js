@@ -2,6 +2,16 @@ import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import './style.styl';
 
+
+
+$('.banner--category .banner__container').slick({
+    infinite: false,
+    arrows: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false
+});
+
 $('[data-carousel]').each(function(){
     const type = $(this).attr('data-carousel');
     let config = {};

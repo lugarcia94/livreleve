@@ -9,4 +9,8 @@ if(body.hasClass('category') || body.hasClass('department') || body.hasClass('re
     sub.last().append($('.pager.bottom')).prepend(resultTimer.last());
 }
 
+$('.category__showcase .tags__filter').appendTo('.category__showcase .main');
 
+$('.banner--category .category__showcase').each(function(){
+    $(this).find('.sub').addClass('last').last();
+});
