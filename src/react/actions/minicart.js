@@ -64,6 +64,7 @@ export function minicartFetchData(callback = function(){}) {
                 minicart.items.forEach((item)=>{
                     amount += parseInt(item.quantity);
                 });
+                
                 dispatch(minicartClean());
                 minicart.items.forEach((item) => dispatch(minicartItems(item)));
                 dispatch(minicartQtd(amount));
