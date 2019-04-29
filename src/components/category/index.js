@@ -11,6 +11,10 @@ if(body.hasClass('category') || body.hasClass('department') || body.hasClass('re
 
 $('.category__showcase .tags__filter').appendTo('.category__showcase .main');
 
-$('.banner--category .category__showcase').each(function(){
-    $(this).find('.sub').addClass('last').last();
+let url = window.location.origin + window.location.pathname;
+
+$('.tags__filter-list li').each(function(){
+    let paramUrl = $(this).find('a').attr('href');
+    let newUrl = url + '?' + paramUrl; 
+    $(this).find('a').attr("href", newUrl);
 });

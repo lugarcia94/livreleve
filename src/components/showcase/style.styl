@@ -118,8 +118,18 @@
         > div > ul:not(.slick-dotted):not(.slick-initialized)
             display                 : flex 
             flex-flow: row wrap
+
+            @media(max-width: 767px)
+                padding: 0 15px
+                justify-content: space-between
+
+             
             > li
                 width: 24.6%
+
+                @media(max-width: 767px)
+                    width: 48%
+                    margin-bottom: 30px
 
                 &.helperComplement
                     order: 2
