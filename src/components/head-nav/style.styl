@@ -1,6 +1,6 @@
-#orders-page 
-    ul.head-nav__sub 
-        padding             : 20px 
+#orders-page
+    ul.head-nav__sub
+        padding             : 20px
 
         p 
             margin-bottom   : 0
@@ -27,9 +27,23 @@
             margin-left        : 2px
             color              : #C2C2C2
     .welcome
-        color: #453F3F
+        color: color[1]
         font-size: 13px
-        pointer-events: none
+        cursor: pointer
+        a
+            text-decoration: none
+            &[href*="logout"]
+                color: color[1]
+                font-size: 0px
+                display: block
+                transition: all .3s
+                &:before
+                    content: 'Sair'
+                    font-size: 13px
+                    display: block
+                &:hover
+                    color: color[2]
+        
 
     &__sub
         position            : absolute
@@ -250,6 +264,7 @@
             background: #F3ECF2
             margin-right 9px
             margin-top: 5px
+            text-decoration: none
         .contact-item_social-facebook
             &:before
                 font-icon          : url('./svg/facebook.svg')
