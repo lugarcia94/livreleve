@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { minicartFetchData, minicartFetchDataRemove, minicartToggle, minicartRemove } from '../../actions/minicart';
 
+import Slider from "react-slick";
+
 import './style.styl';
 
 class Minicart extends Component {
@@ -55,19 +57,20 @@ class Minicart extends Component {
     renderHtml() {
         if(typeof this.props.items === 'undefined') return;
         return Array.from(this.props.items).map((item, index) => {
+            const urlImage = item.imageUrl.replace("-65-65/", "-115-115/");
             return (
                 <li key={item.id} className="minicart__item">
                     <a href={item.detailUrl} className="minicart__link">
                         <figure className="minicart__figure">
-                            <img className="minicart__image" src={item.imageUrl} alt={item.name}/>
+                            <img className="minicart__image" src={urlImage} alt={item.name}/>
                         </figure>
                         <div className="minicart__info">
                             <h4 className="minicart__name">{item.name}</h4>
+                            <small className="minicart__amount">{item.quantity} unidade</small>
                             <span className="minicart__price">{new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(item.sellingPrice / 100)}</span>
-                            <small className="minicart__amount">Qtde.: {item.quantity}</small>
                         </div>
                     </a>
-                    <button onClick={() => this.props.remove(index)} className="minicart__trash"> Excluir </button>
+                    <button onClick={() => this.props.remove(index)} className="minicart__trash"></button>
                 </li>
             );
         });
@@ -75,19 +78,35 @@ class Minicart extends Component {
     render() {
         let list = this.renderHtml();
         let _className = this.props.isRemoved ? 'minicart__container is-loading' : 'minicart__container';
+        
+        const settings = {
+            dots: false,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: true
+        };
 
         if(parseInt(this.props.qtd) == 0)
             list = (<h3 className="minicart__empty">Seu carrinho está vazio.</h3>);
-
+        
         if(this.props.isLoading && !this.props.isRemoved) return (
             <section className={_className} >
                 <div className="minicart__header">
                     <h1 className="minicart__title">Meu Carrinho</h1>
                     <button onClick={this.close} type="button" className="minicart__close">Close</button>
                 </div>
+
                 <div className="minicart__main">
-                    <ul>{list}</ul>
+                    { window.innerWidth > 991 &&
+                        <Slider {...settings}>{list}</Slider>
+                    }
+                    { window.innerWidth < 992 &&
+                        <ul>{list}</ul>
+                    }
                 </div>
+                
             </section>
         );
 
@@ -126,9 +145,16 @@ class Minicart extends Component {
                     <h1 className="minicart__title">Meu Carrinho</h1>
                     <button onClick={this.close} type="button" class="minicart__close">Close</button>
                 </div>
+                
                 <div className="minicart__main">
-                    <ul>{list}</ul>
+                    { window.innerWidth > 991 &&
+                        <Slider {...settings}>{list}</Slider>
+                    }
+                    { window.innerWidth < 992 &&
+                        <ul>{list}</ul>
+                    }
                 </div>
+
                 { this.props.qtd > 0 &&
                     <div className="minicart__footer">
                         {freteHTML}
@@ -140,7 +166,7 @@ class Minicart extends Component {
                             }).format(this.props.minicart.value / 100)}</span>
                         </em>
                         <a className="minicart-calltoaction" href="/checkout/#/cart">
-                            <span> Finalizar </span>
+                            <span>Meu carrinho</span>
                         </a>
                     </div>
                 }

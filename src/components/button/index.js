@@ -28,7 +28,6 @@ function menuAction() {
     }
 }
 
-
 const buttonCart    = document.querySelector('.button__minicart');
 const minicart      = document.querySelector('#minicart');
 
@@ -49,7 +48,6 @@ if(minicart) {
 function cartAction() {
     body.classList.toggle('is-minicart');
 }
-
 
 // Notificação basica do carrinho
 setTimeout(function(){

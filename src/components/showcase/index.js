@@ -23,3 +23,17 @@ $(".showcase-tabs__tabs-item").click(function() {
     $(".showcase-tabs__showcase .showcase").removeClass("showcase--active")
     $(showcase).addClass("showcase--active")
 });
+
+if($('body').hasClass('quickview')) {
+    const linkProduct = sessionStorage.getItem('linkProduct');
+    $( "div.product__page>a" ).attr( "href", linkProduct );
+}
+
+$('.showcase').on('click', '.showcase__quickview', function(){
+    const link = $(this).closest('.showcase__item').find('.showcase__link');
+    sessionStorage.setItem('linkProduct', '');
+    if(link.length) {
+        sessionStorage.setItem('linkProduct', link.attr('href'));
+    }
+    $(this).find('a').trigger('click');
+});

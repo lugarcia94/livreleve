@@ -1,12 +1,12 @@
 #TB_overlay {
-    background: rgba(255,178,0,.9);
+    background: rgba(0,0,0,.75);
 }
 #TB_window {
     background: #fff;
     margin: 0 !important;
     transform: translate(-50%, -50%);
     width: 1200px!important;
-    height: 600px;
+    height: 481px;
     max-width: 90vw;
     max-height: 90vh;
     box-shadow: 0 0 0 10px rgba(0,0,0,.05)
@@ -29,21 +29,25 @@
     display: flex
     justify-content: center 
     align-items: center
-    width: 45px;
-    height: 45px;
-    font-size:0;
-    position: absolute;
-    top: 0
-    right: 0
-    background: #fff;
-    text-decoration: none;
-    
-    &:before 
-        font-icon       : url('./svg/close.svg')
-        font-size       : 15px 
-        color           : #BEAF8C
-
-
+    width: 45px
+    height: 45px
+    font-size:0
+    position: absolute
+    top: -20px
+    right: -20px
+    background: none
+    text-decoration: none
+    &:before
+        content: ''
+        background-color: #F3ECF2
+        border-radius: 50%
+        display: block
+        width: 41px
+        height: 41px
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAn1JREFUOBGFk89LVFEUx885973XqlWLkAzctmgRFAm2CEQqZpzF+xuEIUJQEoxcpAVSGiQkgv/BrN6mhkJLKhxECVoEEVEhBBEEQbvno3dP33PHGZvox2Hefczhfj/n5+On4zujjn+sCuteklB9cHFojf5jXxaa1YhoxYlyHNGYaOlX1VMfEw1oSQ9eTrUq/2J8nn+UspdMVY+Tar9XXREI9ggEOPH4xFOZvZp+8UfQp/n11BM3cDNmZlKI2Wsh7KgOR2FOM7ASALPXv4F2bwFQ+garxqbGPRLmHMdlGb4/uCYqKZgFngOQaPbm+kbI6MPsRuqVGpDG4UL7yHG/dnhy9FlbBWdrolURCB37RMRT5IgiKYvI8ZKwn3RSxpEo/EpoaB7HWjsyVVk3Xhdif7bRVCYfQC6ATOBNtC8GXDiPIqodnb4QAKazxnbt7N2hppCkLFbagYUmWhdJUEIvIHjt+NVOA4SRL3VytAba5Np91zvHZg4y6Oh6yjHnztXN1DnfcIwehPqtBCX0C29fYCHTvmsXmx2AvXvK2QIAcRsIHVvoUAFSsrdFQ1mJLzX7evtxzx51IZsTWyk2NowRyxQWASLsAc2BUBjF/LZHpfrs2+LDLihAno8D4H2D2DKwqIz0ORfHtRM3h2edEDKkwvz2gyXeU/b9XhvET65sV1FrhlHGNsowUufzQxjjyfnz3THuzq1XmMsMfUra48cesS+i2FcFnV9BorFNwBJGK3JHUQ/AQg/cGGk653o3m0NGy8gaRUC//+3kLFI7tXCum4EBOtY/M9IUh9LQIwsa4hIUEI+x0Eck8RYf46UzfwF0QDZeZq0i7DsRes8c1X8C4HwYHMB54L8AAAAASUVORK5CYII=")
+        background-repeat: no-repeat
+        background-position: center
+        background-size: auto
 
 #TB_load {
     color: #ffffff;
