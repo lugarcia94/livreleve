@@ -287,21 +287,25 @@ if(body.attr('id') == 'product-page') {
         const urlPage = window.location.host;
         const urlApi = 'http://' + urlPage + '/api/catalog_system/pub/products/search?fq=productId:' + idProduto;
 
-        $.get(urlApi).done(function(data){
+        $.get(urlApi).done(function(data){ 
             let arrayCabelos = data[0]['Tipo de Cabelo'];
             let catFilter = data[0]['categories'];
-
-            arrayCabelos.forEach(function(itemRetorno){
-                let urlFilter = catFilter + itemRetorno + '?map=c,specificationFilter_19'; 
-                $('.item__extra .tipo ul').append('<li><a href="' + urlFilter + '">' + itemRetorno + '</a></li>');
-            });
+            
+            if (arrayCabelos != null) {
+                arrayCabelos.forEach(function(itemRetorno){
+                    let urlFilter = catFilter + itemRetorno + '?map=c,specificationFilter_19'; 
+                    $('.item__extra .tipo ul').append('<li><a href="' + urlFilter + '">' + itemRetorno + '</a></li>');
+                });
+            }
 
             let arrayLinha = data[0]['Linha']; 
 
-            arrayLinha.forEach(function(itemRetorno){
-                let urlFilter = catFilter + itemRetorno + '?map=c,specificationFilter_19'; 
-                $('.item__extra .linha ul').append('<li><a href="' + urlFilter + '">' + itemRetorno + '</a></li>');
-            });
+            if(arrayLinha != null) {
+                arrayLinha.forEach(function(itemRetorno){
+                    let urlFilter = catFilter + itemRetorno + '?map=c,specificationFilter_19'; 
+                    $('.item__extra .linha ul').append('<li><a href="' + urlFilter + '">' + itemRetorno + '</a></li>');
+                });
+            }
 
         });
     }

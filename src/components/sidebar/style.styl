@@ -141,22 +141,26 @@
         label 
             margin                  : 4px
     .ver-filtros 
-        display                     : flex 
-        justify-content             : center 
-        align-items                 : center 
-        font-size                   : 10px
-        font-weight                 : regular 
-        text-transform              : uppercase
-        text-align                  : center 
-        padding                     : 5px 10px
-        border-radius               : 3px
-        color                       : #fff 
-        background                  : #f38eb2
-        font-weight                 : 700
+        position relative
+        font-size: 0
+        width 100%
+        display: block
 
-        &:hover
-            color: #fff
-            text-decoration: none
+        &:before
+            position absolute
+            content: 'X'
+            color: color[0]
+            right 0
+            font-size: 16px
+            font-weight: 700
+            bottom: 0
+            background: #f3ecf2
+            width 20px
+            height 20px
+            border-radius: 50%
+            display: flex
+            align-items: center
+            justify-content: center
         
 
 .menu-navegue
