@@ -315,3 +315,7 @@ if(body.attr('id') == 'product-page') {
     }
 
 }
+
+if (!$(".product__prices .product__description--short .productDescriptionShort").length){
+    $(".product__prices .product__description--short .description-title").hide()
+}

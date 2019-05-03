@@ -48,8 +48,7 @@
     &__sub
         position            : absolute
         top                 : 160%
-        left                : 50%
-        transform           : translateX(-50%)
+        left                : -25%
         padding             : 30px 20px
         border-radius       : 7px
 
@@ -82,7 +81,7 @@
             content: ''
             display: block
             position: absolute
-            width: 90%
+            width: 85%
             height: 26px
             background-color: #ffffff
             top: 0px
@@ -141,14 +140,16 @@
                         font-icon          : url('./svg/question.svg')
                         font-size          : 30px
                         margin-right       : 5px
-                        color              : color[2] 
+                        color              : color[2]
+                .head-nav__sub
+                    left: -45%!important
 
             &:nth-child(1)
                 &:before
                     font-icon          : url('./svg/user.svg')
                     font-size          : 30px
                     margin-right       : 5px
-                    color              : color[2] 
+                    color              : color[2]
         &--lv2
 
             + .head-nav__item--lv2
@@ -220,6 +221,10 @@
             color: color[0]
             font-size: 15px
             line-height: 20px
+            transition: all .3s
+            &:hover
+                color: color[2]
+                text-decoration: none
 
     .contact-item_tel
         &:before
@@ -234,6 +239,9 @@
     .contact-item_mail
         a
             color: color[2]
+            &:hover
+                color: color[0]
+                text-decoration: none
         &:before
             font-icon          : url('./svg/mail.svg')
             font-size          : 13px
@@ -302,3 +310,14 @@
                 //         font-size       : 0
                 > a 
                     white-space         : nowrap 
+
+.ui-autocomplete
+    max-height: 350px
+    overflow: auto
+    background: #ffffff
+    padding: 0
+    &:before, &:after
+        display: none
+
+    .ui-menu-item
+        border-bottom: 1px solid color[2]
