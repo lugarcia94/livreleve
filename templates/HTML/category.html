@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
 <head>
-    <vtex:template id="00-wawcadeiras-head" />
+    <vtex:template id="00-likecosmeticos-head" />
 </head>
 <body>
 <div class="wrapper">
-    <vtex:template id="00-wawcadeiras-menu" />
+    <vtex:template id="00-likecosmeticos-menu" />
 
     <div class="wrapper__container">
-        <vtex:template id="00-wawcadeiras-header" />
+        <vtex:template id="00-likecosmeticos-header" />
 
         <main class="main" id="main">
-
-            <!-- BreadCrumb -->
-            <section class="breadcrumb">
-                <div class="breadcrumb__container">
-                    <vtex.cmc:breadCrumb />
-                </div>
-            </section>
-            <!-- / BreadCrumb -->
             <div class="main__container layout layout--left" id="main__container">
                 <aside class="sidebar category__sidebar layout__left">
                     <div class="sidebar__container">
@@ -40,14 +32,34 @@
                 </aside>
 
                 <div class="catagory__main layout__main">
-                    <div class="banner banner--category">
-                        <div class="banner__container">
-                            <vtex:contentPlaceHolder id="bannerCategory" />
-                        </div>
-                    </div>
+                    
                     <div class="category__showcase showcase">
                         <div class="showcase__container">
-                            <vtex.cmc:searchResult layout="a505d839-2426-4641-a027-1a4e7e4189d3" itemCount="12"  columnCount="12" />
+                            <section class="breadcrumb">
+                                <div class="breadcrumb__container">
+                                    <vtex.cmc:breadCrumb />
+                                </div>
+                            </section>
+                            <div class="banner banner--category">
+                                <div class="banner__container">
+                                    <vtex:contentPlaceHolder id="bannerCategory" />
+                                </div>
+                            </div>
+                            <div class="tags__filter">
+                                <span class="tags__filter-title">Ordenar por:</span>
+                                <ul class="tags__filter-list">
+                                    <li><a href="O=OrderByPriceDESC">Menor Preço</a></li>
+                                    <li><a href="O=OrderByPriceASC">Menor Preço</a></li>
+                                    <li><a href="O=OrderByPriceDESC">Maior Preço</a></li>
+                                    <li><a href="O=OrderByTopSaleDESC">Mais vendidos</a></li>
+                                    <li><a href="O=OrderByReviewRateDESC">Melhores avaliações</a></li>
+                                    <li><a href="O=OrderByNameASC">A - Z</a></li>
+                                    <li><a href="O=OrderByNameDESC">Z - A</a></li>
+                                    <li><a href="O=OrderByReleaseDateDESC">Data de lançamento</a></li>
+                                    <li><a href="O=OrderByBestDiscountDESC">Melhor Desconto</a></li>
+                                </ul>
+                            </div>
+                            <vtex.cmc:searchResult layout="330a2a51-c9c4-4db5-8eba-bf7649ea3d92" itemCount="12"  columnCount="12" />
                         </div>
                     </div>
                 </div>
@@ -56,9 +68,20 @@
 
 
         </main>
+        
+        <div class="news-rulers">
+            <div class="news-rulers__item news">
+                <vtex.cmc:newsletterOptIn/>
+            </div>
+            <div class="news-rulers__item rulers">
+                <ul class="rulers__list">
+                    <vtex.cmc:rulers />
+                </ul>
+            </div>
+        </div>
 
-        <vtex:template id="00-wawcadeiras-footer" />
-        <vtex:template id="00-wawcadeiras-scripts" />
+        <vtex:template id="00-likecosmeticos-footer" />
+        <vtex:template id="00-likecosmeticos-scripts" />
         <vtex.cmc:productQuickView/>
     </div>
 </div>
