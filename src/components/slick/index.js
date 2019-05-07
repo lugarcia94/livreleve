@@ -12,6 +12,7 @@ $('.banner--category .banner__container').slick({
     dots: false
 });
 
+
 $('[data-carousel]').each(function(){
     const type = $(this).attr('data-carousel');
     let config = {};
