@@ -3,7 +3,7 @@ import './style.styl';
 $('.brands__list').slick({
     slidesToShow: 8,
     slidesToScroll: 8,
-    infinite: false,
+    infinite: true,
     autoplay: true,
     autoplaySpeed: 5000,
     responsive: [   

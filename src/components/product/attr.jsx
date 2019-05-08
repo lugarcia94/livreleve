@@ -5,11 +5,17 @@ import { slug } from 'Core/functions';
 class Attr extends Component {
     constructor(props) {
         super(props);
+        this.toggleClass= this.toggleClass.bind(this);
         this.state = {
             product: {},
             attrs: []
         };
     }
+
+    toggleClass(evt) {
+        evt.currentTarget.closest('div').classList.toggle('on__text');
+    };
+
     async componentDidMount() {
         const { name } = this.props;
         const current  = await vtexjs.catalog.getCurrentProductWithVariations();
@@ -27,10 +33,11 @@ class Attr extends Component {
             });
         
         this.setState({ product, attrs });
+
     }
     render() {
         const { name } = this.props;
-        const { attrs } = this.state;
+        const { attrs, active } = this.state;
 
         if(!attrs.length) return <React.Fragment></React.Fragment>;
 
@@ -43,10 +50,11 @@ class Attr extends Component {
                 <div className="attrs__container">
                     <div className="attrs__case">
                         { attrs.map((attr, attrIndex) => <div className={ 'product__attr product__attr--' + slug( attr.label ) } key={attrIndex}>
-                            { attr.value.toLowerCase() == 'sim' || attr.value.toLowerCase == 'não' ? <React.Fragment>
+                            { attr.value.toLowerCase() == 'sim' || attr.value.toLowerCase() == 'não' ? <React.Fragment>
                                 { attr.value.toLowerCase() && <span className="product__attr-label">{ attr.label }</span> }
                             </React.Fragment> : <React.Fragment>
-                                <span className="product__attr-label">{ attr.label }<span className="product__attr-div">:</span> </span><span className="product__attr-value">{ attr.value }</span>
+                                <span className="product__attr-label">{ attr.label }<span className="product__attr-div">:</span> </span>
+                                <span onClick={this.toggleClass} className="product__attr-value">{ attr.value }</span>
                             </React.Fragment> }
                             
                         </div>) }

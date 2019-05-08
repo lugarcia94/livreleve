@@ -131,8 +131,14 @@
         .attrs__header 
             display             : none 
 
-.product__specification 
+.product__specification
+    max-width: 1320px
+    width: 100%
+    padding: 0 15px
+    margin: 0 auto
     .attrs
+        &__header
+            display none
         &__title
             display                 : flex 
             justify-content         : space-between
@@ -153,50 +159,75 @@
                 width               : 45px 
                 height              : 100%
 
-        &__container 
-            position                : fixed 
-            top                     : 0 
-            left                    : 0 
-            z-index                 : 200
-            width                   : 100%
-            height                  : 100% 
-            background              : #fff 
-            opacity                 : 0
-            visibility              : hidden 
-            transform               : translate3d(100%, 0, 0)
-            transition              : transition[0]
-            &:before 
-                position            : absolute 
-                top                 : 0 
-                right               : 0
-                display             : flex 
-                justify-content     : center 
-                align-items         : center  
-                width               : 45px
-                height              : 45px    
-                background          : none 
-                border              : 0   
-                font-icon           : url('./svg/close.svg')
-                font-size           : 18px
         &__case 
-            height                  : calc(100% - 45px)
-            margin                  : 45px auto 0
-            padding                 : 0 15px 50px
-            font-size               : 13px
-            font-weight             : light
-            overflow-y              : auto 
             .product__attr-label
                 font-weight         : semi-bold
                 padding-right       : 20px
             .product__attr-div
                 display             : none 
-            .product__attr 
-                display                 : grid 
-                grid-template-columns   : repeat(2, 1fr)
-                grid-template-rows      : 1fr 
-                padding                 : 15px
-                &:nth-child(even)
-                    background          : #FFE6AB    
+            .product__attr-value
+                display: block
+                font-size: 14px
+                color: color[1]
+                line-height: 17px
+                font-weight: 300
+                padding-bottom: 41px
+                @media(max-width: 991px)
+                    padding-bottom: 50px
+                    max-height: 130px 
+                    overflow: hidden!important
+                    position: relative
+                    transition: all 150ms ease-in-out
+                    &:before
+                        content         : 'Continuar lendo'
+                        color           : #F48FB1
+                        background      : #fff
+                        height          : 50px
+                        position        : absolute
+                        bottom          : 0 
+                        width           : 100% 
+                        display         : flex
+                        align-items     : center
+                        justify-content : flex-start
+                        font-size       : 12px
+                        font-weight     : 600
+                        cursor          : pointer    
+                        border-bottom   : 1px solid #ccc    
+
+                    &:after
+                        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAMAAADtRZdSAAAAJ1BMVEUAAAD/////v7/1mbj4lbH1kbP0kbH1kLL1kLL0kLL0kLH1j7H0j7GGu5BmAAAADHRSTlMAAQQZJGR2nK2/7/YA5HNeAAAAL0lEQVR42iXGQRYAIARAwa+ixP3PW49ZDSfbYd7KnaA1BcR/XPhWZCyKpdHGHsADRdMBhhov1xAAAAAASUVORK5CYII=')
+                        content             : ''
+                        display             : block
+                        width               : 12px
+                        position            : absolute
+                        bottom              : 0
+                        background-repeat   : no-repeat
+                        right               : 15px
+                        height              : 50px
+                        background-position : center
+                        cursor              : pointer
+
+            .on__text .product__attr-value
+                @media(max-width: 991px)
+                    max-height: 440px
+                    padding-bottom 50px
+                    overflow-y: auto
+
+                    &:before
+                        content: '- Esconder'
+
+                    &:after
+                        transform: rotate(180deg)
+
+            .product__attr-label
+                font-size: 30px
+                color: color[1]
+                line-height: 36px
+                font-weight: 300
+                padding-bottom: 22px
+                padding-top: 40px
+                display: block
+                border-top 1px solid #EDEDED
             
 
     &.on 
@@ -848,7 +879,7 @@
         display                 : flex 
         justify-content         : space-between
         align-items             : flex-start 
-        padding-top             : 10px 
+        padding-top             : 40px 
     .product__image-extra
         display                 : block
         flex                    : 0 0 auto

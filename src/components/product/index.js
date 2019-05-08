@@ -126,6 +126,7 @@ if(body.attr('id') == 'product-page') {
     }
 
     function thumbsCarousel(){
+        
         // Carousel das miniaturas do produto
         $('.thumbs').slick({
             slidesToShow: 4,

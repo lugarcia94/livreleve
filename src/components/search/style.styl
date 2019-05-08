@@ -68,12 +68,13 @@
             cursor          : pointer
             position        : absolute
 
-
-
 .ui-autocomplete
     padding-top: 25px
     z-index: 200 !important
-
+    max-height: 350px
+    overflow: auto
+    background: #ffffff
+    padding: 0
     @media (max-width 991px)
         width: calc(100vw - 40px)
         max-width 1140px
@@ -85,31 +86,34 @@
         right: -55% !important
         margin-top: 20px
 
-    &:before
-        content: ''
-        background #fff
-        top 20px
-        left 0
-        right 0
-        bottom 0
-        position absolute
-        box-shadow: 0 0 5px rgba(0,0,0, .1)
-        border-radius: 2px
+    // &:before
+    //     content: ''
+    //     background #fff
+    //     top 20px
+    //     left 0
+    //     right 0
+    //     bottom 0
+    //     position absolute
+    //     box-shadow: 0 0 5px rgba(0,0,0, .1)
+    //     border-radius: 2px
 
-    &:after
-        content: ''
-        width 10px
-        height 10px
-        background #fff
-        border-radius: 2px
-        left: 50%;
-        margin-left: -10px;
-        transform: rotate(45deg)
-        position absolute
-        top 15px
+    // &:after
+    //     content: ''
+    //     width 10px
+    //     height 10px
+    //     background #fff
+    //     border-radius: 2px
+    //     left: 50%;
+    //     margin-left: -10px;
+    //     transform: rotate(45deg)
+    //     position absolute
+    //     top 15px
 
-        box-shadow: -1px -1px 1px rgba(0,0,0, .1)
+    //     box-shadow: -1px -1px 1px rgba(0,0,0, .1)
 
+
+    .ui-menu-item
+        border-bottom: 1px solid color[2]
     li
         position relative
         z-index 2
@@ -132,3 +136,7 @@
     .ui-state-hover
         background: color[0]
         color #fff
+
+.scrolling--down, .scrolling
+    .ui-autocomplete
+        display: none!important
