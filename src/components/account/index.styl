@@ -41,6 +41,10 @@
     &__links
         border-top: 1px solid #EDEDED
         padding-top: 3px
+        .logout & 
+            padding-top: 0 
+            border-top: 0
+
     &__link
         text-align: center
         a
@@ -50,4 +54,10 @@
             &:hover
                 color: color[2]
                 text-decoration: none
+
+    &__loggin, &__register 
+        display: none 
+
+        .login &
+            display: block
         

@@ -48,7 +48,7 @@
     &__sub
         position            : absolute
         top                 : 160%
-        left                : -25%
+        left                : 50%
         padding             : 30px 20px
         border-radius       : 7px
 
@@ -62,6 +62,7 @@
         opacity             : 0
 
         transition          : transition[0]
+        transform           : translateX(-50%)
 
         box-shadow          : 0 0 5px 0 rgba(0,0,0,0.20)
 
@@ -141,8 +142,8 @@
                         font-size          : 30px
                         margin-right       : 5px
                         color              : color[2]
-                .head-nav__sub
-                    left: -45%!important
+                // .head-nav__sub
+                //     left: -45%!important
 
             &:nth-child(1)
                 &:before
@@ -185,7 +186,8 @@
 
         .logout &:first-child
             order           : 2
-            margin-top      : 10px
+            margin-top      : 0
+            border-top: 0
 
         .logout &:nth-child(2)
             margin-top      : 0
@@ -302,7 +304,9 @@
 @media(min-width: 992px)
     .head-nav
         width: 100%
-        max-width: 340px
+        // max-width: 340px
+        &__sub 
+            min-width: 200px
         &__item
             &--lv1
                 // &:nth-child(1), &:nth-child(2)

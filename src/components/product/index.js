@@ -12,6 +12,7 @@ import './notifyme.styl';
 import './frete.styl';
 import zoom from 'Core/functions/zoom';
 import getProductById from 'Core/getProductById';
+import 'object.observe';
 
 buttonBuy('.product__buy-qtds', '.buy-button', '.qtds__input'); 
 
@@ -116,7 +117,7 @@ if(body.attr('id') == 'product-page') {
             });
         }
         $('#include').append($('<div id="yotubeplay">').append(video));
-        thumbsCarousel();
+        // thumbsCarousel();
 
         // Imagem descrição 
         const image = product.Imagem;
@@ -128,7 +129,7 @@ if(body.attr('id') == 'product-page') {
     function thumbsCarousel(){
         
         // Carousel das miniaturas do produto
-        $('.thumbs').slick({
+        $('.thumbs-two').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
             vertical: true,
@@ -318,6 +319,26 @@ if(body.attr('id') == 'product-page') {
             $(this).toggleClass('on__text');
         });
     }
+
+    function imagesThumb() {
+        const thumbs = $('#show .thumbs:not(clone)');
+
+        if(thumbs) {
+            const clone = thumbs.clone().removeClass('thumbs').addClass('thumbs-two');
+            $('.thumbs-two').remove();
+            thumbs.addClass('clone').after(clone);
+            setTimeout(()=> thumbsCarousel(), 600);
+        }
+
+    }
+
+    const objectThumbs = document.querySelector('.thumbs');
+
+    Object.observe(objectThumbs, function(){
+        imagesThumb();
+    });
+
+    imagesThumb();
 
 }
 

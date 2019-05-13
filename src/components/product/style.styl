@@ -28,8 +28,14 @@
 #include 
     position: relative 
 
-.thumbs .video 
-    cursor: pointer 
+.thumbs 
+    display: none 
+
+.thumbs-two 
+    position: relative 
+    z-index: 20
+    .video 
+        cursor: pointer 
 
 #yotubeplay
     position: absolute 
@@ -86,7 +92,7 @@
         opacity             : 1 
         transform           : translate3d(0,0,0)
 
-.thumbs
+.thumbs-two
     margin                  : -5px -5px 20px
     width                   : 100%
     height                  : auto
@@ -577,7 +583,7 @@
             visibility              : visible 
             transform               : translate3d(0,0,0)
 
-.thumbs 
+.thumbs-two
     max-height: 525px
     a 
         display: block 
@@ -765,7 +771,7 @@
         display                 : flex
         align-items             : flex-start  
         overflow                : hidden
-    .thumbs 
+    .thumbs-two
         order                   : -1
         width                   : 110px
         padding                 : 15px
@@ -1034,7 +1040,7 @@
         margin-bottom 10px
     
 @media (min-width: 992px)
-    .thumbs 
+    .thumbs-two
         order                   : -1
         position                : relative
         flex                    : 0 0 110px
