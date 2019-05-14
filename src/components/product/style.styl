@@ -143,6 +143,8 @@
     padding: 0 15px
     margin: 0 auto
     .attrs
+        @media(min-width: 992px)
+            width: 74.419%
         &__header
             display none
         &__title
@@ -344,6 +346,9 @@
     &__review--box
         { container }
         margin-top: 50px!important
+        >.product__review
+            @media(min-width : 992px)
+                width: 74.419%
 
     &__extra-info
         { container }
@@ -785,8 +790,12 @@
         &__container 
             display             : flex 
             align-items         : flex-start
-            justify-content     : center 
+            justify-content     : space-between
             margin-top          : 20px
+            max-width           : 1320px
+            width               : 100%
+            padding             : 0 15px
+            margin              : 0 auto
             
         &__shipping
             margin-top             : 25px 
@@ -810,7 +819,9 @@
             font-weight: 300
             height: auto
             &:after 
-                display         : none 
+                display         : none
+            &--description
+                width: 74.419%
         &__specification 
             .attrs__case 
                 margin          : 0
@@ -858,7 +869,8 @@
         position                : static 
         visibility              : visible 
         opacity                 : 1 
-        transform               : none 
+        transform               : none
+        width                   : 74.419%
         .productDescription
             padding             : 0 0 10px
             margin-top          : 30px 
@@ -1050,33 +1062,37 @@
 
     .product 
         &__image
-            flex                : 0 1 525px
+            flex                : 0 1 38.21%
             min-width           : 0 
             #show
                 margin              : -15px
                 display             : flex 
         &__info 
-            flex                : 0 1 415px 
+            flex                : 0 1 30.204%
             margin             : 0 15px 
 
         &__right--colunm
-            flex                : 0 1 305px
+            flex                : 0 1 20.877%
             border             : solid 1px transparent
             border-radius      : 7px
             position           : relative
             background         : #fff 
             box-sizing         : border-box
             background-clip    : padding-box
-            padding            : 30px 10px
-
-            &:before 
-                content: ''
-                position: absolute
-                top: 0; right: 0; bottom: 0; left: 0
-                z-index: -1
-                margin: -1px
-                border-radius: inherit; 
-                background: linear-gradient(to right, #BA69C8, #F48FB1)
+            min-width          : 204px
+            &--wrapper
+                border-radius      : 7px
+                padding            : 30px 10px
+                background         : #fff
+                position           : relative
+                &:before 
+                    content: ''
+                    position: absolute
+                    top: 0; right: 0; bottom: 0; left: 0
+                    z-index: -1
+                    margin: -1px
+                    border-radius: inherit; 
+                    background: linear-gradient(to right, #BA69C8, #F48FB1)
 
  
 @media (max-width: 991px)
@@ -1105,23 +1121,25 @@
             font-size: 20px
 
         &__right--colunm
-            flex                : 0 1 305px
             border             : solid 1px transparent
             border-radius      : 7px
             position           : relative
             background         : #fff 
             box-sizing         : border-box
             background-clip    : padding-box
-            padding            : 30px 10px
-
-            &:before 
-                content: ''
-                position: absolute
-                top: 0; right: 0; bottom: 0; left: 0
-                z-index: -1
-                margin: -1px
-                border-radius: inherit; 
-                background: linear-gradient(to right, #BA69C8, #F48FB1)
+            &--wrapper
+                border-radius      : 7px
+                padding            : 30px 10px
+                background         : #fff 
+                position           : relative
+                &:before 
+                    content: ''
+                    position: absolute
+                    top: 0; right: 0; bottom: 0; left: 0
+                    z-index: -1
+                    margin: -1px
+                    border-radius: inherit; 
+                    background: linear-gradient(to right, #BA69C8, #F48FB1)
 
         &__extra-info
             display: none

@@ -10,6 +10,7 @@ import './zoom.styl';
 import './style.styl';
 import './notifyme.styl';
 import './frete.styl';
+import './jquery-scrolltofixed.js';
 import zoom from 'Core/functions/zoom';
 import getProductById from 'Core/getProductById';
 import 'object.observe';
@@ -344,4 +345,10 @@ if(body.attr('id') == 'product-page') {
 
 if (!$(".product__prices .product__description--short .productDescriptionShort").length){
     $(".product__prices .product__description--short .description-title").hide()
+}
+
+if($(window).width() > 991) {
+    $(document).ready(function() {
+        $('.product__right--colunm').scrollToFixed({ marginTop: 210, limit: $('.showcase').offset().top, zIndex: 99, dontSetWidth: true });
+    });
 }
