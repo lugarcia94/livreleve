@@ -348,7 +348,11 @@ if (!$(".product__prices .product__description--short .productDescriptionShort")
 }
 
 if($(window).width() > 991) {
-    $(document).ready(function() {
-        $('.product__right--colunm').scrollToFixed({ marginTop: 210, limit: $('.showcase').offset().top, zIndex: 99, dontSetWidth: true });
-    });
+    setTimeout(() => {
+        $('.product__right--colunm').scrollToFixed({ 
+            marginTop: 210, 
+            limit: $('.showcase').offset().top - $('.product__right--colunm').outerHeight(), 
+            zIndex: 99, 
+            dontSetWidth: true });
+    }, 1000)
 }
