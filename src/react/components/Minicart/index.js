@@ -131,7 +131,7 @@ class Minicart extends Component {
 
                 { this.props.qtd > 0 &&
                     <div className="minicart__footer">
-                        <FreeShipping limit={ frete } current={ this.props.minicart.value } />
+                        { frete > 0 && <FreeShipping limit={ frete } current={ this.props.minicart.value } /> }
                         <div>
                             <em className="minicart__price-total">
                                 <span className="minicart__total">Total:</span>
