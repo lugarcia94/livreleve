@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import FreeShipping from '../FreeShipping';
 import { minicartFetchData, minicartFetchDataRemove, minicartToggle, minicartRemove } from '../../actions/minicart';
 
 import Slider from "react-slick";
@@ -110,34 +111,7 @@ class Minicart extends Component {
             </section>
         );
 
-
         let frete     = this.props.frete;
-        let freteHTML = '';
-
-        if (frete) { 
-            
-            let calcFrete  = (frete - (this.props.minicart.value / 100));
-            var finalValue = ((this.props.minicart.value / 100)*100) / frete;
-            if (finalValue > 100) {
-                finalValue = 95;
-            }
-
-            if (calcFrete <= 0 ) {
-                freteHTML = <div className="minicart__fretegratis">
-                    <span> Você ganhou <strong>Frete Grátis!</strong></span>
-                    <div className="progressbar">
-                        <div style={{width:finalValue + '%'}}></div>
-                    </div>
-                </div>
-            }else{
-                freteHTML = <div className="minicart__fretegratis">
-                <span>Faltam <strong>R$ {calcFrete.toFixed(2)}</strong> para ganhar <strong>Frete Grátis</strong></span>
-                <div className="progressbar">
-                    <div style={{width:finalValue + '%'}}></div>
-                </div>
-            </div>
-            }
-        }
 
         return(
             <div className={_className} >
@@ -157,17 +131,19 @@ class Minicart extends Component {
 
                 { this.props.qtd > 0 &&
                     <div className="minicart__footer">
-                        {freteHTML}
-                        <em className="minicart__price-total">
-                            <span className="minicart__total">Total:</span>
-                            <span className="minicart__price">{new Intl.NumberFormat('pt-br', {
-                                style: 'currency',
-                                currency: 'BRL'
-                            }).format(this.props.minicart.value / 100)}</span>
-                        </em>
-                        <a className="minicart-calltoaction" href="/checkout/#/cart">
-                            <span>Meu carrinho</span>
-                        </a>
+                        <FreeShipping limit={ frete } current={ this.props.minicart.value } />
+                        <div>
+                            <em className="minicart__price-total">
+                                <span className="minicart__total">Total:</span>
+                                <span className="minicart__price">{new Intl.NumberFormat('pt-br', {
+                                    style: 'currency',
+                                    currency: 'BRL'
+                                }).format(this.props.minicart.value / 100)}</span>
+                            </em>
+                            <a className="minicart-calltoaction" href="/checkout/#/cart">
+                                <span>Meu carrinho</span>
+                            </a>
+                        </div>
                     </div>
                 }
             </div>

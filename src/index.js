@@ -12,6 +12,8 @@ import Menu from './react/components/Menu';
 const store = configureStore();
 import getProductById from 'Core/getProductById';
 
+import axios from 'axios';
+
 import 'Core/polyfill/hasAttribute';
 
 //Polyfill
@@ -27,7 +29,7 @@ const config = {
     giftlist: false,
     contact: true,
     relatedSearch: true,
-    wishlist: false
+    wishlist: true
 };
 
 // Load Order Form
@@ -259,3 +261,30 @@ import WishList from './react/components/WishList';
 if(config.wishlist) {
     WishList(); 
 }
+
+
+/**
+ * Function Flag Redirect
+ */
+
+(() => {
+    const flags = document.querySelectorAll('.labels--collection .flag');
+
+    function redirectFlag(flags, label) {
+        const id = Object.keys(flags).filter((key) => flags[key] === label )[0];
+        location.href = `/${ id }?map=productClusterSearchableIds`;
+    }
+
+    flags.forEach(( flag )=>{
+        flag.addEventListener('click', (evt) => {
+            const _this = evt.currentTarget;
+            const skuID = _this.closest('.showcase__item').getAttribute('data-sku');
+            const label = _this.innerHTML;
+
+            axios.get(`/api/catalog_system/pub/products/search?fq=skuId:${ skuID }`)
+                .then((data) => data.data)
+                .then((data) => data[0].clusterHighlights)
+                .then((flags) => redirectFlag(flags, label));
+        });
+    });
+})();

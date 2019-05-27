@@ -11,9 +11,7 @@ const store = configureStore();
 import Painel from './painel';
 import Heart from './heart';
 
-let loadFlag = true;
-
-function load(orderForm) {
+export function load(orderForm) {
     console.log('[ WISHLIST ] Loading...',orderForm);
 
     let rootPainel = document.querySelector('[data-component=wishlist]');
@@ -29,7 +27,6 @@ function load(orderForm) {
 }
 
 export function loadHeart() {
-    
     let rootHearts = Array.from(document.querySelectorAll('[data-component=wishlist-add]:not(actived)'));
     if(rootHearts.length) {
         rootHearts.forEach(rootHeart => {
@@ -45,16 +42,16 @@ export function loadHeart() {
     }
 }
 
-
+$vtex(document).ajaxComplete(function(){
+    loadHeart();
+});
 
 export default () => {
-    $vtex(document).ajaxComplete(function(){
-        loadHeart();
-    });
     if(typeof vtexjs == 'object') {
         vtexjs.checkout.getOrderForm()
             .done(function(orderForm) {
-                load(orderForm);
+                if(orderForm.loggedIn)
+                    load(orderForm);
             });
     }
     loadHeart();

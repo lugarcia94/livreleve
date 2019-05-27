@@ -19,7 +19,7 @@ export function wishlistOrderForm(orderForm) {
         orderForm
     }
 }
-
+import load from '../components/WishList';
 export function wishlistLogin() {
     return (dispatch) => {
         return vtexjs.checkout.getOrderForm()
@@ -30,9 +30,10 @@ export function wishlistLogin() {
                         userEmail: '',
                         locale: 'pt-BR',
                         forceReload: false
-                    });
+                    })
                 } else {
                     dispatch(wishlistOrderForm(orderForm));
+                    load(orderForm);
                 }
             });
     }
@@ -59,7 +60,7 @@ export function isLoadWishlist(loadding) {
     }
 }
 
-export function loadWishlist(_id_) {
+export function loadWishlist(_id_) { 
     return (dispatch) => { 
         const request = axios.get(`${ HOST }/dataentities/LD/search/?idCliente=${ _id_ }&_fields=id,idCliente,products&${ randomNumber() }`);
         dispatch(isLoadWishlist(true));
@@ -69,7 +70,7 @@ export function loadWishlist(_id_) {
                 let idCliente = _id_;
                 let _products = [];
                 let _dataTMP = { idCliente, products: _products };
-                if(data.length) { 
+                if(data.length) {
                     _dataTMP.id         = data[0].id;
                     _dataTMP.products   = JSON.parse(data[0].products);
                     if(_dataTMP.products.length) { 
@@ -189,7 +190,7 @@ export function update(id) {
             .then(() => { 
                 if(!_wishlist.id) {
                     vtexjs.checkout.getOrderForm()
-                        .done(function(orderForm) {
+                        .done((orderForm) => {
                             _wishlist.id = orderForm.clientProfileData.email;
                             dispatch(wishlist(_wishlist));
                         });

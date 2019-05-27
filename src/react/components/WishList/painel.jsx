@@ -31,7 +31,7 @@ class painel extends Component {
         let isBuyAll = false;
         if(checkedAll.length) 
             isBuyAll = true 
-        this.setState({isBuyAll});
+        this.setState({ isBuyAll });
     }
     
     buy (product) {
@@ -49,6 +49,7 @@ class painel extends Component {
     buyALL(event) {
         event.preventDefault();
         this.checkedBuyAll(); 
+
         if(this.state.isBuyAll) {
             let form = event.target;
             let data = new FormData(form);
@@ -62,11 +63,16 @@ class painel extends Component {
 
     selectALL() {
         let radios = Array.from(document.querySelectorAll('.c-wishlist__checkbox'));
+        let isBuyAll = false;
         radios.forEach(radio => {
             if( this.state.checked )    radio.checked = true;
             else                        radio.checked = false;
         });
-        this.setState({ checked: !this.state.checked });
+
+        if(radios.filter((radio) => radio.checked).length)
+            isBuyAll = true;
+        this.setState({ checked: !this.state.checked, isBuyAll });
+    
     }
 
     handle() {
@@ -80,33 +86,32 @@ class painel extends Component {
     }
 
     deleteEvent(product) {
-        window.setTimeout(function(){ 
+        // window.setTimeout(function(){ 
             let products = this.state.product;
             let index    = products.map(p=> p.eventID).indexOf(product.eventID);
                 products = products.filter((p, i) => i != index);
             this.setState({ product: products });
-        }.bind(this), 1000);
+        // }.bind(this), 1000);
     }
 
-    remove(product) {
+    async remove(product) {
         let products = this.state.product;
         let index = products.map(p=> p.eventID).indexOf(product.eventID);
         
         if(index != -1) {
             products[index].show = false;
             this.setState({ product: products });
-            this.deleteEvent(product);
+            await this.deleteEvent(product);
         }
     }
 
-    componentDidMount() {
-        this.props.load(this.props.id);
+    async componentDidMount() {
+        await this.props.load(this.props.id); 
         Array.from(document.querySelectorAll('.head-nav__link--wishlist')).forEach((link) => link.addEventListener("click", ( event ) => { event.preventDefault(); this.handle(); } ));
     }
 
     componentWillReceiveProps(nextProps) { 
         let { products } = this.props;
-        // console.log(this.props);
         if( products != nextProps.products && !this.props.loadding) {
             let product  = this.state.product;
             let productClone = {};
@@ -138,9 +143,11 @@ class painel extends Component {
                 window.setTimeout(function(){ this.remove(productClone); }.bind(this), (1000 * this.state.time));
             }
         }
-        // if(products.length != nextProps.products.length) this.setState({ products: nextProps.products });
     }
-
+    async update(id) {
+        await this.props.update(id, this.props.wishlist);
+        this.forceUpdate();
+    }
     render() {
         const { show, product, checked, purchase }                      = this.state;
         const { loadding, removing, creating, products }                = this.props;
@@ -150,9 +157,9 @@ class painel extends Component {
 
         if(!loadding && !removing && !creating) isLoadding = false;
         
-        if(products.length) flagShow = false;
+        if(products.length) flagShow = false; 
         
-        return <div style={{ display: this.props.orderForm.loggedIn ? 'block' : 'none' }} id="c-wishilist" data-loadding={isLoadding} className="c-wishlist" aria-hidden={ flagShow } aria-expanded={ this.state.open }>
+        return <div id="c-wishilist" data-loadding={isLoadding} className="c-wishlist" aria-hidden={ flagShow } aria-expanded={ this.state.open }>
             <div className="c-wishlist__container">
                 <div className={ "c-wishlist__events" } aria-hidden={ show }>
                     { product.map( ( product, index ) => <div data-eventid={ product.eventID } key={ index } aria-hidden={ !product.show } className={ "c-wishlist__events-item c-wishlist__events-item--" + product.action }>
@@ -196,7 +203,7 @@ class painel extends Component {
                                         </div>
                                         <Product product={ product } />
                                         <div className="c-wishlist__actions">
-                                            <button type="button" className="c-wishlist__button c-wishlist__button--remove" onClick={ () => this.props.update(parseInt(product.id), this.props.wishlist)} >
+                                            <button type="button" className="c-wishlist__button c-wishlist__button--remove" onClick={ () => this.update(product.id) } >
                                                 <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><polygon points="404.176,0 256,148.176 107.824,0 0,107.824 148.176,256 0,404.176 107.824,512 256,363.824 404.176,512 512,404.176 363.824,256 512,107.824 "/></svg>
                                             </button>
                                             <button onClick={ () => this.buy(product) } type="button" className="c-wishlist__button c-wishlist__button--buy">Comprar</button>
@@ -205,7 +212,7 @@ class painel extends Component {
                                 </div>) }
                             </div>
                             <div className="c-wishlist__content-footer">
-                                <button disabled={ !this.state.isBuyAll } type="submit" className="c-wishlist__button c-wishlist__button--buy">Comprar Selecionados</button>
+                                <button onClick={ this.buyALL.bind(this) } disabled={ !this.state.isBuyAll } type="submit" className="c-wishlist__button c-wishlist__button--buy">Comprar Selecionados</button>
                             </div>
                         </div> : <div className="c-wishlist__content c-wishlist__content--empty">
                             <button type="button" className="c-wishlist__button c-wishlist__button--close" onClick={ this.handle }>
@@ -232,7 +239,8 @@ painel.propTypes = {
     loadding: PropTypes.bool.isRequired,
     products: PropTypes.array.isRequired,
     removing: PropTypes.bool.isRequired,
-    creating: PropTypes.bool.isRequired
+    creating: PropTypes.bool.isRequired,
+    orderForm: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -241,7 +249,8 @@ const mapStateToProps = (state) => {
         loadding: state.isLoadWishlist,
         products: state.products,
         removing: state.isRemoving,
-        creating: state.isCreating
+        creating: state.isCreating,
+        orderForm: state.wishlistOrderForm
     };
 };
 
