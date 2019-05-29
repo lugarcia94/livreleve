@@ -160,8 +160,8 @@ if(config.minicart) {
     let rootMinicart = document.querySelector('#minicart');
     if(rootMinicart) {
         let valorFrete = 0;
-        if (rootMinicart.querySelector('.valorFreteGratis'))
-            valorFrete = rootMinicart.querySelector('.valorFreteGratis').innerHTML;
+        if (document.querySelector('#ah-utils .valorFreteGratis'))
+            valorFrete = document.querySelector('#ah-utils .valorFreteGratis').innerHTML;
         ReactDOM.render(
             <Provider store={store}>
                 <Minicart frete={valorFrete}/>

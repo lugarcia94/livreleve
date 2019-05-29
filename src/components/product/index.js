@@ -341,6 +341,11 @@ if(body.attr('id') == 'product-page') {
 
     imagesThumb();
 
+    $('#show').on('click', '.thumbs-two a', function(){
+        const index = parseInt($(this).closest('.slick-slide').attr('data-slick-index')) + 1;
+        $vtex(`#show .thumbs li:nth-child(${ index }) a`).trigger('click');
+    });
+
 }
 
 if (!$(".product__prices .product__description--short .productDescriptionShort").length){
