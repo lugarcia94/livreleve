@@ -21,6 +21,7 @@ import 'Core/polyfill/array.range';
 import 'Core/polyfill/reduce';
 
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
+import CountDown from './react/components/Countdown';
 
 const config = {
     menu: true,
@@ -35,6 +36,9 @@ const config = {
 // Load Order Form
 
 // store.dispatch(fetchOrderForm());
+
+
+CountDown();
 
 import ReduxToastr from 'react-redux-toastr';
 const rootToastr = document.querySelector('[data-component=toastr]');
@@ -195,10 +199,14 @@ if(config.buybutton) {
     addBuyButton();
 }
 
-$vtex(document).ajaxComplete(function(){
+$vtex(document).ajaxComplete(function(evt, xhref, settings){
     if(config.buybutton) { 
         addBuyButton();
     }    
+    if(settings.url.indexOf('buscapagina') !== -1) {
+        CountDown();
+        console.log('countdown');
+    }
 });
 //
 // // Gift List

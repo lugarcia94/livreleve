@@ -114,3 +114,5 @@ import './quickview';
 import './instagram';
 
 import './qtds';
+
+import './countdown';
