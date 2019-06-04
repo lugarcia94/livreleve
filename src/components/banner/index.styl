@@ -65,6 +65,7 @@
             transform: scale(1.05)
 
 .banner--full
+    display: none 
     .slick-arrow
         background: none
 
@@ -74,6 +75,10 @@
     
     .box-banner 
         flex: 0 0 100% 
+
+    &-mobile 
+        display: block
+
     @media(max-width : 991px)
         padding-bottom: 30px
         img
@@ -94,6 +99,14 @@
             left: 50%
             transform: translateX(-50%)
 
+    @media (min-width: 992px) 
+        display: block 
+
+        &-mobile 
+            display: none 
+
+
+
 
 .banner--category
     margin: 10px 0 30px
@@ -113,3 +126,8 @@
 
     .slick-next
         right 30px!important
+
+.banner--full-mobile 
+    padding-bottom: 0
+    .box-banner
+        padding-bottom: 0

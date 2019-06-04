@@ -44,10 +44,10 @@
                 background      : #fff
                 border-top-right-radius: 7px
                 transition      : transition[0]
-                transform       : translate3d(-256px, 20px, 0)
+                transform       : translate3d(-256px, 0, 0)
 
                 .is-menu &
-                    transform   : translate3d(0,20px,0)
+                    transform   : translate3d(0,0,0)
 
             &__nav
                 height          : 100%
@@ -139,6 +139,7 @@
     &__link
         &--nv0, &--nv1, &--nv2
             display                : block
+            text-align             : left
 
             &:hover
                 text-decoration    : none
@@ -237,6 +238,7 @@
             
             .menu__link--nv1, .menu__link--nv2
                 line-height                 : 1.3
+                text-align                  : left
 
             &:not(.menu__categories--nv0)
                 background                  : #fff
@@ -326,7 +328,7 @@
                     position                : absolute
                     right                   : 0
                     width                   : 100%
-                    max-height              : 390px
+                    max-height              : 410px
                     border-radius           : 7px
                     padding                 : 30px 40px
                     transition              : transition[0]
@@ -493,6 +495,7 @@
             &--nv0
                 color: color[0]
                 padding: 10px 15px
+                text-align: left
             &--nv1
                 font-size: 14px
                 font-weight: 500
@@ -532,6 +535,7 @@
                     color: color[2]
                     transform: rotate(180deg)
         .head-nav
+            height: auto
             &__item
                 &--lv1
                     &:before

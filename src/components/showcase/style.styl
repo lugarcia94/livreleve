@@ -67,7 +67,7 @@
         color: #8B8A8A
         line-height: 13px
         overflow hidden
-        height 44px
+        height 40px
         margin-top: 11px
         margin-bottom: 7px
         
@@ -164,8 +164,7 @@
         display                 : flex 
         // padding-top             : 65px 
         margin-top              : 9px
-        @media(max-width : 991px)
-            display none
+        
     &__buy
         margin-left             : 10px
         flex                    : 1 1 auto 
@@ -491,3 +490,18 @@
             margin: 0
             .buy-button__button, .buy-button
                 display: block
+
+
+
+.resultado-busca, .category, .department
+    .showcase__container > div > ul:not(.slick-dotted):not(.slick-initialized) > li.helperComplement, 
+    .showcase [id*=ResultItems_] > div > ul:not(.slick-dotted):not(.slick-initialized) > li.helperComplement
+        display: block !important
+
+    .showcase [id*=ResultItems_] > div > ul:not(.slick-dotted):not(.slick-initialized),
+    .showcase__container > div > ul:not(.slick-dotted):not(.slick-initialized)
+        &:before, &:after 
+            content: ''
+            flex: 1 1 248px
+            min-width: 0
+            order: 10

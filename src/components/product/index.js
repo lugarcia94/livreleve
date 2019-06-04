@@ -36,8 +36,17 @@ const setSkuID = (sku) => {
     }
 };
 
+console.log('frete');
+$('#calculoFrete').click(function(){
+    $('.freight-values', this).hide();
+});
+
 // Check page product
 if(body.attr('id') == 'product-page') {
+
+
+
+
     $(document).ready(()=> ShippingValue());
     // Correção para o zoom
     zoom();
@@ -353,11 +362,28 @@ if (!$(".product__prices .product__description--short .productDescriptionShort")
 }
 
 if($(window).width() > 991) {
-    setTimeout(() => {
-        $('.product__right--colunm').scrollToFixed({ 
-            marginTop: 210, 
-            limit: $('.showcase').offset().top - $('.product__right--colunm').outerHeight(), 
-            zIndex: 99, 
-            dontSetWidth: true });
-    }, 1000)
+    const el = $('.product__right--colunm');
+    if(el.length) {
+
+        scrollFixed(el);
+
+        $vtex(document).on('[SHIPPING]', () => {
+            scrollFixed(el);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            scrollFixed(el);        
+        });
+    }
+}
+
+
+function scrollFixed(el) {
+    el.trigger('detach.ScrollToFixed'); 
+    el.scrollToFixed({ 
+        marginTop: 210, 
+        limit: $('.showcase').offset().top  - $('.product__right--colunm').height(), 
+        zIndex: 99, 
+        dontSetWidth: true 
+    });
 }

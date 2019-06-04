@@ -205,7 +205,6 @@ $vtex(document).ajaxComplete(function(evt, xhref, settings){
     }    
     if(settings.url.indexOf('buscapagina') !== -1) {
         CountDown();
-        console.log('countdown');
     }
 });
 //
