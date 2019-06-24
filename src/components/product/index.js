@@ -35,8 +35,7 @@ const setSkuID = (sku) => {
         code.html('SKU: ' + sku).addClass('product__code--show');
     }
 };
-
-console.log('frete');
+ 
 $('#calculoFrete').click(function(){
     $('.freight-values', this).hide();
 });
