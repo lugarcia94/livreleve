@@ -86,6 +86,7 @@ export function addToCart(items) {
             });
         }
         if(msgIndex < orderForm.messages.length)
+            console.log(orderForm)
             msg(orderForm.messages);
         return orderForm;
     }
@@ -95,10 +96,11 @@ let msgIndex = 0;
 
 export function msg(messages) {
     for(let i=msgIndex; i < messages.length; i++) {
-        toastr.warning('Ops! Ocorreu algum problema.', messages[i].text, {
-            timeOut: 0,
-            extendedTimeOut: 0
-        });    
+        if("O valor do frete foi alterado" !== messages[i].text)
+            toastr.warning('Ops! Ocorreu algum problema.', messages[i].text, {
+                timeOut: 0,
+                extendedTimeOut: 0
+            });
     }
     msgIndex = messages.length;
 }
