@@ -273,7 +273,8 @@ rating-bar-radius = 3px
             margin-top      : 15px
             padding         : 15px
             border-radius   : 3px
-            background      : rgba(0,0,0,.05)
+            border          : 1px solid #ba69c8
+                
         .dados
             margin-bottom   : 10px
         .opt-texto
@@ -395,16 +396,17 @@ rating-bar-radius = 3px
             width               : 45px 
             height              : 45px 
             justify-content     : center 
-            align-items         : center 
-            background          : #ba69c8
+            align-items         : center
             color               : #fff 
             border-radius       : 3px
             &:before 
                 font-icon       : url('./svg/close.svg')
-                font-size       : 20px 
+                font-size       : 14px
+                background      : #ba69c8 
+                padding         : 8px
+                border-radius   : 3px
             &:hover 
-                text-decoration : none  
-                background      : darken(#ba69c8, 10%)
+                text-decoration : none
     input[type=text], textarea 
         width                   : 100% 
         border                  : solid 1px rgba(0,0,0,.1)
