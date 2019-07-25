@@ -90,6 +90,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "browserslist": "^4.6.6",
     "firebase": "^5.5.8",
     "instafeed.js": "^1.4.1",
     "jquery": "^3.1.1",

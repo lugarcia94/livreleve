@@ -210,7 +210,6 @@ gulp.task('js:deploy', function(cb){
  */
 let processors = [
     require('autoprefixer')({
-        browsers: ['last 2 versions'],
         grid: true
     }),
     require('postcss-inline-svg')(),
