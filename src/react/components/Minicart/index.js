@@ -141,7 +141,7 @@ class Minicart extends Component {
                                 }).format(this.props.minicart.value / 100)}</span>
                             </em>
                             <a className="minicart-calltoaction" href="/checkout/#/cart">
-                                <span>Meu carrinho</span>
+                                <span>Finalizar Compra</span>
                             </a>
                         </div>
                     </div>
