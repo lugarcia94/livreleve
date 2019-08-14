@@ -28,35 +28,35 @@ class Menu extends Component {
         window.addEventListener('resize', () => this.resize(this));
     }
     resize(self) {
-        if(window.innerWidth < 992) self.setState({ mobile: true });
+        if (window.innerWidth < 992) self.setState({ mobile: true });
         else self.setState({ mobile: false });
     }
     renderHtml(list, nofollow = false, classname = 'categories', nivel = 0, limit = 0) {
-        if(limit > 0) list = list.slice(0,limit);
+        if (limit > 0) list = list.slice(0, limit);
 
         return list.map((item) => {
             let sub = '';
             let options = {};
             let attr = {};
 
-            options['title']        = item.name;
-            options['className']    = 'menu__link ' + 'menu__link--nv' + nivel;
-            options['data-name']    = item.name;
-            attr['className']       = 'menu__item ' + 'menu__item--nv' + nivel ;
+            options['title'] = item.name;
+            options['className'] = 'menu__link ' + 'menu__link--nv' + nivel;
+            options['data-name'] = item.name;
+            attr['className'] = 'menu__item ' + 'menu__item--nv' + nivel;
 
             //<Product category={item.id}/>
 
-            if(nofollow) options['rel'] = 'nofollow';
-            if(item.children.length){
+            if (nofollow) options['rel'] = 'nofollow';
+            if (item.children.length) {
                 let ulAttr = {};
                 ulAttr['className'] = 'menu__' + classname + ' menu__' + classname + '--nv' + (nivel + 1);
                 attr['className'] = attr['className'] + ' menu__item--has-child';
                 attr['aria-expanded'] = false;
                 sub = (
-                    <div { ...ulAttr } onClick={e => {
+                    <div {...ulAttr} onClick={e => {
                         let body = document.querySelector('body');
 
-                        if(e.target.classList.contains('menu-categories')) {
+                        if (e.target.classList.contains('menu-categories')) {
                             e.currentTarget.parentElement.classList.remove('active');
                             body.classList.remove('mn-active');
                         }
@@ -76,13 +76,13 @@ class Menu extends Component {
                 );
             }
 
-            return(
-                <li { ...attr } key={item.id} onClick={this.handleExpanded} >
-                    <a href={item.url} { ...options } >
-                        { typeof item.icon != 'undefined'  && item.icon != "" && classname == 'categories' && !this.state.mobile &&
+            return (
+                <li {...attr} key={item.id} onClick={this.handleExpanded} >
+                    <a href={item.url} {...options} >
+                        {typeof item.icon != 'undefined' && item.icon != "" && classname == 'categories' && !this.state.mobile &&
                             <span class="menu__icon" dangerouslySetInnerHTML={{ __html: item.icon }}></span>
                         }
-                        { typeof item.banner != 'undefined'  && item.banner != "" && nivel > 0 && classname == 'categories' && !this.state.mobile &&
+                        {typeof item.banner != 'undefined' && item.banner != "" && nivel > 0 && classname == 'categories' && !this.state.mobile &&
                             <span class="menu-banner-link" dangerouslySetInnerHTML={{ __html: item.banner }}></span>
                         }
                         <span>{item.name}</span>
@@ -94,8 +94,8 @@ class Menu extends Component {
     }
 
     handleExpanded(evt) {
-        if(evt.target.classList.contains('menu__item--has-child')) {
-            evt.target.setAttribute('aria-expanded', ! (evt.target.getAttribute('aria-expanded') == 'true'));
+        if (evt.target.classList.contains('menu__item--has-child')) {
+            evt.target.setAttribute('aria-expanded', !(evt.target.getAttribute('aria-expanded') == 'true'));
         }
     }
 
@@ -105,7 +105,7 @@ class Menu extends Component {
     }
 
     allCategory() {
-        if(this.state.mobile)
+        if (this.state.mobile)
             return;
         else {
             let list = this.renderHtml(this.props.items, true, 'menu__categories-all');
@@ -128,38 +128,38 @@ class Menu extends Component {
         let list = this.renderHtml(this.props.items, false, 'categories', 0, 8);
         let allCategory = this.allCategory();
         let { slot } = this.props;
-        
+
         if (this.props.hasErrored) {
-            return(<div aria-expanded={this.props.expanded} class={ (this.state.mobile ?  'menu--mobile' : 'menu--desktop') } role="menubar" >OPS!! Ocorreu algum erro no Carregamento . . .</div>);
+            return (<div aria-expanded={this.props.expanded} class={(this.state.mobile ? 'menu--mobile' : 'menu--desktop')} role="menubar" >OPS!! Ocorreu algum erro no Carregamento . . .</div>);
         }
 
         if (this.props.isLoading) {
-            return(
+            return (
                 <div aria-expanded={this.props.expanded} className={(this.state.mobile ? 'menu--mobile' : 'menu--desktop')} role="menubar">
                     <div className="menu__container">
 
                         <nav className="menu__nav">
                             {this.state.mobile &&
-                            <header className="menu__header">
-                                <h1 className="menu__title">Menu de Categorias</h1>
-                                <button onClick={this.handleClick} className="menu__close" type="button"><span>Close</span></button>
-                                <div className="menu__user">
-                                    <ul className="menu__user-list">
-                                        <li className="menu__user-list-item">
-                                            <a className="menu__user-list-link menu__user-list-link--user" href="/account">Minha Conta</a>
-                                        </li>
-                                        <li className="menu__user-list-item">
-                                            <a className="menu__user-list-link menu__user-list-link--orders" href="/account/orders">Pedidos</a>
-                                        </li>
-                                        <li className="menu__user-list-item">
-                                            <a className="menu__user-list-link menu__user-list-link--mail" href="/contato">Contato</a>
-                                        </li>
-                                        <li className="menu__user-list-item">
-                                            <a className="menu__user-list-link menu__user-list-link--help" href="/institucional/ajuda">Ajuda</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </header>
+                                <header className="menu__header">
+                                    <h1 className="menu__title">Menu de Categorias</h1>
+                                    <button onClick={this.handleClick} className="menu__close" type="button"><span>Close</span></button>
+                                    <div className="menu__user">
+                                        <ul className="menu__user-list">
+                                            <li className="menu__user-list-item">
+                                                <a className="menu__user-list-link menu__user-list-link--user" href="/account">Minha Conta</a>
+                                            </li>
+                                            <li className="menu__user-list-item">
+                                                <a className="menu__user-list-link menu__user-list-link--orders" href="/account/orders">Pedidos</a>
+                                            </li>
+                                            <li className="menu__user-list-item">
+                                                <a className="menu__user-list-link menu__user-list-link--mail" href="/contato">Contato</a>
+                                            </li>
+                                            <li className="menu__user-list-item">
+                                                <a className="menu__user-list-link menu__user-list-link--help" href="/institucional/ajuda">Ajuda</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </header>
                             }
                             <ul className="menu__categories menu__categories--nv0"></ul>
                         </nav>
@@ -170,14 +170,14 @@ class Menu extends Component {
         }
 
         return (
-            <div aria-expanded={this.props.expanded} class={ (this.state.mobile ? 'menu--mobile' : 'menu--desktop') } role="menubar" >
+            <div aria-expanded={this.props.expanded} class={(this.state.mobile ? 'menu--mobile' : 'menu--desktop')} role="menubar" >
                 <div class="menu__container" >
                     <nav class="menu__nav">
-                        { this.state.mobile &&
+                        {this.state.mobile &&
                             <header class="menu__header">
                                 <button onClick={this.handleClick} class="menu__close" type="button"><span>Close</span></button>
                                 <div className="menu__account">
-                                    <a href="/acount" title="minha conta">
+                                    <a href="/account" title="minha conta">
                                         <span>Olá :)</span>
                                         <span>Minha conta</span>
                                     </a>
@@ -188,7 +188,7 @@ class Menu extends Component {
                             {list}
                             {allCategory}
                         </ul>
-                    { this.state.mobile && <footer dangerouslySetInnerHTML={{ __html: slot[0].innerHTML }}></footer> }
+                        {this.state.mobile && <footer dangerouslySetInnerHTML={{ __html: slot[0].innerHTML }}></footer>}
                     </nav>
                 </div>
             </div>

@@ -57,7 +57,6 @@ if (body.attr('id') == 'product-page') {
                 $("html,body").animate({
                     scrollTop: $('.product__variations').offset().top
                 }, 1000);
-                console.log('iframe', $('.product__variations').offset().top);
             } else {
                 $('html,body').animate({
                     scrollTop: $('.product__variations').offset().top - $('.wrapper__container > .header').outerHeight()
@@ -111,25 +110,38 @@ if (body.attr('id') == 'product-page') {
     });
 
     async function initProduct(id) {
-        const product = await getProductById(id);
-        // thumbs Video
-        const video = product.Video
-        if (video) {
-            const src = $(video[0]).attr('src');
-            const id = src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
-            $('.thumbs').append(`<li class="video"><img src="//img.youtube.com/vi/${id}/0.jpg" /></li>`);
-            $('.thumbs .video').on('click', function () {
-                $('#include').toggleClass('on-play');
-            });
-            $('.thumbs li:not(.video)').on('click', function () {
-                $('#include').removeClass('on-play');
-            });
-        }
-        $('#include').append($('<div id="yotubeplay">').append(video));
-        // thumbsCarousel();
+        let idProduto = '';
+
+        vtexjs.catalog.getCurrentProductWithVariations().done(function (product) {
+            idProduto = product.productId;
+        });
+
+        const urlPage = window.location.host;
+        const urlApi = 'http://' + urlPage + '/api/catalog_system/pub/products/search?fq=productId:' + idProduto;
+
+
+        $.get(urlApi).done(function (data) {
+            let video = data[0].iframe;
+            if (video) {
+                const src = $(video[0]).attr('src');
+                const id = src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+                $('.thumbs').append(`<li class="video"><img src="//img.youtube.com/vi/${id}/0.jpg" /></li>`);
+
+            }
+            $('#include').append($('<div id="yotubeplay">').append(video));
+        });
+
+        $('.video').on('click', function () {
+            $('#include').toggleClass('on-play');
+        });
+        $('li:not(.video)').on('click', function () {
+            $('#include').removeClass('on-play');
+        });
+
+        thumbsCarousel();
 
         // Imagem descrição 
-        const image = product.Imagem;
+        // const image = product.Imagem;
         if (image) {
             $('.product__specification-image').append($('<div class="product__image-extra">').append(`<img src="${image}" />`));
         }
@@ -243,7 +255,6 @@ if (body.attr('id') == 'product-page') {
 
     }
     function renderProgressiveHtml(qtd, percent) {
-        console.log(qtd, percent);
         const HTML = `<div class="progressive">
             <div class="progressive__container">
                 <h3 class="progressive__title">Desconto Progressivo</h3>
@@ -300,6 +311,7 @@ if (body.attr('id') == 'product-page') {
         const urlApi = 'http://' + urlPage + '/api/catalog_system/pub/products/search?fq=productId:' + idProduto;
 
         $.get(urlApi).done(function (data) {
+
             let arrayCabelos = data[0]['Tipo de Cabelo'];
             let catFilter = data[0]['categories'];
 
