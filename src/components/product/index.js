@@ -107,6 +107,15 @@ if (body.attr('id') == 'product-page') {
     vtexjs.catalog.getCurrentProductWithVariations().done(function (product) {
         setSkuID(product.skus[0].sku);
         initProduct(product.productId);
+
+        setTimeout(function () {
+            $('.video').on('click', function () {
+                $('#include').toggleClass('on-play');
+            });
+            $('li:not(.video)').on('click', function () {
+                $('#include').removeClass('on-play');
+            });
+        }, 1000);
     });
 
     async function initProduct(id) {
@@ -126,17 +135,11 @@ if (body.attr('id') == 'product-page') {
                 const src = $(video[0]).attr('src');
                 const id = src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
                 $('.thumbs').append(`<li class="video"><img src="//img.youtube.com/vi/${id}/0.jpg" /></li>`);
-
             }
             $('#include').append($('<div id="yotubeplay">').append(video));
         });
 
-        $('.video').on('click', function () {
-            $('#include').toggleClass('on-play');
-        });
-        $('li:not(.video)').on('click', function () {
-            $('#include').removeClass('on-play');
-        });
+
 
         thumbsCarousel();
 
@@ -146,6 +149,9 @@ if (body.attr('id') == 'product-page') {
             $('.product__specification-image').append($('<div class="product__image-extra">').append(`<img src="${image}" />`));
         }
     }
+
+
+
 
     function thumbsCarousel() {
 
