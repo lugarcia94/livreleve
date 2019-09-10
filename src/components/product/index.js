@@ -107,15 +107,6 @@ if (body.attr('id') == 'product-page') {
     vtexjs.catalog.getCurrentProductWithVariations().done(function (product) {
         setSkuID(product.skus[0].sku);
         initProduct(product.productId);
-
-        setTimeout(function () {
-            $('.video').on('click', function () {
-                $('#include').toggleClass('on-play');
-            });
-            $('li:not(.video)').on('click', function () {
-                $('#include').removeClass('on-play');
-            });
-        }, 1000);
     });
 
     async function initProduct(id) {
@@ -128,18 +119,16 @@ if (body.attr('id') == 'product-page') {
         const urlPage = window.location.host;
         const urlApi = 'http://' + urlPage + '/api/catalog_system/pub/products/search?fq=productId:' + idProduto;
 
-
         $.get(urlApi).done(function (data) {
-            let video = data[0].iframe;
+            let video = data[0].iframe; 
             if (video) {
                 const src = $(video[0]).attr('src');
                 const id = src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
                 $('.thumbs').append(`<li class="video"><img src="//img.youtube.com/vi/${id}/0.jpg" /></li>`);
+                $('.thumbs-two').append(`<li class="video"><img src="//img.youtube.com/vi/${id}/0.jpg" /></li>`);
             }
             $('#include').append($('<div id="yotubeplay">').append(video));
         });
-
-
 
         thumbsCarousel();
 
@@ -149,9 +138,6 @@ if (body.attr('id') == 'product-page') {
             $('.product__specification-image').append($('<div class="product__image-extra">').append(`<img src="${image}" />`));
         }
     }
-
-
-
 
     function thumbsCarousel() {
 
@@ -208,7 +194,6 @@ if (body.attr('id') == 'product-page') {
         $('body,html').animate({
             scrollTop: top
         }, 1000);
-
         evt.preventDefault();
     });
 
@@ -217,6 +202,18 @@ if (body.attr('id') == 'product-page') {
         if ($('.notifyme.sku-notifyme').attr('style').indexOf('none') != -1) {
             $('body').addClass('product--availabled');
         }
+
+        setTimeout(function(){ 
+
+        $('.video').on('click', function () {
+            $('#include').toggleClass('on-play'); 
+        });
+        $('li:not(.video)').on('click', function () {
+            $('#include').removeClass('on-play');
+        });
+
+    }, 1000);
+    
     }
 
     checkProduct();

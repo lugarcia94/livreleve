@@ -308,9 +308,11 @@
                 &--nv0
                     column-count: 4
 
-                    li
+                    > li
                         display: block 
                         break-inside: avoid
+                        max-height: 300px
+                        overflow: auto
 
                 .menu__item--has-child
                     &:not(.menu__item--nv0)
