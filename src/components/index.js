@@ -114,3 +114,6 @@ import './quickview';
 import './instagram';
 
 import './qtds';
+
+// Blackfriday
+import './blackfriday';

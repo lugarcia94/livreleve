@@ -2,7 +2,9 @@ import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import './style.styl';
 
-
+if ($('#blackfriday-page')) {
+    $('.helperComplement').remove();
+}
 
 $('.banner--category .banner__container').slick({
     infinite: false,
@@ -12,8 +14,27 @@ $('.banner--category .banner__container').slick({
     dots: false
 });
 
+$('#blackfriday-page .products_showcase .n6colunas > ul').slick({
+    infinite: true,
+    arrows: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+            }
+        }
+    ]
+});
 
-$('[data-carousel]').each(function(){
+
+
+
+
+$('[data-carousel]').each(function () {
     const type = $(this).attr('data-carousel');
     let config = {};
 
@@ -23,97 +44,97 @@ $('[data-carousel]').each(function(){
             config.autoplaySpeed = 5000;
             config.responsive = [
                 {
-                    breakpoint    : 992,
-                    settings      : {
-                        dots      : true,
-                        arrows    : false,
+                    breakpoint: 992,
+                    settings: {
+                        dots: true,
+                        arrows: false,
                     }
                 }
             ];
             break;
         case 'three':
-            config.variableWidth      = true;
-            config.responsive         = [
+            config.variableWidth = true;
+            config.responsive = [
                 {
-                    breakpoint        : 992,
-                    settings          : {
-                        centerMode    : true
+                    breakpoint: 992,
+                    settings: {
+                        centerMode: true
                     }
                 }
             ];
             break;
 
         case 'duo':
-            config.slidesToShow      = 2;
-            config.slidesToScroll    = 2;
+            config.slidesToShow = 2;
+            config.slidesToScroll = 2;
 
             break;
 
         case 'showcase':
-            config.slidesToShow      = 5;
-            config.slidesToScroll    = 5;
-            config.arrows            = true;
-            config.dots              = false;
-            config.responsive        = [
+            config.slidesToShow = 5;
+            config.slidesToScroll = 5;
+            config.arrows = true;
+            config.dots = false;
+            config.responsive = [
                 {
-                    breakpoint        : 1024,
-                    settings          : {
-                        slidesToShow      : 4,
-                        slidesToScroll    : 4
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4
                     }
                 },
                 {
-                    breakpoint        : 992,
-                    settings          : "unslick"
+                    breakpoint: 992,
+                    settings: "unslick"
                 }
             ];
 
             break;
-        
+
         case 'miniBanner':
-            config.slidesToShow      = 4;
-            config.slidesToScroll    = 4;
-            config.arrows            = false;
-            config.dots              = false;
-            config.responsive        = [
+            config.slidesToShow = 4;
+            config.slidesToScroll = 4;
+            config.arrows = false;
+            config.dots = false;
+            config.responsive = [
                 {
-                    breakpoint        : 992,
-                    settings          : {
-                        slidesToShow      : 3,
-                        slidesToScroll    : 3,
-                        dots              : true
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        dots: true
                     }
                 },
                 {
-                    breakpoint        : 720,
-                    settings          : {
-                        slidesToShow      : 2,
-                        slidesToScroll    : 2,
-                        dots              : true
+                    breakpoint: 720,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots: true
                     }
                 }
             ];
 
             break;
-        
-            case 'miniVal':
-            config.slidesToShow      = 4;
-            config.slidesToScroll    = 4;
-            config.arrows            = true;
-            config.dots              = false;
-            config.responsive        = [
+
+        case 'miniVal':
+            config.slidesToShow = 4;
+            config.slidesToScroll = 4;
+            config.arrows = true;
+            config.dots = false;
+            config.responsive = [
                 {
-                    breakpoint        : 992,
-                    settings          : {
-                        slidesToShow      : 2,
-                        slidesToScroll    : 2
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
                     }
                 },
                 {
-                    breakpoint        : 425,
-                    settings          : {
-                        slidesToShow      : 1,
-                        slidesToScroll    : 1
+                    breakpoint: 425,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
                     }
                 }
             ];
@@ -121,44 +142,44 @@ $('[data-carousel]').each(function(){
             break;
 
         case 'gift':
-            config.slidesToShow      = 1;
-            config.slidesToScroll    = 1;
-            config.dots              = false;
+            config.slidesToShow = 1;
+            config.slidesToScroll = 1;
+            config.dots = false;
 
-            config.responsive         = [
+            config.responsive = [
                 {
-                    breakpoint        : 992,
-                    settings          : {
-                        slidesToShow      : 3,
-                        slidesToScroll    : 3
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
                     }
                 },
                 {
-                    breakpoint        : 768,
-                    settings          : {
-                        slidesToShow      : 2,
-                        slidesToScroll    : 2
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
                     }
                 },
                 {
-                    breakpoint        : 425,
-                    settings          : {
-                        slidesToShow      : 1,
-                        slidesToScroll    : 1
+                    breakpoint: 425,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
                     }
                 }
             ];
             break;
     }
 
-    if( $.inArray(type, ['showcase', 'gift']) != -1 ) {
+    if ($.inArray(type, ['showcase', 'gift']) != -1) {
         $(this).find('.helperComplement').remove();
         $(this).find('> div > ul').slick(config);
-    }else if( type == 'buytobether'){
+    } else if (type == 'buytobether') {
 
-    }else{
+    } else {
         $(this).slick(config);
-    } 
+    }
 
 });
 
