@@ -85,30 +85,30 @@ $star-not-selected
     opacity: .6
 
 // Pagina de produto
-for item in '50' '40' '30' '20' '10' '0' '00'
+for item in '50' '45' '40' '35' '30' '25' '20' '15' '10' '0' '00'
     .rating-demonstrativo, .rating-produto
         &.avaliacao{ item }
-            if item == '50'
+            if item == '50' || item == '45'
                 &:before
                     content     : '\E000\E000\E000\E000\E000'
                 &:after
                     content     : ''
-            if item == '40'
+            if item == '40' || item == '35'
                 &:before
                     content     : '\E000\E000\E000\E000'
                 &:after
                     content     : '\E000'
-            if item == '30'
+            if item == '30' || item == '25'
                 &:before
                     content     : '\E000\E000\E000'
                 &:after
                     content     : '\E000\E000'
-            if item == '20'
+            if item == '20' || item == '15'
                 &:before 
                     content     : '\E000\E000'
                 &:after     
                     content     : '\E000\E000\E000'
-            if item == '10'
+            if item == '10' || item == '05'
                 &:before 
                     content     : '\E000'
                 &:after     
@@ -273,7 +273,8 @@ rating-bar-radius = 3px
             margin-top      : 15px
             padding         : 15px
             border-radius   : 3px
-            background      : rgba(0,0,0,.05)
+            border          : 1px solid #ba69c8
+                
         .dados
             margin-bottom   : 10px
         .opt-texto
@@ -395,16 +396,17 @@ rating-bar-radius = 3px
             width               : 45px 
             height              : 45px 
             justify-content     : center 
-            align-items         : center 
-            background          : #ffb200
+            align-items         : center
             color               : #fff 
             border-radius       : 3px
             &:before 
                 font-icon       : url('./svg/close.svg')
-                font-size       : 20px 
+                font-size       : 14px
+                background      : #ba69c8 
+                padding         : 8px
+                border-radius   : 3px
             &:hover 
-                text-decoration : none  
-                background      : darken(#ffb200, 10%)
+                text-decoration : none
     input[type=text], textarea 
         width                   : 100% 
         border                  : solid 1px rgba(0,0,0,.1)
@@ -442,12 +444,16 @@ rating-bar-radius = 3px
         font-weight             : bold 
         text-transform          : uppercase 
         color                   : #fff 
-        background              : #ffb200
+        background              : #ba69c8
         border-radius           : 3px 
         margin-bottom           : 30px 
         &:hover 
             text-decoration : none  
-            background      : darken(#ffb200, 10%)
+            background      : darken(#ba69c8, 10%)
+
+form#formUserReview .footer .close a 
+    display: none
+
 
 @media (min-width: 992px)
     .product__review:before 

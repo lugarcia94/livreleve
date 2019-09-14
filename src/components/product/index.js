@@ -36,8 +36,19 @@ const setSkuID = (sku) => {
     }
 };
 
+$('#calculoFrete').click(function () {
+    $('.freight-values', this).hide();
+});
+
 // Check page product
 if (body.attr('id') == 'product-page') {
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
     $(document).ready(() => ShippingValue());
     // Correção para o zoom
     zoom();
@@ -49,7 +60,6 @@ if (body.attr('id') == 'product-page') {
                 $("html,body").animate({
                     scrollTop: $('.product__variations').offset().top
                 }, 1000);
-                console.log('iframe', $('.product__variations').offset().top);
             } else {
                 $('html,body').animate({
                     scrollTop: $('.product__variations').offset().top - $('.wrapper__container > .header').outerHeight()
@@ -103,6 +113,7 @@ if (body.attr('id') == 'product-page') {
     });
 
     async function initProduct(id) {
+<<<<<<< HEAD
         const product = await getProductById(id);
         // thumbs Video
         const video = product.Video
@@ -122,6 +133,32 @@ if (body.attr('id') == 'product-page') {
 
         // Imagem descrição 
         const image = product.Imagem;
+=======
+        let idProduto = '';
+
+        vtexjs.catalog.getCurrentProductWithVariations().done(function (product) {
+            idProduto = product.productId;
+        });
+
+        const urlPage = window.location.host;
+        const urlApi = 'http://' + urlPage + '/api/catalog_system/pub/products/search?fq=productId:' + idProduto;
+
+        $.get(urlApi).done(function (data) {
+            let video = data[0].iframe; 
+            if (video) {
+                const src = $(video[0]).attr('src');
+                const id = src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+                $('.thumbs').append(`<li class="video"><img src="//img.youtube.com/vi/${id}/0.jpg" /></li>`);
+                $('.thumbs-two').append(`<li class="video"><img src="//img.youtube.com/vi/${id}/0.jpg" /></li>`);
+            }
+            $('#include').append($('<div id="yotubeplay">').append(video));
+        });
+
+        thumbsCarousel();
+
+        // Imagem descrição 
+        // const image = product.Imagem;
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
         if (image) {
             $('.product__specification-image').append($('<div class="product__image-extra">').append(`<img src="${image}" />`));
         }
@@ -182,7 +219,6 @@ if (body.attr('id') == 'product-page') {
         $('body,html').animate({
             scrollTop: top
         }, 1000);
-
         evt.preventDefault();
     });
 
@@ -191,6 +227,18 @@ if (body.attr('id') == 'product-page') {
         if ($('.notifyme.sku-notifyme').attr('style').indexOf('none') != -1) {
             $('body').addClass('product--availabled');
         }
+
+        setTimeout(function(){ 
+
+        $('.video').on('click', function () {
+            $('#include').toggleClass('on-play'); 
+        });
+        $('li:not(.video)').on('click', function () {
+            $('#include').removeClass('on-play');
+        });
+
+    }, 1000);
+    
     }
 
     checkProduct();
@@ -234,9 +282,13 @@ if (body.attr('id') == 'product-page') {
         }
 
     }
+<<<<<<< HEAD
 
     function renderProgressiveHtml(qtd, percent) {
         console.log(qtd, percent);
+=======
+    function renderProgressiveHtml(qtd, percent) {
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
         const HTML = `<div class="progressive">
             <div class="progressive__container">
                 <h3 class="progressive__title">Desconto Progressivo</h3>
@@ -247,7 +299,10 @@ if (body.attr('id') == 'product-page') {
         $('.progressive').remove();
         $('.product__actions--button').before(HTML);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
     $('.qtds__input').on('qtds.change', function (evt, qtd) {
         var qtds = parseInt(qtd) || 1;
         discountProgressive(qtds);
@@ -266,8 +321,13 @@ if (body.attr('id') == 'product-page') {
     }
 
     // funcao foto na variacao
+<<<<<<< HEAD
     if ($('.Selecioneacor .item-dimension-Selecioneacor .group_1 label').length) {
         $('.Selecioneacor .item-dimension-Selecioneacor .group_1 label').each(function () {
+=======
+    if ($('.SelecioneacorD .item-dimension-SelecioneacorD label').length) {
+        $('.SelecioneacorD .item-dimension-SelecioneacorD label').each(function () {
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
             let variableName = $(this).html();
             let namevariableNew = 'color-' + slug(variableName) + '.jpg';
             let urlImage = '/arquivos/' + namevariableNew;
@@ -294,6 +354,10 @@ if (body.attr('id') == 'product-page') {
         const urlApi = 'http://' + urlPage + '/api/catalog_system/pub/products/search?fq=productId:' + idProduto;
 
         $.get(urlApi).done(function (data) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
             let arrayCabelos = data[0]['Tipo de Cabelo'];
             let catFilter = data[0]['categories'];
 
@@ -346,7 +410,11 @@ if (body.attr('id') == 'product-page') {
 
     $('#show').on('click', '.thumbs-two a', function () {
         const index = parseInt($(this).closest('.slick-slide').attr('data-slick-index')) + 1;
+<<<<<<< HEAD
         $(`#show .thumbs li:nth-child(${index}) a`).trigger('click');
+=======
+        $vtex(`#show .thumbs li:nth-child(${index}) a`).trigger('click');
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
     });
 
 }
@@ -356,6 +424,7 @@ if (!$(".product__prices .product__description--short .productDescriptionShort")
 }
 
 if ($(window).width() > 991) {
+<<<<<<< HEAD
     setTimeout(() => {
         $('.product__right--colunm').scrollToFixed({
             marginTop: 210,
@@ -364,4 +433,30 @@ if ($(window).width() > 991) {
             dontSetWidth: true
         });
     }, 1000)
+=======
+    const el = $('.product__right--colunm');
+    if (el.length) {
+
+        scrollFixed(el);
+
+        $vtex(document).on('[SHIPPING]', () => {
+            scrollFixed(el);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            scrollFixed(el);
+        });
+    }
+}
+
+
+function scrollFixed(el) {
+    el.trigger('detach.ScrollToFixed');
+    el.scrollToFixed({
+        marginTop: 210,
+        limit: $('.showcase').offset().top - $('.product__right--colunm').height(),
+        zIndex: 99,
+        dontSetWidth: true
+    });
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
 }

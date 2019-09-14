@@ -67,7 +67,7 @@
         color: #8B8A8A
         line-height: 13px
         overflow hidden
-        height 44px
+        height 40px
         margin-top: 11px
         margin-bottom: 7px
         
@@ -114,24 +114,26 @@
         > div > ul:not(.slick-dotted):not(.slick-initialized)
             display                 : flex 
             flex-flow               : row wrap
-
-            @media(max-width: 767px)
-                padding: 0 15px
-                justify-content: space-between
-
+            
             > li
-                flex: 1 1 248px
+                flex: 0 1 25%
                 min-width: 0
+                @media(max-width: 1100px)
+                    flex: 0 1 33%
+                @media(max-width: 991px)
+                    min-width: 160px
                 @media(max-width: 767px)
                     margin-bottom: 30px
+                @media(max-width: 700px)
+                    flex: 0 1 50%
+                @media(max-width: 450px)
+                    flex: 1 1 45.177%
+                    padding: 0 5px
+                    min-width: 135px
 
                 &.helperComplement
                     order: 2
                     display: none
-
-        &:not([data-carousel])
-            > div > ul
-                margin          : -15px
 
         &[data-carousel]
             > div > ul:not(.slick-dotted)
@@ -139,6 +141,7 @@
                 width           : 100%
                 @media(max-width : 991px)
                     overflow        : auto
+                    flex-wrap       : nowrap
                 > li
                     min-width       : 160px
                     margin-right    : 30px
@@ -160,8 +163,7 @@
         display                 : flex 
         // padding-top             : 65px 
         margin-top              : 9px
-        @media(max-width : 991px)
-            display none
+        
     &__buy
         margin-left             : 10px
         flex                    : 1 1 auto 

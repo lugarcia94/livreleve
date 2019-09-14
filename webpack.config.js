@@ -71,7 +71,6 @@ const config = {
                                 new IconfontWebpackPlugin(loader),
                                 require('postcss-inline-svg')(),
                                 require('autoprefixer')({
-                                    browsers: ['last 2 versions'],
                                     grid: true
                                 })
                             ]
@@ -91,7 +90,6 @@ const config = {
                                 new IconfontWebpackPlugin(loader),
                                 require('postcss-inline-svg')(),
                                 require('autoprefixer')({
-                                    browsers: ['last 2 versions'],
                                     grid: true
                                 })
                             ]

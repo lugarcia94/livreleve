@@ -5,7 +5,7 @@ $('.brands__list').slick({
     slidesToScroll: 8,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     responsive: [   
         {
             breakpoint    : 1200,

@@ -115,5 +115,9 @@ import './instagram';
 
 import './qtds';
 
+<<<<<<< HEAD
 // Blackfriday
 import './blackfriday';
+=======
+import './countdown';
+>>>>>>> 393a5346151084a9b488af77ee44e1462e91fb8c
