@@ -1,8 +1,8 @@
 {
-  "name": "likecosmeticos",
+  "name": "woodprime",
   "author": "Lucas Garcia <lucasgaarciaa@gmail.com>",
   "vtex": {
-    "store": "likecosmeticos",
+    "store": "woodprime",
     "acronym": "rf",
     "environment": "vtexcommercestable",
     "device": "web",
