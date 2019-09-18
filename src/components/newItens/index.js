@@ -1,3 +1,5 @@
 import './style.styl';
  
-$('body').addClass('teste')
+$('body').addClass('ccc')
+
+
