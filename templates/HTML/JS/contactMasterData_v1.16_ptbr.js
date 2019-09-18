@@ -9,7 +9,7 @@
 					"type": co_type
 					};
 
-	var urlCO = "//api/dataentities/" + dataEntity + "/documents/";
+	var urlCO = "/api/dataentities/" + dataEntity + "/documents/";
 
 	$.ajax({
 		headers: {
