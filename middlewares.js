@@ -2,6 +2,7 @@ var disableCompression, errorHandler, ignoreReplace, replaceHost, replaceHtmlBod
 
 ignoreReplace = [/\.js(\?.*)?$/, /\.css(\?.*)?$/, /\.svg(\?.*)?$/, /\.ico(\?.*)?$/, /\.woff(\?.*)?$/, /\.png(\?.*)?$/, /\.jpg(\?.*)?$/, /\.jpeg(\?.*)?$/, /\.gif(\?.*)?$/, /\.pdf(\?.*)?$/];
 
+
 replaceHtmlBody = function(environment, accountName, secureUrl, port) {
     return function(req, res, next) {
         var data, end, proxiedHeaders, proxiedStatusCode, write, writeHead;

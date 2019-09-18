@@ -3,6 +3,7 @@ const   path                    = require('path');
 const   MiniCssExtractPlugin    = require("mini-css-extract-plugin");
 const   IconfontWebpackPlugin   = require('iconfont-webpack-plugin');
 
+
 const config = {
     entry: {
         app: './src/index.js',

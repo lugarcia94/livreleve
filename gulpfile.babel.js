@@ -21,6 +21,7 @@ import browserSync      from 'browser-sync';
 /**
  * General
  */
+
 const $ = gulpLoad();
 const {
     vtex,

@@ -889,7 +889,7 @@
                     });
 
                     $.ajax({
-                        url: 'https://api.vtexcrm.com.br/woodprime/dataentities/AC/search?_fields=linkImage,sku,image,description,title&_where=sku=' + _object.data[i].sku,
+                        url: '/api/dataentities/AC/search?_fields=linkImage,sku,image,description,title&_where=sku=' + _object.data[i].sku,
                         type: 'GET',
                         async: false,
                         dataType: 'json',

@@ -78,7 +78,7 @@ class Contact extends Component {
 
     sendEmail() {
         let form = this.state.form;
-        axios.post('//api.vtex.com/likecosmeticos/dataentities/CT/documents', {
+        axios.post('/api/dataentities/CT/documents', {
             firstName: form.firstName.value,
             lastName: form.lastName.value,
             email: form.email.value,
