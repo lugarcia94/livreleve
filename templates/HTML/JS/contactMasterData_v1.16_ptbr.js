@@ -9,7 +9,7 @@
 					"type": co_type
 					};
 
-	var urlCO = "http://api.vtexcrm.com.br/" + storeName + "/dataentities/" + dataEntity + "/documents/";
+	var urlCO = "/api/dataentities/" + dataEntity + "/documents/";
 
 	$.ajax({
 		headers: {
@@ -41,7 +41,7 @@
 
 function ContactCreateByEmail(storeName, dataEntity, cl_email)
 {
-	var cl_url = "http://api.vtexcrm.com.br/" + storeName + "/dataentities/CL/search/?email=" + cl_email + "&_fields=id";
+	var cl_url = "/api/dataentities/CL/search/?email=" + cl_email + "&_fields=id";
 	
 	$.ajax({
 		headers: {
@@ -86,7 +86,7 @@ function ClientCreate()
 					"phone": cl_phone
 					};
 
-	var cl_url = "http://api.vtexcrm.com.br/" + storeName + "/dataentities/CL/documents/";
+	var cl_url = "/api/dataentities/CL/documents/";
 
 	$.ajax({
 		headers: {
