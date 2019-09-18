@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title> Loja de Móveis e Decorações Online | Cadeira, Mesas, Criado-Mudo e muito mais. </title>
+    <vtex:template id="wood-prime-mobile-head" />
+    <vtex:template id="02-woodprime-call" />
+    <!-- App orders css -->
+    <link href="/arquivos/woodprime-mobile-orders.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-mobile-header" />
+        </header><!-- /.header -->
+
+        <main class="main">
+            <div class="section-breadcrumb">
+                <ul>
+                    <li>
+                        <a title="woodprime" href="/">wood prime</a>
+                    </li>
+                    <li>
+                        <a title="minha conta" href="/account">minha conta</a>
+                    </li>
+                    <li class="last">
+                        <a title="meus pedidos" href="/account/orders">meus pedidos</a>
+                    </li>
+                </ul>
+            </div><!-- /.section-breadcrumb -->
+            <section class="section-content">
+                <div class="order-list">
+                    <vtex.cmc:orderList />
+                </div><!-- /.order-list -->
+            </section><!-- /.section-content -->
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4>Assine nossa newsletter</h4>
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div><!-- /.form-row -->
+                    </form><!-- /.form-newsletter -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-newsletter -->
+        </main><!-- /.main -->
+
+        <vtex:template id="wood-prime-mobile-footer" />
+    </div><!-- /.wrapper -->
+
+    <vtex:template id="wood-prime-mobile-scripts" />
+
+    <style type="text/css">
+        #ah-orders-content .no-underline>span {
+            display: none;
+        }
+    </style>
+
+    <!-- App orders js -->
+    <script type="text/javascript" src="/arquivos/woodprime-mobile-orders.min.js"></script>
+</body>
+
+</html>

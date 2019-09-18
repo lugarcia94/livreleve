@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title> App de personalização de produto wood prime </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/arquivos/favicon.ico" />
+    <vtex:template id="02-woodprime-call" />
+    <!-- App CSS -->
+    <link href="/arquivos/woodprime.customization.vendor.min.css?v=14" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/woodprime.customization.app.main.min.css?v=14" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrapper" id="app-customization">
+        <header class="header">
+            <div class="shell">
+                <div class="cols">
+                    <div class="col col-size2">
+                        <h1> App de personalização de produto Wood Prime </h1>
+                    </div><!-- /.col-size2 -->
+                </div><!-- /.cols -->
+            </div><!-- /.shell -->
+        </header><!-- /.header -->
+
+        <main class="main">
+            <div class="shell">
+                <div class="section-body">
+                    <aside class="section-aside">
+                        <div class="widget-product-tabs">
+                            <ul>
+                                <li>
+                                    <a href="/customization/register-custom">
+                                        Cadastrar Personalização
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/customization/register-product">
+                                        Cadastrar Produto
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/customization/list-custom">
+                                        Buscar Personalização
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/customization/search-product">
+                                        Buscar Produto
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!-- /.widget-product-tabs -->
+                    </aside><!-- /.section-aside -->
+
+                    <div class="section-content">
+                        <vtex:contentPlaceHolder id="templeite" />
+                    </div><!-- /.section-content -->
+                </div><!-- /.section-body -->
+            </div><!-- /.shell -->
+        </main><!-- /.main -->
+
+        <footer class="footer">
+            <div class="shell">
+                <div class="copyright">
+                    <p> © 2018 WWW.WOODPRIME.COM.BR </p>
+                    <p> WOOD PRIME COMÉRCIO DE MÓVEIS E DECORAÇÕES LTDA - CNPJ 19.962.381/0001-18 - I.E. 90659814-05
+                    </p>
+                </div><!-- /.copyright -->
+            </div><!-- /.shell -->
+        </footer><!-- /.footer -->
+    </div><!-- /.wrapper -->
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/arquivos/woodprime.customization.vendor.min.js?v=14"></script>
+    <script type="text/javascript" src="/arquivos/woodprime.customization.app.main.min.js?v=14"></script>
+    <script type="text/javascript" src="/arquivos/woodprime.customization.app.components.min.js?v=14"></script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!-- Javascript -->
+<div id="ah-global">
+    <ah-alert></ah-alert>
+</div>
+<div class="ah-utils" aria-hide="true" style="display:none">
+    <vtex.cmc:departmentNavigator />
+</div>
+
+
+<div id="coutdown-date" class="ah-hidden" hidden="">
+    <ul id="fullbanner">
+        <vtex.cmc:countDownFullbanner />
+    </ul>
+
+    <ul id="banner-inferior-00">
+        <vtex.cmc:countDownBannerZero />
+    </ul>
+
+    <ul id="banner-inferior-01">
+        <vtex.cmc:countDownBannerOne />
+    </ul>
+
+    <ul id="banner-inferior-02">
+        <vtex.cmc:countDownBannerTow />
+    </ul>
+
+    <ul id="banner-inferior-03">
+        <vtex.cmc:countDownBannerThee />
+    </ul>
+
+    <ul id="banner-inferior-04">
+        <vtex.cmc:countDownBannerFour />
+    </ul>
+
+    <ul id="banner-inferior-05">
+        <vtex.cmc:countDownBannerFive />
+    </ul>
+</div>
+
+
+
+
+<script src="/arquivos/jquery.zoom.min.js"></script>
+<script src="/arquivos/jquery.countdown.min.js"></script>
+<script src="/arquivos/app.js"></script>
+
+<vtex.cmc:prodtags />
+<script src="/arquivos/slick.min.js"></script>
+
+<script type="text/javascript">
+    let $win = $(window);
+
+    $win.on('load scroll', function () {
+        if ($(this).scrollTop() > 600)
+            $(".footer .scroll-top").addClass('active');
+        else
+            $(".footer .scroll-top").removeClass('active');
+    });
+
+    $('body').on('click', '.footer .scroll-top', function (event) {
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 800);
+    });
+</script>

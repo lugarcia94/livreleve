@@ -19,7 +19,7 @@
 
 </head>
 
-<body id="orders-page">
+<body id="institucional-page">
 
     <div class="page">
 
@@ -27,21 +27,33 @@
         <vtex:template id="Header" />
         <!-- /SubTemplate: Header -->
 
-        <div id="orders-extra-top"></div>
+        <div id="institucional-extra-top"></div>
 
-        <section id="orders-content" class="container">
-            <vtex.cmc:orderList />
+        <section id="institucional-content" class="container">
+
+            <div id="box-bread-brumb" class="hidden-xs">
+                <vtex.cmc:breadCrumb />
+            </div>
+
+            <div id="institucional-extra-middle"></div>
+
+            <h2 class="titulo-institucional">Ajuda</h2>
+
+            <div class="conteudo-institucional">
+                <vtex:contentPlaceHolder id="ajuda" />
+            </div>
+
         </section><!-- #content -->
 
-        <div id="orders-extra-bottom"></div>
+        <div id="institucional-extra-bottom"></div>
 
         <!--  SubTemplate: Footer -->
         <vtex:template id="Footer" />
         <!-- /SubTemplate: Footer -->
 
     </div><!-- .container-fluid -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-    <vtex:template id="commonScripts" />
+
 </body>
+<vtex:template id="commonScripts" />
 
 </html>

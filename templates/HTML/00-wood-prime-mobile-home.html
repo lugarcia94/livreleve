@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title> Loja de Móveis e Decorações Online | Cadeira, Mesas, Criado-Mudo e muito mais. </title>
+    <vtex:template id="wood-prime-mobile-head" />
+    <vtex:template id="02-woodprime-call" />
+    <!-- App home css -->
+    <link href="/arquivos/woodprime-mobile-home.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="http://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
+    <link href="/arquivos/style-blog.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+</head>
+
+<style>
+    #hidetext {
+        display: none;
+    }
+
+    .days {
+        display: none;
+    }
+
+    .section__counter {
+        padding-bottom: 64px;
+        margin: 41px auto 63px;
+        position: relative
+    }
+
+    .section__counter::after {
+        content: "";
+        background-color: #F5F5F5;
+        height: -webkit-calc(100% - 78px);
+        height: -moz-calc(100% - 78px);
+        height: calc(100% - 78px);
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -2
+    }
+
+    .section__counter .cols {
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%;
+        max-width: 1124px;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        height: 400px
+    }
+
+    .section__counter .cols .col-counter {
+        width: 100%;
+        background-color: #247471;
+        text-align: center;
+        padding: 61px 0 36px;
+        height: 450px
+    }
+
+    .section__counter .cols .col-counter .counter__title {
+        font-size: 28px;
+        letter-spacing: .01em;
+        font-weight: 100;
+        color: #fff;
+        margin-bottom: 46px;
+        text-align: center;
+        font-family: Montserrat, sans-serif
+    }
+
+    .section__counter .cols .col-counter .counter {
+        width: 100%;
+        max-width: 90%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-flow: row wrap;
+        -moz-box-orient: horizontal;
+        -moz-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0 auto 50px
+    }
+
+    .section__counter .cols .col-counter .counter span {
+        font-family: Montserrat, sans-serif;
+        line-height: 1;
+        letter-spacing: .02em;
+        font-weight: 400;
+        color: #fff;
+        font-size: 0;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 25%;
+        -moz-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%
+    }
+
+    .section__counter .cols .col-counter .counter span::first-line {
+        font-size: 38px
+    }
+
+    .section__counter .cols .col-counter .counter span small {
+        display: block;
+        font-weight: 300;
+        letter-spacing: .02em;
+        font-size: 11px;
+        width: 100%;
+        text-transform: uppercase;
+        margin-top: 10px
+    }
+
+    .section__counter .cols .col-counter .btn__counter {
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        width: 180px;
+        height: 45px;
+        line-height: 45px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background-color: #fff;
+        color: #247471;
+        font-weight: 700;
+        font-size: 14px;
+        display: block;
+        margin: 0 auto 10px
+    }
+
+    .section__counter .cols .col-counter .counter__description p {
+        text-align: center;
+        font-family: Montserrat, sans-serif;
+        font-weight: 300;
+        color: #fff;
+        font-size: 14px
+    }
+
+    .section__counter .cols .col-counter .counter__description p strong {
+        display: block;
+        font-size: 20px;
+        font-weight: 700
+    }
+
+    .section__counter .cols .col-products {
+        width: 69.4%;
+        height: 400px;
+        position: relative;
+        background-color: #fff
+    }
+
+    .section__counter .cols .col-products .shelf__product .product {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 27px 52px 27px 62px;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__image {
+        width: 100%;
+        max-width: 300px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__image .product__tags {
+        margin-bottom: 21px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__image .product__tags .flag+.flag {
+        margin-left: 10px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__image .product__tags .flash-sale {
+        height: 25px;
+        background-color: #F74F5F;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 11px;
+        color: #fff;
+        line-height: 25px;
+        padding: 0 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: inline-block
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__image a {
+        display: block
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__image a img {
+        width: 100%
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content {
+        width: 100%;
+        max-width: 309px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__name {
+        font-weight: 300;
+        font-family: Montserrat, sans-serif;
+        color: #666;
+        letter-spacing: .02em;
+        font-size: 24px;
+        margin-bottom: 7px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .yv-review-quickreview {
+        margin-bottom: 22px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__price {
+        margin-bottom: 18px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__price>del {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        color: #888;
+        display: block
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__price>strong {
+        font-family: Montserrat, sans-serif;
+        color: #247471;
+        font-weight: 400;
+        font-size: 30px;
+        display: block;
+        margin-bottom: 30px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__price small {
+        color: #6666;
+        font-weight: 300;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        display: block
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__price small:first-of-type,
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__price small:first-of-type strong {
+        color: #666;
+        font-weight: 600;
+        font-size: 14px
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__price small strong {
+        color: #B09B73;
+        font-weight: 700
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__link {
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        width: 180px;
+        height: 45px;
+        line-height: 45px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background-color: #247471;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        display: inline-block;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+        text-align: center
+    }
+
+    .section__counter .cols .col-products .shelf__product .product .product__content .product__link:hover {
+        background-color: #F74F5F;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s
+    }
+
+    .section__counter .cols .col-products .slider__arrow {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 100%
+    }
+
+    .section__counter .cols .col-products .slider__arrow .slider-next,
+    .section__counter .cols .col-products .slider__arrow .slider-prev {
+        width: 40px;
+        height: 40px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        display: block;
+        text-indent: -99999px
+    }
+
+    .section__counter .cols .col-products .slider__arrow .slider-prev {
+        background: url(/arquivos/wood-prime-ico-arrow-prev.png) 45% center no-repeat #c8ba9f;
+        position: absolute;
+        left: -20px
+    }
+
+    .section__counter .cols .col-products .slider__arrow .slider-next {
+        background: url(/arquivos/wood-prime-ico-arrow-next.png) 45% center no-repeat #c8ba9f;
+        position: absolute;
+        right: -20px
+    }
+</style>
+<style>
+    .section__counter .cols .col-counter .counter span:nth-child(1) {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-mobile-header" />
+        </header><!-- /.header -->
+        <vtex.cmc:fullTextSearchBox />
+        <main class="main">
+            <div class="slider">
+                <div class="slider-clip owl-carousel">
+                    <vtex:contentPlaceHolder id="slider-main" />
+                </div><!-- /.slider-clip owl-carousel -->
+            </div><!-- /.slider -->
+
+            <!-- hello -->
+            <div class="section-mini-banners teste">
+                <div class="shell">
+                    <div class="banners-clip">
+                        <vtex:contentPlaceHolder id="section-banners-top" />
+                    </div><!-- /.slider-clip -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-products-bottom -->
+
+            <div class="section__counter">
+
+                <countdown-shelf-component></countdown-shelf-component>
+
+
+                <!--
+                    <div class="shell"><div class="shell"><div class="cols"><div class="col-counter"><h3 class="counter__title"> 
+                O P O R T U N I D A D E S
+            </h3> <div class="counter">
+                    <span style="display: none;"> 00 : <small>Dias</small></span>
+                    <span> 08 : <small>Horas</small></span>
+                    <span> 48 : <small>Minutos</small></span>
+                    <span> 45 <small>Segundos</small></span>
+                </div> <a href="/busca/?fq=H:303" class="btn__counter">
+                ver coleção
+            </a> <div class="counter__description"><p> Descontos de até <strong> 50% OFF</strong></p></div></div> </div></div></div>
+            -->
+
+            </div>
+
+
+
+            <div class="section-products">
+                <div class="shell">
+                    <div class="slider-products">
+                        <div class="slider-clip">
+                            <vtex:contentPlaceHolder id="section-products-01" />
+                        </div><!-- /.slider-clip -->
+                    </div><!-- /.slider-products -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-products -->
+
+            <div class="section-products">
+                <div class="shell">
+                    <div class="slider-products">
+                        <div class="slider-clip">
+                            <vtex:contentPlaceHolder id="section-products-02" />
+                        </div><!-- /.slider-clip -->
+                    </div><!-- /.slider-products -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-products -->
+
+
+            <div class="mobileslidex">
+
+                <div class="container">
+                    <vtex:contentPlaceHolder id="bannerhtmlmobile" />
+                </div>
+
+            </div>
+
+            <div class="section__comments bgtransparent dynamicsection">
+                <div class="shell">
+                    <header class="header__title">
+                        <h2>
+                            <vtex:contentPlaceHolder id="tituloinstitucional" />
+                        </h2>
+                    </header>
+                    <div clas="content__comments">
+                        <ul class="list__comment">
+                            <li class="col fullwidth">
+                                <div class="text-comment">
+                                    <p>
+                                        <vtex:contentPlaceHolder id="descinstitucional" />
+                                    </p>
+
+                                    <div id="hidetext">
+                                        <p>
+                                            <vtex:contentPlaceHolder id="hidedescinstitucional" />
+                                        </p>
+                                    </div>
+
+                                    <a href="#" id="btnsaibamais" target="_blank" class="btnglobal">
+                                        <vtex:contentPlaceHolder id="botaoinstitucional" />
+                                    </a>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section__comments">
+                <div class="shell">
+                    <header class="header__title">
+                        <h2> No Blog </h2>
+                    </header><!-- /.header__title -->
+                    <div class="list__container">
+                        <ul class="list__post">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-instagram">
+                <div class="shell">
+                    <header class="title">
+                        <i class="ico ico-instagram"></i>
+                        <h4>Siga-nos</h4>
+                        <p>Siga a gente e acompanhe novidades</p>
+
+                        <a href="https://www.instagram.com/woodprime/" target="_blank">
+                            Seguir
+                        </a>
+                    </header><!-- /.title -->
+
+                    <div class="instagram-photos">
+                        <!-- <instagram></instagram> -->
+                    </div><!-- /.instagram-photos -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-instagram -->
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4>Assine nossa newsletter</h4>
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div><!-- /.form-row -->
+                    </form><!-- /.form-newsletter -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-newsletter -->
+        </main><!-- /.main -->
+
+        <vtex:template id="wood-prime-mobile-footer" />
+    </div><!-- /.wrapper -->
+
+    <vtex:template id="wood-prime-mobile-scripts" />
+    <!-- App home js -->
+    <script type="text/javascript" src="/arquivos/woodprime-mobile-home.min.js"></script>
+    <script type="text/javascript">
+        $(".btn-nav, .nav-close").on("click", function () {
+
+            if ($("body").hasClass("menu-open")) {
+
+                $("#powerSliderWidget1").hide();
+
+            } else {
+
+                $("#powerSliderWidget1").show();
+
+            }
+
+        });
+
+
+    </script>
+
+    <script>
+        /*
+function addDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+var today = addDays(new Date(), 1).toISOString().slice(0,10);
+
+  setInterval(function(){
+      $(".counter").countdown(today, function(s) { $(this).html(s.strftime('<span class="days"> %D <span class="divider">:</span> <small>Dias</small></span><span class="hours"> %H <span class="divider">:</span><small>Horas</small></span><span class="minutes"> %M <span class="divider">:</span><small>Minutos</small></span><span class="seconds">%S<small>Segundos</small></span>')) }), $(".section__counter .cols .col-counter .counter").bind("DOMSubtreeModified", function() { })
+}, 2000);
+*/
+    </script>
+    <script type="text/javascript" src="/arquivos/woodprime-app-components.min.js?v=004"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/arquivos/scripts-blog.js"></script>
+</body>
+
+</html>

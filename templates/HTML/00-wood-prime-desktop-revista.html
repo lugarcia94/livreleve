@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="wood-prime-head" />
+    <link href="/arquivos/woodprime.cms.min.css" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/woodprime_revista.css" rel="stylesheet" type="text/css" />
+
+    <vtex:contentPlaceHolder id="metaTags-institucional" />
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-header" />
+        </header><!-- /.header -->
+
+        <section class="rv_destaques" style="background: url('/arquivos/rv_desktop_banner_bg.jpg')">
+            <div class="shell">
+                <div class="rv_posts">
+                    <div class="rv_destaque_title">
+                        <vtex:contentPlaceHolder id="destaquesTitulo" />
+                    </div>
+                    <vtex:contentPlaceHolder id="destaquesConteudo" />
+                </div>
+            </div>
+        </section>
+
+        <main class="main">
+            <div class="shell">
+                <div class="rv_title_mais">
+                    <vtex:contentPlaceHolder id="tituloLeiaMais" />
+                </div>
+                <div class="rv_posts">
+                    <vtex:contentPlaceHolder id="blocoPosts01" />
+                </div>
+
+                <div class="rv_post_wide">
+                    <vtex:contentPlaceHolder id="blocoPostWide" />
+                </div>
+
+                <div class="rv_posts">
+                    <vtex:contentPlaceHolder id="blocoPosts02" />
+                </div>
+
+                <div class="rv_more_btn">
+                    <vtex:contentPlaceHolder id="botaoMais" />
+                </div>
+            </div>
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4>Assine nossa newsletter</h4>
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div><!-- /.form-row -->
+                    </form><!-- /.form-newsletter -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-newsletter -->
+
+        </main><!-- /.main -->
+
+        <footer class="footer">
+            <vtex:template id="wood-prime-footer" />
+        </footer><!-- /.footer -->
+    </div><!-- /.wrapper -->
+
+    <vtex:template id="wood-prime-scripts" />
+</body>
+
+</html>

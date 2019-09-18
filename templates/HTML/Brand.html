@@ -24,15 +24,15 @@
 
 </head>
 
-<body id="category-page">
+<body id="brand-page">
 
     <div class="page">
 
-        <header class="header">
-            <vtex:template id="wood-prime-header" />
-        </header><!-- /.header -->
+        <!--  SubTemplate: Header -->
+        <vtex:template id="Header" />
+        <!-- /SubTemplate: Header -->
 
-        <div id="category-extra-top"></div>
+        <div id="brand-extra-top"></div>
 
         <section id="content" class="container">
 
@@ -40,33 +40,33 @@
                 <vtex.cmc:breadCrumb />
             </div>
 
-            <div id="category-extra-middle"></div>
+            <div id="brand-extra-middle"></div>
 
             <div class="row">
 
                 <aside class="col-xs-3 hidden-xs hidden-sm sidebar">
-                    <div id="departament-navegador">
-                        <!--  Controle: navegador de departamento -->
+                    <div id="brand-navegador">
+                        <!--  Controle: navegador de brando -->
                         <vtex.cmc:searchNavigator />
-                        <!-- /Controle: navegador de departamento -->
+                        <!-- /Controle: navegador de brando -->
 
-                        <div id="category-extra-filtro"></div>
-                    </div><!-- #departament-navegador -->
+                        <div id="brand-extra-filtro"></div>
+                    </div><!-- #brand-navegador -->
                 </aside><!-- .sidebar -->
 
                 <article id="main-content" class="col-xs-12 col-md-9">
 
-                    <div class="title-category">
+                    <div class="title-brand">
                         <!--  Controle: Titulo -->
                         <vtex.cmc:searchTitle />
                         <!-- /Controle: Titulo -->
-                    </div><!-- .title-category -->
+                    </div><!-- .title-brand -->
 
-                    <div id="departament-banner">
+                    <div id="brand-banner">
                         <!--  placeholder -->
                         <vtex:contentPlaceHolder id="Banner-Principal" />
                         <!-- /placeholder -->
-                    </div><!-- #departament-banner -->
+                    </div><!-- #brand-banner -->
 
                     <div id="collections">
                         <div class="showcase-default">
@@ -83,7 +83,7 @@
 
         </section><!-- #content -->
 
-        <div id="category-extra-bottom"></div>
+        <div id="brand-extra-bottom"></div>
 
         <!--  SubTemplate: Footer -->
         <vtex:template id="Footer" />

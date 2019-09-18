@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title> Loja de Móveis e Decorações Online | Cadeira, Mesas, Criado-Mudo e muito mais. </title>
+    <vtex:template id="wood-prime-mobile-head" />
+
+    <!-- App departament css -->
+    <link href="/arquivos/woodprime-mobile-cms.min.css" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/slick.css" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/woodprime_revista_mobile.css" rel="stylesheet" type="text/css" />
+
+
+    <vtex:contentPlaceHolder id="metaTags-institucional" />
+
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-mobile-header" />
+        </header><!-- /.header -->
+        <vtex.cmc:fullTextSearchBox />
+
+        <section class="rv_destaques">
+            <div class="shell">
+                <div class="rv_posts">
+                    <div class="rv_destaque_title">
+                        <vtex:contentPlaceHolder id="destaquesTitulo" />
+                    </div>
+                    <vtex:contentPlaceHolder id="destaquesConteudo" />
+                </div>
+            </div>
+        </section>
+
+        <main class="main">
+            <div class="shell">
+                <div class="rv_title_mais">
+                    <vtex:contentPlaceHolder id="tituloLeiaMais" />
+                </div>
+                <div class="rv_posts_m">
+                    <vtex:contentPlaceHolder id="blocoPosts01" />
+                </div>
+
+                <div class="rv_more_btn">
+                    <vtex:contentPlaceHolder id="botaoMais" />
+                </div>
+            </div>
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4>Assine nossa newsletter</h4>
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div><!-- /.form-row -->
+                    </form><!-- /.form-newsletter -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-newsletter -->
+        </main><!-- /.main -->
+
+        <vtex:template id="wood-prime-mobile-footer" />
+    </div><!-- /.wrapper -->
+
+    <vtex:template id="wood-prime-mobile-scripts" />
+
+    <!-- App departament js -->
+    <script type="text/javascript" src="/arquivos/woodprime-mobile-cms.min.js"></script>
+    <script type="text/javascript" src="/arquivos/slick.min.js"></script>
+    <script type="text/javascript" src="/arquivos/woodprime-mobile-revista.js"></script>
+</body>
+
+</html>

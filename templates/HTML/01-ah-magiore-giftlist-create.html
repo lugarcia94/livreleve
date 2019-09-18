@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="01-ah-magiore-head" />
+</head>
+
+<body id="gift-list">
+    <div id="app" class="wrapper">
+
+        <!--  SubTemplate: Header -->
+        <vtex:template id="01-ah-magiore-header" />
+        <!--  SubTemplate: Header -->
+
+        <main id="ah-main">
+            <div class="ah-container">
+                <aside class="ah-aside">
+                    <vtex:template id="new-GiftList-Sidebar-nav" />
+                    <!--<vtex.cmc:giftListNavigation />-->
+                </aside>
+                <section class="ah-content-gift-list">
+                    <h2>Criar lista</h2>
+                    <!-- Controle: Criar uma Lista -->
+                    <vtex.cmc:GiftListFormV2 />
+                    <!--
+                os seguintes parâmtros são permitidos:
+                types="1,2,3,..." especifica quais tipos de listas serão permitidos na criação. Por padrão, todos os tipos ativos são permitidos
+                urlmanage="http://mysite.com/alternatefolder" caminho customizado nos links para a página de gerenciamento da lista
+                urledit="http://mysite.com/alternatefolder" caminho customizado nos links para a página de edição da lista
+                 -->
+                    <!-- /Controle: Criar uma Lista -->
+                </section>
+            </div>
+        </main>
+    </div>
+    <vtex:template id="01-ah-magiore-footer" />
+    <vtex:template id="01-ah-magiore-scripts" />
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title>
+        <vtex.cmc:searchTitle /> | Cadeira, Mesas, Criado-Mudo e muito mais. </title>
+    <vtex:template id="wood-prime-mobile-head" />
+    <vtex:template id="02-woodprime-call" />
+    <!-- App departament css -->
+    <link href="/arquivos/woodprime-mobile-departament.min.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .section-textoSeo {
+            display: block;
+            width: 100%;
+            padding: 35px 10px;
+        }
+
+        .section-textoSeo h1 {
+            font-size: 28px;
+            color: #247471;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .section-textoSeo p {
+            font-family: "Montserrat", sans-serif;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-mobile-header" />
+        </header><!-- /.header -->
+        <vtex.cmc:fullTextSearchBox />
+        <main class="main">
+            <div class="section-navigation">
+                <div class="filter-by">
+                    <button type="button" class="btn-filter">Filtrar</button>
+                    <div class="main-filter">
+                        <div class="header-filter">
+                            <div class="title-filter">
+                                <h3>Filtrar</h3>
+                                <button type="button" class="filter-close">+</button>
+                            </div>
+                        </div>
+                        <div class="body-filter">
+                            <vtex.cmc:searchNavigator />
+                        </div>
+                    </div>
+                </div><!-- /.filter-by -->
+                <div class="order-by">
+                    <label for="order-by">Ordenar por:</label>
+                    <select name="order-by" id="order-by">
+                        <option value="">Ordenar por</option>
+                        <option value="OrderByPriceASC">Menor Preço</option>
+                        <option value="OrderByPriceDESC">Maior Preço</option>
+                        <option value="OrderByTopSaleDESC">Mais vendidos</option>
+                        <option value="OrderByReviewRateDESC">Melhores avaliações</option>
+                        <option value="OrderByNameASC">A - Z</option>
+                        <option value="OrderByNameDESC">Z - A</option>
+                        <option value="OrderByReleaseDateDESC">Data de lançamento</option>
+                        <option value="OrderByBestDiscountDESC">Melhor Desconto</option>
+                    </select>
+                </div><!-- /.order-by -->
+            </div><!-- /.section-navigation -->
+
+            <div class="section-breadcrumb">
+                <vtex.cmc:breadCrumb />
+            </div><!-- /. section-breadcrumb -->
+
+            <div class="section-products">
+                <div class="shell">
+                    <vtex.cmc:searchResult layout="3a02afb4-7d7c-4ebb-bb09-524c8c0095f8" itemCount="12"
+                        columnCount="12" />
+                    <button type="button" class="btn-load">Carregar mais produtos</button>
+                </div><!-- /.shell -->
+            </div><!-- /.section-products -->
+
+            <div class="section-textoSeo">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="textoSEO categoria" />
+                </div><!-- /.shell -->
+            </div><!-- /.section-SEO -->
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4>Assine nossa newsletter</h4>
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div><!-- /.form-row -->
+                    </form><!-- /.form-newsletter -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-newsletter -->
+        </main><!-- /.main -->
+
+        <vtex:template id="wood-prime-mobile-footer" />
+    </div>
+    <script>
+        window.scriptsHere = $("#woodprime-app script:not([src])");
+        $("<here></here>").insertBefore("#woodprime-app script:not([src])");
+    </script>
+    <vtex:template id="wood-prime-mobile-scripts" />
+    <!-- App departament js -->
+    <script type="text/javascript" src="/arquivos/woodprime-mobile-departament.min.js"></script>
+</body>
+
+</html>

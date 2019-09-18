@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<vtex:template id="0-ah-head" />
+
+<body id="empty-search">
+    <vtex:template id="0-ah-header" />
+
+    <main id="ah-main" role="main">
+        <div class="ah-container">
+            <section class="ah-empty-search">
+                <div class="ah-container">
+                    <h2>Nenhum resultado encontrado :(</h2>
+                    <h4> Infelizmente sua busca não retornou nenhum resultado. Mas não se preocupe, você pode fazer uma
+                        nova busca abaixo e tentar novamente.</h4>
+                    <div class="ah-search ">
+                        <vtex.cmc:fullTextSearchBox />
+                    </div>
+                </div>
+            </section><!-- #main-content -->
+
+            <!-- Newsletter -->
+            <section class="ah-newsletter">
+                <div class="news">
+                    <vtex.cmc:newsletterOptIn />
+                </div>
+                <div class="team">
+                    <vtex:bannerTeam />
+                </div>
+            </section>
+            <!-- / Newsletter -->
+        </div>
+    </main>
+
+
+    <vtex:template id="0-ah-footer" />
+    <vtex:template id="0-ah-scripts" />
+
+</body>
+
+</html>

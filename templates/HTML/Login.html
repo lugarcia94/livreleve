@@ -19,7 +19,7 @@
 
 </head>
 
-<body id="orders-page">
+<body id="login-page">
 
     <div class="page">
 
@@ -27,21 +27,21 @@
         <vtex:template id="Header" />
         <!-- /SubTemplate: Header -->
 
-        <div id="orders-extra-top"></div>
+        <div id="login-extra-top"></div>
 
-        <section id="orders-content" class="container">
-            <vtex.cmc:orderList />
+        <section id="login-content" class="container">
+            <vtex.cmc:userLogin />
         </section><!-- #content -->
 
-        <div id="orders-extra-bottom"></div>
+        <div id="login-extra-bottom"></div>
 
         <!--  SubTemplate: Footer -->
         <vtex:template id="Footer" />
         <!-- /SubTemplate: Footer -->
 
     </div><!-- .container-fluid -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-    <vtex:template id="commonScripts" />
+
 </body>
+<vtex:template id="commonScripts" />
 
 </html>

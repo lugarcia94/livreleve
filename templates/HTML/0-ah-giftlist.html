@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title>Woodprime</title>
+    <vtex:template id="0-ah-head" />
+</head>
+
+<body id="gift-list">
+    <vtex.cmc:productQuickView />
+    <div id="app" class="wrapper">
+
+        <!--  SubTemplate: Header -->
+        <vtex:template id="0-ah-header" />
+        <!--  SubTemplate: Header -->
+
+        <main id="ah-main">
+            <div class="ah-container">
+                <aside class="ah-aside">
+                    <vtex:template id="new-GiftList-Sidebar-nav" />
+                    <!--<vtex.cmc:giftListNavigation />-->
+                </aside>
+                <section class="ah-content-gift-list">
+                    <!-- Controle: Busca de Listas -->
+                    <vtex.cmc:GiftListSearchV2 />
+                    <!--
+                os seguintes parâmtros são permitidos:
+                types="1,2,3,..." especifica quais tipos de listas serão permitidos nos resultados de busca. Por padrão, todos os tipos ativos são permitidos
+                 -->
+                    <!-- /Controle: Busca de Listas -->
+                </section>
+            </div>
+        </main>
+    </div>
+    <vtex:template id="0-ah-footer" />
+    <vtex:template id="0-ah-scripts" />
+</body>
+
+</html>

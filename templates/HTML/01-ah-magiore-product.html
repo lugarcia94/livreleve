@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="01-ah-magiore-head" />
+</head>
+
+<body id="ah-product">
+    <vtex:template id="01-ah-magiore-header" />
+    <div id="ah-app" class="wrapper">
+        <main id="ah-main">
+
+            <div class="ah-container">
+
+                <!-- BreadCrumb -->
+                <section class="ah-breadcrumb" id="ah-breadcrumb">
+                    <vtex.cmc:breadCrumb />
+                </section>
+                <!-- / BreadCrumb -->
+
+                <section class="ah-box-data-products product-normal">
+
+                    <!-- Zoom -->
+                    <section class="ah-zoom-image">
+                        <div id="produto">
+                            <div class="ah-product-image"></div>
+                            <div class="label" role="group">
+                                <span class="label-colection">
+                                    <span class="label-discount" style="display:none;">
+                                        <vtex.cmc:discountHightLight /></span>
+                                    <vtex.cmc:HightLight />
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="ah-details">
+                        <header class="ah-details-header">
+                            <h1 class="ah-product-name">
+                                <vtex.cmc:productName />
+                            </h1>
+                            <h6 class="ah-product-sku">Código: <span>
+                                    <vtex.cmc:skuReference /></span></h6>
+                            <span class="ah-brand"> Marca:
+                                <vtex.cmc:brandName /> </span>
+                            <span class="ah-review">
+                                <a href="#reviews" class="link-ancora">
+                                    <vtex.cmc:evaluationRate /></a>
+                            </span>
+                        </header>
+
+                        <div class="col-left">
+                            <div class="product-info">
+                                <h3>Informações do Produto</h3>
+                                <div class="content">
+
+                                </div>
+                            </div>
+                            <div class="ah-seletor-sku">
+                                <vtex.cmc:skuSelection />
+                            </div>
+
+                            <div class="ah-product-social">
+                                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                <div class="addthis_inline_share_toolbox"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-right">
+                            <div class="ah-product-prices">
+
+                                <div class="ah-price-box">
+                                    <!--  Component: Sellers -->
+                                    <span>
+                                        <vtex.cmc:SellerOptions /></span>
+
+                                    <!--  Component: Price -->
+                                    <span>
+                                        <vtex.cmc:skuPrice /></span>
+
+                                    <span class="paymentmethod">
+                                        <p class="titleparcela">
+                                            <svg id="icon-noun_530922_cc" viewBox="0 0 26 32">
+                                                <path
+                                                    d="M17.386 23.572v-2.726l2.696 0.969c0.242 0.091 0.485 0.121 0.727 0.121 0.909 0 1.726-0.576 2.060-1.424l2.514-6.906c0.212-0.545 0.182-1.151-0.061-1.666s-0.697-0.939-1.242-1.121l-12.237-4.452c-0.242-0.091-0.485-0.121-0.727-0.121v0c-0.909 0-1.726 0.575-2.060 1.424l-2.332 6.391h-4.543c-1.212 0-2.181 0.969-2.181 2.181v7.33c0 1.212 0.969 2.181 2.181 2.181h13.024c1.181 0 2.181-0.969 2.181-2.181zM11.086 6.974c0.151 0 0.333 0.030 0.485 0.091l12.237 4.452c0.757 0.273 1.151 1.121 0.878 1.848l-14.963-5.452c0.212-0.575 0.787-0.939 1.363-0.939zM8.481 11.366l14.963 5.452-1.272 3.453c-0.212 0.576-0.788 0.969-1.363 0.969-0.151 0-0.333-0.030-0.485-0.091l-2.938-1.060v-3.847c0-1.212-0.969-2.181-2.181-2.181h-7.724l1-2.696zM0.727 16.242c0-0.787 0.636-1.454 1.454-1.454h13.024c0.787 0 1.454 0.636 1.454 1.454v0.485h-15.932v-0.485zM0.727 17.424h15.932v4.937h-15.932v-4.937zM0.727 23.572v-0.485h15.932v0.485c0 0.788-0.636 1.454-1.454 1.454h-13.024c-0.818 0-1.454-0.636-1.454-1.454z">
+                                                </path>
+                                            </svg>
+                                            Opções de parcelamento
+                                        </p>
+                                        <vtex.cmc:OtherPaymentMethod />
+                                    </span>
+
+
+                                    <!--  Component: Sales channels -->
+                                    <span>
+                                        <vtex.cmc:SalesChannelDropList /></span>
+
+                                    <!-- Serviços -->
+                                    <span>
+                                        <vtex.cmc:stockKeepingUnitService /></span>
+                                    <!-- Serviços -->
+
+                                </div><!-- .price-box -->
+
+                                <div id="ah-sku" class="ah-btn-buy">
+                                    <vtex.cmc:BuyButton />
+                                </div>
+
+                                <span class="ah-gift-add">
+                                    <vtex.cmc:GiftListInsertSkuV2 />
+                                </span>
+
+                            </div>
+
+                            <div class="ah-frete">
+                                <vtex.cmc:shippingValue />
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        ShippingValue();
+                                    });
+                                </script>
+                            </div>
+                            <a class="btn-frete" href="/institucional/politica-frete-gratis"
+                                title="Política Frete Grátis">
+                                <vtex:contentPlaceHolder id="Politica Frete" />
+                            </a>
+                        </div>
+
+                    </section>
+                </section>
+
+                <section class="all-info">
+
+                    <div class="product-description">
+                        <h2 class="ah-title">Informações sobre o produto</h2>
+                        <div class="content">
+                            <vtex.cmc:ProductDescription />
+                        </div>
+                    </div>
+
+                    <div class="technical-specifications">
+                        <h2 class="ah-title">Especificações Técnicas</h2>
+                        <div class="content"></div>
+                    </div>
+
+                </section>
+
+                <section class="jointsales">
+                    <vtex.cmc:BuyTogether />
+                </section>
+
+                <section class="data-reviews ">
+                    <div id="reviews">
+                        <vtex.cmc:UserReview />
+                    </div>
+                </section>
+
+                <section class="ah-showcase product-related" data-carousel="true">
+                    <vtex:contentPlaceHolder id="Relacionados" />
+                </section>
+
+
+                <section class="ah-newsletter">
+                    <div class="news">
+                        <svg id="icon-news-01" viewBox="0 0 26 32">
+                            <path
+                                d="M12.797 3.772c6.74 0 12.228 5.488 12.228 12.228s-5.488 12.228-12.228 12.228-12.228-5.488-12.228-12.228 5.488-12.228 12.228-12.228zM12.797 3.203c-7.081 0-12.797 5.716-12.797 12.797s5.716 12.797 12.797 12.797 12.797-5.716 12.797-12.797-5.716-12.797-12.797-12.797v0z">
+                            </path>
+                            <path
+                                d="M5.602 11.592v8.816c0 0.227 0.171 0.398 0.398 0.398h13.593c0.227 0 0.398-0.171 0.398-0.398v-8.816c0-0.227-0.171-0.398-0.398-0.398h-13.593c-0.228 0-0.398 0.171-0.398 0.398zM18.939 20.152h-12.285c-0.228 0-0.398-0.171-0.398-0.398v-5.005c0-0.256 0.256-0.455 0.512-0.398l5.943 1.592c0.057 0.028 0.142 0.028 0.199 0l5.943-1.564c0.256-0.057 0.512 0.114 0.512 0.398v4.948c0 0.227-0.199 0.427-0.427 0.427zM19.053 13.668l-6.143 1.649c-0.057 0.028-0.142 0.028-0.199 0l-6.171-1.649c-0.171-0.057-0.313-0.199-0.313-0.398v-1.052c0-0.227 0.171-0.398 0.398-0.398h12.313c0.227 0 0.398 0.171 0.398 0.398v1.052c0.028 0.199-0.114 0.341-0.284 0.398z">
+                            </path>
+                        </svg>
+                        <vtex.cmc:newsletterOptIn />
+                    </div>
+                    <div class="coments" data-carousel="true"
+                        data-carousel-config='{"dots": false, "slidesToShow": 1, "responsive": [{"breakpoint": 1199, "settings": {"slidesToShow": 1}},{"breakpoint": 992, "settings": {"slidesToShow": 1}}]}'>
+                        <ul>
+                            <vtex.cmc:footerAvaliacaoMagiore />
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+    </div>
+    <vtex:template id="01-ah-magiore-footer" />
+
+    <div class="ah-hidden">
+        <vtex.cmc:productSpecification />
+    </div>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59ba830ab78259d5"></script>
+
+    <vtex:template id="01-ah-magiore-scripts" />
+    <vtex.cmc:productQuickView />
+
+</body>
+
+</html>

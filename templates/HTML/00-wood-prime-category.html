@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="wood-prime-head" />
+    <link href="/arquivos/woodprime.category.min.css?v=003" rel="stylesheet" type="text/css" />
+    <vtex:template id="02-woodprime-call" />
+</head>
+
+<body id="ah-category">
+
+    <div id="woodprime-app" class="wrapper">
+
+        <header class="header">
+            <vtex:template id="wood-prime-header" />
+        </header><!-- /.header -->
+
+        <main id="ah-main" role="main">
+
+            <section class="ah-banner" role="banner" data-countdown="category-banner" data-carousel="true"
+                data-carousel-config='{"autoplay": true}'>
+                <vtex:contentPlaceHolder id="fullbanner" />
+            </section>
+
+            <div class="ah-container">
+
+                <div class="collections">
+
+                    <aside class="ah-sidebar">
+                        <header>
+                            <h4>Filtrar sua busca</h4>
+                            <button class="close">X</button>
+                        </header>
+
+                        <div class="main">
+                            <vtex.cmc:searchNavigator />
+                        </div>
+
+                        <button class="btn-sidebar">
+                            <svg id="icon-ic_filter_list_black_24px" viewBox="0 0 32 32">
+                                <path
+                                    d="M13.333 24h5.333v-2.667h-5.333v2.667zM4 8v2.667h24v-2.667h-24zM8 17.333h16v-2.667h-16v2.667z">
+                                </path>
+                            </svg>
+                        </button>
+                    </aside>
+
+                    <div class="products">
+                        <!-- BreadCrumb -->
+                        <header>
+                            <vtex.cmc:breadCrumb />
+
+                            <article class="description">
+                                <vtex:contentPlaceHolder id="descriptionSEO" />
+                            </article>
+                        </header>
+                        <!-- / BreadCrumb -->
+
+                        <div class="main">
+                            <vtex.cmc:searchResult layout="f2eb3f3f-69f1-486a-aa83-092701384d25" itemCount="12"
+                                columnCount="12" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section-textoSeo">
+                    <vtex:contentPlaceHolder id="textoSEO departamento" />
+                </div>
+
+                <section class="ah-newsletter">
+                    <div class="news">
+                        <svg id="icon-news-01" viewBox="0 0 26 32">
+                            <path
+                                d="M12.797 3.772c6.74 0 12.228 5.488 12.228 12.228s-5.488 12.228-12.228 12.228-12.228-5.488-12.228-12.228 5.488-12.228 12.228-12.228zM12.797 3.203c-7.081 0-12.797 5.716-12.797 12.797s5.716 12.797 12.797 12.797 12.797-5.716 12.797-12.797-5.716-12.797-12.797-12.797v0z">
+                            </path>
+                            <path
+                                d="M5.602 11.592v8.816c0 0.227 0.171 0.398 0.398 0.398h13.593c0.227 0 0.398-0.171 0.398-0.398v-8.816c0-0.227-0.171-0.398-0.398-0.398h-13.593c-0.228 0-0.398 0.171-0.398 0.398zM18.939 20.152h-12.285c-0.228 0-0.398-0.171-0.398-0.398v-5.005c0-0.256 0.256-0.455 0.512-0.398l5.943 1.592c0.057 0.028 0.142 0.028 0.199 0l5.943-1.564c0.256-0.057 0.512 0.114 0.512 0.398v4.948c0 0.227-0.199 0.427-0.427 0.427zM19.053 13.668l-6.143 1.649c-0.057 0.028-0.142 0.028-0.199 0l-6.171-1.649c-0.171-0.057-0.313-0.199-0.313-0.398v-1.052c0-0.227 0.171-0.398 0.398-0.398h12.313c0.227 0 0.398 0.171 0.398 0.398v1.052c0.028 0.199-0.114 0.341-0.284 0.398z">
+                            </path>
+                        </svg>
+                        <vtex.cmc:newsletterOptIn />
+                    </div>
+                    <div class="coments" data-carousel="true"
+                        data-carousel-config='{"dots": false, "slidesToShow": 1, "responsive": [{"breakpoint": 1199, "settings": {"slidesToShow": 1}},{"breakpoint": 992, "settings": {"slidesToShow": 1}}]}'>
+                        <ul>
+                            <vtex.cmc:footerAvaliacao />
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+        <div id="coutdown-date-category" class="ah-hidden" hidden="">
+            <ul id="category-banner">
+                <vtex:contentPlaceHolder id="data-fullbanner" />
+            </ul>
+        </div>
+        <vtex:template id="0-ah-footer" />
+        <vtex:template id="0-ah-scripts" />
+        <script src="/arquivos/QD_infinityScroll.min.js"></script>
+
+    </div>
+</body>
+
+
+
+</html>

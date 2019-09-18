@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="01-ah-magiore-head" />
+</head>
+
+<body id="empty-search">
+    <vtex:template id="01-ah-magiore-header" />
+
+    <main id="ah-main" role="main">
+        <div class="ah-container">
+            <section class="ah-empty-search">
+                <div class="ah-container">
+                    <h2>Nenhum resultado encontrado :(</h2>
+                    <h4> Infelizmente sua busca não retornou nenhum resultado. Mas não se preocupe, você pode fazer uma
+                        nova busca abaixo e tentar novamente.</h4>
+                    <div class="ah-search ">
+                        <vtex.cmc:fullTextSearchBox />
+                    </div>
+                </div>
+            </section><!-- #main-content -->
+
+            <section class="ah-newsletter">
+                <div class="news">
+                    <svg id="icon-news-01" viewBox="0 0 26 32">
+                        <path
+                            d="M12.797 3.772c6.74 0 12.228 5.488 12.228 12.228s-5.488 12.228-12.228 12.228-12.228-5.488-12.228-12.228 5.488-12.228 12.228-12.228zM12.797 3.203c-7.081 0-12.797 5.716-12.797 12.797s5.716 12.797 12.797 12.797 12.797-5.716 12.797-12.797-5.716-12.797-12.797-12.797v0z">
+                        </path>
+                        <path
+                            d="M5.602 11.592v8.816c0 0.227 0.171 0.398 0.398 0.398h13.593c0.227 0 0.398-0.171 0.398-0.398v-8.816c0-0.227-0.171-0.398-0.398-0.398h-13.593c-0.228 0-0.398 0.171-0.398 0.398zM18.939 20.152h-12.285c-0.228 0-0.398-0.171-0.398-0.398v-5.005c0-0.256 0.256-0.455 0.512-0.398l5.943 1.592c0.057 0.028 0.142 0.028 0.199 0l5.943-1.564c0.256-0.057 0.512 0.114 0.512 0.398v4.948c0 0.227-0.199 0.427-0.427 0.427zM19.053 13.668l-6.143 1.649c-0.057 0.028-0.142 0.028-0.199 0l-6.171-1.649c-0.171-0.057-0.313-0.199-0.313-0.398v-1.052c0-0.227 0.171-0.398 0.398-0.398h12.313c0.227 0 0.398 0.171 0.398 0.398v1.052c0.028 0.199-0.114 0.341-0.284 0.398z">
+                        </path>
+                    </svg>
+                    <vtex.cmc:newsletterOptIn />
+                </div>
+                <div class="coments" data-carousel="true"
+                    data-carousel-config='{"dots": false, "slidesToShow": 1, "responsive": [{"breakpoint": 1199, "settings": {"slidesToShow": 1}},{"breakpoint": 992, "settings": {"slidesToShow": 1}}]}'>
+                    <ul>
+                        <vtex.cmc:footerAvaliacaoMagiore />
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <vtex:template id="01-ah-magiore-footer" />
+    <vtex:template id="01-ah-magiore-scripts" />
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="01-ah-magiore-head" />
+    <title>Magiore – Loja de Moveis Online</title>
+</head>
+
+
+<body id="ah-home">
+
+    <vtex:template id="01-ah-magiore-header" />
+
+    <main id="ah-main" role="main">
+        <div class="ah-container">
+
+            <!-- Banner Princiapl -->
+            <section class="ah-fullbanner" role="banner" data-countdown="fullbanner" data-carousel="true"
+                data-carousel-config='{"autoplay": true, "dots": false}'>
+                <vtex:contentPlaceHolder id="fullbanner" />
+            </section>
+
+
+            <!-- Banner de suporte -->
+            <section class="ah-banner" data-countdown="banner-inferior-00">
+                <div class="banner type01" role="banner" data-carousel="true"
+                    data-carousel-config='{"dots": true, "infinite": true, "speed": 300, "slidesToShow": 2, "variableWidth": true, "responsive": [{"breakpoint": 1199, "settings": {"slidesToShow": 1}}]}'>
+                    <vtex:contentPlaceHolder id="banners01" />
+                </div>
+            </section>
+
+
+            <!-- Banner Cantegoria 01 -->
+            <section class="ah-banner banner1" data-countdown="banner-inferior-01">
+                <div class="banner">
+                    <vtex:contentPlaceHolder id="banners02" />
+                </div>
+                <ul class="banner type02 htmlbanner" role="banner" data-carousel="true"
+                    data-carousel-config='{"slidesToShow": 3, "responsive": [{"breakpoint": 1199, "settings": { "slidesToShow": 2}}, {"breakpoint": 580, "settings": { "slidesToShow": 1}}]}'>
+                    <vtex:contentPlaceHolder id="banners03" />
+                </ul>
+            </section>
+
+
+            <!-- Vitrine 01 -->
+            <section class="ah-showcase" data-carousel="true">
+                <!--<h2><vtex:contentPlaceHolder id="titleOffers01"/></h2>-->
+                <vtex:contentPlaceHolder id="offers01" />
+            </section>
+
+
+            <!-- Banner Cantegoria 02 -->
+            <section class="ah-banner banner2" data-countdown="banner-inferior-02">
+                <ul class="banner type02 htmlbanner" role="banner" data-carousel="true"
+                    data-carousel-config='{"slidesToShow": 3, "responsive": [{"breakpoint": 1199, "settings": { "slidesToShow": 2}}, {"breakpoint": 580, "settings": { "slidesToShow": 1}}]}'>
+                    <vtex:contentPlaceHolder id="banners05" />
+                </ul>
+                <div class="banner">
+                    <vtex:contentPlaceHolder id="banners04" />
+                </div>
+            </section>
+
+            <!-- Vitrine 02 -->
+            <section class="ah-showcase" data-carousel="true">
+                <!--<h2><vtex:contentPlaceHolder id="titleOffers02"/></h2>-->
+                <vtex:contentPlaceHolder id="offers02" />
+            </section>
+
+
+            <!-- Banner Cantegoria 03 -->
+            <section class="ah-banner banner3" data-countdown="banner-inferior-03">
+                <div class="banner">
+                    <vtex:contentPlaceHolder id="banners06" />
+                </div>
+                <ul class="banner type02 htmlbanner" role="banner" data-carousel="true"
+                    data-carousel-config='{"slidesToShow": 3, "responsive": [{"breakpoint": 1199, "settings": { "slidesToShow": 2}}, {"breakpoint": 580, "settings": { "slidesToShow": 1}}]}'>
+                    <vtex:contentPlaceHolder id="banners07" />
+                </ul>
+            </section>
+
+
+            <!-- Vitrine 03 -->
+            <section class="ah-showcase" data-carousel="true">
+                <!--<h2><vtex:contentPlaceHolder id="titleOffers02"/></h2>-->
+                <vtex:contentPlaceHolder id="offers03" />
+            </section>
+
+
+            <!-- Banner Cantegoria 04 -->
+            <section class="ah-banner banner4" data-countdown="banner-inferior-04">
+                <ul class="banner type02 htmlbanner" role="banner" data-carousel="true"
+                    data-carousel-config='{"slidesToShow": 3, "responsive": [{"breakpoint": 1199, "settings": { "slidesToShow": 2}}, {"breakpoint": 580, "settings": { "slidesToShow": 1}}]}'>
+                    <vtex:contentPlaceHolder id="banners10" />
+                </ul>
+                <div class="banner">
+                    <vtex:contentPlaceHolder id="banners09" />
+                </div>
+            </section>
+
+            <!-- Vitrine 04 -->
+            <section class="ah-showcase" data-carousel="true">
+                <!--<h2><vtex:contentPlaceHolder id="titleOffers02"/></h2>-->
+                <vtex:contentPlaceHolder id="offers04" />
+            </section>
+
+
+
+
+            <!-- Banner de Suporte inferior -->
+            <section class="ah-banner" data-countdown="banner-inferior-05">
+                <div class="banner type03" role="banner" data-carousel="true"
+                    data-carousel-config='{"slidesToShow": 3, "responsive": [{"breakpoint": 768, "settings": { "slidesToShow": 2}}, {"breakpoint": 580, "settings": { "slidesToShow": 1}}]}'>
+                    <vtex:contentPlaceHolder id="banners08" />
+                </div>
+            </section>
+
+
+            <!-- Newsletter -->
+            <section class="ah-newsletter">
+                <div class="news">
+                    <svg id="icon-news-01" viewBox="0 0 26 32">
+                        <path
+                            d="M12.797 3.772c6.74 0 12.228 5.488 12.228 12.228s-5.488 12.228-12.228 12.228-12.228-5.488-12.228-12.228 5.488-12.228 12.228-12.228zM12.797 3.203c-7.081 0-12.797 5.716-12.797 12.797s5.716 12.797 12.797 12.797 12.797-5.716 12.797-12.797-5.716-12.797-12.797-12.797v0z">
+                        </path>
+                        <path
+                            d="M5.602 11.592v8.816c0 0.227 0.171 0.398 0.398 0.398h13.593c0.227 0 0.398-0.171 0.398-0.398v-8.816c0-0.227-0.171-0.398-0.398-0.398h-13.593c-0.228 0-0.398 0.171-0.398 0.398zM18.939 20.152h-12.285c-0.228 0-0.398-0.171-0.398-0.398v-5.005c0-0.256 0.256-0.455 0.512-0.398l5.943 1.592c0.057 0.028 0.142 0.028 0.199 0l5.943-1.564c0.256-0.057 0.512 0.114 0.512 0.398v4.948c0 0.227-0.199 0.427-0.427 0.427zM19.053 13.668l-6.143 1.649c-0.057 0.028-0.142 0.028-0.199 0l-6.171-1.649c-0.171-0.057-0.313-0.199-0.313-0.398v-1.052c0-0.227 0.171-0.398 0.398-0.398h12.313c0.227 0 0.398 0.171 0.398 0.398v1.052c0.028 0.199-0.114 0.341-0.284 0.398z">
+                        </path>
+                    </svg>
+                    <vtex.cmc:newsletterOptIn />
+                </div>
+                <div class="coments" data-carousel="true"
+                    data-carousel-config='{"dots": false, "slidesToShow": 1, "responsive": [{"breakpoint": 1199, "settings": {"slidesToShow": 1}},{"breakpoint": 992, "settings": {"slidesToShow": 1}}]}'>
+                    <ul>
+                        <vtex.cmc:footerAvaliacaoMagiore />
+                    </ul>
+                </div>
+            </section>
+
+
+        </div>
+    </main>
+
+    <vtex:template id="01-ah-magiore-footer" />
+    <vtex:template id="01-ah-magiore-scripts" />
+    <vtex.cmc:cssbannersMagiore />
+
+</body>
+
+</html>

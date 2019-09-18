@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="01-ah-magiore-head" />
+</head>
+
+<body id="gift-list">
+    <vtex.cmc:productQuickView />
+    <div id="app" class="wrapper">
+
+        <!--  SubTemplate: Header -->
+        <vtex:template id="01-ah-magiore-header" />
+        <!--  SubTemplate: Header -->
+
+        <main id="ah-main">
+            <div class="ah-container">
+                <aside class="ah-aside">
+                    <vtex:template id="new-GiftList-Sidebar-nav" />
+                    <!--<vtex.cmc:giftListNavigation />-->
+                </aside>
+                <section class="ah-content-gift-list" id="ah-collections">
+                    <h2>Produtos na lista</h2>
+                    <!-- Controle: Informações de uma Lista -->
+                    <vtex.cmc:GiftListInfoV2 />
+                    <!-- /Controle: informações de uma Lista -->
+                    <vtex.cmc:GiftListInsertSkuV2 popup="true" />
+                    <!--<div class="collectionWrap ah-collections">-->
+                    <!--    <vtex.cmc:giftListShelfPaged layout="f2eb3f3f-69f1-486a-aa83-092701384d25" itemCount="12" columnCount="12" />-->
+                    <!--</div>-->
+                    <div class="main collectionWrap ah-collections">
+                        <vtex.cmc:searchResult layout="f2eb3f3f-69f1-486a-aa83-092701384d25" itemCount="12"
+                            columnCount="12" />
+                    </div>
+                    <vtex.cmc:giftListSendToCartButton />
+                </section>
+            </div>
+        </main>
+    </div>
+    <vtex:template id="01-ah-magiore-footer" />
+    <vtex:template id="01-ah-magiore-scripts" />
+</body>
+
+</html>

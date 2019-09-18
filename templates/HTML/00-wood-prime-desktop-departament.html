@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="wood-prime-head" />
+    <link href="/arquivos/woodprime.category.min.css?v=14" rel="stylesheet" type="text/css" />
+    <vtex:template id="02-woodprime-call" />
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-header" />
+        </header>
+
+        <main class="main">
+            <div class="section__benner">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="Banner" />
+                    <vtex:contentPlaceHolder id="Texto banner" />
+                </div>
+            </div>
+
+            <!-- fim banner departamento -->
+
+            <div class="section__content banner-queridinhos">
+                <div class="shell">
+                    <div class="section__body">
+
+                        <!-- coluna 1 -->
+                        <div class="section-block-qrd col">
+                            <p>Confira os queridinhos da wood
+                                <span class="line"></span>
+                            </p>
+                        </div>
+
+                        <!-- coluna 2 -->
+                        <div class="section__qrd-category section__qrd-category-left col">
+                            <vtex:contentPlaceHolder id="Banner_Category_Left" />
+                            <div class="qrd-btn">
+                                <vtex:contentPlaceHolder id="Category_link-Left" />
+                            </div>
+                        </div>
+
+                        <!-- coluna 3 -->
+                        <div class="section__qrd-category section__qrd-category-center col">
+                            <vtex:contentPlaceHolder id="Banner_Category_Center" />
+                            <div class="qrd-btn">
+                                <vtex:contentPlaceHolder id="Category_link-Center" />
+                            </div>
+                        </div>
+
+                        <!-- coluna 4 -->
+                        <div class="section__qrd-category section__qrd-category-right col">
+                            <vtex:contentPlaceHolder id="Banner_Category_Right" />
+                            <div class="qrd-btn">
+                                <vtex:contentPlaceHolder id="Category_link-Right" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- fim banner queridinhos -->
+
+            <div class="section-products">
+                <div class="shell">
+                    <div class="section__body">
+                        <!-- sidebar menu categorias -->
+                        <div class="section__aside">
+                            <department-filters-component></department-filters-component>
+                        </div>
+
+                        <!-- produtos -->
+                        <div class="section__content">
+                            <category-products-component ref="category"></category-products-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fim vitrine produtos -->
+
+            <div class="section__banner__triplo">
+                <div class="shell">
+                    <div class="section__body">
+
+                        <!-- big banner -->
+                        <div class="big-banner">
+                            <vtex:contentPlaceHolder id="Banner_Category_Big" />
+                            <div class="qrd-btn">
+                                <vtex:contentPlaceHolder id="Category_link_Banner_Big" />
+                            </div>
+                        </div>
+
+                        <!-- small banner -->
+                        <div class="small-banner">
+
+                            <!-- top -->
+                            <div class="small__banner__top">
+                                <vtex:contentPlaceHolder id="Banner_Category_Small_Top" />
+                                <div class="qrd-btn">
+                                    <vtex:contentPlaceHolder id="Category_link_Small_Top" />
+                                </div>
+                            </div>
+
+
+                            <!-- bottom -->
+                            <div class="small__banner__bottom">
+                                <vtex:contentPlaceHolder id="Banner_Category_Small_Bottom" />
+                                <div class="qrd-btn">
+                                    <vtex:contentPlaceHolder id="Category_link_Small_Bottom" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- fim banner triplo -->
+
+            <div class="section__product__bottom" style="display: none;">
+                <div class="shell">
+                    <div class="section__body">
+                        <div class="section-products">
+                            <div class="slider-products">
+                                <div class="slider-clip">
+                                    <vtex:contentPlaceHolder id="section-products-01" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fim vitrine bottom -->
+
+            <div class="section__description__department">
+                <div class="shell">
+                    <div class="section__body">
+                        <div class="section__content">
+                            <div class="section__sobre__depto">
+                                <span class="divisor"></span>
+                                <vtex:contentPlaceHolder id="Descritivo Sobre o departamento" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fim descricao sobre o departamento -->
+
+            <div class="section-textoSeo" style="display: none !important">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="textoSEO categoria" />
+                </div>
+            </div>
+
+            <!-- fim seo departamento -->
+
+            <div class="section__comments" style="margin-bottom: 0px">
+                <div class="shell">
+                    <header class="header__title">
+                        <h2> O que dizem sobre nós </h2>
+                    </header>
+
+                    <div class="content__comments">
+                        <ul class="list__comment">
+                            <!-- col 1 -->
+                            <li class="col">
+                                <div class="comment-star">
+                                    <span class="evaluation-star">
+                                        <i style="width: 5%;"></i>
+                                    </span>
+                                </div>
+
+                                <div class="text-comment">
+                                    <p>Gostamos muito da cristaleira, foi tudo perfeito, desde a compra até a entrega,
+                                        não temos nada à reclamar.</p>
+                                </div>
+
+                                <div class="author">
+                                    <i class="ico ico-user"></i>
+                                    <strong>José Ricardo Nóbrega Guimâes</strong>
+                                    <span> 25/08/2019 </span>
+                                </div>
+                            </li>
+
+                            <!-- col 2 -->
+                            <li class="col">
+                                <div class="comment-star">
+                                    <span class="evaluation-star">
+                                        <i style="width: 5%;"></i>
+                                    </span>
+                                </div>
+
+                                <div class="text-comment">
+                                    <p>Lindo! Bem acabado, bem embalado, entregue antes do prazo, recomendo!</p>
+                                </div>
+
+                                <div class="author">
+                                    <i class="ico ico-user"></i>
+                                    <strong> Avani Maior </strong>
+                                    <span> 22/08/2019 </span>
+                                </div>
+                            </li>
+
+                            <!-- col 3 -->
+                            <li class="col">
+                                <div class="comment-star">
+                                    <span class="evaluation-star">
+                                        <i style="width: 5%;"></i>
+                                    </span>
+                                </div>
+
+                                <div class="text-comment">
+                                    <p>Minha cabeceira deixou meu quarto alem de aconchegante, lindo! Me sinto em
+                                        Versalhes com ela! Uma linda Luiz XV!</p>
+                                </div>
+
+                                <div class="author">
+                                    <i class="ico ico-user"></i>
+                                    <strong> Elza Fernandes Marques</strong>
+                                    <span> 15/08/2019 </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fim depoimentos -->
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4> Assine nossa newsletter </h4>
+                            <p> Receba nossas novidades e lançamentos primeiro. </p>
+                        </div>
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- fim main -->
+
+        <footer class="footer">
+            <vtex:template id="wood-prime-footer" />
+        </footer>
+    </div>
+
+    <vtex:template id="wood-prime-scripts" />
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title> Loja de Móveis e Decorações Online | Cadeira, Mesas, Criado-Mudo e muito mais. </title>
+    <vtex:template id="wood-prime-mobile-head" />
+    <vtex:template id="02-woodprime-call" />
+    <!-- App home css -->
+    <link href="/arquivos/woodprime-mobile-home.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <h1 class="logo">
+                <a href="/" title="Home"> Wood Prime </a>
+            </h1>
+        </header><!-- /.header -->
+
+        <main class="main">
+            <div class="slider">
+                <div class="slider-clip">
+                    <vtex:contentPlaceHolder id="slider-main" />
+                </div><!-- /.slider-clip owl-carousel -->
+            </div><!-- /.slider -->
+
+            <div class="section-countdown">
+                <div class="shell">
+                    <countdown-component></countdown-component>
+                </div><!-- /.shell -->
+            </div><!-- /.section-countdown -->
+
+            <div class="section-description">
+                <div class="shell">
+                    <header class="title">
+                        30ª edição da Feistock
+                    </header><!-- /.title -->
+
+                    <div class="description">
+                        <vtex:contentPlaceHolder id="Descrição do evento" />
+                    </div><!-- /.description -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-products-bottom -->
+
+            <div class="section-products">
+                <div class="shell">
+                    <div class="slider-products">
+                        <div class="slider-clip">
+                            <vtex:contentPlaceHolder id="Products" />
+                        </div><!-- /.slider-clip -->
+                    </div><!-- /.slider-products -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-products -->
+
+            <div class="section-mini-banners">
+                <div class="shell">
+                    <div class="banners-clip">
+                        <vtex:contentPlaceHolder id="Mini banners" />
+                    </div><!-- /.slider-clip -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-products-bottom -->
+
+            <div class="section-instagram">
+                <div class="shell">
+                    <header class="title">
+                        <i class="ico ico-instagram"></i>
+                        <h4>Siga-nos</h4>
+                        <p>Siga a gente e acompanhe novidades</p>
+
+                        <a href="https://www.instagram.com/woodprime/" target="_blank">
+                            Seguir
+                        </a>
+                    </header><!-- /.title -->
+
+                    <div class="instagram-photos">
+                        <instagram></instagram>
+                    </div><!-- /.instagram-photos -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-instagram -->
+        </main><!-- /.main -->
+
+        <footer class="footer">
+            <div class="navigation-footer">
+                <ul>
+                    <li>
+                        <a href="/institucional/empresa" title="Sobre nós">
+                            Sobre nós
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/institucional/onde-estamos" title="Onde estamos">
+                            Onde estamos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/institucional/links-uteis" title="Links Úteis">
+                            Links Úteis</a>
+                    </li>
+                    <li>
+                        <a href="/institucional/fale-conosco" title="Atendimento">
+                            Atendimento
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /.navigation-footer -->
+
+            <div class="social">
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/woodprime/">
+                            <i class="ico ico-instagram"> Instagram </i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.facebook.com/woodprimemoveis/">
+                            <i class="ico ico-facebook"> Facebook </i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://br.pinterest.com/woodprime/">
+                            <i class="ico ico-pinterest"> Pinterest </i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/in/woodprime/">
+                            <i class="ico ico-linkedin"> LinkedIn </i>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /.social -->
+
+            <div class="copyright">
+                <p> Copyright © 2018 Wood Prime </p>
+            </div><!-- /.copyright -->
+        </footer>
+    </div><!-- /.wrapper -->
+
+    <vtex:template id="wood-prime-mobile-scripts" />
+</body>
+
+</html>

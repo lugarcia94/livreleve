@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <vtex:metaTags />
+
+    <!-- Preloder -->
+    <script src="/arquivos/pace.min.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="/arquivos/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        #my-orders-container a .no-underline,
+        .myo-cancel-btn {
+            display: none !important;
+        }
+    </style>
+
+    <style type="text/css">
+        #ah-orders-content .no-underline>span {
+            display: none;
+        }
+    </style>
+</head>
+
+<body id="ah-orders-page">
+    <!--  SubTemplate: Header -->
+    <vtex:template id="0-ah-header" />
+    <!--  SubTemplate: Header -->
+
+    <main id="ah-main">
+        <section class="ah-breadcrumb" id="ah-breadcrumb">
+            <div class="ah-container">
+                <div class="ah-border">
+                    <header class="ah-header-collection">
+                        <div class="bread-crumb">
+                            <ul>
+                                <li><a title="Home" href="/">Home</a></li>
+                                <li class="last">
+                                    <strong><a title="Minha conta" href="/account">Minha Conta</a></strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </header>
+
+                    <!--<div class="ah-main-breadcrumb">-->
+                    <!--    <div class="ah-title-category">-->
+                    <!--        <h2 class="titulo-sessao">Minha Conta</h2>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </section>
+
+        <section id="ah-orders-content" class="ah-container">
+            <vtex.cmc:orderList />
+        </section><!-- #content -->
+
+        <div class="ah-container">
+            <section class="ah-newsletter">
+                <div class="news">
+                    <svg id="icon-news-01" viewBox="0 0 26 32">
+                        <path
+                            d="M12.797 3.772c6.74 0 12.228 5.488 12.228 12.228s-5.488 12.228-12.228 12.228-12.228-5.488-12.228-12.228 5.488-12.228 12.228-12.228zM12.797 3.203c-7.081 0-12.797 5.716-12.797 12.797s5.716 12.797 12.797 12.797 12.797-5.716 12.797-12.797-5.716-12.797-12.797-12.797v0z">
+                        </path>
+                        <path
+                            d="M5.602 11.592v8.816c0 0.227 0.171 0.398 0.398 0.398h13.593c0.227 0 0.398-0.171 0.398-0.398v-8.816c0-0.227-0.171-0.398-0.398-0.398h-13.593c-0.228 0-0.398 0.171-0.398 0.398zM18.939 20.152h-12.285c-0.228 0-0.398-0.171-0.398-0.398v-5.005c0-0.256 0.256-0.455 0.512-0.398l5.943 1.592c0.057 0.028 0.142 0.028 0.199 0l5.943-1.564c0.256-0.057 0.512 0.114 0.512 0.398v4.948c0 0.227-0.199 0.427-0.427 0.427zM19.053 13.668l-6.143 1.649c-0.057 0.028-0.142 0.028-0.199 0l-6.171-1.649c-0.171-0.057-0.313-0.199-0.313-0.398v-1.052c0-0.227 0.171-0.398 0.398-0.398h12.313c0.227 0 0.398 0.171 0.398 0.398v1.052c0.028 0.199-0.114 0.341-0.284 0.398z">
+                        </path>
+                    </svg>
+                    <vtex.cmc:newsletterOptIn />
+                </div>
+                <div class="coments" data-carousel="true"
+                    data-carousel-config='{"dots": false, "slidesToShow": 1, "responsive": [{"breakpoint": 1199, "settings": {"slidesToShow": 1}},{"breakpoint": 992, "settings": {"slidesToShow": 1}}]}'>
+                    <ul>
+                        <vtex.cmc:footerAvaliacao />
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <vtex:template id="0-ah-footer" />
+    <link href="/arquivos/style.css" rel="stylesheet" type="text/css" />
+    <vtex:template id="0-ah-scripts" />
+
+</body>
+
+</html>

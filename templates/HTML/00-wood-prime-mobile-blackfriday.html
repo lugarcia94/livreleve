@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title> Loja de Móveis e Decorações Online | Cadeira, Mesas, Criado-Mudo e muito mais. </title>
+    <vtex:template id="wood-prime-mobile-head" />
+
+    <!-- App departament css -->
+    <link href="/arquivos/woodprime-mobile-cms.min.css" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/woodprime_blackfriday_mobile.css" rel="stylesheet" type="text/css" />
+    <vtex:template id="02-woodprime-call" />
+    <vtex:contentPlaceHolder id="metaTags-institucional" />
+
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-mobile-header" />
+        </header><!-- /.header -->
+        <vtex.cmc:fullTextSearchBox />
+
+        <main class="main">
+            <vtex:contentPlaceHolder id="banner_blackfriday" />
+
+            <section class="counter_container">
+                <div class="shell">
+                    <div class="counter">
+                        <div class="countdown">
+                            <h3>Ofertas iniciam em:</h3>
+                            <div class="timer">
+                                <div class="clock_item">
+                                    <span id="days"></span> <small>Dias</small>
+                                </div>
+                                <div class="sep">:</div>
+                                <div class="clock_item">
+                                    <span id="hours"></span> <small>Horas</small>
+                                </div>
+                                <div class="sep">:</div>
+                                <div class="clock_item">
+                                    <span id="minutes"></span> <small>Minutos</small>
+                                </div>
+                                <div class="sep">:</div>
+                                <div class="clock_item clock_seconts">
+                                    <span id="seconds"></span> <small>Segundos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="newsletter_blackfriday">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="newsletter_blackfriday" />
+                </div>
+            </section>
+
+
+
+            <section class="black_texto">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="texto_blackfriday01" />
+                </div>
+            </section>
+
+            <section class="black_categorias">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="chamada_categorias" />
+                </div>
+            </section>
+
+            <section class="black_texto">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="texto_blackfriday02" />
+                </div>
+            </section>
+
+            <section class="black_duvidas">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="duvidas_blackfriday" />
+                </div>
+            </section>
+        </main><!-- /.main -->
+
+        <vtex:template id="wood-prime-mobile-footer" />
+    </div><!-- /.wrapper -->
+
+    <vtex:template id="wood-prime-mobile-scripts" />
+
+    <!-- App departament js -->
+    <script type="text/javascript" src="/arquivos/woodprime-mobile-cms.min.js"></script>
+    <script type="text/javascript" src="/arquivos/woodprime_blackfriday.js"></script>
+</body>
+
+</html>

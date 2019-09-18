@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="01-ah-magiore-head" />
+</head>
+
+<body id="ah-home">
+    <vtex:template id="01-ah-magiore-header" />
+
+    <main id="ah-main" role="main">
+        <div class="ah-container">
+
+            <div id="contactForm"></div>
+
+        </div>
+    </main>
+
+    <vtex:template id="01-ah-magiore-footer" />
+    <vtex:template id="01-ah-magiore-scripts" />
+    <vtex.cmc:cssbanners />
+    <script src="arquivos/contactMasterData_v1.16_ptbr.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var storeName = "magiore"; //Indica o nome da conta utilizada na API do MasterData
+            var dataEntity = "CO"; //Indica a sigla da entidade de dados utilizada na API do MasterData
+            var htmlElementId = "contactForm"; //Indica o ID do elemento HTML que receberá o formulário
+            var messageLoading = "Carregando..."; //Mensagem de carregamento do formulário (ao salvar)
+            var messageValidation = "Preencha corretamente todos os campos obrigatórios do formulário."; //Mensagem de validação de formulário
+            var messageSuccess = "Contato realizado com sucesso. Em breve nossa equipe entrará em contato com você. Obrigado."; //Mensagem de sucesso
+            var messageError = "Algum erro aconteceu. Tente novamente mais tarde."; //Mensagem de erro
+
+            FormCreate(storeName, dataEntity, htmlElementId, messageLoading, messageValidation, messageSuccess, messageError);
+        });
+    </script>
+
+</body>
+
+</html>

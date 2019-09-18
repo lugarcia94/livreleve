@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title> Wood Prime -
+        <vtex.cmc:productPageTitle />
+    </title>
+    <vtex:template id="wood-prime-head" />
+    <vtex:template id="02-woodprime-call" />
+    <!-- App product css -->
+    <link href="/arquivos/woodprime-product.min.css?v=2004192305" rel="stylesheet" type="text/css" />
+
+    <!-- Hotjar Tracking Code for http://www.woodprime.com.br/ -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 614025, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-header" />
+        </header><!-- /.header -->
+
+        <main class="main">
+            <div class="section-bread-crumb">
+                <div class="shell">
+                    <vtex.cmc:breadCrumb />
+                    <div style="display: none">
+                        <vtex.cmc:productName />
+                    </div>
+                </div><!-- /.shell -->
+            </div><!-- /.section-bread-crumb -->
+
+            <div class="section-product-infos">
+                <div class="shell">
+                    <div class="product-image">
+                        <flags-component ref="flags"></flags-component>
+
+                        <vtex.cmc:ProductImage />
+
+                        <div class="produc-hover-mensage">
+                            <span> Imagem meramente ilustrativa </span>
+                        </div><!-- /.produc-hover-mensage -->
+                    </div><!-- /.product-image -->
+
+                    <div class="product-details">
+                        <header class="product-header">
+                            <div class="product-rating">
+                                <div id="yv-review-quickreview"></div>
+                            </div><!-- /.product-rating -->
+
+                            <div class="product-brand">
+                                <span>Marca:</span>
+                                <vtex.cmc:brandName />
+                            </div><!-- /.product-brand -->
+
+                            <div class="product-code-reference">
+                                <span>Cod:</span>
+                                <vtex.cmc:skuReference />
+                            </div><!-- /.product-brand -->
+
+                            <h1 class="product-name">
+                                <vtex.cmc:productName />
+                            </h1><!-- /.product-name -->
+                        </header><!-- /.roduct-header -->
+
+                        <div class="product-componente">
+                            <div class="product-left">
+                                <div class="product-price">
+                                    <price-component ref="price"></price-component>
+                                </div>
+                                <!--/.product-price -->
+
+                                <div class="product-quantity">
+                                    <buy-button-component ref="buyButton"></buy-button-component>
+                                </div>
+                                <!--/.product-quantity -->
+
+                                <div class="product-share">
+                                    <span> Compartilhar:</span>
+
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="share-facebook">
+                                                Facebook
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="share-google-plus">
+                                                Google Plus
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="share-whatsapp">
+                                                WhatsApp
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/ .product-share -->
+                            </div>
+                            <!--/.product-left -->
+
+                            <div class="product-right">
+                                <div class="product-dimensions">
+                                    <measures-component ref="measures"></measures-component>
+                                </div>
+                                <!--/.product-dimensions -->
+
+                                <div class="product-shipping">
+                                    <shipping-component ref="shipping"></shipping-component>
+                                </div>
+                                <!--/.product-shipping -->
+
+                                <div class="product-paymentmet">
+                                    <vtex.cmc:OtherPaymentMethod />
+                                </div>
+                                <!--/.product-paymentmet -->
+                            </div>
+                            <!--/.product-right -->
+                        </div><!-- /.product-componente -->
+                    </div><!-- /.product-details -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-product-infos -->
+
+            <div class="section-details">
+                <div class="shell">
+                    <header class="title">
+                        <h2> Informação sobre o produto </h2>
+                    </header><!-- /.title -->
+
+                    <div class="product-scroll">
+                        <div class="product-description">
+                            <header class="description-title">
+                                <h2> Porque este produto é incrível: </h2>
+                            </header><!-- /.title -->
+
+                            <vtex.cmc:ProductDescription />
+                        </div><!-- /.product-description -->
+
+                        <div class="product-specification">
+                            <header class="specification-title">
+                                <h3> Especificações técnicas </h3>
+                            </header><!-- /.title -->
+
+                            <vtex.cmc:productSpecification />
+                        </div><!-- /.product-specification -->
+                    </div><!-- /.product-scroll -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-details -->
+
+            <div class="section-buy-together">
+                <div class="shell">
+                    <buy-together></buy-together>
+                </div><!-- /.shell -->
+            </div><!-- /.section-buy-together -->
+
+            <div class="section-evaluation">
+                <div class="shell">
+                    <header class="title">
+                        <h3> Avaliação sobre o produto </h3>
+                    </header><!-- /.title -->
+
+                    <section class="yv-reviews-container">
+                        <div class="yv-box yv-box-review">
+                            <div id="yv-reviews"></div>
+                        </div><!-- /.yv-box yv-box-review -->
+
+                        <div class="yv-box yv-box-qa">
+                            <h3 class="yv-title">Dúvidas dos consumidores</h3>
+                            <div class="yv-qa"></div>
+                        </div><!-- /.yv-box yv-box-qa -->
+                    </section><!-- /.yv-reviews-container -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-evaluation -->
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4> Assine nossa newsletter </h4>
+                            <p> Receba nossas novidades e lançamentos primeiro. </p>
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div><!-- /.form-row -->
+                    </form><!-- /.form-newsletter -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-newsletter -->
+
+            <div class="section__countdown--product">
+                <div class="shell">
+                    <countdown-product-component ref="countdown"></countdown-product-component>
+                </div><!-- /.shell -->
+            </div><!-- /.section__counter-->
+        </main><!-- /.main -->
+
+        <footer class="footer">
+            <vtex:template id="wood-prime-footer" />
+        </footer><!-- /.footer -->
+    </div><!-- /.wrapper -->
+
+    <vtex:template id="wood-prime-scripts" />
+
+    <!-- App product js -->
+    <script type="text/javascript" src="/arquivos/woodprime-product.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="wood-prime-head" />
+    <link href="/arquivos/woodprime.category.min.css?v=004" rel="stylesheet" type="text/css" />
+    <vtex:template id="02-woodprime-call" />
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-header" />
+        </header><!-- /.header -->
+
+        <main class="main">
+            <div class="section__benner">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="Banner" />
+                    <vtex:contentPlaceHolder id="Texto banner" />
+                </div><!-- /.shell -->
+            </div><!-- /.section__breadcrumbs -->
+
+            <div class="section-products">
+                <div class="shell">
+                    <div class="section__body">
+                        <div class="section__aside">
+                            <category-filters-component></category-filters-component>
+                        </div><!-- /.section__aside -->
+
+                        <div class="section__content">
+                            <category-products-component ref="category"></category-products-component>
+                        </div><!-- /.section__content -->
+                    </div><!-- /.section__body -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-product-infos -->
+
+            <div class="section-textoSeo">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="textoSEO categoria" />
+                </div><!-- /.shell -->
+            </div><!-- /.section-SEO -->
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4> Assine nossa newsletter </h4>
+                            <p> Receba nossas novidades e lançamentos primeiro. </p>
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div><!-- /.form-row -->
+                    </form><!-- /.form-newsletter -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-newsletter -->
+        </main><!-- /.main -->
+
+        <footer class="footer">
+            <vtex:template id="wood-prime-footer" />
+        </footer><!-- /.footer -->
+    </div><!-- /.wrapper -->
+
+    <vtex:template id="wood-prime-scripts" />
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="01-ah-magiore-head" />
+</head>
+
+<body id="ah-product">
+    <div id="ah-app" class="wrapper">
+        <main id="ah-main">
+            <div class="ah-box-data-products product-normal">
+
+                <!-- Zoom -->
+                <section class="ah-zoom-image">
+                    <div>
+                        <vtex.cmc:ProductImage zoom="off" />
+                        <div class="ah-product-video">
+                            <div class="product-video">
+
+                            </div>
+                        </div>
+                        <div class="label" role="group">
+                            <span class="label-colection">
+                                <span class="label-discount" style="display:none;">
+                                    <vtex.cmc:discountHightLight /></span>
+                                <vtex.cmc:HightLight />
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ah-details">
+                    <header class="ah-details-header">
+                        <h1 class="ah-product-name">
+                            <vtex.cmc:productName />
+                        </h1>
+                        <h6 class="ah-product-sku">Código: <span>
+                                <vtex.cmc:skuReference /></span></h6>
+                        <span class="ah-brand"> Marca:
+                            <vtex.cmc:brandName /> </span>
+                        <span class="ah-review">
+                            <a href="#reviews" class="link-ancora">
+                                <vtex.cmc:evaluationRate /></a>
+                        </span>
+                    </header>
+
+                    <div class="col-left">
+                        <div class="product-info">
+                            <h3>Informações do Produto</h3>
+                            <div class="content">
+
+                            </div>
+                        </div>
+                        <!--<div class="ah-seletor-sku">-->
+                        <!--     <vtex.cmc:skuSelection />-->
+                        <!--</div>-->
+
+                    </div>
+
+                    <div class="col-right">
+                        <div class="ah-product-prices">
+
+                            <div class="ah-price-box">
+                                <!--  Component: Sellers -->
+                                <!--<span><vtex.cmc:SellerOptions /></span>-->
+
+                                <!--  Component: Price -->
+                                <span>
+                                    <vtex.cmc:skuPrice /></span>
+
+                            </div><!-- .price-box -->
+
+                            <div id="ah-sku" class="ah-btn-buy">
+                                <!--<vtex.cmc:BuyButton />-->
+                                <div class="quickview__link-product"></div>
+                            </div>
+
+                            <span class="ah-gift-add">
+                                <vtex.cmc:GiftListInsertSkuV2 />
+                            </span>
+
+                        </div>
+
+                        <div class="ah-product-social">
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <div class="addthis_inline_share_toolbox"></div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="data-reviews " hidden="" style="display:none;">
+                    <div id="reviews">
+                        <vtex.cmc:UserReview />
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+    </div>
+
+    <div class="ah-hidden">
+        <vtex.cmc:productSpecification />
+    </div>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59ba830ab78259d5"></script>
+
+    <vtex:template id="01-ah-magiore-scripts" />
+
+
+</body>
+
+</html>
