@@ -1,0 +1,638 @@
+{
+    "orders": [
+        {
+            "package": null,
+            "subjectItemAttachment": {
+                "item": "Criado Mudo Bombê Li...",
+                "totalItems": 2,
+                "extraItems": 1
+            },
+            "cancellationReason": null,
+            "items": [
+                {
+                    "additionalInfo": {
+                        "dimension": {
+                            "cubicweight": 96.81,
+                            "height": 83,
+                            "length": 72,
+                            "weight": 25000,
+                            "width": 54
+                        },
+                        "categoriesIds": "/30/34/",
+                        "productClusterId": "139,152,213,234,241",
+                        "commercialConditionId": "1",
+                        "brandName": "Wood Prime - FS",
+                        "brandId": "2000010",
+                        "offeringInfo": null,
+                        "offeringType": null,
+                        "offeringTypeId": null
+                    },
+                    "sellerSku": "203",
+                    "priceTable": null,
+                    "priceValidUntil": "2019-12-04T02:00:00Z",
+                    "callCenterOperator": null,
+                    "commission": 0,
+                    "freightCommission": 0,
+                    "taxCode": null,
+                    "costPrice": null,
+                    "uniqueId": "E849FD7177DD43FEABD6E158A15CFE81",
+                    "id": "203",
+                    "productId": "250",
+                    "refId": "1132466",
+                    "ean": "9900000047399",
+                    "name": "Criado Mudo Bombê Liso 2 Gavetas - Wood Prime FS 1132466",
+                    "skuName": "Criado Mudo Bombê Liso 2 Gavetas - Wood Prime FS 1132466",
+                    "modalType": null,
+                    "parentItemIndex": null,
+                    "parentAssemblyBinding": null,
+                    "assemblies": [],
+                    "tax": 0,
+                    "priceDefinitions": null,
+                    "price": 87990,
+                    "listPrice": 170990,
+                    "manualPrice": null,
+                    "sellingPrice": 79191,
+                    "orderRewardStatus": null,
+                    "rewardValue": 0,
+                    "isGift": false,
+                    "preSaleDate": null,
+                    "productCategoryIds": "/30/34/",
+                    "productCategories": {
+                        "30": "Quarto",
+                        "34": "Criado Mudo",
+                        "63": "Infantil",
+                        "68": "Criado Mudo"
+                    },
+                    "quantity": 1,
+                    "seller": "1",
+                    "sellerChain": [
+                        "1"
+                    ],
+                    "imageUrl": "http://woodprime.vteximg.com.br/arquivos/ids/157265-120-120/criado-mudo-madeira-branco-duas-gavetas-bombe-1132466.jpg?v=636293413095030000",
+                    "detailUrl": "/criado-mudo-bombe-liso-2-gavetas-wood-prime-fs-1132466/p",
+                    "components": [],
+                    "bundleItems": [],
+                    "attachments": [],
+                    "attachmentOfferings": [
+                        {
+                            "name": "Caracteristicas",
+                            "required": false,
+                            "schema": {
+                                "Personalização": {
+                                    "maximumNumberOfCharacters": 2000,
+                                    "domain": []
+                                }
+                            }
+                        }
+                    ],
+                    "offerings": [],
+                    "priceTags": [
+                        {
+                            "name": "discount@price-1ce675a4-40d3-416d-a670-02eef02ee54a#01c31878-f625-4cdc-a367-fc4ce7506f84",
+                            "value": -8799,
+                            "rawValue": -87.99,
+                            "isPercentual": false,
+                            "identifier": "1ce675a4-40d3-416d-a670-02eef02ee54a"
+                        },
+                        {
+                            "name": "discount@shipping-090a1951-bbf4-4aa9-adad-2b074b5e66c8#3c4700f2-7361-4120-b086-c33f90162eee",
+                            "value": -6245,
+                            "rawValue": -62.45,
+                            "isPercentual": false,
+                            "identifier": "090a1951-bbf4-4aa9-adad-2b074b5e66c8"
+                        }
+                    ],
+                    "availability": "available",
+                    "measurementUnit": "un",
+                    "unitMultiplier": 1
+                },
+                {
+                    "additionalInfo": {
+                        "dimension": {
+                            "cubicweight": 96.81,
+                            "height": 83,
+                            "length": 72,
+                            "weight": 25000,
+                            "width": 54
+                        },
+                        "categoriesIds": "/30/34/",
+                        "productClusterId": "139,152,213,234,241",
+                        "commercialConditionId": "1",
+                        "brandName": "Wood Prime - FS",
+                        "brandId": "2000010",
+                        "offeringInfo": null,
+                        "offeringType": null,
+                        "offeringTypeId": null
+                    },
+                    "sellerSku": "203",
+                    "priceTable": null,
+                    "priceValidUntil": "2019-12-04T02:00:00Z",
+                    "callCenterOperator": null,
+                    "commission": 0,
+                    "freightCommission": 0,
+                    "taxCode": null,
+                    "costPrice": null,
+                    "uniqueId": "E849FD7177DD43FEABD6E158A15CFE81",
+                    "id": "203",
+                    "productId": "250",
+                    "refId": "1132466",
+                    "ean": "9900000047399",
+                    "name": "Criado Mudo Bombê Liso 2 Gavetas - Wood Prime FS 1132466",
+                    "skuName": "Criado Mudo Bombê Liso 2 Gavetas - Wood Prime FS 1132466",
+                    "modalType": null,
+                    "parentItemIndex": null,
+                    "parentAssemblyBinding": null,
+                    "assemblies": [],
+                    "tax": 0,
+                    "priceDefinitions": null,
+                    "price": 87990,
+                    "listPrice": 170990,
+                    "manualPrice": null,
+                    "sellingPrice": 79191,
+                    "orderRewardStatus": null,
+                    "rewardValue": 0,
+                    "isGift": false,
+                    "preSaleDate": null,
+                    "productCategoryIds": "/30/34/",
+                    "productCategories": {
+                        "30": "Quarto",
+                        "34": "Criado Mudo",
+                        "63": "Infantil",
+                        "68": "Criado Mudo"
+                    },
+                    "quantity": 1,
+                    "seller": "1",
+                    "sellerChain": [
+                        "1"
+                    ],
+                    "imageUrl": "http://woodprime.vteximg.com.br/arquivos/ids/157265-120-120/criado-mudo-madeira-branco-duas-gavetas-bombe-1132466.jpg?v=636293413095030000",
+                    "detailUrl": "/criado-mudo-bombe-liso-2-gavetas-wood-prime-fs-1132466/p",
+                    "components": [],
+                    "bundleItems": [],
+                    "attachments": [
+                        {
+                            "name": "Caracteristicas",
+                            "content": {
+                                "Personalização": "Cores - Fs:Branco,Acabamento de Pintura:Fosca"
+                            }
+                        }
+                    ],
+                    "attachmentOfferings": [
+                        {
+                            "name": "Caracteristicas",
+                            "required": false,
+                            "schema": {
+                                "Personalização": {
+                                    "maximumNumberOfCharacters": 2000,
+                                    "domain": []
+                                }
+                            }
+                        }
+                    ],
+                    "offerings": [],
+                    "priceTags": [
+                        {
+                            "name": "discount@price-1ce675a4-40d3-416d-a670-02eef02ee54a#01c31878-f625-4cdc-a367-fc4ce7506f84",
+                            "value": -8799,
+                            "rawValue": -87.99,
+                            "isPercentual": false,
+                            "identifier": "1ce675a4-40d3-416d-a670-02eef02ee54a"
+                        },
+                        {
+                            "name": "discount@shipping-090a1951-bbf4-4aa9-adad-2b074b5e66c8#3c4700f2-7361-4120-b086-c33f90162eee",
+                            "value": -6245,
+                            "rawValue": -62.45,
+                            "isPercentual": false,
+                            "identifier": "090a1951-bbf4-4aa9-adad-2b074b5e66c8"
+                        }
+                    ],
+                    "availability": "available",
+                    "measurementUnit": "un",
+                    "unitMultiplier": 1
+                }
+            ],
+            "sellers": [
+                {
+                    "subSellerId": "1",
+                    "fulfillmentEndpoint": "http://fulfillment.vtexcommerce.com.br/api/fulfillment?sc=1&an=woodprime",
+                    "id": "1",
+                    "name": "Wood Prime",
+                    "logo": ""
+                }
+            ],
+            "giftRegistryData": null,
+            "receiptData": null,
+            "contextData": null,
+            "marketPlaceOrderId": "",
+            "marketPlaceOrderGroup": null,
+            "marketplaceServicesEndpoint": null,
+            "orderFormId": "d0f9ff5a17784d7f922417574e17fd30",
+            "sequence": "556691",
+            "affiliateId": "",
+            "status": "",
+            "callCenterOperator": "",
+            "userProfileId": "5c849fbc-59ff-46fe-80d0-775483dba4fc",
+            "hostName": "woodprime",
+            "creationVersion": null,
+            "creationEnvironment": null,
+            "lastChangeVersion": null,
+            "workflowInstanceId": null,
+            "marketplacePaymentValue": null,
+            "orderId": "965303244626-01",
+            "orderGroup": "965303244626",
+            "state": "payment-pending",
+            "isCheckedIn": false,
+            "sellerOrderId": "00-965303244626-01",
+            "storeId": null,
+            "checkedInPickupPointId": null,
+            "value": 158382,
+            "totals": [
+                {
+                    "id": "Items",
+                    "name": "Total dos Itens",
+                    "value": 175980
+                },
+                {
+                    "id": "Discounts",
+                    "name": "Total dos Descontos",
+                    "value": -17598
+                },
+                {
+                    "id": "Shipping",
+                    "name": "Total do Frete",
+                    "value": 0,
+                    "alternativeTotals": [
+                        {
+                            "id": "AlternativeShippingTotal",
+                            "name": "Alternative Shipping Total",
+                            "value": 12490
+                        },
+                        {
+                            "id": "AlternativeShippingDiscount",
+                            "name": "Alternative Shipping Discount",
+                            "value": -12490
+                        }
+                    ]
+                },
+                {
+                    "id": "Tax",
+                    "name": "Total da Taxa",
+                    "value": 0
+                }
+            ],
+            "clientProfileData": {
+                "email": "09a458fa4db145acbadc2e14f474f162@ct.vtex.com.br",
+                "firstName": "Carolina",
+                "lastName": "Amant Gabiatti",
+                "document": "02687871079",
+                "documentType": "cpf",
+                "phone": "+5551999839876",
+                "corporateName": null,
+                "tradeName": null,
+                "corporateDocument": null,
+                "stateInscription": "",
+                "corporatePhone": null,
+                "isCorporate": false,
+                "profileCompleteOnLoading": false,
+                "profileErrorOnLoading": false,
+                "customerClass": null
+            },
+            "ratesAndBenefitsData": {
+                "rateAndBenefitsIdentifiers": [
+                    {
+                        "id": "1ce675a4-40d3-416d-a670-02eef02ee54a",
+                        "name": "a-vista-desconto-10",
+                        "featured": true,
+                        "description": "a-vista-desconto-10",
+                        "matchedParameters": {
+                            "category@CatalogSystem": "45,30,39,51,74,63,81,86,85,84,73,3,21|inclusive",
+                            "paymentMethodId": "520160"
+                        },
+                        "additionalInfo": null
+                    },
+                    {
+                        "id": "090a1951-bbf4-4aa9-adad-2b074b5e66c8",
+                        "name": "Frete Grátis acima de R$ 1.490,00 (Capitais: São Paulo - SP e Porto alegre - RS)",
+                        "featured": false,
+                        "description": "Frete Grátis acima de R$ 1.490,00 (Capitais: São Paulo - SP e Porto alegre - RS)",
+                        "matchedParameters": {
+                            "zipCode@Shipping": "90540-001",
+                            "category@CatalogSystem": "3,21,30,74,51,45,73,63,81,39|inclusive"
+                        },
+                        "additionalInfo": null
+                    }
+                ],
+                "teaser": []
+            },
+            "shippingData": {
+                "address": {
+                    "addressType": "residential",
+                    "receiverName": "Carolina Amant Gabiatti",
+                    "addressId": "1567370776713",
+                    "isDisposable": false,
+                    "postalCode": "90540-001",
+                    "city": "Porto Alegre",
+                    "state": "RS",
+                    "country": "BRA",
+                    "street": "Rua Marquês do Pombal",
+                    "number": "327",
+                    "neighborhood": "Moinhos de Vento",
+                    "complement": "403",
+                    "reference": null,
+                    "geoCoordinates": [
+                        -51.194175720214844,
+                        -30.019481658935547
+                    ]
+                },
+                "logisticsInfo": [
+                    {
+                        "itemIndex": 0,
+                        "selectedSla": "Normal",
+                        "selectedDeliveryChannel": "delivery",
+                        "addressId": "1567370776713",
+                        "slas": [
+                            {
+                                "id": "Normal",
+                                "deliveryChannel": "delivery",
+                                "name": "Normal",
+                                "deliveryIds": [
+                                    {
+                                        "courierId": "'",
+                                        "warehouseId": "25",
+                                        "dockId": "25",
+                                        "courierName": "Transportadora",
+                                        "quantity": 1,
+                                        "totalListPrice": 0
+                                    }
+                                ],
+                                "shippingEstimate": "35bd",
+                                "shippingEstimateDate": null,
+                                "lockTTL": "10d",
+                                "availableDeliveryWindows": [],
+                                "deliveryWindow": null,
+                                "price": 0,
+                                "listPrice": 6245,
+                                "tax": 0,
+                                "pickupStoreInfo": {
+                                    "isPickupStore": false,
+                                    "friendlyName": null,
+                                    "address": null,
+                                    "additionalInfo": null,
+                                    "dockId": null
+                                },
+                                "pickupPointId": null,
+                                "pickupDistance": 0,
+                                "polygonName": null
+                            }
+                        ],
+                        "shipsTo": [
+                            "BRA"
+                        ],
+                        "itemId": "203",
+                        "deliveryChannels": [
+                            {
+                                "id": "delivery",
+                                "stockBalance": 0
+                            }
+                        ]
+                    },
+                    {
+                        "itemIndex": 1,
+                        "selectedSla": "Normal",
+                        "selectedDeliveryChannel": "delivery",
+                        "addressId": "1567370776713",
+                        "slas": [
+                            {
+                                "id": "Normal",
+                                "deliveryChannel": "delivery",
+                                "name": "Normal",
+                                "deliveryIds": [
+                                    {
+                                        "courierId": "'",
+                                        "warehouseId": "25",
+                                        "dockId": "25",
+                                        "courierName": "Transportadora",
+                                        "quantity": 1,
+                                        "totalListPrice": 0
+                                    }
+                                ],
+                                "shippingEstimate": "35bd",
+                                "shippingEstimateDate": null,
+                                "lockTTL": "10d",
+                                "availableDeliveryWindows": [],
+                                "deliveryWindow": null,
+                                "price": 0,
+                                "listPrice": 6245,
+                                "tax": 0,
+                                "pickupStoreInfo": {
+                                    "isPickupStore": false,
+                                    "friendlyName": null,
+                                    "address": null,
+                                    "additionalInfo": null,
+                                    "dockId": null
+                                },
+                                "pickupPointId": null,
+                                "pickupDistance": 0,
+                                "polygonName": null
+                            }
+                        ],
+                        "shipsTo": [
+                            "BRA"
+                        ],
+                        "itemId": "203",
+                        "deliveryChannels": [
+                            {
+                                "id": "delivery",
+                                "stockBalance": 0
+                            }
+                        ]
+                    }
+                ],
+                "selectedAddresses": [
+                    {
+                        "addressType": "residential",
+                        "receiverName": "Carolina Amant Gabiatti",
+                        "addressId": "1567370776713",
+                        "isDisposable": false,
+                        "postalCode": "90540-001",
+                        "city": "Porto Alegre",
+                        "state": "RS",
+                        "country": "BRA",
+                        "street": "Rua Marquês do Pombal",
+                        "number": "327",
+                        "neighborhood": "Moinhos de Vento",
+                        "complement": "403",
+                        "reference": null,
+                        "geoCoordinates": [
+                            -51.194175720214844,
+                            -30.019481658935547
+                        ]
+                    }
+                ],
+                "availableAddresses": [
+                    {
+                        "addressType": "residential",
+                        "receiverName": "Carolina Amant Gabiatti",
+                        "addressId": "1567370776713",
+                        "isDisposable": false,
+                        "postalCode": "90540-001",
+                        "city": "Porto Alegre",
+                        "state": "RS",
+                        "country": "BRA",
+                        "street": "Rua Marquês do Pombal",
+                        "number": "327",
+                        "neighborhood": "Moinhos de Vento",
+                        "complement": "403",
+                        "reference": null,
+                        "geoCoordinates": [
+                            -51.194175720214844,
+                            -30.019481658935547
+                        ]
+                    }
+                ],
+                "pickupPoints": []
+            },
+            "paymentData": {
+                "giftCards": [],
+                "transactions": [
+                    {
+                        "isActive": true,
+                        "transactionId": "1A59B69F458F4910A52D4F46191038C0",
+                        "merchantName": "WOODPRIME",
+                        "payments": [
+                            {
+                                "id": "F2B2549A69074CBCA77CC6506CBE6595",
+                                "paymentSystem": "520160",
+                                "paymentSystemName": "BOLBRADESCO",
+                                "value": 158382,
+                                "installments": 1,
+                                "connectorResponses": {
+                                    "Tid": "5257953890",
+                                    "ReturnCode": null,
+                                    "Message": null,
+                                    "authId": "5257953890",
+                                    "acquirer": "MercadoPagoV1",
+                                    "message": "pending_waiting_payment"
+                                },
+                                "referenceValue": 158382,
+                                "cardHolder": null,
+                                "cardNumber": null,
+                                "firstDigits": null,
+                                "lastDigits": null,
+                                "cvv2": null,
+                                "expireMonth": null,
+                                "expireYear": null,
+                                "url": "https://www.mercadopago.com/mlb/payments/ticket/helper?payment_id=5257953890&payment_method_reference_id=5046069774&caller_id=257524552&hash=135ae01b-74c6-44df-8d09-897d3b58213e",
+                                "koinUrl": null,
+                                "tid": "5257953890",
+                                "redemptionCode": null,
+                                "giftCardId": null,
+                                "giftCardProvider": null,
+                                "giftCardAsDiscount": null,
+                                "group": "bankInvoice",
+                                "dueDate": null,
+                                "accountId": null,
+                                "parentAccountId": null,
+                                "bankIssuedInvoiceIdentificationNumber": null,
+                                "bankIssuedInvoiceIdentificationNumberFormatted": null,
+                                "bankIssuedInvoiceBarCodeNumber": null,
+                                "bankIssuedInvoiceBarCodeType": null
+                            }
+                        ],
+                        "sharedTransaction": false
+                    }
+                ]
+            },
+            "clientPreferencesData": {
+                "locale": "pt-BR",
+                "optinNewsLetter": true
+            },
+            "commercialConditionData": null,
+            "marketingData": {
+                "utmSource": null,
+                "utmMedium": null,
+                "utmCampaign": null,
+                "utmipage": null,
+                "utmiPart": null,
+                "utmiCampaign": null,
+                "coupon": null,
+                "marketingTags": []
+            },
+            "storePreferencesData": {
+                "countryCode": "BRA",
+                "saveUserData": false,
+                "timeZone": "E. South America Standard Time",
+                "currencyCode": "BRL",
+                "currencyLocale": 1046,
+                "currencySymbol": "R$",
+                "currencyFormatInfo": {
+                    "currencyDecimalDigits": 2,
+                    "currencyDecimalSeparator": ",",
+                    "currencyGroupSeparator": ".",
+                    "currencyGroupSize": 3,
+                    "startsWithCurrencySymbol": true
+                }
+            },
+            "openTextField": null,
+            "invoiceData": null,
+            "itemMetadata": null,
+            "taxData": null,
+            "customData": null,
+            "hooksData": null,
+            "changeData": null,
+            "subscriptionData": null,
+            "salesChannel": "1",
+            "followUpEmail": "2305d61e00f14dedb58e5cab49c584e0@ct.vtex.com.br",
+            "creationDate": "2019-09-30T01:54:06.9971434Z",
+            "lastChange": "2019-09-30T01:54:13.0847148Z",
+            "timeZoneCreationDate": "2019-09-29T22:54:06.9971434",
+            "timeZoneLastChange": "2019-09-29T22:54:13.0847148",
+            "isCompleted": true,
+            "merchantName": null,
+            "userType": "",
+            "roundingError": 0,
+            "allowEdition": false,
+            "allowCancellation": false,
+            "isUserDataVisible": false,
+            "allowChangeSeller": false
+        }
+    ],
+    "ordersUrl": "http://www.woodprime.com.br/account#/orders",
+    "orderGroup": "965303244626",
+    "subjectItemAttachment": {
+        "item": "Criado Mudo Bombê Li...",
+        "totalItems": 2,
+        "extraItems": 1
+    },
+    "split": false,
+    "totalValue": 158382,
+    "callCenterOperatorData": null,
+    "_accountInfo": {
+        "HostName": "woodprime",
+        "MainAccountName": "woodprime",
+        "IsPersisted": true,
+        "IsRemoved": false,
+        "Id": "7225bf5a-00e2-4661-98c2-dc79cdb4ef09",
+        "Cnpj": "01940955000191",
+        "CompanyName": "Wood Prime",
+        "TradingName": "Wood Prime",
+        "AccountName": "woodprime",
+        "DefaultUrl": null,
+        "Address": "RUA OLIMPIO LOPES 311, wood prime",
+        "Number": null,
+        "Complement": null,
+        "District": null,
+        "City": "Londrina",
+        "State": "PR",
+        "PostalCode": "86046-230",
+        "Country": "Brasil",
+        "Telephone": "4333437800",
+        "IsActive": true,
+        "Sponsor": "297b7ab7-8ff3-45be-a627-1c32e987d269",
+        "Logo": "Logo-wood-prime-2019.jpg",
+        "AppId": "1a2986c2-2e63-4a26-8e07-3ca898afb8c7",
+        "IsOperating": true,
+        "LV": "LV-1001095",
+        "Sigla": null
+    }
+}
