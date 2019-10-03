@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="initial-scale=1.0"> -->
+    <!-- So that mobile webkit will display zoomed in -->
+    <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!-- disable auto telephone linking in iOS -->
+    <title>{{orders.0.sellers.0.name}}</title>
+    <style>
+        body>table>tbody,
+        body>table>tbody>tr {
+            max-width: 100%;
+            display: block;
+        }
+
+        table td {
+            max-width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block
+        }
+    </style>
+</head>
+
+
+<body style="font-family: Arial, sans-serif; color: #888888;">
+    <table style="width: 100%; max-width: 600px; display: block; margin: 0 auto; font-family: Arial, sans-serif">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td><img style="max-width: 100%; margin-bottom: 35px;"
+                                src="https://woodprime.vteximg.com.br/arquivos/email_logo.png" alt=""></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 0 55px 50px; font-family: Arial, sans-serif">
+                <strong style="color: #000; font-size: 16px;">Nota fiscal emitida</strong> <br>
+                <h2 style="font-size: 24px; color: #c8ba9f; margin: 0;">Nº do pedido: {{orderId}}</h2> <br>
+                <p style="margin: 0 0 20px; font-size: 14px; font-weight: bold; color: #000;">Olá
+                    {{clientProfileData.firstName}}.</p>
+                <p style="font-size: 12px; color: #656565;">
+                    Já emitimos, sua nota, já, já despachamos para seu lar! <br>
+                    Seu sonho está quase se realizando. :)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block">
+                <img style="margin: 0 auto 60px; display: block;"
+                    src="https://woodprime.vteximg.com.br/arquivos/trk_nota_fiscal_emitida.png" alt="">
+            </td>
+        </tr>
+
+    </table>
+
+    <table
+        style="width: 100%; max-width: 600px; display: block; margin: 0 auto 60px; padding: 0 55px; width:calc(100% - 110px);">
+        <tr>
+            <td style="width: 100%; display: block;">
+                <a style="background: #247471; font-family: Arial, sans-serif; text-decoration: none; color: #ffffff; display: block; text-align: center; height: 60px; line-height: 60px; border-radius: 4px;"
+                    href="https://www.{{_accountInfo.HostName}}.com.br/account/orders" class="button">acompanhe através
+                    do site</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block; padding-bottom: 20px;">
+                <a href="#" style="display: block; text-align: center; text-decoration: none;">
+                    <p
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; text-align: center; color: #000; text-decoration: none;">
+                        Avalie-nos agora</p>
+                    <img style="max-width: 100%; display: block; margin: 0 auto"
+                        src="https://www.woodprime.com.br/arquivos/email_stars.png" alt="">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #888888; margin-bottom: 20px;">
+                    * IMPORTANTE: Caso exista alguma
+                    pendencia em seu pedido
+                    nossa equipe entrará em
+                    contao para sana-la.</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="width: 100%; display: block;">
+                <a href="https://newsurvey.ebit.com.br/Survey/Open/50218?storeId=50218&amp;bannerEmail=true&amp;transactionId={{orders.0.orderId}}&amp;email={{orders.0.clientProfileData.email}}&amp;zipCode={{orders.0.shippingData.address.postalCode}}&amp;totalSpent={{formatCurrencyWithoutDecimals orders.0.totals.0.value}}&amp;productName={{#each orders.0.items}}{{#if @index}}|{{/if}}{{name}}{{/each}}&amp;value={{#each orders.0.items}}{{#if @index}}|{{/if}}{{formatCurrencyWithoutDecimals price}}{{/each}}&amp;quantity={{#each orders.0.items}}{{#if @index}}|{{/if}}{{quantity}}{{/each}}&amp;parcels={{#each orders.0.paymentData.transactions.0.payments}}{{#if @index}}|{{/if}}{{installments}}{{/each}}&amp;deliveryTax={{formatCurrencyWithoutDecimals orders.0.totals.2.value}}&amp;ean={{#each orders.0.items}}{{#if @index}}|{{/if}}{{ean}}{{/each}}&amp;sku={{#each orders.0.items}}{{#if @index}}|{{/if}}{{sellerSku}}{{/each}}"
+                    style="display: block; margin-bottom: 40px;">
+                    <img width="468" height="60"
+                        src="https://www.{{_accountInfo.HostName}}.com.br/arquivos/wood-prime-transacional-ebit.png"
+                        border="0" alt="O que você achou dessa compra?">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #c8ba9f; margin: 0 0 20px 0; text-align: center;">
+                    - Central de
+                    Atendimento -</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 25px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_phone.png" alt=""> 0800 042 0103</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_mail.png" alt="">
+                    atendimento@woodprime.com.br 
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_whatsapp.png" alt="">
+                    (43) 99968-6699
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 40px;">
+                    Horário de Atendimentode Seg. à Sex. 08h30 às 18h. | Sáb. 09h às 12h
+                </p>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

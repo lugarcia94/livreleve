@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+    <head>
+        <title>Loja de Móveis e Decorações Online | Cadeira, Mesas, Criado-Mudo e muito mais. </title>
+        <vtex:template id="wood-prime-head"/>
+        
+        <!-- App home css -->
+        <link href="/arquivos/woodprime-home.min.css?v=002" rel="stylesheet" type="text/css"/>
+        <link href="/arquivos/style-blog.css" rel="stylesheet" type="text/css"/> 
+        <vtex:template id="02-woodprime-call" />
+
+	
+        <!-- Hotjar Tracking Code for http://www.woodprime.com.br/ -->
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:614025,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+        <style>
+        .counter span:nth-child(1){
+  display: none !important;
+}
+.section-banners-top .owl-carousel {
+            display: block !important;
+        }
+        .slider .owl-carousel {
+            display: block !important;
+        }
+#hidetext {
+  display: none;
+}
+        </style>
+    </head>
+
+    <body>
+<div class="wrapper" id="woodprime-app">
+            <header class="header">
+                <vtex:template id="wood-prime-header-lid"/>
+            </header><!-- /.header -->
+
+            <main class="main">
+                <div class="slider">
+                    <div class="slider-clip owl-carousel">
+                        <vtex:contentPlaceHolder id="slider-main"/>
+                    </div><!-- /.slider-clip owl-carousel -->
+
+                    <div class="shell">
+                        <div class="slider-dots">
+                            <a href="#" class="slider-prev">
+                                <span>slide prev</span>
+                            </a>
+
+                            <a href="#" class="slider-next">
+                                <span>slide next</span>
+                            </a>
+                        </div><!-- /.slider-dots -->
+                    </div><!-- /.shell -->
+                </div><!-- /.slider -->
+
+                <div class="section-pit-bar">
+                    <div class="shell">
+                        <div class="cols">
+                            <div class="col col-1of3">
+                                <i class="ico ico-truck"></i>
+                                <span>
+                                    <strong>Frete grátis</strong> várias regiões acima de R$ 1.499*
+                                </span>
+                            </div><!-- /.col.col-1of3 -->
+
+                            <div class="col col-1of3">
+                                <i class="ico ico-money"></i>
+                                <span>
+                                    Parcela em até <strong>10x sem juros</strong> 
+                                </span>
+                            </div><!-- /.col.col-1of3 -->
+
+                            <div class="col col-1of3">
+                                <i class="ico ico-ticket"></i>
+                                <span>
+                                    10% de desconto <strong>no boleto</strong> 
+                                </span>
+                            </div><!-- /.col.col-1of3 -->
+                        </div><!-- /.cols -->
+                    </div><!-- /.shell -->
+                </div><!-- /.section-pit-bar -->
+
+                <div class="section__counter">
+                    <div class="shell">
+                        <countdown-shelf-component></countdown-shelf-component>
+                    </div><!-- /.shell -->
+                </div><!-- /.section__counter-->
+
+                <div class="section-banners-top">
+                    <div class="shell">
+                        <div class="banners-clip owl-carousel">
+                            <vtex:contentPlaceHolder id="section-banners-top"/>
+                        </div><!-- /.slider-clip -->
+                    </div><!-- /.shell -->
+                </div><!-- /.section-products-bottom -->
+
+                <div class="section-products">
+                    <div class="shell">
+                        <div class="slider-products">
+                            <div class="slider-clip">
+                                <vtex:contentPlaceHolder id="section-products-01"/>
+                            </div><!-- /.slider-clip -->
+                        </div><!-- /.slider-products -->
+                    </div><!-- /.shell -->
+                </div><!-- /.section-products -->
+
+                <div class="section-banners-middle">
+    <div class="shell">
+        <div class="banners-clip">
+            <div class="banner-full">
+                <vtex:contentPlaceHolder id="bannerFullMiddle"/>
+            </div>
+            <div class="wrapper-banners">
+                <div class="banner-image">
+                    <vtex:contentPlaceHolder id="firstBannerMiddle"/>
+                </div>
+                <div class="banner-image">
+                     <vtex:contentPlaceHolder id="secondBannerMiddle"/>
+                </div>
+                <div class="banner-image">
+                     <vtex:contentPlaceHolder id="lastBannerMiddle"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <div class="section-products">
+                    <div class="shell">
+                        <div class="slider-products">
+                            <div class="slider-clip">
+                                <vtex:contentPlaceHolder id="section-products-02"/>
+                            </div><!-- /.slider-clip -->
+                        </div><!-- /.slider-products -->
+                    </div><!-- /.shell -->
+                </div><!-- /.section-products -->
+
+                <div class="section-banners-bottom">
+                    <div class="shell">
+                        <div class="banners-clip">
+                            <vtex:contentPlaceHolder id="section-banners-bottom"/>
+                        </div><!-- /.slider-clip -->
+                    </div><!-- /.shell -->
+                </div><!-- /.section-products-bottom -->
+
+                <div class="section-products">
+                    <div class="shell">
+                        <div class="slider-products">
+                            <div class="slider-clip">
+                                <vtex:contentPlaceHolder id="section-products-03"/>
+                            </div><!-- /.slider-clip -->
+                        </div><!-- /.slider-products -->
+                    </div><!-- /.shell -->
+                </div><!-- /.section-products -->
+
+                <div class="section__comments">
+                    <div class="shell"> 
+                        <header class="header__title">
+                            <h2> No Blog </h2>
+                        </header><!-- /.header__title -->
+                        <div class="list__container">
+                            <ul class="list__post">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section__comments">
+                    <div class="shell"> 
+                        <header class="header__title">
+                            <h2> O que dizem sobre nós </h2>
+                        </header><!-- /.header__title -->
+                
+                        <div clas="content__comments">
+                            <ul class="list__comment">
+                                <li class="col">
+                                    <div class="comment-star">
+                                        <span class="evaluation-star">
+                                            <i style="width: 5%;"></i>
+                                        </span>
+                                    </div><!-- /.comment-star-->
+                            
+                                    <div class="text-comment">
+                                        <blockquote>
+                                          <p>Produtos muito bons. Achei muito importante o cuidado com os produtos entregues, todos bem embalados e bem protegidos.</p>
+                                        </blockquote>
+                                    </div>
+                                    <!-- /.text-comment -->
+                            
+                                    <div class="author">
+                                        <i class="ico ico-user"></i>
+                                        <strong>	Domingos Tondolo</strong>
+                                        <span> 03/09/2019 </span>
+                                    </div>
+                                    <!-- /.author -->
+                                </li>
+                            
+                                <li class="col">
+                                    <div class="comment-star">
+                                        <span class="evaluation-star">
+                                            <i style="width: 5%;"></i>
+                                        </span>
+                                    </div><!-- /.comment-star-->
+                            
+                                    <div class="text-comment">
+                                        <p>Produto com acabamento muito bem feito. Exatamente como proposto no site.</p>
+                                    </div><!-- /.text-comment -->
+                            
+                                    <div class="author">
+                                        <i class="ico ico-user"></i>
+                                        <strong> Francine Mattos </strong>
+                                        <span> 30/08/2019 </span>
+                                    </div>
+                                    <!-- /.author -->
+                                </li>
+                            
+                                <li class="col">
+                                    <div class="comment-star">
+                                        <span class="evaluation-star">
+                                            <i style="width: 5%;"></i>
+                                        </span>
+                                    </div><!-- /.comment-star-->
+                            
+                                    <div class="text-comment">
+                                        <p>Sofá lindo, confortável e com tecido veludo de ótima qualidade!!O Chesterfield tem um toque estiloso !!</p>
+                                    </div><!-- /.text-comment -->
+                            
+                                    <div class="author">
+                                        <i class="ico ico-user"></i>
+                                        <strong> Marilda Motta</strong>
+                                        <span> 29/08/2019 </span>
+                                    </div>
+                                    <!-- /.author -->
+                                </li>
+                            </ul><!-- /.list__comment -->
+                        </div><!-- /.content__comments -->
+                    </div><!-- /.shell -->
+                </div><!-- /.section__comments -->
+                
+                <div class="section__comments bgtransparent dynamicsection">
+                    <div class="shell">
+                        <header class="header__title">
+                            <h2><vtex:contentPlaceHolder id="tituloinstitucional"/></h2></header>
+                        <div clas="content__comments">
+                            <ul class="list__comment">
+                                <li class="col fullwidth">
+                                    <div class="text-comment">
+                                        <p><vtex:contentPlaceHolder id="descinstitucional"/></p>
+
+                                        <div id="hidetext">
+                                            <p><vtex:contentPlaceHolder id="hidedescinstitucional"/></p>
+                                        </div>
+                                        
+                                        <a href="#" id="btnsaibamais" target="_blank" class="btnglobal">
+                                           <vtex:contentPlaceHolder id="botaoinstitucional"/>
+                                        </a>
+                                        
+                                        </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section__instagram">
+                    <div class="shell">
+                        <instagram-component></instagram-component>
+                    </div><!-- /.shell -->
+                </div><!-- /.section__instagram -->
+
+                <div class="section-newsletter">
+                    <div class="shell">
+                        <form class="form-newsletter">
+                            <div class="form-row">
+                                <h4>Assine nossa newsletter</h4>
+                                <p>Receba nossas novidades e lançamentos primeiro.</p>
+                            </div><!-- /.form-row -->
+                            
+                            <div class="form-row">
+                                <form-newsletter></form-newsletter>
+                            </div><!-- /.form-row -->
+                        </form><!-- /.form-newsletter -->
+                    </div><!-- /.shell -->
+                </div><!-- /.section-newsletter -->
+            </main><!-- /.main -->
+
+            <footer class="footer">
+                <vtex:template id="wood-prime-footer"/>
+            </footer><!-- /.footer -->
+        </div><!-- /.wrapper -->
+
+        <vtex:template id="wood-prime-scripts"/>
+        
+        <!-- App home js -->
+        
+        <!--
+         <script type="text/javascript" src="/arquivos/woodprime-app-components.min.js?v=004"></script>
+         -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript" src="/arquivos/scripts-blog.js"></script>
+        
+          <script>
+          /*
+             var sprev = document.querySelector(".slider-prev");
+                var snext = document.querySelector(".slider-next");
+                var sliders = document.querySelectorAll(".slider .box-banner img");
+                
+                if(sliders.length = 1){
+                  sprev.style.display = 'none';
+                  snext.style.display = 'none';
+                }
+                */
+         </script>
+         <script>
+             	if ($('.slider .slider-clip .box-banner').length == 1)
+			$('.slider .shell .slider-dots').addClass('hidden');
+
+		$('.slider .slider-clip.owl-carousel').owlCarousel({
+		    loop: true,
+		    nav: false,
+		    dots: true,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		    }
+		});
+
+		$('.slider').on('click', '.slider-dots .slider-next', function(event) {
+            event.preventDefault();
+            $('.slider .slider-clip.owl-carousel').trigger('next.owl.carousel');
+        });
+
+        $('.slider').on('click', '.slider-dots .slider-prev', function(event) {
+            event.preventDefault();
+            $('.slider .slider-clip.owl-carousel').trigger('prev.owl.carousel');
+        });
+         </script>
+         <script>
+             $('.section-banners-top .banners-clip').owlCarousel({
+		    loop: true,
+		    nav: true,
+		    dots: true,
+		    margin: 20,
+		    responsive:{
+		        0:{
+		            items:2
+		        },
+		    }
+		});
+         </script>
+    </body>
+</html>

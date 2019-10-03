@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="initial-scale=1.0"> -->
+    <!-- So that mobile webkit will display zoomed in -->
+    <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!-- disable auto telephone linking in iOS -->
+    <title>{{orders.0.sellers.0.name}}</title>
+    <style>
+        body>table>tbody,
+        body>table>tbody>tr {
+            max-width: 100%;
+            display: block;
+        }
+
+        table td {
+            max-width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block
+        }
+    </style>
+</head>
+
+
+<body style="font-family: Arial, sans-serif; color: #888888;">
+    <table style="width: 100%; max-width: 600px; display: block; margin: 0 auto; font-family: Arial, sans-serif">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td><img style="max-width: 100%; margin-bottom: 35px;"
+                                src="https://woodprime.vteximg.com.br/arquivos/email_logo.png" alt=""></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 0 55px 50px; font-family: Arial, sans-serif">
+                <strong style="color: #000; font-size: 16px;">Pedido enviado</strong> <br>
+                <h2 style="font-size: 24px; color: #c8ba9f; margin: 0;">Nº do pedido: {{orderId}}</h2> <br>
+                <p style="margin: 0 0 20px; font-size: 14px; font-weight: bold; color: #000;">Olá
+                    {{clientProfileData.firstName}}.</p>
+                <p style="font-size: 14px; color: #656565;">
+                    <strong style="font-size: 18px">Já esta quase aí...</strong> <br>
+                    Seu pedido foi enviado! <br>
+                    <br>
+                    Informamos que suas peças foram coletadas, <br>
+                    e já estão em posse da Transportadora.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block">
+                <img style="margin: 0 auto 60px; display: block; margin: 0 55px;"
+                    src="https://woodprime.vteximg.com.br/arquivos/trk_pedido_em_transporte.png" alt="">
+            </td>
+        </tr>
+
+    </table>
+
+    <table
+        style="width: 100%; max-width: 600px; display: block; margin: 0 auto 60px; padding: 0 55px; width:calc(100% - 110px);">
+        <tr>
+            <td style="width: 100%; display: block;">
+                <a style="background: #247471; margin: 0 55px; font-family: Arial, sans-serif; text-decoration: none; color: #ffffff; display: block; text-align: center; height: 60px; line-height: 60px; border-radius: 4px;"
+                    href="https://www.{{_accountInfo.HostName}}.com.br/account/orders" class="button">acompanhe através
+                    do site</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 100%; display: block; padding: 0 55px; width: calc(100% - 110px);">
+                <h2 style="font-size: 24px; color: #c8ba9f; font-family: Arial, sans-serif">IMPORTANTE</h2>
+                <p style="font-size: 12px; color: #888888; font-family: Arial, sans-serif"><strong>A Wood Prime possui
+                        um seguro contra avarias no
+                        transporte.</strong> <br>
+                    Para sua eficácia, os produtos devem ser conferidos no ato da entrega. <br>
+                    <br>
+                    Por isso, orientamos nossos clientes a conferirem seus produtos no momento do recebimento, de forma
+                    <br>
+                    minuciosa, abrindo a caixa totalmente e desembalando a peça de suas proteções. <br>
+                    <br>
+                    Na possibilidade de constatar qualquer irregularidade, não receba o produto, recusando-o e <br>
+                    devolvendo-o para a transportadora no ato da entrega e notificando no verso do conhecimento como:
+                    <br>
+                    <br>
+                    Avaria no Transporte. Em seguida, comunique nossa central de atendimento imediatamente. <br>
+                    <br>
+                    É imprescindível que verifique sua mercadoria no ato da entrega, pois não nos responsabilizaremos
+                    <br>
+                    por avarias de transporte detectadas posteriormente ou após a liberação do entregador. <br>
+                    <br>
+                    Caso não seja o Sr. Ou a Sra. a receber os produtos, pedimos que oriente o responsável pelo <br>
+                    recebimento a seguir os mesmos procedimentos.</p>
+                <h3 style="font-size: 14px; color: #c8ba9f; font-family: Arial, sans-serif">O QUE PRECISA SABER SOBRE A
+                    ENTREGA?</h3>
+                <p style="font-size: 12px; color: #888888; font-family: Arial, sans-serif">
+                    1. HORÁRIO DE ENTREGA: Nossas entregas são realizadas de segunda-feira à sexta-feira, das 08hs00min
+                    as 18hs00min, exceto feriados locais e nacionais. Não realizamos agendamentos de entrega. <br>
+                    <br>
+                    3. SERVIÇO DE ENTREGA: O serviço de entrega do produto não engloba eventuais serviços de
+                    desmontagens e montagens e, tampouco, inclui o transporte de produtos por escadas ou guindastes, em
+                    locais que dificultem a entrega ou que possam acarretar danos à mercadoria, ficando o cliente ciente
+                    de que eventuais custos para isso deverão ser por ele suportados. <br>
+                    <br>
+                    4. INSTALAÇÃO E MONTAGEM: Não nos responsabilizamos pela instalação e montagem de móveis e/ou
+                    decorações.Obs.: informamos ainda que é de total responsabilidade do Cliente qualquer necessidade de
+                    instalação de acessórios para utilização do produto. <br>
+                    <br>
+                    5. DIMENSÕES DO PRODUTO: É muito importante se atentar para as dimensões dos produtos, pois é
+                    responsabilidade do Cliente, caso o produto tenha dimensões superiores ao local de acesso da entrega
+                    dificultando ou impossibilitando que a mesma seja concluída. <br>
+                    <br>
+                    6. PRAZO DE ENTREGA: Nosso prazo de entrega passa a contar a partir da aprovação do pagamento do
+                    pedido. Para pedidos de boleto bancário, o prazo para envio da confirmação pelo banco e de até três
+                    dias úteis. <br>
+                    <br>
+                    7. RECEBIMENTO DO PRODUTO: A entrega só será realizada, caso haja uma pessoa autorizada no local
+                    (portando documento de identificação com foto) para receber o item, pois é preciso checar, no ato da
+                    entrega, se a mercadoria está conforme o solicitado. Se o produto estiver em perfeitas condições,
+                    assine o Comprovante de Recebimento.Obs.: É importante que o documento seja assinado e datado. <br>
+                    <br>
+                    8. AUSÊNCIA NO LOCAL DE ENTREGA: Em caso de ausência na hora da entrega, a transportadora realizará
+                    mais duas (2) tentativas. Caso não tenha sucesso, o produto retornará ao Centro de Distribuição.
+                    <br>
+                    <br>
+                    9. ENTREGA PARCIAL: Caso um pedido contenha mais de um produto, pode ocorrer que os itens sejam
+                    entregues separadamente. Esta situação está relacionada ao tamanho do produto e sua disponibilidade
+                    em nosso estoque. <br>
+                    <br>
+                    10. ATRASO DE ENTREGA: Alguns fatores podem ocasionar um atraso na entrega, como demora na liberação
+                    do pedido por parte da administradora do cartão de crédito, inconsistência de dados fornecidos pelo
+                    cliente, ausência no local de entrega, recusa no recebimento por terceiros, além de fenômenos
+                    naturais. <br>
+                    <br>
+                    Atenciosamente,
+                </p>
+                <img style="max-width: 100%; display: block; "
+                    src="https://www.woodprime.com.br/arquivos/email_equipe_wp.png" alt="">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #c8ba9f; margin: 0 0 20px 0; text-align: center;">
+                    - Central de
+                    Atendimento -</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 25px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_phone.png" alt=""> 0800 042 0103</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_mail.png" alt="">
+                    atendimento@woodprime.com.br 
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_whatsapp.png" alt="">
+                    (43) 99968-6699
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 40px;">
+                    Horário de Atendimentode Seg. à Sex. 08h30 às 18h. | Sáb. 09h às 12h
+                </p>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

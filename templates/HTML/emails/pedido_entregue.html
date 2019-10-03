@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="initial-scale=1.0"> -->
+    <!-- So that mobile webkit will display zoomed in -->
+    <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!-- disable auto telephone linking in iOS -->
+    <title>{{orders.0.sellers.0.name}}</title>
+    <style>
+        body>table>tbody,
+        body>table>tbody>tr {
+            max-width: 100%;
+            display: block;
+        }
+
+        table td {
+            max-width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block
+        }
+    </style>
+</head>
+
+
+<body style="font-family: Arial, sans-serif; color: #888888;">
+    <table style="width: 100%; max-width: 600px; display: block; margin: 0 auto; font-family: Arial, sans-serif">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td><img style="max-width: 100%; margin-bottom: 35px;"
+                                src="https://woodprime.vteximg.com.br/arquivos/email_logo.png" alt=""></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 0 55px 50px; font-family: Arial, sans-serif">
+                <strong style="color: #000; font-size: 16px;">Seu pedido foi entregue</strong> <br>
+                <h2 style="font-size: 24px; color: #c8ba9f; margin: 0;">Nº do pedido: {{orderId}}</h2> <br>
+                <p style="margin: 0 0 20px; font-size: 14px; font-weight: bold; color: #000;">Olá
+                    {{clientProfileData.firstName}}.</p>
+                <p style="font-size: 14px; color: #656565; font-family: Arial, sans-serif">
+                    Seu produto chegou lindo e maravilhoso, agora é só desfrutar de um sonho realizado! <br>
+                    <br>
+                    Esperamos que sua experiencia tenha sido incrível e que possa nos ver sempre no
+                    <a style="color: #257572;" href="https://www.facebook.com/woodprimemoveis/">facebook</a>, <a
+                        style="color: #257572;" href="https://www.instagram.com/woodprime/">instagram</a>, <a
+                        style="color: #257572;" href="https://br.pinterest.com/woodprime/">pinterest</a>, <a
+                        style="color: #257572;" href="https://www.linkedin.com/company/woodprime/">linkedin</a>, <a
+                        style="color: #257572;" href="https://blog.woodprime.com.br/">blog</a> ou em nosso
+                    <a style="color: #257572;" href="https://www.woodprime.com.br/">site</a>
+                    estamos sempre pensando em algo para deixar sua vida mais feliz e seu lar mais
+                    aconchegante e maravilhoso.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block">
+                <img style="margin: 0 auto 60px; display: block;"
+                    src="https://woodprime.vteximg.com.br/arquivos/trk_pedido_entregue.png" alt="">
+            </td>
+        </tr>
+
+    </table>
+
+    <table
+        style="width: 100%; max-width: 600px; display: block; margin: 0 auto 60px; padding: 0 55px; width:calc(100% - 110px);">
+        <tr>
+            <td style="width: 100%; display: block;">
+                <a style="background: #247471; margin: 0 0 60px; font-family: Arial, sans-serif; text-decoration: none; color: #ffffff; display: block; text-align: center; height: 60px; line-height: 60px; border-radius: 4px;"
+                    href="https://www.{{_accountInfo.HostName}}.com.br/account/orders" class="button">acompanhe através
+                    do site</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="display: block; width: 100%;">
+                <strong style="font-size: 16px; color: #000; font-family: Arial, sans-serif">Você já ganhou para sua
+                    próxima compra!</strong>
+                <span
+                    style="font-size: 24px; font-weight: bold; display:block; color: #c8ba9f; text-transform: uppercase; font-family: Arial, sans-serif">05%
+                    de
+                    desconto</span>
+                <span style="font-size: 14px; color: #000; font-family: Arial, sans-serif">Basta adicionar ao carrinho o
+                    código EUVOLTEI que seu
+                    desconto será ativado
+                    automaticamente.</span>
+                <p
+                    style="font-size: 12px; color: #888888; display: block; margin-bottom: 30px; font-family: Arial, sans-serif">
+                    REGRAS: <br>
+                    - O desconto aplica-se a todos os produtos em nosso site. <br>
+                    - Pedido mínimo de R$ 100,00.
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 100%; display: block; padding-bottom: 20px;">
+                <a href="#" style="display: block; text-align: center; text-decoration: none;">
+                    <p
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; text-align: center; color: #000; text-decoration: none;">
+                        Avalie-nos agora</p>
+                    <img style="max-width: 100%; display: block; margin: 0 auto"
+                        src="https://www.woodprime.com.br/arquivos/email_stars.png" alt="">
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 100%; display: block">
+                <img style="margin: 0 auto 60px; display: block;"
+                    src="https://woodprime.vteximg.com.br/arquivos/email_premio.jpg" alt="">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #c8ba9f; margin: 0 0 20px 0; text-align: center;">
+                    - Central de
+                    Atendimento -</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 25px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_phone.png" alt=""> 0800 042 0103</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_mail.png" alt="">
+                    atendimento@woodprime.com.br 
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_whatsapp.png" alt="">
+                    (43) 99968-6699
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 40px;">
+                    Horário de Atendimentode Seg. à Sex. 08h30 às 18h. | Sáb. 09h às 12h
+                </p>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

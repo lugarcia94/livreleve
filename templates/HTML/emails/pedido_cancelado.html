@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="initial-scale=1.0"> -->
+    <!-- So that mobile webkit will display zoomed in -->
+    <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!-- disable auto telephone linking in iOS -->
+    <title>{{orders.0.sellers.0.name}}</title>
+    <style>
+        table tbody,
+        table tr {
+            max-width: 100%;
+            display: block;
+        }
+
+        table td {
+            max-width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+    </style>
+</head>
+
+<body style="font-family: Arial, sans-serif; color: #888888;">
+    <table style="width: 100%; max-width: 600px; display: block; margin: 0 auto; font-family: Arial, sans-serif"
+        align="center" cellpadding="0" cellspacing="0" width="100%">
+        <tbody style="max-width: 100%; display: block">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td><img style="max-width: 100%; margin-bottom: 35px;"
+                                    src="https://www.woodprime.com.br/arquivos/email_logo.png" alt=""></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0 55px 50px; font-family: Arial, sans-serif">
+                    <strong style="color: #000; font-size: 16px;">Pedido cancelado</strong> <br>
+                    <h2 style="font-size: 24px; color: #c8ba9f; margin: 0;">Nº do pedido: {{orderId}}</h2> <br>
+                    <p style="margin: 0; font-size: 14px; font-weight: bold; color: #000;">Olá
+                        {{clientProfileData.firstName}}.</p>
+                    <p style="font-size: 12px; color: #656565;">
+                        <strong style="font-size: 18px; color: #000000; display: block;">É uma pena,</strong>
+                        mas seu pedido foi cancelado. <br> <br>
+                        Apesar de seu pedido tter sido cancelado, esperamos te ver em breve em <br>
+                        nosso site ou loja para servi-lo ainda melhor.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; display: block">
+                    <img style="margin: 0 auto 60px; display: block;"
+                        src="https://www.woodprime.com.br/arquivos/trk_pedido_cancelado.png" alt="">
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <table style="width: 100%; max-width: 600px; display: block; margin: 0 auto 60px">
+        <tbody style="max-width: 100%; display: block">
+            <tr>
+                <td style="width: 100%; display: block">
+                    <p style="font-family: Arial, sans-serif; text-align: center; font-size: 12px; color: #000000">
+                        <strong>Você pode refazer sua compra com poucos cliques </strong> <br>
+                        para gerar um novo boleto ou esolher outra forma de pagamento:
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table
+        style="background: #e1e1e1; padding: 30px 45px; width: 100%; width:calc(100% - 90px); max-width: 600px; display: block; margin: 0 auto 30px;">
+        <tbody style="max-width: 100%; display: block">
+            <tr>
+                <td style="padding: 10px; vertical-align: middle;"><img
+                        src="https://www.woodprime.com.br/arquivos/mail_stp_01.png" alt=""></td>
+                <td
+                    style="padding: 10px; vertical-align: middle; font-family: Arial, sans-serif; font-size: 16px; color: #000000">
+                    <strong>Acesse o site com seu login e senha <br> <br>
+
+                        Após acessar o painel da sua conta, <br>
+                        clique no menu lateral pedidos</strong></td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: middle;"><img
+                        src="https://www.woodprime.com.br/arquivos/mail_stp_02.png" alt=""></td>
+                <td
+                    style="padding: 10px; vertical-align: middle; font-family: Arial, sans-serif; font-size: 16px; color: #000000">
+                    Localize
+                    o pedido {{orderId}} <br>
+
+                    Clique em ver detalhe do pedido. <br>
+                    Agora clique em Pedir novamente</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: middle;"><img
+                        src="https://www.woodprime.com.br/arquivos/mail_stp_03.png" alt=""></td>
+                <td
+                    style="padding: 10px; vertical-align: middle; font-family: Arial, sans-serif; font-size: 16px; color: #000000">
+                    <strong>Verifique se os produtos estção <br>
+                        diponíveis no estoque, depois <br>
+                        clique finalizar compra.</strong>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: middle;"><img
+                        src="https://www.woodprime.com.br/arquivos/mail_stp_04.png" alt=""></td>
+                <td
+                    style="padding: 10px; vertical-align: middle; font-family: Arial, sans-serif; font-size: 16px; color: #000000">
+                    Agora escolha uma nova forma de <br>
+                    pagamento e depois é só clicar em <br>
+                    <span style="display: block; color: #247471; font-weight: bold">FINALIZAR COMPRA.</span>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 100%">
+                    <a style="background: #247471; font-family: Arial, sans-serif; text-decoration: none; color: #ffffff; text-transform: uppercase; display: block; text-align: center; height: 60px; line-height: 60px; border-radius: 4px; max-width: 240px; margin: 20px auto 10px;"
+                        href="https://www.{{_accountInfo.HostName}}.com.br/account/orders" class="button">Refaça sua
+                        compra</a>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table
+        style="width: 100%; max-width: 600px; display: block; margin: 0 auto 60px; padding: 0 55px; width:calc(100% - 110px);">
+        <tbody style="max-width: 100%; display: block">
+            <tr>
+                <td style="width: 100%; display: block;">
+                    <p
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #c8ba9f; margin: 0 0 20px 0; text-align: center;">
+                        - Central de
+                        Atendimento -</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; display: block;">
+                    <p
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 25px;">
+                        <img style="display: inline-block; margin: 0 5px 0 0;"
+                            src="https://www.woodprime.com.br/arquivos/email_phone.png" alt=""> 0800 042 0103</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; display: block;">
+                    <p
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                        <img style="display: inline-block; margin: 0 5px 0 0;"
+                            src="https://www.woodprime.com.br/arquivos/email_mail.png" alt="">
+                        atendimento@woodprime.com.br 
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; display: block;">
+                    <p
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                        <img style="display: inline-block; margin: 0 5px 0 0;"
+                            src="https://www.woodprime.com.br/arquivos/email_whatsapp.png" alt="">
+                        (43) 99968-6699
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; display: block;">
+                    <p
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 40px;">
+                        Horário de Atendimentode Seg. à Sex. 08h30 às 18h. | Sáb. 09h às 12h
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width: 100%; display: block;">
+                    <p
+                        style="font-size: 18px; color:#000; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif;">
+                        Esperamos te ver em breve :)</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

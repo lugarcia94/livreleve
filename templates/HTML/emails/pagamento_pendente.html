@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="initial-scale=1.0"> -->
+    <!-- So that mobile webkit will display zoomed in -->
+    <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!-- disable auto telephone linking in iOS -->
+    <title>{{orders.0.sellers.0.name}}</title>
+    <style>
+        body>table>tbody,
+        body>table>tbody>tr {
+            max-width: 100%;
+            display: block;
+        }
+
+        table td {
+            max-width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block
+        }
+    </style>
+</head>
+
+<body style="font-family: Arial, sans-serif; color: #888888;">
+    <table style="width: 100%; max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td><img style="max-width: 100%; margin-bottom: 35px;"
+                                src="https://www.woodprime.com.br/arquivos/email_logo.png" alt=""></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 0 55px 50px; font-family: Arial, sans-serif">
+                <strong style="color: #000; font-size: 16px;">Recebemos seu pedido</strong> <br>
+                <h2 style="font-size: 24px; color: #c8ba9f; margin: 0;">Nº do pedido: {{orders.0.orderId}}</h2> <br>
+                <p style="margin: 0; font-size: 14px; font-weight: bold; color: #000;">Olá
+                    {{orders.0.clientProfileData.firstName}}.</p>
+                <p style="font-size: 12px; color: #656565;">
+                    <strong style="font-size: 18px; color: #000000; display: block;">Falta pouco...</strong>
+                    Verificamos que o pagamento referente ao(s) pedido(s) abaixo continua pendente. <br>
+                    Por favor, realize este pagamento para continuar com sua compra
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <img style="margin: 0 auto 60px; display: block;"
+                    src="https://www.woodprime.com.br/arquivos/trk_pagamento_pendente.png" alt="">
+            </td>
+        </tr>
+
+    </table>
+    <table
+        style="max-width: 600px; margin: 0 auto 60px; padding: 0 55px; width: 100%; width:calc(100% - 110px); display: block;">
+        <tr>
+            <td style="width: 100%; display: block;">
+                <a style="background: #247471; font-family: Arial, sans-serif; text-decoration: none; margin-right: 10px; color: #ffffff; display: block; text-align: center; height: 60px; line-height: 60px; border-radius: 4px;"
+                    href="{{ orders.0.paymentData.transactions.0.payments.0.url }}" target="_blank">imprimir boleto</a>
+            </td>
+        </tr>
+    </table>
+    <table style="width: 100%; max-width: 600px; margin: 0 auto 60px">
+        <tr>
+            <td style="padding: 0 55px;">
+                <p style="font-size: 12px; font-family: Arial, sans-serif; margin-bottom: 60px;">
+                    1 Verifique se seu navegador bloqueou seu boleto ou se ele foi aberto em outra aba. <br>
+                    2 Evite que sua compra seja cancelada, pague o boleto no máximo em 03 dias <br>
+                    3 O boleto não é enviado via Correios, é nescessário imprimi-lo. <br>
+                    4 Poderá ser pago na âgencia bacária de sua preferênica ou pela internet. <br>
+                    5 Não é possível dividir o valore, é pago apenas em um vez. <br>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p style="font-family: Arial, sans-serif; text-align: center; font-size: 16px; font-weight: bold;">Aqui
+                    você encontra todos
+                    os detalhes do seu pedido</p>
+            </td>
+        </tr>
+    </table>
+
+    {{#each orders}}
+
+    <!-- TABELA DE DETALHE DA ORDER -->
+    <table width="100%" cellspacing="0" border="0"
+        style="border: 3px solid #eeeeee; font-family: Arial, Helvetica, sans-serif; width: 100%; max-width: 600px; margin: 0 auto 20px">
+        <tbody>
+            <tr>
+                <td style="padding-bottom:0;">
+                    <table width="100%" border="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <table width="100%" cellspacing="0" border="0">
+                                    <tr>
+                                        <th width="52%"
+                                            style="color:#656565;font-weight: bold;font-size: 13px;padding-left: 30px; padding-top: 20px;"
+                                            align="left">
+                                            Produto
+                                        </th>
+                                        <th width="18%"
+                                            style="color:#656565;font-weight: bold;font-size: 13px;padding-top: 20px;"
+                                            align="center">
+                                            Entrega
+                                        </th>
+                                        <th width="18%"
+                                            style="color:#656565;font-weight: bold;font-size: 13px;padding-top: 20px;"
+                                            align="center">
+                                            Preço
+                                        </th>
+                                        <th width="12%"
+                                            style="color:#656565;font-weight: bold;font-size: 13px;padding-right: 30px; padding-top: 20px;"
+                                            align="center">
+                                            Qtd
+                                        </th>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        {{#each items}}
+                        <tr>
+                            <td>
+                                <table width="100%" cellspacing="0" border="0">
+                                    <tr>
+                                        <td width="52%" align="left"
+                                            style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 24px;padding-left: 20px;padding-top: 20px;padding-bottom: 20px;">
+                                            <span style="display:  inline-block;vertical-align:  middle;"><img
+                                                    src="{{imageUrl}}" width="100px" /></span>
+                                            <span
+                                                style="display:  inline-block;vertical-align:  middle;font-size: 12px; color: #656565;width: 58%; line-height: 15px;padding-left: 10px;">{{name}}</span>
+                                        </td>
+                                        <td width="18%" align="center"
+                                            style="padding-top: 20px;font-size: 12px; color: #656565;padding-bottom: 20px;">
+                                            {{#each ../shippingData.logisticsInfo}}
+                                            {{#eq itemId ../id}}
+                                            {{#each slas}}
+                                            {{#eq ../selectedSla id}}
+                                            {{#if deliveryWindow}}
+                                            Agendada
+                                            {{else}}
+                                            {{#unless shippingEstimateDate}}
+                                            {{#hasSubStr shippingEstimate 'bd'}}
+                                            {{replace shippingEstimate 'bd' ' dias úteis.'}}
+                                            {{else}}
+                                            {{replace shippingEstimate 'd' ' dias.'}}
+                                            {{/hasSubStr}}
+                                            {{else}}
+                                            {{formatDate shippingEstimateDate}}
+                                            {{/unless}}
+                                            {{/if}}
+                                            {{/eq}}
+                                            {{/each}}
+                                            {{/eq}}
+                                            {{/each}}
+                                        </td>
+                                        <td width="18%" align="center" style="padding-top: 20px;padding-bottom: 20px;">
+                                            <div style="display: block;font-size: 12px; color: #656565"><strike>De:
+                                                    {{formatCurrency listPrice}}</strike></div>
+                                            <div style="display: block;font-size: 12px; color: #656565">Por:
+                                                {{formatCurrency sellingPrice}}</div>
+                                        </td>
+                                        <td width="12%" align="center"
+                                            style="padding-right: 30px;font-size: 12px; color: #656565;padding-bottom: 20px;">
+                                            {{quantity}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table width="100%" cellspacing="0" border="0">
+                                    <tr>
+                                        <td align="center"
+                                            style="padding-top: 20px;padding-bottom: 20px;background-color: #eeeeee;">
+                                            {{#if attachments}}
+                                            <div style="display: block;font-size: 12px; color: #656565;">Personalização:
+                                            </div>
+                                            <div
+                                                style="display: block;font-size: 12px; color: #656565;padding: 5px 0 0 0;">
+                                                {{attachments.0.content.Personalização}}</div>
+                                            {{/if}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{#if giftRegistryData}}
+                    <table cellspacing="0" cellspacing="0" style="padding-top:0;padding-bottom:0;padding-right:0px;"
+                        border="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td
+                                    style="padding-top: 20px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;">
+                                    <div style="font-size: 12px; color: #656565;">Endereço de entrega:
+                                        {{giftRegistryData.description}}</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {{else}}
+                    <table cellspacing="0" cellspacing="0" style="padding-top:0;padding-bottom:0;padding-right:0px;"
+                        border="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td
+                                    style="padding-top: 20px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;">
+                                    <div style="font-size: 12px; color: #656565;">Endereço de entrega:
+                                        {{shippingData.address.street}}, {{shippingData.address.number}},
+                                        {{shippingData.address.neighborhood}}, {{shippingData.address.city}} -
+                                        {{shippingData.address.state}} - CEP {{shippingData.address.postalCode}}</div>
+                                    {{#ifCond items.0.productCategoryIds '==' '/1000150/'}}
+                                    <div style="display: block;font-size: 12px; color: #656565;">Enviaremos seu pedido
+                                        até o 5º dia útil do próximo mês</div>
+                                    {{/ifCond}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%"
+                        style="background-color: #eeeeee;">
+                        <tbody>
+                            <tr>
+                                <td align="center"
+                                    style="padding-top: 20px;padding-bottom: 20px;background-color: #eeeeee;">
+                                    <div style="font-size: 12px; color: #656565;display: block;">Método de pagamento:
+                                        {{#each paymentData.transactions}}
+                                        {{#each payments}}
+                                        <span>
+                                            <strong>{{paymentSystemName}} </strong>
+                                        </span>
+                                        {{/each}}
+                                        {{/each}}
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%"
+                        style="padding: 20px;">
+                        <tr>
+                            <td style="width: 50%">
+                                {{#if paymentData.giftCards.0.provider}}
+                                <table>
+                                    <tr>
+                                        <div style="font-size: 12px; color: #656565;display: block;">
+                                            Cupom de desconto:</br>
+                                            {{paymentData.giftCards.0.provider}}
+                                        </div>
+                                    </tr>
+                                </table>
+                                {{/if}}
+                            </td>
+                            <td style="width: 50%">
+                                <table cellspacing="0" cellpadding="0" border="0" align="right">
+                                    <tbody>
+                                        {{#each totals}}
+                                        {{#if value}}
+                                        <tr>
+                                            <td valign="top" align="right"
+                                                style="color:#656565; font-size: 12px; padding-bottom: 10px;">
+                                                {{#eq id "Items"}}Subtotal{{/eq}}
+                                                {{#eq id "Shipping"}}Entrega{{/eq}}
+                                                {{#eq id "Discounts"}}Descontos{{/eq}}
+                                                {{#eq id "Tax"}}Taxas{{/eq}}
+                                            </td>
+                                            <td valign="top" align="right"
+                                                style="text-align:left; padding-left: 7px;color:#656565; font-size: 12px; padding-bottom: 10px;">
+                                                R$ {{formatCurrency value}}
+                                            </td>
+                                        </tr>
+                                        {{/if}}
+                                        {{/each}}
+                                        {{#if value}}
+                                        <tr>
+                                            <td valign="top" align="right"
+                                                style="color:#656565; font-size: 12px; font-weight:bold;">
+                                                Total
+                                            </td>
+                                            <td valign="top" align="right"
+                                                style="text-align:left; padding-left: 7px;color:#656565; font-size: 12px;">
+                                                R$ {{formatCurrency value}}
+                                            </td>
+                                        </tr>
+                                        {{/if}}
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {{/each}}
+
+    <table
+        style="width: 100%; max-width: 600px; margin: 0 auto 60px; padding: 0 55px; width: 100%; width:calc(100% - 110px); display: block;">
+        <tr>
+            <td style="width: 100%; display: block;">
+                <a style="background: #247471; font-family: Arial, sans-serif; text-decoration: none; color: #ffffff; display: block; text-align: center; height: 60px; line-height: 60px; border-radius: 4px;"
+                    href="https://www.{{_accountInfo.HostName}}.com.br/account/orders" class="button">acompanhe através
+                    do site</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-bottom: 20px; width: 100%; display: block">
+                <a href="#" style="display: block; text-align: center; text-decoration: none;">
+                    <p
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; text-align: center; color: #000; text-decoration: none;">
+                        Avalie-nos agora</p>
+                    <img style="max-width: 100%; display: block; margin: 0 auto"
+                        src="https://www.woodprime.com.br/arquivos/email_stars.png" alt="">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="width: 100%; display: block;">
+                <a href="https://newsurvey.ebit.com.br/Survey/Open/50218?storeId=50218&amp;bannerEmail=true&amp;transactionId={{orders.0.orderId}}&amp;email={{orders.0.clientProfileData.email}}&amp;zipCode={{orders.0.shippingData.address.postalCode}}&amp;totalSpent={{formatCurrencyWithoutDecimals orders.0.totals.0.value}}&amp;productName={{#each orders.0.items}}{{#if @index}}|{{/if}}{{name}}{{/each}}&amp;value={{#each orders.0.items}}{{#if @index}}|{{/if}}{{formatCurrencyWithoutDecimals price}}{{/each}}&amp;quantity={{#each orders.0.items}}{{#if @index}}|{{/if}}{{quantity}}{{/each}}&amp;parcels={{#each orders.0.paymentData.transactions.0.payments}}{{#if @index}}|{{/if}}{{installments}}{{/each}}&amp;deliveryTax={{formatCurrencyWithoutDecimals orders.0.totals.2.value}}&amp;ean={{#each orders.0.items}}{{#if @index}}|{{/if}}{{ean}}{{/each}}&amp;sku={{#each orders.0.items}}{{#if @index}}|{{/if}}{{sellerSku}}{{/each}}"
+                    style="display: block; margin-bottom: 40px;">
+                    <img width="468" height="60"
+                        src="https://www.{{_accountInfo.HostName}}.com.br/arquivos/wood-prime-transacional-ebit.png"
+                        border="0" alt="O que você achou dessa compra?">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #c8ba9f; margin: 0 0 20px 0; text-align: center;">
+                    - Central de
+                    Atendimento -</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 25px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_phone.png" alt=""> 0800 042 0103</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_mail.png" alt="">
+                    atendimento@woodprime.com.br 
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 20px;">
+                    <img style="display: inline-block; margin: 0 5px 0 0;"
+                        src="https://www.woodprime.com.br/arquivos/email_whatsapp.png" alt="">
+                    (43) 99968-6699
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #b3afae; text-align: center; margin: 0 0 40px;">
+                    Horário de Atendimentode Seg. à Sex. 08h30 às 18h. | Sáb. 09h às 12h
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%; display: block;">
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #000000; text-align: center; margin: 0">
+                    IMPORTATE: <br>
+                    O prazo de entrega será considerado somente após a <br>
+                    confirmação do pagamento ou imediato em caso de bônus
+                </p>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
