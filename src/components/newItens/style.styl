@@ -183,3 +183,113 @@ button.buy-button svg
 
 .section-breadcrumbs ul li > a
     color: #888888
+
+@media(min-width: 992px)
+    .section__body .section__content
+        width 75%
+
+    .section__body .section__content .section__products .shelf .product
+        width 33%
+
+    .section-products .shelf .product .product-image
+        text-align: center
+
+    .section__body .section__aside
+        width 25%
+
+.section-products .shelf  .product
+    .product-quickview 
+        background: #247471!important
+
+.section-products .shelf .product .product-content .product-name a
+    font-weight: 700
+    text-align: left
+
+    &:hover
+        color: #247471
+ 
+ .product-content > small 
+  display: none!important
+
+.section-products .shelf .product .product-content del
+    text-align: left
+
+.price__infos 
+    display: flex
+    align-items: center
+
+    .info__price 
+        font-weight: 600
+        margin-left: 5px
+        color: #666
+        font-size: 14px
+
+        @media(max-width: 320px)
+            font-size: 10px
+            
+.section-products .shelf .product .product-btn 
+    opacity: 1!important
+    visibility: visible!important
+    margin: 0
+    position absolute
+    right: 0
+    bottom: 10px
+
+    .product-link
+        font-size: 0
+        background-color: transparent
+        background-repeat: no-repeat
+        background-position: center
+        padding: 0
+        height 40px
+        width 40px
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAASCAMAAAC3taQAAAAAKlBMVEUAAAAjc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3FMBpnfAAAADnRSTlMAEK+fUO//YM8woPDQsFxtbKYAAABFSURBVHjahc8xDsAwCENRSIlpkub+120WBJYq9W9vs+UnbVfCOtA05DjdzD6YRoQzJSLNUMILllWMgkdj5wK25oc95asX9b0COXcHGYoAAAAASUVORK5CYII=')
+        
+        &:hover
+            opacity .7
+            background-color: transparent
+            background-repeat: no-repeat
+            background-position: center
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAASCAMAAAC3taQAAAAAKlBMVEUAAAAjc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3Ejc3FMBpnfAAAADnRSTlMAEK+fUO//YM8woPDQsFxtbKYAAABFSURBVHjahc8xDsAwCENRSIlpkub+120WBJYq9W9vs+UnbVfCOtA05DjdzD6YRoQzJSLNUMILllWMgkdj5wK25oc95asX9b0COXcHGYoAAAAASUVORK5CYII=')
+
+.section-products .shelf .product .product-tags .flag.flag-percent 
+    background-color: #b13713
+    width: 45px
+    height: 45px
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    font-weight: 700
+
+.section-products .shelf .product .product-content 
+    text-align: center
+    font-family: 'Open Sans'
+
+.section-products .shelf .product .product-content del 
+    text-align: left
+    display: block
+    color: #aaa
+    font-size: 14px
+    font-weight: 400
+    letter-spacing: .1px
+
+
+.section-products .shelf .product .product-content > strong
+    display: none!important
+ 
+ .section-products .shelf .product .product-content > small:last-child  
+    display: block!important
+    font-size: 0
+    text-align: left
+    strong
+        color: #247471
+        font-size: 20px
+        font-weight: 700
+
+.modal-mask
+    z-index 9999999
+
+iframe#launcher 
+    bottom: 10%!important
+    top: auto
