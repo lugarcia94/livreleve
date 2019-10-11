@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:template id="wood-prime-head" />
+    <link href="/arquivos/woodprime.category.min.css?v=14" rel="stylesheet" type="text/css" />
+    <vtex:template id="02-woodprime-call" />
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-header" />
+        </header>
+
+        <main class="main">
+
+            <div class="section-products">
+                <div class="shell">
+                    <div class="section__body">
+                        <!-- sidebar menu categorias -->
+                        <div class="section__aside">
+                            <department-filters-component></department-filters-component>
+                        </div>
+
+                        <!-- produtos -->
+                        <div class="section__content">
+                            <vtex.cmc:searchResult layout="f2eb3f3f-69f1-486a-aa83-092701384d25" itemCount="24"
+                                columnCount="24" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="section__comments" style="margin-bottom: 0px">
+                <div class="shell">
+                    <header class="header__title">
+                        <h2> O que dizem sobre nós </h2>
+                    </header>
+
+                    <div class="content__comments">
+                        <ul class="list__comment">
+                            <!-- col 1 -->
+                            <li class="col">
+                                <div class="comment-star">
+                                    <span class="evaluation-star">
+                                        <i style="width: 5%;"></i>
+                                    </span>
+                                </div>
+
+                                <div class="text-comment">
+                                    <p>Gostamos muito da cristaleira, foi tudo perfeito, desde a compra até a entrega,
+                                        não temos nada à reclamar.</p>
+                                </div>
+
+                                <div class="author">
+                                    <i class="ico ico-user"></i>
+                                    <strong>José Ricardo Nóbrega Guimâes</strong>
+                                    <span> 25/08/2019 </span>
+                                </div>
+                            </li>
+
+                            <!-- col 2 -->
+                            <li class="col">
+                                <div class="comment-star">
+                                    <span class="evaluation-star">
+                                        <i style="width: 5%;"></i>
+                                    </span>
+                                </div>
+
+                                <div class="text-comment">
+                                    <p>Lindo! Bem acabado, bem embalado, entregue antes do prazo, recomendo!</p>
+                                </div>
+
+                                <div class="author">
+                                    <i class="ico ico-user"></i>
+                                    <strong> Avani Maior </strong>
+                                    <span> 22/08/2019 </span>
+                                </div>
+                            </li>
+
+                            <!-- col 3 -->
+                            <li class="col">
+                                <div class="comment-star">
+                                    <span class="evaluation-star">
+                                        <i style="width: 5%;"></i>
+                                    </span>
+                                </div>
+
+                                <div class="text-comment">
+                                    <p>Minha cabeceira deixou meu quarto alem de aconchegante, lindo! Me sinto em
+                                        Versalhes com ela! Uma linda Luiz XV!</p>
+                                </div>
+
+                                <div class="author">
+                                    <i class="ico ico-user"></i>
+                                    <strong> Elza Fernandes Marques</strong>
+                                    <span> 15/08/2019 </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fim depoimentos -->
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4> Assine nossa newsletter </h4>
+                            <p> Receba nossas novidades e lançamentos primeiro. </p>
+                        </div>
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- fim main -->
+
+        <footer class="footer">
+            <vtex:template id="wood-prime-footer" />
+        </footer>
+    </div>
+
+    <vtex:template id="wood-prime-scripts" />
+</body>
+
+</html>

@@ -97,8 +97,8 @@ import './head-nav';
 // // Sidebar
 // import './sidebar';
 
-// // Category
-// import './category';
+// Category
+import './category';
 
 // // Empty
 // import './empty';
