@@ -313,8 +313,79 @@ iframe#launcher
                 display: none!important
 
 .blackfriday__on
-    .section__blackfriday
-        display: block!important
+    .section-pit-bar
+        margin-top: 163px
+
+    .slider
+        #demo 
+            position: absolute
+            top: 100%
+            z-index: 99
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 101px
+            color: #ad2e42
+            text-transform: uppercase
+            font-family: 'Montserrat'
+            font-weight: 700
+            background: #000
+            width: 100%
+            text-align: center
+            padding: 10px 0
+
+            @media(max-width: 991px)
+                font-size: 30px
+
+                strong
+                    &:before
+                        display: none
+
+            .dias
+                position relative 
+
+                &:before
+                    content: 'dias'
+                    position absolute
+                    color: #ad2e42
+                    font-size: 15px
+                    text-transform: none
+                    bottom: 0
+                    left 12% 
+            .horas
+                position relative 
+
+                &:before
+                    content: 'horas'
+                    position absolute
+                    color: #ad2e42
+                    font-size: 15px
+                    text-transform: none
+                    bottom: 0
+                    left 17% 
+            .minutos
+                position relative 
+
+                &:before
+                    content: 'minutos'
+                    position absolute
+                    color: #ad2e42
+                    font-size: 15px
+                    text-transform: none
+                    bottom: 0
+                    left 20% 
+
+            .segundos
+                position relative 
+                font-size: 24px
+    
+
+            &:before
+                content: 'as ofertas expiram em'
+                font-size: 15px
+                display: block
+                color: #fff
+
+    .section__blackfriday 
 
         .banners__slick
             .box-banner 
@@ -328,3 +399,4 @@ iframe#launcher
     
 .section-products .shelf .owl-dots
     margin: 15px 0
+

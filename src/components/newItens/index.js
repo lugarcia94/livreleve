@@ -24,7 +24,7 @@ $('.section__blackfriday .banners__slick').slick({
 });
 
 // Set the date we're counting down to
-var countDownDate = new Date("10/15/2019 14:49").getTime();
+var countDownDate = new Date("10/15/2019 15:37").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -42,13 +42,13 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  document.getElementById("demo").innerHTML = "<strong class='dias'> " + days + " : </strong><strong class='horas'>" + hours + " : </strong><strong class='minutos'>"
+  + minutes + "</strong>" + "<span class='segundos'> : " + seconds + "</span>";
     
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("demo").innerHTML = "EXPIRADO";
   }
 }, 1000);
 
