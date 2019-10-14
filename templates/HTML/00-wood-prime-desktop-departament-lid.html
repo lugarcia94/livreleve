@@ -69,9 +69,32 @@
                 <div class="shell">
                     <div class="section__body">
                         <!-- sidebar menu categorias -->
-                        <div class="section__aside">
-                            <department-filters-component></department-filters-component>
-                        </div>
+                        <aside class="sidebar category__sidebar layout__left">
+                            <div class="sidebar__container">
+                                <header class="sidebar__header">
+                                    <h4 class="sideebar__title">Filtrar sua busca</h4>
+                                    <button type="button"
+                                        class="button sidebar__button sidebar__button--close">X</button>
+                                </header>
+
+                                <div class="sidebar__main">
+                                    <vtex.cmc:searchNavigator />
+                                    <div class="sidebar-seo seo--description">
+                                        <div class="seo--description">
+                                            <vtex:contentPlaceHolder id="TextoDeApoio" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="button sidebar__button sidebar__button--open">
+                                <svg id="icon-ic_filter_list_black_24px" viewBox="0 0 32 32">
+                                    <path
+                                        d="M13.333 24h5.333v-2.667h-5.333v2.667zM4 8v2.667h24v-2.667h-24zM8 17.333h16v-2.667h-16v2.667z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </aside>
 
                         <!-- produtos -->
                         <div class="section__content">

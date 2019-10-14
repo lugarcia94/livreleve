@@ -103,6 +103,11 @@
 
 .department-new
 
+    .vitrine
+        + .searchResultsTime
+            + .sub .orderBy
+                display         : none
+
     .titulo-sessao
         margin: 0;
 
@@ -137,28 +142,36 @@
         font-weight         : regular
         display             : flex     
         justify-content: flex-end   
+        margin-bottom: 30px
 
         .compare, .filterBy
             display         : none
 
         .orderBy
             white-space     : nowrap
-            margin          : 0 70px
+            margin          : 0
             text-align      : center
+            border: none
 
-            label, .SumoSelect
+            label
+                display: none
+
+            .SumoSelect
                 display         : inline-block
                 vertical-align  : middle
 
             .SumoSelect
-                max-width       : 135px
+                max-width       : 150px
+
+                .SumoUnder
+                    z-index         : 1
 
                 > .CaptionCont
-                    border-color    : #FFE6AB
+                    border-color    : #c8ba9f
                     border-radius   : 3px
                     > span
-                        height: 23px;
-                        line-height: 23px;
+                        height: 35px;
+                        line-height: 35px;
                     > label 
                         display         : flex 
                         justify-content : center 
@@ -166,7 +179,7 @@
                         &:before 
                             font-icon   : url('./svg/down.svg') 
                             font-size   : 5px
-                            color       : #FF7000
+                            color       : #c8ba9f
 
                         > i
                             display     : none 

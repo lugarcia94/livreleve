@@ -1,8 +1,8 @@
 // // Reset CSS
 // import './reset/index.styl';
 
-// // Sumoselect
-// import './sumoselect';
+// Sumoselect
+import './sumoselect'; 
 
 // // Layout
 // import './layout';
@@ -94,8 +94,8 @@ import './head-nav';
 // // Pages
 // import './pages';
 
-// // Sidebar
-// import './sidebar';
+// Sidebar
+import './sidebar';
 
 // Category
 import './category';
