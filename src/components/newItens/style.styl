@@ -225,7 +225,7 @@ button.buy-button svg
         font-size: 14px
 
         @media(max-width: 320px)
-            font-size: 10px
+            font-size: 9px
             
 .section-products .shelf .product .product-btn 
     opacity: 1!important
@@ -261,6 +261,7 @@ button.buy-button svg
     align-items: center
     justify-content: center
     font-weight: 700
+    min-width: 45px
 
 .section-products .shelf .product .product-content 
     text-align: center
@@ -275,10 +276,14 @@ button.buy-button svg
     letter-spacing: .1px
 
 
-.section-products .shelf .product .product-content > strong
-    display: none!important
+.section-products  .shelf .product .product-content > strong
+        display: none!important
+
+
+.shelf .product .product-content > strong
+    text-align: left
  
- .section-products .shelf .product .product-content > small:last-child  
+.section-products .shelf .product .product-content > small:last-child  
     display: block!important
     font-size: 0
     text-align: left
@@ -298,4 +303,28 @@ iframe#launcher
     .yv-review-quickreview 
         text-align: left
     
+.section-pit-bar .col-1of3
+    padding: 0
     
+@media(max-width: 991px)
+    .product
+        .product-tags
+            p.flag.personalizavel, p.flag.exclusivo
+                display: none!important
+
+.blackfriday__on
+    .section__blackfriday
+        display: block!important
+
+        .banners__slick
+            .box-banner 
+                img
+                    width auto
+                    max-width 100%
+
+    .section-newsletter, .header .bar, .section__counter .cols .col-counter
+        background: #000
+
+    
+.section-products .shelf .owl-dots
+    margin: 15px 0
