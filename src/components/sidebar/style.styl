@@ -18,7 +18,7 @@
         position            : fixed
         top                 : 0
         left                : 0
-        z-index             : 100
+        z-index             : 1000000
 
         width               : 100%
         height              : 100%
@@ -87,13 +87,28 @@
 
             border          : 0
 
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAABBVBMVEUAAAD/////8v//8/P48fj48fj07PT07fP07fPz7fPz7fP07PPz7fL07PP07fP07fP07fPBbcXBbsXCbsXCbsbCd8vCeMvGccPGccTGe8rIfcvKdMHLdMHLdMLPd7/Qd7/Qd8DQeMDUer3Ver7Ve77Yq9zZfbvZrt3afrzbsN3btN/cs93ctuDdstzegLnegbrfgbrftNzgs9vguN/htdvhttzhu+DiuN3jg7fjhLjjt9rkutzluNnmt9jmu9voh7boutnpudfpu9jrutbsirTsvdfsv9ntirTti7TtlLrul7zuvtbuwNjuwtnwwNXwwtfxmbrymrryv9PywNXyxdjyx9nz7PKGgIykAAAAEXRSTlMABhMVJCVej6mqw8zd5vn6/GN45GEAAAEXSURBVHjafZN5V4MwDMADm0BhwDyZypzXdJ54C16dunlt3prv/1F8CCV9E/v7p0nz0iRNAgW6YTmu5zqWocMoVVZHQZ1VQUYzfZTxTY2MFRtHsSuFsYZ/qeVmjTxl7OxxE8sxf7P1sRw/zZzlSnv2MBOGjx+ZwAB0UefMeHCcnrf84S2vWwcDc7Yng/AM8Trh99+YYYCFgq1GuHhxGcX8VdxY4GDBfnNhpRMlQxQ44CJxtLTc2b0j3QUPiYPW6lrUJ92TfXfmU2syIF8p7kaj2brq7sX8pYhLOW9OBOE54k3Me18iZ6p3eio4Tc8+772Leumv1udOMuH56bP4K2D4H0zdI2V/1bOhniv1TKrnmRgr3QX1Hv0A1fG9SC1o+YgAAAAASUVORK5CYII=')
+            // background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAABBVBMVEUAAAD/////8v//8/P48fj48fj07PT07fP07fPz7fPz7fP07PPz7fL07PP07fP07fP07fPBbcXBbsXCbsXCbsbCd8vCeMvGccPGccTGe8rIfcvKdMHLdMHLdMLPd7/Qd7/Qd8DQeMDUer3Ver7Ve77Yq9zZfbvZrt3afrzbsN3btN/cs93ctuDdstzegLnegbrfgbrftNzgs9vguN/htdvhttzhu+DiuN3jg7fjhLjjt9rkutzluNnmt9jmu9voh7boutnpudfpu9jrutbsirTsvdfsv9ntirTti7TtlLrul7zuvtbuwNjuwtnwwNXwwtfxmbrymrryv9PywNXyxdjyx9nz7PKGgIykAAAAEXRSTlMABhMVJCVej6mqw8zd5vn6/GN45GEAAAEXSURBVHjafZN5V4MwDMADm0BhwDyZypzXdJ54C16dunlt3prv/1F8CCV9E/v7p0nz0iRNAgW6YTmu5zqWocMoVVZHQZ1VQUYzfZTxTY2MFRtHsSuFsYZ/qeVmjTxl7OxxE8sxf7P1sRw/zZzlSnv2MBOGjx+ZwAB0UefMeHCcnrf84S2vWwcDc7Yng/AM8Trh99+YYYCFgq1GuHhxGcX8VdxY4GDBfnNhpRMlQxQ44CJxtLTc2b0j3QUPiYPW6lrUJ92TfXfmU2syIF8p7kaj2brq7sX8pYhLOW9OBOE54k3Me18iZ6p3eio4Tc8+772Leumv1udOMuH56bP4K2D4H0zdI2V/1bOhniv1TKrnmRgr3QX1Hv0A1fG9SC1o+YgAAAAASUVORK5CYII=')
             font-size: 0
             background-repeat: no-repeat
             background-color: #fff
             background-position: center
             right 0
             position: absolute
+
+            &:before 
+                position            : absolute 
+                top                 : 0 
+                right               : 0
+                display             : flex 
+                justify-content     : center 
+                align-items         : center  
+                width               : 45px
+                height              : 45px    
+                background          : none 
+                border              : 0   
+                font-icon           : url('./svg/close.svg')
+                font-size           : 18px
+                color               : color[1]
 
 
         &--open
@@ -102,7 +117,7 @@
             left                : 20px
             z-index             : 50
 
-            width               : 45px
+            width               : 45px 
             height              : 45px
 
             border              : 0

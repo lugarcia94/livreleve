@@ -103,6 +103,7 @@
 
 .department-new
 
+
     .vitrine
         + .searchResultsTime
             + .sub .orderBy
@@ -228,10 +229,14 @@
             display: none
 
     .section-products 
+        @media(max-width 991px)
+            .main 
+                padding-top: 0
         .section
             &__content
                 margin-top: 30px
                 .main 
+                    padding: 0
                     .searchResultsTime 
                         display: none
     

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <title>
+        <vtex.cmc:searchTitle /> | Cadeira, Mesas, Criado-Mudo e muito mais. </title>
+    <vtex:template id="wood-prime-mobile-head" />
+    <vtex:template id="02-woodprime-call" />
+    <!-- App departament css -->
+    <link href="/arquivos/woodprime-mobile-departament.min.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .section-textoSeo {
+            display: block;
+            width: 100%;
+            padding: 35px 10px;
+        }
+
+        .section-textoSeo h1 {
+            font-size: 28px;
+            color: #247471;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .section-textoSeo p {
+            font-family: "Montserrat", sans-serif;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper" id="woodprime-app">
+        <header class="header">
+            <vtex:template id="wood-prime-mobile-header" />
+        </header><!-- /.header -->
+        <vtex.cmc:fullTextSearchBox />
+        <main class="main">
+            <!-- sidebar menu categorias -->
+            <aside class="sidebar category__sidebar layout__left">
+                <div class="sidebar__container">
+                    <header class="sidebar__header">
+                        <h4 class="sideebar__title">Filtrar sua busca</h4>
+                        <button type="button" class="button sidebar__button sidebar__button--close">X</button>
+                    </header>
+
+                    <div class="sidebar__main">
+                        <vtex.cmc:searchNavigator />
+                        <div class="sidebar-seo seo--description">
+                            <div class="seo--description">
+                                <vtex:contentPlaceHolder id="TextoDeApoio" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="button sidebar__button sidebar__button--open">
+                    <svg id="icon-ic_filter_list_black_24px" viewBox="0 0 32 32">
+                        <path
+                            d="M13.333 24h5.333v-2.667h-5.333v2.667zM4 8v2.667h24v-2.667h-24zM8 17.333h16v-2.667h-16v2.667z">
+                        </path>
+                    </svg>
+                </button>
+            </aside>
+
+            <div class="section-breadcrumb">
+                <vtex.cmc:breadCrumb />
+            </div><!-- /. section-breadcrumb -->
+
+            <div class="section__content">
+                <div class="section-products">
+                    <div class="shell">
+                        <vtex.cmc:searchResult layout="3a02afb4-7d7c-4ebb-bb09-524c8c0095f8" itemCount="12"
+                            columnCount="12" />
+                        <button type="button" class="btn-load">Carregar mais produtos</button>
+                    </div><!-- /.shell -->
+                </div><!-- /.section-products -->
+            </div>
+
+            <div class="section-textoSeo">
+                <div class="shell">
+                    <vtex:contentPlaceHolder id="textoSEO categoria" />
+                </div><!-- /.shell -->
+            </div><!-- /.section-SEO -->
+
+            <div class="section-newsletter">
+                <div class="shell">
+                    <form class="form-newsletter">
+                        <div class="form-row">
+                            <h4>Assine nossa newsletter</h4>
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                            <form-newsletter></form-newsletter>
+                        </div><!-- /.form-row -->
+                    </form><!-- /.form-newsletter -->
+                </div><!-- /.shell -->
+            </div><!-- /.section-newsletter -->
+        </main><!-- /.main -->
+
+        <vtex:template id="wood-prime-mobile-footer" />
+    </div>
+    <script>
+        window.scriptsHere = $("#woodprime-app script:not([src])");
+        $("<here></here>").insertBefore("#woodprime-app script:not([src])");
+    </script>
+    <vtex:template id="wood-prime-mobile-scripts" />
+    <!-- App departament js -->
+    <script type="text/javascript" src="/arquivos/woodprime-mobile-departament.min.js"></script>
+</body>
+
+</html>
