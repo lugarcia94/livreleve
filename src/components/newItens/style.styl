@@ -225,7 +225,7 @@ button.buy-button svg
         font-size: 14px
 
         @media(max-width: 320px)
-            font-size: 10px
+            font-size: 9px
             
 .section-products .shelf .product .product-btn 
     opacity: 1!important
@@ -261,6 +261,7 @@ button.buy-button svg
     align-items: center
     justify-content: center
     font-weight: 700
+    min-width: 45px
 
 .section-products .shelf .product .product-content 
     text-align: center
@@ -273,12 +274,17 @@ button.buy-button svg
     font-size: 14px
     font-weight: 400
     letter-spacing: .1px
-
-
-.section-products .shelf .product .product-content > strong
+ 
+.category .section-products  .shelf .product .product-content > strong
+    display: none!important
+    
+.home .section-products  .shelf .product .product-content > strong
     display: none!important
  
- .section-products .shelf .product .product-content > small:last-child  
+.shelf .product .product-content > strong
+    text-align: left
+ 
+.section-products .shelf .product .product-content > small:last-child  
     display: block!important
     font-size: 0
     text-align: left
@@ -298,4 +304,103 @@ iframe#launcher
     .yv-review-quickreview 
         text-align: left
     
+.section-pit-bar .col-1of3
+    padding: 0
     
+@media(max-width: 991px)
+    .section-products .shell .main 
+        padding: 0
+        
+    .product
+        .product-tags
+            p.flag.personalizavel, p.flag.exclusivo
+                display: none!important
+
+.blackfriday__on
+    .section-pit-bar
+        margin-top: 163px
+
+    .slider
+        #demo 
+            position: absolute
+            top: 100%
+            z-index: 99
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 101px
+            color: #ad2e42
+            text-transform: uppercase
+            font-family: 'Montserrat'
+            font-weight: 700
+            background: #000
+            width: 100%
+            text-align: center
+            padding: 10px 0
+
+            @media(max-width: 991px)
+                font-size: 30px
+
+                strong
+                    &:before
+                        display: none
+
+            .dias
+                position relative 
+
+                &:before
+                    content: 'dias'
+                    position absolute
+                    color: #ad2e42
+                    font-size: 15px
+                    text-transform: none
+                    bottom: 0
+                    left 12% 
+            .horas
+                position relative 
+
+                &:before
+                    content: 'horas'
+                    position absolute
+                    color: #ad2e42
+                    font-size: 15px
+                    text-transform: none
+                    bottom: 0
+                    left 17% 
+            .minutos
+                position relative 
+
+                &:before
+                    content: 'minutos'
+                    position absolute
+                    color: #ad2e42
+                    font-size: 15px
+                    text-transform: none
+                    bottom: 0
+                    left 20% 
+
+            .segundos
+                position relative 
+                font-size: 24px
+    
+
+            &:before
+                content: 'as ofertas expiram em'
+                font-size: 15px
+                display: block
+                color: #fff
+
+    .section__blackfriday 
+
+        .banners__slick
+            .box-banner 
+                img
+                    width auto
+                    max-width 100%
+
+    .section-newsletter, .header .bar, .section__counter .cols .col-counter
+        background: #000
+
+    
+.section-products .shelf .owl-dots
+    margin: 15px 0
+
