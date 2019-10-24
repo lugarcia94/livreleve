@@ -1,6 +1,6 @@
 import './style.styl';
-import 'slick-carousel';
-import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel';
+// import 'slick-carousel/slick/slick.css';
 
 // $('body').addClass('blackfriday__on');
 
@@ -54,3 +54,8 @@ import 'slick-carousel/slick/slick.css';
 // }, 1000);
 
 // }, 1000);
+ 
+let name = window.location.pathname; 
+if(name === '/sala-de-estar') {
+    $('body').addClass('especial__category');
+}
