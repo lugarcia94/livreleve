@@ -414,3 +414,62 @@ iframe#launcher
 .section-products .shelf .owl-dots
     margin: 15px 0
 
+.section__instafeed
+    h2
+        font-family: Montserrat,sans-serif
+        color: #b09b73
+        font-weight: 300
+        font-size: 30px
+        text-align: center
+        margin: 40px 0
+        position: relative
+
+        &:after 
+            margin-left: 22px
+        
+        &:before 
+            margin-left: -110px
+
+        &:before, &:after
+            content: ""
+            width: 90px
+            height: 1px
+            top: 20px
+            background: #b09b73
+            position: absolute
+
+@media(max-width: 991px)
+    .search-result .section-products .shelf .product .product-content>small
+        display: none!important
+
+.instafeed__list
+    display: flex
+    flex-wrap: wrap
+    margin-bottom 30px
+    
+    .instafeed__item
+        flex: 0 0 16.6666% 
+        overflow hidden
+        max-height: 200px
+
+        @media(max-width: 1200px)
+            max-height: 150px
+
+        @media(max-width: 991px)
+            flex: 0 0 33.3333%
+            max-height: 200px
+
+       
+
+        @media(max-width: 425px)
+            max-height: 150px
+            flex: 0 0 50%
+
+        img
+            max-width: 140%
+            position: relative
+            left: 50%
+            transform: translateX(-50%)
+            display: block
+            top: 50%
+ 

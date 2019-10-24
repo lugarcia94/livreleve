@@ -6,7 +6,7 @@ const   IconfontWebpackPlugin   = require('iconfont-webpack-plugin');
 
 const config = {
     entry: {
-        "app-base": './src/index.js',
+        "app": './src/index.js',
         quickview: './src/pages/quickview/index.js',
         vendor: ['whatwg-fetch', 'slick-carousel', 'jquery'],
     },

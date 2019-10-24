@@ -59,3 +59,35 @@ let name = window.location.pathname;
 if(name === '/sala-de-estar') {
     $('body').addClass('especial__category');
 }
+ 
+// plugin instagram
+var instagramUserId = "2098271925"
+var instagramToken = "2098271925.1677ed0.455773e8dec54cf8ba64ea3f97ca8c1b"
+
+var galleryFeed = new Instafeed({
+    get: "user",
+    userId: instagramUserId,
+    accessToken: instagramToken,
+    resolution: "standard_resolution",
+    useHttp: "true",
+    limit: 6,
+    links: "true",
+    template: '<div class="img-featured-container instafeed__item">' +
+        '<a href="{{link}}" class="instafeed__link" target="_blank">' +
+        '<img src="{{image}}" class="instafeed__image img-responsive">' +
+        '</a>' +
+        '</div>',
+    target: "instafeed-gallery-feed",
+    after: function () {
+        // disable button if no more results to load
+        if (!this.hasNext()) {
+            if (btnInstafeedLoad)
+                btnInstafeedLoad.setAttribute('disabled', 'disabled');
+        }
+        // end instagram carousel
+    }
+});
+
+galleryFeed.run();
+ 
+ 
