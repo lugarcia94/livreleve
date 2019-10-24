@@ -446,24 +446,27 @@ iframe#launcher
     display: flex
     flex-wrap: wrap
     margin-bottom 30px
+    justify-content: space-between
     
     .instafeed__item
-        flex: 0 0 16.6666% 
+        flex: 0 0 16% 
         overflow hidden
         max-height: 200px
+        margin: 0 4px
 
         @media(max-width: 1200px)
             max-height: 150px
+            flex: 0 0 15%
 
         @media(max-width: 991px)
-            flex: 0 0 33.3333%
+            flex: 0 0 30%
             max-height: 200px
+            margin: 10px 4px
 
-       
-
-        @media(max-width: 425px)
+        @media(max-width: 767px)
             max-height: 150px
-            flex: 0 0 50%
+            flex: 0 0 47%
+            
 
         img
             max-width: 140%
