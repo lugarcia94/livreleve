@@ -88,6 +88,9 @@ var galleryFeed = new Instafeed({
     }
 });
 
-galleryFeed.run();
+if($('body.home').length) {
+    galleryFeed.run();
+}
+
  
  
