@@ -254,14 +254,15 @@ button.buy-button svg
 
 .section-products .shelf .product .product-tags .flag.flag-percent 
     background-color: #b13713
-    width: 45px
-    height: 45px
+    width: 50px
+    height: 50px
     border-radius: 50%
     display: flex
     align-items: center
     justify-content: center
     font-weight: 700
-    min-width: 45px
+    min-width: 50px
+    padding: 0
 
 .section-products .shelf .product .product-content 
     text-align: center
@@ -482,3 +483,64 @@ iframe#launcher
             display: block
             top: 50%
  
+.section-products .shelf .product .product-tags, .product-default .flags-component .product-flags
+
+
+    p.flag.black-friday, p.flag.Black.Friday
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        padding: 0
+        background: #000
+        color: #f00
+        line-height: 13px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-weight: 700
+        margin-right 5px
+        text-align: center
+
+    p.flag.discount
+        background-color: #b13713
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        font-weight: 700
+        min-width: 50px
+        padding: 0
+
+@media(max-width: 991px)
+    .product
+        .section-product
+            .product-flags
+
+                p.flag.black-friday, p.flag.Black.Friday
+                    width: 50px
+                    height: 50px
+                    border-radius: 50%
+                    padding: 0
+                    background: #000
+                    color: #f00
+                    line-height: 13px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    font-weight: 700
+                    margin-right 5px
+                    text-align: center
+
+                p.flag.discount
+                    background-color: #b13713
+                    width: 50px
+                    height: 50px
+                    border-radius: 50%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    font-weight: 700
+                    min-width: 50px
+                    padding: 0
