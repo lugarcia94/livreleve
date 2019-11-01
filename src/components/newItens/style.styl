@@ -337,6 +337,13 @@ iframe#launcher
     .section-pit-bar
         margin-top: 163px
 
+    @media(max-width: 991px)
+        .header
+            background: #000!important
+
+        main, .main
+            padding-top 119px
+
     .slider
         #demo 
             position: absolute
@@ -355,7 +362,10 @@ iframe#launcher
             padding: 10px 0
 
             @media(max-width: 991px)
-                font-size: 30px
+                font-size: 30px 
+                left 0
+                transform: none
+                margin-top: -2px
 
                 strong
                     &:before
@@ -422,15 +432,14 @@ iframe#launcher
     margin: 15px 0
 
 .section__instafeed
-    h2
-        font-family: Montserrat,sans-serif
+    h2 
         color: #b09b73
         font-weight: 300
         font-size: 30px
         text-align: center
         margin: 40px 0
         position: relative
-
+        font-family: 'Montserrat'
         &:after 
             margin-left: 22px
         
@@ -484,8 +493,6 @@ iframe#launcher
             top: 50%
  
 .section-products .shelf .product .product-tags, .product-default .flags-component .product-flags
-
-
     p.flag.black-friday, p.flag.Black.Friday
         width: 50px
         height: 50px
@@ -544,3 +551,9 @@ iframe#launcher
                     font-weight: 700
                     min-width: 50px
                     padding: 0
+
+
+@media(max-width: 991px)
+    .section-mini-banners
+        margin-top 50px
+
