@@ -80,12 +80,10 @@ var galleryFeed = new Instafeed({
         '</div>',
     target: "instafeed-gallery-feed",
     after: function () {
-        // disable button if no more results to load
         if (!this.hasNext()) {
             if (btnInstafeedLoad)
                 btnInstafeedLoad.setAttribute('disabled', 'disabled');
         }
-        // end instagram carousel
     }
 });
 
