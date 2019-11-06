@@ -2,7 +2,7 @@
 // import './reset/index.styl';
 
 // Sumoselect
-import './sumoselect'; 
+import './sumoselect';
 
 // // Layout
 // import './layout';
@@ -19,8 +19,8 @@ import './sumoselect';
 // // Wrapper
 // import './wrapper';
 
-// // Account
-// import './account';
+// Account
+import './account';
 
 // // Header
 // import './header';
