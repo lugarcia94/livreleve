@@ -3,7 +3,7 @@ import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 
 $('body').addClass('blackfriday__on');
-
+if($('body.home').length) {
 setTimeout(function(){
 $('.section__blackfriday .banners__slick').slick({
     infinite: false,
@@ -55,12 +55,18 @@ var x = setInterval(function() {
 }, 1000);
 
 }, 1000);
- 
+}
 let name = window.location.pathname; 
+
 if(name === '/sala-de-estar') {
     $('body').addClass('especial__category');
 }
  
+let href = window.location.href; 
+if (href == 'https://www.woodprime.com.br/biomovel#2' || href == 'https://www.woodprime.com.br/biomovel#3' || href == 'https://www.woodprime.com.br/biomovel#4' || href=='https://www.woodprime.com.br/biomovel#5') {
+    $('body').addClass('especial__category');
+}
+
 // plugin instagram
 var instagramUserId = "2098271925"
 var instagramToken = "2098271925.1677ed0.455773e8dec54cf8ba64ea3f97ca8c1b"
