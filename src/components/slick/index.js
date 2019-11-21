@@ -30,10 +30,6 @@ $('#blackfriday-page .products_showcase .n6colunas > ul').slick({
     ]
 });
 
-
-
-
-
 $('[data-carousel]').each(function () {
     const type = $(this).attr('data-carousel');
     let config = {};
