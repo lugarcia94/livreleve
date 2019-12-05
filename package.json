@@ -1,8 +1,8 @@
 {
-  "name": "woodprime",
-  "author": "Lucas Garcia <lucasgaarciaa@gmail.com>",
+  "name": "livreeleve",
+  "author": "Lucas Carvalho <lucasdecarvalho.ti@gmail.com>",
   "vtex": {
-    "store": "woodprime",
+    "store": "livreeleve",
     "acronym": "rf",
     "environment": "vtexcommercestable",
     "device": "web",

@@ -1,121 +1,121 @@
-// // Reset CSS
-// import './reset/index.styl';
+// // // Reset CSS
+// // import './reset/index.styl';
 
-// Sumoselect
-import './sumoselect';
+// // Sumoselect
+// import './sumoselect';
 
-// // Layout
-// import './layout';
+// // // Layout
+// // import './layout';
 
-// // product
-// import './product';
+// // // product
+// // import './product';
 
-// //buytobether
-// import './buytobether';
+// // //buytobether
+// // import './buytobether';
 
-// // SlickJS
-// import './slick';
+// // // SlickJS
+// // import './slick';
 
-// // Wrapper
-// import './wrapper';
+// // // Wrapper
+// // import './wrapper';
 
-// Account
-import './account';
+// // Account
+// import './account';
 
-// // Header
-// import './header';
+// // // Header
+// // import './header';
 
-// // Logo
-// import './logo';
+// // // Logo
+// // import './logo';
 
-// // Banner
-// import './banner';
+// // // Banner
+// // import './banner';
 
-// // Brands
-// import './brands';
+// // // Brands
+// // import './brands';
 
-// // Search
-// import './search';
+// // // Search
+// // import './search';
 
-// // Main
-// import './main';
+// // // Main
+// // import './main';
 
-// // Button
-// import './button';
+// // // Button
+// // import './button';
 
-// head-nav
-import './head-nav';
+// // head-nav
+// import './head-nav';
 
-// // Review
-// import './review';
+// // // Review
+// // import './review';
 
-// // breadcrumb
-// import './breadcrumb';
+// // // breadcrumb
+// // import './breadcrumb';
 
-// // Contact
-// import './contact';
+// // // Contact
+// // import './contact';
 
-// // Social
-// import './social';
+// // // Social
+// // import './social';
 
-// // Showcase
-// import './showcase';
+// // // Showcase
+// // import './showcase';
 
-// // Footer
-// import './footer';
+// // // Footer
+// // import './footer';
 
-// // Copyright
-// import './copyright';
+// // // Copyright
+// // import './copyright';
 
-// // Payment
-// import './payment';
+// // // Payment
+// // import './payment';
 
-// // Security
-// import './security';
+// // // Security
+// // import './security';
 
-// // Partners
-// import './partners';
+// // // Partners
+// // import './partners';
 
-// // labels
-// import './labels';
+// // // labels
+// // import './labels';
 
-// // News Rulers
-// import './news-rulers';
+// // // News Rulers
+// // import './news-rulers';
 
-// // Rulers
-// import './rulers';
+// // // Rulers
+// // import './rulers';
 
-// // prices
-// import './prices';
+// // // prices
+// // import './prices';
 
-// // Kits & Gift
-// import './kits-gift';
+// // // Kits & Gift
+// // import './kits-gift';
 
-// // Pages
-// import './pages';
+// // // Pages
+// // import './pages';
 
-// Sidebar
-import './sidebar';
+// // Sidebar
+// import './sidebar';
 
-// Category
-import './category';
+// // Category
+// import './category';
 
-// // Empty
-// import './empty';
+// // // Empty
+// // import './empty';
 
-// // tb 
-// import './tb';
+// // // tb 
+// // import './tb';
 
-// // quickview
-// import './quickview';
+// // // quickview
+// // import './quickview';
 
 
-// // Instagram
-// import './instagram';
+// // // Instagram
+// // import './instagram';
 
-// import './qtds';
+// // import './qtds';
 
-// // Blackfriday
-// import './blackfriday';
+// // // Blackfriday
+// // import './blackfriday';
 
 import './newItens';
